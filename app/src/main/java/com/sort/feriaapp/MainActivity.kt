@@ -20,7 +20,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        homeFragment = HomeFragment()
+
+        homeFragment = HomeFragment.newInstance()
+        galleryFragment = GalleryFragment.newInstance()
+        mediaFragment = MediaFragment.newInstance()
 
         setCurrentFragment(homeFragment)
 
@@ -30,11 +33,9 @@ class MainActivity : AppCompatActivity() {
                     setCurrentFragment(homeFragment)
                 }
                 R.id.page_2 -> {
-                    mediaFragment = MediaFragment()
                     setCurrentFragment(mediaFragment)
                 }
                 R.id.page_3 -> {
-                    galleryFragment = GalleryFragment()
                     setCurrentFragment(galleryFragment)
                 }
             }
