@@ -5,9 +5,9 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.sort.feriaapp.databinding.ActivityMainBinding
-import com.sort.feriaapp.fragments.GalleryFragment
-import com.sort.feriaapp.fragments.HomeFragment
-import com.sort.feriaapp.fragments.MediaFragment
+import com.sort.feriaapp.ui.GalleryFragment
+import com.sort.feriaapp.ui.HomeFragment
+import com.sort.feriaapp.ui.MediaFragment
 
 
 class MainActivity : AppCompatActivity() {
@@ -21,9 +21,9 @@ class MainActivity : AppCompatActivity() {
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        homeFragment = HomeFragment.newInstance()
-        galleryFragment = GalleryFragment.newInstance()
-        mediaFragment = MediaFragment.newInstance()
+        homeFragment = HomeFragment.newInstance("", "")
+        galleryFragment = GalleryFragment.newInstance("", "")
+        mediaFragment = MediaFragment.newInstance("", "")
 
         setCurrentFragment(homeFragment)
 
