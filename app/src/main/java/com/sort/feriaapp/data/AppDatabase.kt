@@ -5,16 +5,13 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
-import androidx.work.OneTimeWorkRequestBuilder
-import androidx.work.WorkManager
-import com.sort.feriaapp.data.dao.ArticleDAO
+import com.sort.feriaapp.data.dao.ArticleDao
 import com.sort.feriaapp.utils.DATABASE_NAME
-import com.sort.feriaapp.workers.SeedDatabaseWorker
 
 @Database(entities = [Article::class], version = 1)
 abstract class AppDatabase: RoomDatabase() {
 
-    abstract fun articleDao(): ArticleDAO
+    abstract fun articleDao(): ArticleDao
 
     companion object {
         @Volatile private var instance: AppDatabase? = null
