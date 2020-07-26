@@ -30,13 +30,13 @@ class MainActivity : AppCompatActivity() {
         binding.bottomNavigation.setOnNavigationItemSelectedListener {
             when(it.itemId){
                 R.id.page_1 -> {
-                    setCurrentFragment(homeFragment)
+                    setCurrentFragment(homeFragment).addToBackStack(null)
                 }
                 R.id.page_2 -> {
-                    setCurrentFragment(mediaFragment)
+                    setCurrentFragment(mediaFragment).addToBackStack(null)
                 }
                 R.id.page_3 -> {
-                    setCurrentFragment(galleryFragment)
+                    setCurrentFragment(galleryFragment).addToBackStack(null)
                 }
             }
             true

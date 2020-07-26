@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:clickable="true">
+
+    <TextView
+        android:id="@+id/TVtitle_event"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="title" />
+
+    <TextView
+        android:id="@+id/TVlink_event"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+
+    <ImageView
+        android:id="@+id/IMGevent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_action_image" />
+</LinearLayout>

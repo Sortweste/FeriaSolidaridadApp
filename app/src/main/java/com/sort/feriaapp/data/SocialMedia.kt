@@ -1,5 +1,4 @@
 package com.sort.feriaapp.data
-
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
@@ -11,3 +10,4 @@ data class SocialMedia (
     val type: String,
     val ArticleId: Long
 )
+
