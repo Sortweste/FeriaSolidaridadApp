@@ -7,9 +7,10 @@
     tools:context=".MainActivity">
 
     <FrameLayout
-        android:id="@+id/fragment"
+        android:id="@+id/fragment_recyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:name="com.sort.feriaapp.HomeFragment"
         />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
