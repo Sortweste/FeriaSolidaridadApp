@@ -1,7 +1,6 @@
 package com.sort.feriaapp.ui
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -11,9 +10,7 @@ import android.widget.ListView
 import android.widget.TextView
 import com.sort.feriaapp.R
 import com.sort.feriaapp.data.Article
-import com.sort.feriaapp.data.Events
-import com.sort.feriaapp.data.LVeventosAdaptador
-import kotlin.math.log
+import com.sort.feriaapp.adapters.LVeventosAdaptador
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -38,7 +35,7 @@ private const val ARG_homepage = "param9"
  */
 class template_recyclerview_article_show : Fragment() {
 
-    var adapter:LVeventosAdaptador? = null
+    var adapter: LVeventosAdaptador? = null
 
     /*
     private var title: String? = null
@@ -92,7 +89,10 @@ class template_recyclerview_article_show : Fragment() {
         var IMGsocialmedia1 = view.findViewById<ImageView>(R.id.IMGsocialmedia1_show)
         var IMGsocialmedia2 = view.findViewById<ImageView>(R.id.IMGsocialmedia2_show)
         var IMGsocialmedia3= view.findViewById<ImageView>(R.id.IMGsocialmedia3_show)
-        adapter = LVeventosAdaptador(view.context, articles?.events!!)
+        adapter = LVeventosAdaptador(
+            view.context,
+            articles?.events!!
+        )
         LVevents.adapter = adapter
 
         TVtitle.setText(articles?.title)

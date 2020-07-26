@@ -1,4 +1,4 @@
-package com.sort.feriaapp.data
+package com.sort.feriaapp.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -8,7 +8,7 @@ import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
 import com.sort.feriaapp.R
-import kotlinx.android.synthetic.main.template_listview_eventos.view.*
+import com.sort.feriaapp.data.Events
 
 class LVeventosAdaptador(private val context: Context,
                          private val eventos: ArrayList<Events>) : BaseAdapter() {

@@ -16,4 +16,3 @@ data class Article (
     val type: String?,
     val homepage: String?
 )
-

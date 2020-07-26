@@ -1,7 +1,6 @@
 package com.sort.feriaapp.ui
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -10,8 +9,10 @@ import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.sort.feriaapp.R
+import com.sort.feriaapp.adapters.RVAdaptadorCustom
 import com.sort.feriaapp.data.*
 import com.sort.feriaapp.databinding.FragmentHomeBinding
+import com.sort.feriaapp.helpers.RVArticlesClickListener
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
@@ -34,7 +35,7 @@ class HomeFragment : Fragment() {
 
     }
     var lista:RecyclerView? = null
-    var adaptador:RVAdaptadorCustom? = null
+    var adaptador: RVAdaptadorCustom? = null
     var layoutManager:RecyclerView.LayoutManager? = null
 
     override fun onCreateView(
@@ -70,15 +71,16 @@ class HomeFragment : Fragment() {
         layoutManager = GridLayoutManager(view.context,2)
         lista?.layoutManager =layoutManager
 
-        adaptador = RVAdaptadorCustom(articles,object:RVArticlesClickListener{
-            override fun OnClick(Vista: View, index: Int) {
-                //rvarticle = template_recyclerview_article_show.newInstance(articles.get(index).title, articles.get(index).description,articles.get(index).institution,articles.get(index).foto,articles.get(index).video,articles.get(index).meeting_url,articles.get(index).type,articles.get(index).homepage)
-                rvarticle = template_recyclerview_article_show.newInstance(articles.get(index))
-                setCurrentFragment(rvarticle).addToBackStack(null)
+        adaptador = RVAdaptadorCustom(articles,
+            object : RVArticlesClickListener {
+                override fun OnClick(Vista: View, index: Int) {
+                    //rvarticle = template_recyclerview_article_show.newInstance(articles.get(index).title, articles.get(index).description,articles.get(index).institution,articles.get(index).foto,articles.get(index).video,articles.get(index).meeting_url,articles.get(index).type,articles.get(index).homepage)
+                    rvarticle = template_recyclerview_article_show.newInstance(articles.get(index))
+                    setCurrentFragment(rvarticle).addToBackStack(null)
 
-            }
+                }
 
-        })
+            })
 
         lista?.adapter = adaptador
 
