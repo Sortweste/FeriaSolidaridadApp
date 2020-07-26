@@ -1,6 +1,7 @@
 package com.sort.feriaapp.ui
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -9,10 +10,7 @@ import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.sort.feriaapp.R
-import com.sort.feriaapp.data.RVAdaptadorCustom
-import com.sort.feriaapp.data.Article
-import com.sort.feriaapp.data.Events
-import com.sort.feriaapp.data.RVArticlesClickListener
+import com.sort.feriaapp.data.*
 import com.sort.feriaapp.databinding.FragmentHomeBinding
 
 private const val ARG_PARAM1 = "param1"
@@ -49,18 +47,23 @@ class HomeFragment : Fragment() {
         evento.add(Events("UCA",R.drawable.ic_action_image,"www.API.org"))
         evento.add(Events("UCA2",R.drawable.ic_action_image,"www.API2.org"))
 
+        val socialMedia = ArrayList<SocialMedia>()
+        socialMedia.add(SocialMedia("prueba facebook","www/someurlforfacebook.com","facebook") )
+        socialMedia.add(SocialMedia("prueba twitter","www/someurlfortwitter.com","twitter"))
+        socialMedia.add(SocialMedia("prueba instagram","www/someurlforinstagram.com","instagram"))
+
 
         val articles = ArrayList<Article>()
         articles.add(Article(1,R.drawable.ic_action_image,"Evento","UCA","Un evento en la uca para personas que estudiantes en la uca",R.drawable.ic_action_video,
-            "www.api.org",evento,"fun","www.API.org"
+            "www.api.org",evento,"fun","www.API.org",socialMedia
         ))
         articles.add(Article(2,R.drawable.ic_action_image,"Evento2","UCA 2","Un evento en la uca 2 para personas que estudiantes en la uca 2",R.drawable.ic_action_video,
-            "www.api.org",evento,"fun","www.API.org"
+            "www.api.org",evento,"fun","www.API.org",socialMedia
         ))
         articles.add(Article(3,R.drawable.ic_action_image,"Evento3","UCA 3","Un evento en la uca 3 para personas que estudiantes en la uca 3",R.drawable.ic_action_video,
-            "www.api.org",evento,"fun","www.API.org"
+            "www.api.org",evento,"fun","www.API.org",socialMedia
         ))
-
+        //Log.d("debug red social", socialMedia.get(1).name);
         lista = view.findViewById(R.id.RVArticle)
         lista?.setHasFixedSize(true)
 

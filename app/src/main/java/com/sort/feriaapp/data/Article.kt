@@ -17,17 +17,11 @@ class Article (){
     var events:ArrayList<Events>? = null
     var type:String? = null
     var homepage:String? = null
-    //var social_media:ArrayList<socialMedia>? = null
+    var social_media:ArrayList<SocialMedia>? = null
 
-    constructor(id: Int,foto:Int,title:String, institution:String, description:String):this(){
-        this.id = id
-        this.foto = foto
-        this.title = title
-        this.institution = institution
-        this.description = description
-    }
+
     constructor(id: Int,foto:Int,title:String, institution:String, description:String,video:Int,meeting_url:String,
-    events: ArrayList<Events>,type:String,homepage:String):this(){
+    events: ArrayList<Events>,type:String,homepage:String,socialMedia:ArrayList<SocialMedia>):this(){
         this.id = id
         this.foto = foto
         this.title = title
@@ -38,5 +32,6 @@ class Article (){
         this.events = events
         this.type = type
         this.homepage = homepage
+        this.social_media = socialMedia
     }
 }

@@ -1,6 +1,7 @@
 package com.sort.feriaapp.ui
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +13,7 @@ import com.sort.feriaapp.R
 import com.sort.feriaapp.data.Article
 import com.sort.feriaapp.data.Events
 import com.sort.feriaapp.data.LVeventosAdaptador
+import kotlin.math.log
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -84,7 +86,12 @@ class template_recyclerview_article_show : Fragment() {
         var LVevents = view.findViewById<ListView>(R.id.LVeventos_show)
         var TVtype = view.findViewById<TextView>(R.id.TVtype_show)
         var TVhomepage = view.findViewById<TextView>(R.id.TVhomepage)
-
+        var TVsocialmedia1 = view.findViewById<TextView>(R.id.TVsocialmedia1_show)
+        var TVsocialmedia2 = view.findViewById<TextView>(R.id.TVsocialmedia2_show)
+        var TVsocialmedia3= view.findViewById<TextView>(R.id.TVsocialmedia3_show)
+        var IMGsocialmedia1 = view.findViewById<ImageView>(R.id.IMGsocialmedia1_show)
+        var IMGsocialmedia2 = view.findViewById<ImageView>(R.id.IMGsocialmedia2_show)
+        var IMGsocialmedia3= view.findViewById<ImageView>(R.id.IMGsocialmedia3_show)
         adapter = LVeventosAdaptador(view.context, articles?.events!!)
         LVevents.adapter = adapter
 
@@ -94,10 +101,17 @@ class template_recyclerview_article_show : Fragment() {
         IMGimg.setImageResource(articles?.foto!!)
         VIDvideo.setImageResource(articles?.video!!)
         TVmeeting.setText(articles?.meeting_url)
-
-
         TVtype.setText(articles?.type)
         TVhomepage.setText(articles?.homepage)
+
+        TVsocialmedia1.setText(articles?.social_media!!.get(0).name)
+        TVsocialmedia2.setText(articles?.social_media!!.get(1).name)
+        TVsocialmedia3.setText(articles?.social_media!!.get(2).name)
+        imageSocialMedia(articles?.social_media!!.get(0).type,IMGsocialmedia1)
+        imageSocialMedia(articles?.social_media!!.get(1).type,IMGsocialmedia2)
+        imageSocialMedia(articles?.social_media!!.get(2).type,IMGsocialmedia3)
+
+
 
 
 
@@ -131,6 +145,16 @@ class template_recyclerview_article_show : Fragment() {
                     putString(ARG_homepage, homepage)
                 }
             }*/
+        fun imageSocialMedia(type:String?,imageview:ImageView){
+            if (type =="facebook"){
+                imageview.setImageResource(R.drawable.ic_action_image)
+            }else if(type =="twitter"){
+                imageview.setImageResource(R.drawable.ic_action_home)
+            }else if(type =="instagram"){
+                imageview.setImageResource(R.drawable.ic_action_video)
+            }
+        }
+
         @JvmStatic
         fun newInstance(article: Article?) =
             template_recyclerview_article_show().apply {
