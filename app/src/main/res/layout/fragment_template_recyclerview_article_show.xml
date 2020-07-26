@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.template_recyclerview_article_show">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/IMGarticle_show"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_action_image" />
+
+        <TextView
+            android:id="@+id/TVtitle_show"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="titulo" />
+
+        <TextView
+            android:id="@+id/TVdescription_show"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Description" />
+
+        <TextView
+            android:id="@+id/TVinstitution_show"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Institution" />
+
+        <ImageView
+            android:id="@+id/VIDarticle_show"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_action_image" />
+
+        <ListView
+            android:id="@+id/LVeventos_show"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/TVtype_show"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="type" />
+
+        <TextView
+            android:id="@+id/TVmeeting_url_show"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="meeting url" />
+
+        <TextView
+            android:id="@+id/TVhomepage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="homepage" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/IMGsocialmedia1_show"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/ic_action_image" />
+
+            <TextView
+                android:id="@+id/TVsocialmedia1_show"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Facebook" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/IMGsocialmedia2_show"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/ic_action_image" />
+
+            <TextView
+                android:id="@+id/TVsocialmedia2_show"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Twitter" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/IMGsocialmedia3_show"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/ic_action_image" />
+
+            <TextView
+                android:id="@+id/TVsocialmedia3_show"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Instagram" />
+        </LinearLayout>
+
+    </LinearLayout>
+</FrameLayout>
