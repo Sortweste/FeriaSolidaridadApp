@@ -14,6 +14,9 @@ class ArticleRepository(private val articleDao: ArticleDao): SafeApiRequest() {
         articleDao.insert(article)
     }
 
+    suspend fun insertArticles(articles: List<Article>){
+        articleDao.insertMany(*articles.toTypedArray())
+    }
 
 
     companion object {
