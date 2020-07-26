@@ -1,37 +1,19 @@
 package com.sort.feriaapp.data
 
-/* @Entity(tableName = "articles")
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "articles")
 data class Article (
-    @PrimaryKey val id: Int
+    @PrimaryKey val id: Long,
+    val title: String,
+    val description: String,
+    val institution: String,
+    @ColumnInfo(name = "image_url") val imageURL: String,
+    @ColumnInfo(name = "video_url") val videoURL: String?,
+    @ColumnInfo(name = "meeting_url") val meetingURL: String?,
+    val type: String?,
+    val homepage: String?
+)
 
-) */
-class Article (){
-
-    var id:Int? = null
-    var foto:Int = 0
-    var title:String? = null
-    var institution:String? = null
-    var description:String? = null
-    var video:Int = 0
-    var meeting_url:String? = null
-    var events:ArrayList<Events>? = null
-    var type:String? = null
-    var homepage:String? = null
-    var social_media:ArrayList<SocialMedia>? = null
-
-
-    constructor(id: Int,foto:Int,title:String, institution:String, description:String,video:Int,meeting_url:String,
-    events: ArrayList<Events>,type:String,homepage:String,socialMedia:ArrayList<SocialMedia>):this(){
-        this.id = id
-        this.foto = foto
-        this.title = title
-        this.institution = institution
-        this.description = description
-        this.video = video
-        this.meeting_url = meeting_url
-        this.events = events
-        this.type = type
-        this.homepage = homepage
-        this.social_media = socialMedia
-    }
-}

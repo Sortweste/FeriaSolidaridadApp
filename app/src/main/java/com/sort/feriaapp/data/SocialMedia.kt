@@ -1,14 +1,13 @@
 package com.sort.feriaapp.data
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 
-class SocialMedia() {
-    var name:String? = null
-    var url:String? = null
-    var type:String? = null
+@Entity(tableName = "social_media")
+data class SocialMedia (
+    @PrimaryKey val id: Long,
+    val name: String,
+    val url: String,
+    val type: String,
+    val ArticleId: Long
+)
 
-    constructor(name:String, url:String, type:String):this(){
-        this.name = name
-        this.url = url
-        this.type = type
-    }
-
-}
