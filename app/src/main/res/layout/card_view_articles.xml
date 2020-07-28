@@ -26,7 +26,7 @@
             android:id="@+id/TVtitle_show"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="title"
+            android:text="@{}"
             android:textSize="@dimen/Title_cardview"/>
 
         <TextView
