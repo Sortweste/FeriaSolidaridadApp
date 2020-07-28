@@ -1,22 +1,33 @@
 package com.sort.feriaapp.viewmodels
 
-import android.app.Application
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
+
+import androidx.lifecycle.*
 import com.sort.feriaapp.data.Article
-import com.sort.feriaapp.data.dao.ArticleDAO
+import com.sort.feriaapp.data.ArticleWithEventsAndSocialMedia
+import com.sort.feriaapp.data.repositories.ArticleRepository
 import kotlinx.coroutines.*
 
-class ArticleViewModel( dataSource: ArticleDAO,
-                        application: Application): ViewModel() {
-    val database = dataSource
+
+class ArticleViewModel(private val articleRepository:ArticleRepository): ViewModel() {
+
+    private val _getAllArticles = articleRepository
+        .getAllArticles
+        .asLiveData()
+
+    val getAllArticles: LiveData<List<ArticleWithEventsAndSocialMedia>>
+    get() = _getAllArticles
+
+    init{
+
+    }
+
+    fun insert(article: Article) = viewModelScope.launch(Dispatchers.IO) {
+        articleRepository.insertArticle(article)
+    }
+
     private val viewModelJob = Job()
 
     private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
-
-    private val articles = database.getAllArticles()
 
     override fun onCleared() {
         super.onCleared()

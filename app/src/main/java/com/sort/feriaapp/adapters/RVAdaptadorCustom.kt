@@ -17,7 +17,7 @@ class RVAdaptadorCustom(items:ArrayList<Article>, var listener: RVArticlesClickL
         this.items = items
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val vista = LayoutInflater.from(parent?.context).inflate(R.layout.template_recyclerview_articles,parent,false)
+        val vista = LayoutInflater.from(parent?.context).inflate(R.layout.card_view_articles,parent,false)
         val viewHolder = ViewHolder(
             vista,
             listener

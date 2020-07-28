@@ -13,6 +13,8 @@ import com.sort.feriaapp.adapters.RVAdaptadorCustom
 import com.sort.feriaapp.data.*
 import com.sort.feriaapp.databinding.FragmentHomeBinding
 import com.sort.feriaapp.helpers.RVArticlesClickListener
+import com.sort.feriaapp.viewmodels.ArticleViewModel
+import kotlinx.android.synthetic.main.fragment_home.view.*
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
@@ -21,7 +23,8 @@ private const val ARG_PARAM2 = "param2"
 class HomeFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
-    lateinit var rvarticle: template_recyclerview_article_show
+
+    //private val viewModel = ArticleViewModel()
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
@@ -34,6 +37,7 @@ class HomeFragment : Fragment() {
         }
 
     }
+
     var lista:RecyclerView? = null
     var adaptador: RVAdaptadorCustom? = null
     var layoutManager:RecyclerView.LayoutManager? = null
@@ -44,28 +48,11 @@ class HomeFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
-        val evento = ArrayList<Events>()
-        evento.add(Events("UCA",R.drawable.ic_action_image,"www.API.org"))
-        evento.add(Events("UCA2",R.drawable.ic_action_image,"www.API2.org"))
-
+        val events = ArrayList<Event>()
         val socialMedia = ArrayList<SocialMedia>()
-        socialMedia.add(SocialMedia("prueba facebook","www/someurlforfacebook.com","facebook") )
-        socialMedia.add(SocialMedia("prueba twitter","www/someurlfortwitter.com","twitter"))
-        socialMedia.add(SocialMedia("prueba instagram","www/someurlforinstagram.com","instagram"))
-
-
         val articles = ArrayList<Article>()
-        articles.add(Article(1,R.drawable.ic_action_image,"Evento","UCA","Un evento en la uca para personas que estudiantes en la uca",R.drawable.ic_action_video,
-            "www.api.org",evento,"fun","www.API.org",socialMedia
-        ))
-        articles.add(Article(2,R.drawable.ic_action_image,"Evento2","UCA 2","Un evento en la uca 2 para personas que estudiantes en la uca 2",R.drawable.ic_action_video,
-            "www.api.org",evento,"fun","www.API.org",socialMedia
-        ))
-        articles.add(Article(3,R.drawable.ic_action_image,"Evento3","UCA 3","Un evento en la uca 3 para personas que estudiantes en la uca 3",R.drawable.ic_action_video,
-            "www.api.org",evento,"fun","www.API.org",socialMedia
-        ))
-        //Log.d("debug red social", socialMedia.get(1).name);
-        lista = view.findViewById(R.id.RVArticle)
+
+        lista = view.RVArticle
         lista?.setHasFixedSize(true)
 
         layoutManager = GridLayoutManager(view.context,2)

@@ -5,6 +5,7 @@ import com.sort.feriaapp.data.ArticleWithEventsAndSocialMedia
 import com.sort.feriaapp.data.dao.ArticleDao
 import com.sort.feriaapp.utils.SafeApiRequest
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
 
 class ArticleRepository(private val articleDao: ArticleDao): SafeApiRequest() {
 

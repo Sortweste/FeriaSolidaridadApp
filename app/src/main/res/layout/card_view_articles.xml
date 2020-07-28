@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="article"
+            type="com.sort.feriaapp.data.Article" />
+    </data>
+
+    <LinearLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="#ECE4D3"
+        android:orientation="vertical"
+        android:padding="8dp"
+        android:clickable="true">
+
+        <ImageView
+            android:id="@+id/IMGarticle"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/TVtitle_show"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="title"
+            android:textSize="@dimen/Title_cardview"/>
+
+        <TextView
+            android:id="@+id/TVinstitution_show"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="institution"
+            android:textSize="@dimen/institution_cardview"/>
+
+        <TextView
+            android:id="@+id/TVdescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="description"
+            android:textSize="@dimen/description_cardview"/>
+
+    </LinearLayout>
+
+</layout>
+

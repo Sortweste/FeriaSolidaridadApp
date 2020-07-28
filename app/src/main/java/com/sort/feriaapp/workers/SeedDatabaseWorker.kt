@@ -1,7 +1,7 @@
 package com.sort.feriaapp.workers
 
 import android.content.Context
-import android.util.JsonReader
+import com.google.gson.stream.JsonReader
 import androidx.work.CoroutineWorker
 import androidx.work.WorkerParameters
 import com.google.gson.Gson
