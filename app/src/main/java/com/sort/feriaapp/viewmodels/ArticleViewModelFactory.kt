@@ -8,7 +8,9 @@ class ArticleViewModelFactory(private val articleRepository: ArticleRepository):
 
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        return ArticleViewModel(articleRepository) as T
+        if(modelClass.isAssignableFrom(ArticleViewModel::class.java))
+            return ArticleViewModel(articleRepository) as T
+        throw IllegalArgumentException("Unable to construct ViewModel")
     }
 
 }

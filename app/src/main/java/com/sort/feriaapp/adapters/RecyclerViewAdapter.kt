@@ -6,11 +6,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.sort.feriaapp.data.Article
 import com.sort.feriaapp.databinding.CardViewArticlesBinding
+import com.sort.feriaapp.helpers.RecyclerViewClickListener
 
-
-class RecyclerViewAdapter(private val items: List<Article>): RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
-
-    inner class ViewHolder(val binding: CardViewArticlesBinding): RecyclerView.ViewHolder(binding.root)
+class RecyclerViewAdapter(private val items: List<Article>, private val listener: RecyclerViewClickListener<Article>): RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerViewAdapter.ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -18,13 +16,16 @@ class RecyclerViewAdapter(private val items: List<Article>): RecyclerView.Adapte
         return ViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: RecyclerViewAdapter.ViewHolder, position: Int) {
-        holder.binding.article = items[position]
-        holder.binding.executePendingBindings()
-    }
+    override fun onBindViewHolder(holder: RecyclerViewAdapter.ViewHolder, position: Int) = holder.bind(items[position])
 
-    override fun getItemCount(): Int {
-        return items.size
+    override fun getItemCount(): Int = items.size
+
+    inner class ViewHolder(private val binding: CardViewArticlesBinding): RecyclerView.ViewHolder(binding.root){
+        fun bind(item: Article){
+            binding.article = item
+            binding.executePendingBindings()
+            binding.root.setOnClickListener { listener.onCardViewClick(it, item) }
+        }
     }
 
 }
