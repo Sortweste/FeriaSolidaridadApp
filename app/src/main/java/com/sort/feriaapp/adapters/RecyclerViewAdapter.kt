@@ -6,9 +6,10 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.sort.feriaapp.data.Article
 import com.sort.feriaapp.databinding.CardViewArticlesBinding
+import com.sort.feriaapp.helpers.BindAdapter
 import com.sort.feriaapp.helpers.RecyclerViewClickListener
 
-class RecyclerViewAdapter(private val items: List<Article>, private val listener: RecyclerViewClickListener<Article>): RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
+class RecyclerViewAdapter(private val items: List<Article>, private val listener: RecyclerViewClickListener<Article>): RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>(), BindAdapter<List<Article>> {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerViewAdapter.ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -26,6 +27,11 @@ class RecyclerViewAdapter(private val items: List<Article>, private val listener
             binding.executePendingBindings()
             binding.root.setOnClickListener { listener.onCardViewClick(it, item) }
         }
+    }
+
+    override fun setData(items: List<List<Article>>) {
+        
+        notifyDataSetChanged()
     }
 
 }

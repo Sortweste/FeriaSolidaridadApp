@@ -14,7 +14,7 @@ class ArticleViewModel(private val articleRepository:ArticleRepository): ViewMod
         .getAllArticles
         .asLiveData()
 
-    val getAllArticles: LiveData<List<ArticleWithEventsAndSocialMedia>>
+    val articles: LiveData<List<ArticleWithEventsAndSocialMedia>>
     get() = _getAllArticles
 
     init{
@@ -25,13 +25,9 @@ class ArticleViewModel(private val articleRepository:ArticleRepository): ViewMod
         articleRepository.insertArticle(article)
     }
 
-    private val viewModelJob = Job()
-
-    private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
 
     override fun onCleared() {
         super.onCleared()
-        viewModelJob.cancel()
     }
 
 }

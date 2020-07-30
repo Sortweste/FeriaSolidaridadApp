@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
         <variable
             name="article"
-            type="com.sort.feriaapp.data.Article" />
+            type="com.sort.feriaapp.network.responses.ArticleResponse" />
     </data>
 
     <LinearLayout
@@ -23,6 +24,7 @@
             android:id="@+id/IMGarticle"
             android:layout_width="match_parent"
             android:layout_height="120dp"
+            app:setImageUrl="@{}"
             />
 
         <TextView
