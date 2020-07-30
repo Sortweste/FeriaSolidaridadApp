@@ -19,19 +19,18 @@
         android:layout_height="wrap_content"
         card_view:cardCornerRadius="4dp">
 
-
         <ImageView
-            android:id="@+id/IMGarticle"
+            android:id="@+id/representative_image"
             android:layout_width="match_parent"
             android:layout_height="120dp"
-            app:setImageUrl="@{}"
-            />
+            app:setImageUrl="@{article.image_url}"
+            android:contentDescription="@string/representative_image_institution" />
 
         <TextView
-            android:id="@+id/TVtitle_show"
+            android:id="@+id/institution_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{}"
+            android:text="@{article.institution}"
             android:textSize="@dimen/Title_cardview"/>
 
         <TextView

@@ -69,7 +69,7 @@ class HomeFragment : Fragment(), RecyclerViewClickListener<Article>{
     private fun initObservers(){
         lifecycleScope.launchWhenCreated {
             viewModel.articles.observe(viewLifecycleOwner, Observer{
-
+                adapter.setData(it)
             })
         }
     }

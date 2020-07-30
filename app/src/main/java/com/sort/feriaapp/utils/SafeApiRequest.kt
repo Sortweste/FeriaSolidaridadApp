@@ -5,16 +5,16 @@ import java.io.IOException
 
 abstract class SafeApiRequest {
 
-    suspend fun<T: Any> apiRequest(call: suspend () -> Response<T>): T {
+    suspend fun <T : Any> apiRequest(call: suspend () -> Response<T>): Resource<T> {
         val response = call.invoke()
-        if(response.isSuccessful){
-            return response.body()!!
-        }else{
-            throw ApiException(
-                response.code().toString()
-            )
-        }
+        return if (response.isSuccessful)
+            Resource.success(response.body()!!)
+        else
+            error(response.code().toString())
     }
-}
 
-class ApiException(message: String): IOException(message)
+    private fun <T> error(message: String): Resource<T> {
+        return Resource.error(message)
+    }
+
+}
