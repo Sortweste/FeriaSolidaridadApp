@@ -58,7 +58,7 @@ class HomeFragment : Fragment(), RecyclerViewClickListener<Article>{
     }
 
     private fun initRecyclerView(){
-        adapter = RecyclerViewAdapter(this,this)
+        adapter = RecyclerViewAdapter(this)
         binding.recyclerViewArticle.also {
             it.setHasFixedSize(true)
             it.layoutManager = GridLayoutManager(requireContext(), 2)
