@@ -9,13 +9,17 @@ import com.sort.feriaapp.databinding.CardViewArticlesBinding
 import com.sort.feriaapp.helpers.BindAdapter
 import com.sort.feriaapp.helpers.RecyclerViewClickListener
 
+import com.sort.feriaapp.R
+
 class RecyclerViewAdapter(private val listener: RecyclerViewClickListener<Article>): RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>(), BindAdapter<Article> {
 
     private var items: List<Article> = emptyList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerViewAdapter.ViewHolder {
-        val inflater = LayoutInflater.from(parent.context)
-        val binding: CardViewArticlesBinding = DataBindingUtil.inflate(inflater, viewType, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.card_view_articles ,parent, false)
+        val binding = DataBindingUtil.bind<CardViewArticlesBinding>(view)!!
+        //val inflater = LayoutInflater.from(parent.context)
+        //val binding: CardViewArticlesBinding = DataBindingUtil.inflate(inflater, viewType, parent, false)
         return ViewHolder(binding)
     }
 
