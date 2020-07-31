@@ -1,68 +1,74 @@
 [
   {
     "id": 1,
-    "title": "Actividad #1",
-    "description": "Asiste a nuestra actividad",
+    "description": "",
     "institution": "Linux Foundation",
-    "imageURL": "http://www.uca.edu.sv/servicio-social/wp-content/uploads/2017/08/logo_CSS-1.png",
+    "summary": "Consorcio tecnológico sin ánimo de lucro establecido para adoptar el crecimiento de Linux.",
+    "imageURL": "https://i1.wp.com/windtux.com/wp-content/uploads/2016/01/Linux-foundation-logo.png?ssl=1",
+    "logoURL": "https://i1.wp.com/windtux.com/wp-content/uploads/2016/01/Linux-foundation-logo.png?ssl=1",
     "videoURL": "",
-    "meetingURL": "SomeMeetingRoomURL",
+    "meetingURL": "",
     "type": "Event",
-    "homepage": "http://www.uca.edu.sv/servicio-social/"
+    "homepage": ""
   },
   {
     "id": 2,
-    "title": "Actividad #2",
-    "description": "No te lo puedes perder",
-    "institution": "Linux Foundation",
-    "imageURL": "http://www.uca.edu.sv/servicio-social/wp-content/uploads/2017/08/logo_CSS-1.png",
+    "description": "",
+    "institution": "Node js",
+    "summary": "Entorno en tiempo de ejecución multiplataforma, de código abierto, para la capa del servidor basado en el lenguaje de programación JavaScrip",
+    "imageURL": "https://s3-us-west-2.amazonaws.com/devcodepro/media/tutorials/instalacion-de-nodejs-en-ubuntu-t1.jpg",
+    "logoURL": "https://nodejs.org/static/images/logo-hexagon-card.png",
     "videoURL": "",
-    "meetingURL": "SomeMeetingRoomURL",
+    "meetingURL": "",
     "type": "Event",
-    "homepage": "http://www.uca.edu.sv/servicio-social/"
+    "homepage": ""
   },
   {
     "id": 3,
-    "title": "Actividad #3",
-    "description": "Vamos a superarlo",
-    "institution": "Linux Foundation",
-    "imageURL": "http://www.uca.edu.sv/servicio-social/wp-content/uploads/2017/08/logo_CSS-1.png",
+    "description": "",
+    "institution": "Ruby on Rails",
+    "summary": "Framework de aplicaciones web de código abierto escrito en el lenguaje de programación Ruby",
+    "imageURL": "https://www.muylinux.com/wp-content/uploads/2017/12/Ruby-on-Rails-1.png",
+    "logoURL": "https://www.logolynx.com/images/logolynx/40/4075aff8eab8b2c14b3c2bab7bc04384.jpeg",
     "videoURL": "",
-    "meetingURL": "SomeMeetingRoomURL",
+    "meetingURL": "",
     "type": "Event",
-    "homepage": "http://www.uca.edu.sv/servicio-social/"
+    "homepage": ""
   },
   {
     "id": 4,
-    "title": "Actividad #4",
-    "description": "Asiste a nuestra actividad",
-    "institution": "Linux Foundation",
-    "imageURL": "http://www.uca.edu.sv/servicio-social/wp-content/uploads/2017/08/logo_CSS-1.png",
+    "description": "",
+    "institution": "Flutter",
+    "summary": "SDK de código fuente abierto de desarrollo de aplicaciones móviles creado por Google. ",
+    "imageURL": "https://i.ytimg.com/vi/fq4N0hgOWzU/maxresdefault.jpg",
+    "logoURL": "https://diegolaballos.com/files/images/flutter-icon.jpg",
     "videoURL": "",
-    "meetingURL": "SomeMeetingRoomURL",
+    "meetingURL": "",
     "type": "Event",
-    "homepage": "http://www.uca.edu.sv/servicio-social/"
+    "homepage": ""
   },
   {
     "id": 5,
-    "title": "Actividad #5",
-    "description": "Estamos juntos en esto",
-    "institution": "Linux Foundation",
-    "imageURL": "http://www.uca.edu.sv/servicio-social/wp-content/uploads/2017/08/logo_CSS-1.png",
+    "description": "",
+    "institution": "C#",
+    "summary": "Lenguaje de programación multiparadigma desarrollado y estandarizado por la empresa Microsoft como parte de su plataforma .NET",
+    "imageURL": "https://user-images.githubusercontent.com/29004603/75462714-9dd79b80-59bf-11ea-8e6b-575765733340.png",
+    "logoURL": "https://cdn-images-1.medium.com/max/822/1*Voh7k0_lP6wMJEApsqfKnA.png",
     "videoURL": "",
-    "meetingURL": "SomeMeetingRoomURL",
+    "meetingURL": "",
     "type": "Event",
-    "homepage": "http://www.uca.edu.sv/servicio-social/"
+    "homepage": ""
   },
   {
     "id": 6,
-    "title": "Actividad #6",
-    "description": "En todo amar y servir",
-    "institution": "Linux Foundation",
-    "imageURL": "http://www.uca.edu.sv/servicio-social/wp-content/uploads/2017/08/logo_CSS-1.png",
+    "description": "",
+    "institution": "JavaScript",
+    "summary": "Lenguaje de programación interpretado, dialecto del estándar ECMAScript.",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
+    "logoURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
     "videoURL": "",
-    "meetingURL": "SomeMeetingRoomURL",
+    "meetingURL": "",
     "type": "Event",
-    "homepage": "http://www.uca.edu.sv/servicio-social/"
+    "homepage": ""
   }
 ]

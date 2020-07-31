@@ -31,9 +31,11 @@ class RecyclerViewAdapter(private val listener: RecyclerViewClickListener<Articl
         }
     }
 
-    override fun setData(items: List<Article>) {
-        this.items = items
-        notifyDataSetChanged()
+    override fun setData(items: List<Article>?) {
+        if(!items.isNullOrEmpty()) {
+            this.items = items
+            notifyDataSetChanged()
+        }
     }
 
 }

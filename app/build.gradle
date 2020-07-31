@@ -34,14 +34,15 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
 }
 
 dependencies {
-    def room_version = "2.2.5"
+    def room_version = "2.3.0-alpha01"
     def work_version = "2.4.0"
     def arch_version = '2.3.0-alpha06'
 
@@ -68,7 +69,10 @@ dependencies {
 
     implementation "androidx.navigation:navigation-fragment-ktx:2.3.0"
     implementation "androidx.navigation:navigation-ui-ktx:2.3.0"
+
     implementation "androidx.room:room-runtime:$room_version"
+    implementation "androidx.room:room-ktx:$room_version"
+
 
     implementation "androidx.work:work-runtime-ktx:$work_version"
 
@@ -78,9 +82,10 @@ dependencies {
 
     implementation 'com.github.bumptech.glide:glide:4.11.0'
 
+    kapt 'com.github.bumptech.glide:compiler:4.11.0'
+    kapt "androidx.room:room-compiler:$room_version"
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-    annotationProcessor 'androidx.room:room-compiler:2.2.5'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
 }

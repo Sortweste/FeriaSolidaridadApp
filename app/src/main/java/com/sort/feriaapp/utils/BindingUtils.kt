@@ -8,14 +8,14 @@ import com.sort.feriaapp.helpers.BindAdapter
 
 @BindingAdapter("data")
 @Suppress("UNCHECKED_CAST")
-fun <T> setRecyclerViewProperties(recyclerView: RecyclerView, data: List<T>){
+fun <T> setRecyclerViewProperties(recyclerView: RecyclerView, data: List<T>?){
     if (recyclerView.adapter is BindAdapter<*>) {
         (recyclerView.adapter as BindAdapter<T>).setData(data)
     }
 }
 
 @BindingAdapter("setImageUrl")
-fun bindImageUrl(view: ImageView,url: String){
+fun bindImageUrl(view: ImageView, url: String){
     if(url.isNotBlank())
         Glide.with(view.context).load(url).into(view)
 }
