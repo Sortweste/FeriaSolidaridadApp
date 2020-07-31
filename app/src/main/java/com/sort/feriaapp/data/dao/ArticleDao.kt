@@ -10,6 +10,9 @@ abstract class ArticleDao: BaseDao<Article> {
 
     @Transaction
     @Query("SELECT * FROM articles")
-    abstract fun getAllArticles(): Flow<List<ArticleWithEventsAndSocialMedia>>
+    abstract fun getAllArticlesInfo(): Flow<List<ArticleWithEventsAndSocialMedia>>
+
+    @Query("SELECT * FROM articles")
+    abstract fun getAllArticles(): Flow<List<Article>>
 
 }

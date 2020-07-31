@@ -14,7 +14,7 @@ class ArticleViewModel(private val articleRepository:ArticleRepository): ViewMod
         .getAllArticles
         .asLiveData()
 
-    val articles: LiveData<List<ArticleWithEventsAndSocialMedia>>
+    val articles: LiveData<List<Article>>
     get() = _getAllArticles
 
     init{

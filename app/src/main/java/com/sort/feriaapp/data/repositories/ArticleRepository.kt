@@ -5,10 +5,14 @@ import com.sort.feriaapp.data.ArticleWithEventsAndSocialMedia
 import com.sort.feriaapp.data.dao.ArticleDao
 import com.sort.feriaapp.utils.SafeApiRequest
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.transform
 
 class ArticleRepository(private val articleDao: ArticleDao): SafeApiRequest() {
 
-    val getAllArticles: Flow<List<ArticleWithEventsAndSocialMedia>> = articleDao.getAllArticles()
+    val getAllArticles: Flow<List<Article>> = articleDao.getAllArticles()
+
+    val articlesWithEventsAndSocialMedia: Flow<List<ArticleWithEventsAndSocialMedia>> = articleDao.getAllArticlesInfo()
 
     suspend fun insertArticle(article: Article){
         articleDao.insert(article)
@@ -17,6 +21,7 @@ class ArticleRepository(private val articleDao: ArticleDao): SafeApiRequest() {
     suspend fun insertArticles(articles: List<Article>){
         articleDao.insertMany(*articles.toTypedArray())
     }
+
 
     companion object {
         @Volatile private var instance: ArticleRepository? = null
