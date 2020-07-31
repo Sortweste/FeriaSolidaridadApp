@@ -16,10 +16,8 @@ class RecyclerViewAdapter(private val listener: RecyclerViewClickListener<Articl
     private var items: List<Article> = emptyList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerViewAdapter.ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.card_view_articles ,parent, false)
-        val binding = DataBindingUtil.bind<CardViewArticlesBinding>(view)!!
-        //val inflater = LayoutInflater.from(parent.context)
-        //val binding: CardViewArticlesBinding = DataBindingUtil.inflate(inflater, viewType, parent, false)
+        val view = LayoutInflater.from(parent.context)
+        val binding: CardViewArticlesBinding = DataBindingUtil.inflate(view, R.layout.card_view_articles,parent, false)
         return ViewHolder(binding)
     }
 
