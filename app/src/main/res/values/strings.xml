@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">FeriaApp</string>
     <string name="bottom_nav_home">Home</string>
-    <string name="bottom_nav_image">Images</string>
-    <string name="bottom_nav_video">Video</string>
+    <string name="bottom_nav_image">Events</string>
+    <string name="bottom_nav_video">Misc.</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="representative_image_institution">Representative Image</string>

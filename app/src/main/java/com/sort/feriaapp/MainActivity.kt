@@ -30,13 +30,13 @@ class MainActivity : AppCompatActivity() {
         binding.bottomNavigation.setOnNavigationItemSelectedListener {
             when(it.itemId){
                 R.id.page_1 -> {
-                    setCurrentFragment(homeFragment).addToBackStack(null)
+                    setCurrentFragment(homeFragment)
                 }
                 R.id.page_2 -> {
-                    setCurrentFragment(mediaFragment).addToBackStack(null)
+                    setCurrentFragment(mediaFragment)
                 }
                 R.id.page_3 -> {
-                    setCurrentFragment(galleryFragment).addToBackStack(null)
+                    setCurrentFragment(galleryFragment)
                 }
             }
             true
@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun setCurrentFragment(fragment: Fragment) =
         supportFragmentManager.beginTransaction().apply {
-            replace(R.id.fragment, fragment)
+            replace(R.id.fragment_recyclerview, fragment)
             setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
             commit()
         }

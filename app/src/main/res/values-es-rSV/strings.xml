@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FeriaApp</string>
+    <string name="bottom_nav_home">Instituciones</string>
+    <string name="bottom_nav_image">Eventos</string>
+    <string name="bottom_nav_video">Misc.</string>
+
+    <string name="hello_blank_fragment">Soy un Fragmento Vacío</string>
+    <string name="representative_image_institution">Imagen Representativa de la Institución</string>
+    <string name="institution_icon">Logo de la Institución</string>
+</resources>
