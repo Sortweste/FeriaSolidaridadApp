@@ -8,4 +8,5 @@
     <string name="hello_blank_fragment">Soy un Fragmento Vacío</string>
     <string name="representative_image_institution">Imagen Representativa de la Institución</string>
     <string name="institution_icon">Logo de la Institución</string>
+    <string name="app_about">XIX Feria de la Solidaridad</string>
 </resources>
