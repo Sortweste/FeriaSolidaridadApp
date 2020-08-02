@@ -9,4 +9,5 @@
     <string name="representative_image_institution">Imagen Representativa de la Institución</string>
     <string name="institution_icon">Logo de la Institución</string>
     <string name="app_about">XIX Feria de la Solidaridad</string>
+    <string name="representative_event_institution">Representative Event Institution</string>
 </resources>

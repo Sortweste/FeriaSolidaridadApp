@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="articleInfo"
+            type="com.sort.feriaapp.data.ArticleWithEventsAndSocialMedia" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/representative_carousel"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:contentDescription="@string/representative_image_institution"
+                android:scaleType="centerCrop"
+                app:layout_constraintTop_toTopOf="parent"
+                app:setImageUrl="@{articleInfo.article.imageURL}"
+                tools:src="@drawable/slider" />
+
+            <TextView
+                android:id="@+id/institute_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="10dp"
+                android:text="@{articleInfo.article.institution}"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="@id/representative_carousel"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="Institute Name Placeholder" />
+
+            <TextView
+                android:id="@+id/institute_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="10dp"
+                android:text="@{articleInfo.article.description}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/representative_carousel"
+                tools:text="@string/lorem_ipsum" />
+
+
+            <com.google.android.youtube.player.YouTubePlayerFragment
+                android:id="@+id/youtube_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_margin="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/institute_description" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</layout>
