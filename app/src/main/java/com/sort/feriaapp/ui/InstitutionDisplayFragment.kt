@@ -10,11 +10,11 @@ import com.google.android.youtube.player.YouTubeInitializationResult
 import com.google.android.youtube.player.YouTubePlayer
 import com.google.android.youtube.player.YouTubePlayerFragment
 import com.sort.feriaapp.BuildConfig
-import com.sort.feriaapp.databinding.FragmentArticleDisplayBinding
+import com.sort.feriaapp.databinding.FragmentInstitutionDisplayBinding
 
-class ArticleDisplayFragment : Fragment(), YouTubePlayer.OnInitializedListener {
+class InstitutionDisplayFragment : Fragment(), YouTubePlayer.OnInitializedListener {
 
-    private var _binding : FragmentArticleDisplayBinding? = null
+    private var _binding : FragmentInstitutionDisplayBinding? = null
     private val binding get() = _binding!!
     private lateinit var youTubePlayerFragment: YouTubePlayerFragment
 
@@ -26,7 +26,7 @@ class ArticleDisplayFragment : Fragment(), YouTubePlayer.OnInitializedListener {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentArticleDisplayBinding.inflate(inflater, container, false)
+        _binding = FragmentInstitutionDisplayBinding.inflate(inflater, container, false)
         //binding.articleInfo = ArticleWithEventsAndSocialMedia()
         youTubePlayerFragment = binding.youtubeFragment
         youTubePlayerFragment.initialize(BuildConfig.YOUTUBE_API_KEY, this)

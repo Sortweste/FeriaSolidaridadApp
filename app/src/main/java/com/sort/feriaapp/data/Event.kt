@@ -10,5 +10,5 @@ data class Event (
     val title: String,
     @ColumnInfo(name = "image_url") val imageURL: String?,
     val link: String,
-    val ArticleId: Long
+    val InstitutionId: Long
 )

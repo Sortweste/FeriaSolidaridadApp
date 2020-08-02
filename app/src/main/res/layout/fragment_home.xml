@@ -6,7 +6,7 @@
     <data>
         <variable
             name="articleViewModel"
-            type="com.sort.feriaapp.viewmodels.ArticleViewModel"/>
+            type="com.sort.feriaapp.viewmodels.InstitutionViewModel"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

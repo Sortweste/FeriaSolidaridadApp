@@ -8,7 +8,7 @@
 
         <variable
             name="articleInfo"
-            type="com.sort.feriaapp.data.ArticleWithEventsAndSocialMedia" />
+            type="com.sort.feriaapp.data.InstitutionWithEvents" />
     </data>
 
     <ScrollView
@@ -26,7 +26,7 @@
                 android:contentDescription="@string/representative_image_institution"
                 android:scaleType="centerCrop"
                 app:layout_constraintTop_toTopOf="parent"
-                app:setImageUrl="@{articleInfo.article.imageURL}"
+                app:setImageUrl="@{articleInfo.institution.imageURL}"
                 tools:src="@drawable/slider" />
 
             <TextView
@@ -36,7 +36,7 @@
                 android:layout_marginEnd="30dp"
                 android:layout_marginRight="30dp"
                 android:layout_marginBottom="10dp"
-                android:text="@{articleInfo.article.institution}"
+                android:text="@{articleInfo.institution.institution}"
                 android:textColor="@color/white"
                 android:textSize="24sp"
                 app:layout_constraintBottom_toBottomOf="@id/representative_carousel"
@@ -49,7 +49,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginVertical="10dp"
-                android:text="@{articleInfo.article.description}"
+                android:text="@{articleInfo.institution.description}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/representative_carousel"
                 tools:text="@string/lorem_ipsum" />
@@ -63,6 +63,14 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/institute_description" />
+
+        <!--<ImageView
+            android:id="@+id/meet_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="@{articleInfo.events.}"
+            />-->
+
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

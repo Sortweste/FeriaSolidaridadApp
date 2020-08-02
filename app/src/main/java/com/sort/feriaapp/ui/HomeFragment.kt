@@ -6,28 +6,27 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
 import com.sort.feriaapp.adapters.RecyclerViewAdapter
-import com.sort.feriaapp.data.Article
+import com.sort.feriaapp.data.Institution
 import com.sort.feriaapp.databinding.FragmentHomeBinding
 import com.sort.feriaapp.helpers.RecyclerViewClickListener
 import com.sort.feriaapp.utils.InjectorUtils
-import com.sort.feriaapp.viewmodels.ArticleViewModel
+import com.sort.feriaapp.viewmodels.InstitutionViewModel
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-class HomeFragment : Fragment(), RecyclerViewClickListener<Article>{
+class HomeFragment : Fragment(), RecyclerViewClickListener<Institution>{
     private var param1: String? = null
     private var param2: String? = null
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel: ArticleViewModel by viewModels{
+    private val viewModel: InstitutionViewModel by viewModels{
         InjectorUtils.provideArticleViewModelFactory(this)
     }
 
@@ -68,14 +67,10 @@ class HomeFragment : Fragment(), RecyclerViewClickListener<Article>{
 
     private fun initObservers(){
         lifecycleScope.launchWhenCreated {
-            viewModel.articles.observe(viewLifecycleOwner, Observer{
+            viewModel.institutions.observe(viewLifecycleOwner, Observer{
                 adapter.setData(it)
             })
         }
-    }
-
-    private fun startNewArticleFragment(){
-
     }
 
     companion object {
@@ -94,8 +89,8 @@ class HomeFragment : Fragment(), RecyclerViewClickListener<Article>{
         _binding = null
     }
 
-    override fun onCardViewClick(view: View, obj: Article) {
-        startNewArticleFragment()
+    override fun onCardViewClick(view: View, obj: Institution) {
+
     }
 
 }

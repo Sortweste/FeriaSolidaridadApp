@@ -4,20 +4,20 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.sort.feriaapp.data.Article
-import com.sort.feriaapp.databinding.CardViewArticlesBinding
+import com.sort.feriaapp.data.Institution
 import com.sort.feriaapp.helpers.BindAdapter
 import com.sort.feriaapp.helpers.RecyclerViewClickListener
 
 import com.sort.feriaapp.R
+import com.sort.feriaapp.databinding.CardViewInstitutionsBinding
 
-class RecyclerViewAdapter(private val listener: RecyclerViewClickListener<Article>): RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>(), BindAdapter<Article> {
+class RecyclerViewAdapter(private val listener: RecyclerViewClickListener<Institution>): RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>(), BindAdapter<Institution> {
 
-    private var items: List<Article> = emptyList()
+    private var items: List<Institution> = emptyList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerViewAdapter.ViewHolder {
         val view = LayoutInflater.from(parent.context)
-        val binding: CardViewArticlesBinding = DataBindingUtil.inflate(view, R.layout.card_view_articles,parent, false)
+        val binding: CardViewInstitutionsBinding = DataBindingUtil.inflate(view, R.layout.card_view_institutions,parent, false)
         return ViewHolder(binding)
     }
 
@@ -25,15 +25,15 @@ class RecyclerViewAdapter(private val listener: RecyclerViewClickListener<Articl
 
     override fun getItemCount(): Int = items.size
 
-    inner class ViewHolder(private val binding: CardViewArticlesBinding): RecyclerView.ViewHolder(binding.root){
-        fun bind(item: Article){
+    inner class ViewHolder(private val binding: CardViewInstitutionsBinding): RecyclerView.ViewHolder(binding.root){
+        fun bind(item: Institution){
             binding.article = item
             binding.executePendingBindings()
             binding.root.setOnClickListener { listener.onCardViewClick(it, item) }
         }
     }
 
-    override fun setData(items: List<Article>?) {
+    override fun setData(items: List<Institution>?) {
         if(!items.isNullOrEmpty()) {
             this.items = items
             notifyDataSetChanged()

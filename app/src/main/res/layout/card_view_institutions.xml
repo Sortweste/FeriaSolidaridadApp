@@ -7,7 +7,7 @@
 
         <variable
             name="article"
-            type="com.sort.feriaapp.data.Article" />
+            type="com.sort.feriaapp.data.Institution" />
     </data>
 
     <com.google.android.material.card.MaterialCardView
@@ -47,7 +47,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@{article.institution}"
+                    android:text="@{article.name}"
                     android:gravity="center"
                     android:layout_gravity="center"
                     android:textAppearance="?attr/textAppearanceHeadline6"
