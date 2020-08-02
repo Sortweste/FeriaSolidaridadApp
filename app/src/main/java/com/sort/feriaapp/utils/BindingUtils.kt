@@ -1,5 +1,6 @@
 package com.sort.feriaapp.utils
 
+import android.view.View
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -18,4 +19,9 @@ fun <T> setRecyclerViewProperties(recyclerView: RecyclerView, data: List<T>?){
 fun bindImageUrl(view: ImageView, url: String){
     if(url.isNotBlank())
         Glide.with(view.context).load(url).into(view)
+}
+
+@BindingAdapter("goneUnless")
+fun goneUnless(view: View, notVisible: Boolean){
+    view.visibility = if(notVisible) View.GONE else View.VISIBLE
 }

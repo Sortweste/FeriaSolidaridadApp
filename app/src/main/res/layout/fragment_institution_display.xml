@@ -6,8 +6,10 @@
 
     <data>
 
+        <import type="android.view.View" />
+
         <variable
-            name="articleInfo"
+            name="institutionInfo"
             type="com.sort.feriaapp.data.InstitutionWithEvents" />
     </data>
 
@@ -26,7 +28,7 @@
                 android:contentDescription="@string/representative_image_institution"
                 android:scaleType="centerCrop"
                 app:layout_constraintTop_toTopOf="parent"
-                app:setImageUrl="@{articleInfo.institution.imageURL}"
+                app:setImageUrl="@{institutionInfo.institution.imageURL}"
                 tools:src="@drawable/slider" />
 
             <TextView
@@ -36,7 +38,7 @@
                 android:layout_marginEnd="30dp"
                 android:layout_marginRight="30dp"
                 android:layout_marginBottom="10dp"
-                android:text="@{articleInfo.institution.institution}"
+                android:text="@{institutionInfo.institution.name}"
                 android:textColor="@color/white"
                 android:textSize="24sp"
                 app:layout_constraintBottom_toBottomOf="@id/representative_carousel"
@@ -49,8 +51,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginVertical="10dp"
-                android:text="@{articleInfo.institution.description}"
+                android:text="@{institutionInfo.institution.description}"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/representative_carousel"
                 tools:text="@string/lorem_ipsum" />
 
@@ -61,16 +65,76 @@
                 android:layout_height="150dp"
                 android:layout_margin="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/institute_description" />
 
-        <!--<ImageView
-            android:id="@+id/meet_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="@{articleInfo.events.}"
-            />-->
+            <TextView
+                android:id="@+id/meetup_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:drawableStart="@drawable/ic_action_video"
+                android:drawableLeft="@drawable/ic_action_video"
+                android:drawablePadding="@dimen/drawable_padding"
+                android:gravity="center"
+                android:text="@{institutionInfo.institution.meetup}"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                app:goneUnless="@{institutionInfo.institution.meetup.empty}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/youtube_fragment"
+                tools:text="Link to our meetings" />
 
+
+            <TextView
+                android:id="@+id/facebook_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:drawableStart="@drawable/ic_action_video"
+                android:drawableLeft="@drawable/ic_action_video"
+                android:drawablePadding="@dimen/drawable_padding"
+                android:gravity="center"
+                android:text="@{institutionInfo.institution.facebook}"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                app:goneUnless="@{institutionInfo.institution.facebook.empty}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/meetup_view"
+                tools:text="Facebook Account" />
+
+            <TextView
+                android:id="@+id/twitter_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:drawableStart="@drawable/ic_action_video"
+                android:drawableLeft="@drawable/ic_action_video"
+                android:drawablePadding="@dimen/drawable_padding"
+                android:gravity="center"
+                android:text="@{institutionInfo.institution.twitter}"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                app:goneUnless="@{institutionInfo.institution.twitter.empty}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/facebook_view"
+                tools:text="Twitter Account" />
+
+            <TextView
+                android:id="@+id/instagram_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:drawableStart="@drawable/ic_action_video"
+                android:drawableLeft="@drawable/ic_action_video"
+                android:drawablePadding="@dimen/drawable_padding"
+                android:gravity="center"
+                android:text="@{institutionInfo.institution.instagram}"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                app:goneUnless="@{institutionInfo.institution.instagram.empty}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/twitter_view"
+                tools:text="Instagram Account" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

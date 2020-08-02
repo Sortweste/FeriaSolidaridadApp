@@ -6,17 +6,21 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.google.android.youtube.player.YouTubeInitializationResult
 import com.google.android.youtube.player.YouTubePlayer
 import com.google.android.youtube.player.YouTubePlayerFragment
 import com.sort.feriaapp.BuildConfig
 import com.sort.feriaapp.databinding.FragmentInstitutionDisplayBinding
+import com.sort.feriaapp.viewmodels.InstitutionViewModel
 
 class InstitutionDisplayFragment : Fragment(), YouTubePlayer.OnInitializedListener {
 
     private var _binding : FragmentInstitutionDisplayBinding? = null
     private val binding get() = _binding!!
     private lateinit var youTubePlayerFragment: YouTubePlayerFragment
+
+    //private val viewmodel: InstitutionViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,7 +31,7 @@ class InstitutionDisplayFragment : Fragment(), YouTubePlayer.OnInitializedListen
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentInstitutionDisplayBinding.inflate(inflater, container, false)
-        //binding.articleInfo = ArticleWithEventsAndSocialMedia()
+        //binding.institutionInfo = vm.selectedInstitution
         youTubePlayerFragment = binding.youtubeFragment
         youTubePlayerFragment.initialize(BuildConfig.YOUTUBE_API_KEY, this)
         return binding.root
@@ -40,10 +44,9 @@ class InstitutionDisplayFragment : Fragment(), YouTubePlayer.OnInitializedListen
 
     override fun onInitializationSuccess(provider: YouTubePlayer.Provider?, player: YouTubePlayer?, wasRestored: Boolean) {
         if(player == null) return
-        if(wasRestored)
-            player.play()
+        if(wasRestored) player.play()
         else {
-            player.cueVideo("Zpqn8fo8v7k")
+            player.cueVideo()
             player.setPlayerStyle(YouTubePlayer.PlayerStyle.DEFAULT)
         }
     }
