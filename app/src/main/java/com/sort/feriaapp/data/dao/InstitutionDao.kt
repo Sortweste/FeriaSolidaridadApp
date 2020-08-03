@@ -17,6 +17,6 @@ abstract class InstitutionDao: BaseDao<Institution> {
 
     @Transaction
     @Query("SELECT * FROM institutions WHERE id=:id")
-    abstract suspend fun getInstitutionInfoById(id: Long): InstitutionWithEvents
+    abstract fun getInstitutionInfoById(id: Long): InstitutionWithEvents
 
 }

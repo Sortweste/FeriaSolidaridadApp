@@ -27,7 +27,7 @@ class HomeFragment : Fragment(), RecyclerViewClickListener<Institution>{
     private val binding get() = _binding!!
 
     private val viewModel: InstitutionViewModel by viewModels{
-        InjectorUtils.provideArticleViewModelFactory(this)
+        InjectorUtils.provideInstitutionViewModelFactory(this)
     }
 
     private lateinit var adapter: RecyclerViewAdapter

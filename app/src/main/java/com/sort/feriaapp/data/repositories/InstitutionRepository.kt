@@ -12,8 +12,8 @@ class InstitutionRepository(private val institutionDao: InstitutionDao): SafeApi
 
     val institutionsWithEvents: Flow<List<InstitutionWithEvents>> = institutionDao.getAllInstitutionsInfo()
 
-    suspend fun getInstitutionInfoById(id: Long){
-        institutionDao.getInstitutionInfoById(id)
+    fun getInstitutionInfoById(id: Long): InstitutionWithEvents{
+        return institutionDao.getInstitutionInfoById(id)
     }
 
     suspend fun insertInstitution(institution: Institution){

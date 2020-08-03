@@ -12,15 +12,19 @@ import com.google.android.youtube.player.YouTubePlayer
 import com.google.android.youtube.player.YouTubePlayerFragment
 import com.sort.feriaapp.BuildConfig
 import com.sort.feriaapp.databinding.FragmentInstitutionDisplayBinding
-import com.sort.feriaapp.viewmodels.InstitutionViewModel
+import com.sort.feriaapp.utils.InjectorUtils
+import com.sort.feriaapp.viewmodels.InstitutionDetailViewModel
 
-class InstitutionDisplayFragment : Fragment(), YouTubePlayer.OnInitializedListener {
+
+class InstitutionDetailFragment : Fragment(), YouTubePlayer.OnInitializedListener {
 
     private var _binding : FragmentInstitutionDisplayBinding? = null
     private val binding get() = _binding!!
     private lateinit var youTubePlayerFragment: YouTubePlayerFragment
 
-    //private val viewmodel: InstitutionViewModel by viewModels()
+    private val institutionDetailViewModel: InstitutionDetailViewModel by viewModels {
+        InjectorUtils.provideInstitutionDetailVieModelFactory(this.requireActivity(), args.institutionId)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,7 +35,7 @@ class InstitutionDisplayFragment : Fragment(), YouTubePlayer.OnInitializedListen
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentInstitutionDisplayBinding.inflate(inflater, container, false)
-        //binding.institutionInfo = vm.selectedInstitution
+        binding.institutionInfo = institutionDetailViewModel.institutionInfo
         youTubePlayerFragment = binding.youtubeFragment
         youTubePlayerFragment.initialize(BuildConfig.YOUTUBE_API_KEY, this)
         return binding.root
@@ -46,7 +50,7 @@ class InstitutionDisplayFragment : Fragment(), YouTubePlayer.OnInitializedListen
         if(player == null) return
         if(wasRestored) player.play()
         else {
-            player.cueVideo()
+            player.cueVideo(binding.institutionInfo.institution.videoURL)
             player.setPlayerStyle(YouTubePlayer.PlayerStyle.DEFAULT)
         }
     }
