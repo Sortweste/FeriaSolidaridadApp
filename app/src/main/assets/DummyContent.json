@@ -9,7 +9,11 @@
     "videoURL": "",
     "meetingURL": "",
     "type": "Event",
-    "homepage": ""
+    "meetup": "",
+    "website": "",
+    "twitter": "",
+    "instagram": "",
+    "facebook": ""
   },
   {
     "id": 2,
@@ -21,7 +25,11 @@
     "videoURL": "",
     "meetingURL": "",
     "type": "Event",
-    "homepage": ""
+    "meetup": "",
+    "website": "",
+    "twitter": "",
+    "instagram": "",
+    "facebook": ""
   },
   {
     "id": 3,
@@ -33,7 +41,11 @@
     "videoURL": "",
     "meetingURL": "",
     "type": "Event",
-    "homepage": ""
+    "meetup": "",
+    "website": "",
+    "twitter": "",
+    "instagram": "",
+    "facebook": ""
   },
   {
     "id": 4,
@@ -45,7 +57,11 @@
     "videoURL": "",
     "meetingURL": "",
     "type": "Event",
-    "homepage": ""
+    "meetup": "",
+    "website": "",
+    "twitter": "",
+    "instagram": "",
+    "facebook": ""
   },
   {
     "id": 5,
@@ -57,7 +73,11 @@
     "videoURL": "",
     "meetingURL": "",
     "type": "Event",
-    "homepage": ""
+    "meetup": "",
+    "website": "",
+    "twitter": "",
+    "instagram": "",
+    "facebook": ""
   },
   {
     "id": 6,
@@ -69,6 +89,10 @@
     "videoURL": "",
     "meetingURL": "",
     "type": "Event",
-    "homepage": ""
+    "meetup": "",
+    "website": "",
+    "twitter": "",
+    "instagram": "",
+    "facebook": ""
   }
 ]

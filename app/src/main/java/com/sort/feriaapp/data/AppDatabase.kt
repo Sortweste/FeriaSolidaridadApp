@@ -12,7 +12,7 @@ import com.sort.feriaapp.data.dao.EventDao
 import com.sort.feriaapp.utils.DATABASE_NAME
 import com.sort.feriaapp.workers.SeedDatabaseWorker
 
-@Database(entities = [Institution::class, Event::class], version = 1)
+@Database(entities = [Institution::class, Event::class], version = 1, exportSchema = false)
 abstract class AppDatabase: RoomDatabase() {
 
     abstract fun institutionDao(): InstitutionDao

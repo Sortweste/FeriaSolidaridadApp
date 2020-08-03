@@ -21,8 +21,8 @@ class SeedDatabaseWorker(
         try {
             applicationContext.assets.open(DUMMY_CONTENT_FILENAME).use { inputStream ->
                 JsonReader(inputStream.reader()).use { jsonReader ->
-                    val articleType = object : TypeToken<List<Institution>>() {}.type
-                    val institutionList: List<Institution> = Gson().fromJson(jsonReader, articleType)
+                    val institutionType = object : TypeToken<List<Institution>>() {}.type
+                    val institutionList: List<Institution> = Gson().fromJson(jsonReader, institutionType)
 
                     val database = AppDatabase.getInstance(applicationContext)
                     database.institutionDao().insertMany(*institutionList.toTypedArray())

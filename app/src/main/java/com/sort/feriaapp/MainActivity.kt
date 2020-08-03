@@ -20,23 +20,23 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        //setSupportActionBar(binding.topAppBar)
-
+        setSupportActionBar(binding.topAppBar)
         homeFragment = HomeFragment.newInstance("", "")
         galleryFragment = GalleryFragment.newInstance("", "")
         mediaFragment = MediaFragment.newInstance("", "")
 
         setCurrentFragment(homeFragment)
 
+
         binding.bottomNavigation.setOnNavigationItemSelectedListener {
             when(it.itemId){
-                R.id.page_1 -> {
+                R.id.homeFragment -> {
                     setCurrentFragment(homeFragment)
                 }
-                R.id.page_2 -> {
+                R.id.mediaFragment -> {
                     setCurrentFragment(mediaFragment)
                 }
-                R.id.page_3 -> {
+                R.id.galleryFragment -> {
                     setCurrentFragment(galleryFragment)
                 }
             }

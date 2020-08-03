@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/page_1"
+        android:id="@+id/homeFragment"
         android:enabled="true"
         android:icon="@drawable/ic_action_home"
         android:title="@string/bottom_nav_home"
         />
     <item
-        android:id="@+id/page_2"
+        android:id="@+id/mediaFragment"
         android:enabled="true"
         android:icon="@drawable/ic_action_image"
         android:title="@string/bottom_nav_image"
         />
     <item
-        android:id="@+id/page_3"
+        android:id="@+id/galleryFragment"
         android:enabled="true"
         android:icon="@drawable/ic_action_video"
         android:title="@string/bottom_nav_video"

@@ -5,14 +5,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
     tools:context=".MainActivity">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/bottom_navigation"
-        android:fitsSystemWindows="true"
         app:layout_dodgeInsetEdges="bottom">
 
         <com.google.android.material.appbar.AppBarLayout
@@ -33,8 +31,16 @@
             android:name="com.sort.feriaapp.HomeFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            />
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+        <!--<fragment
+            android:id="@+id/fragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:defaultNavHost="true"
+            app:layout_anchorGravity="center"
+            app:navGraph="@navigation/navigation_graph" /> -->
 
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>

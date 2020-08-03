@@ -6,8 +6,6 @@
 
     <data>
 
-        <import type="android.view.View" />
-
         <variable
             name="institutionInfo"
             type="com.sort.feriaapp.data.InstitutionWithEvents" />
@@ -58,7 +56,7 @@
                 app:layout_constraintTop_toBottomOf="@id/representative_carousel"
                 tools:text="@string/lorem_ipsum" />
 
-
+<!--
             <com.google.android.youtube.player.YouTubePlayerFragment
                 android:id="@+id/youtube_fragment"
                 android:layout_width="match_parent"
@@ -136,7 +134,7 @@
                 app:layout_constraintTop_toBottomOf="@id/twitter_view"
                 tools:text="Instagram Account" />
 
-
+    -->
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>

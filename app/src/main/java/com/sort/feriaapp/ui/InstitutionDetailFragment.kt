@@ -18,13 +18,15 @@ import com.sort.feriaapp.viewmodels.InstitutionDetailViewModel
 
 class InstitutionDetailFragment : Fragment(), YouTubePlayer.OnInitializedListener {
 
+
+
     private var _binding : FragmentInstitutionDisplayBinding? = null
     private val binding get() = _binding!!
     private lateinit var youTubePlayerFragment: YouTubePlayerFragment
 
-    private val institutionDetailViewModel: InstitutionDetailViewModel by viewModels {
+    /*private val institutionDetailViewModel: InstitutionDetailViewModel by viewModels {
         InjectorUtils.provideInstitutionDetailVieModelFactory(this.requireActivity(), args.institutionId)
-    }
+    }*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,8 +37,8 @@ class InstitutionDetailFragment : Fragment(), YouTubePlayer.OnInitializedListene
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentInstitutionDisplayBinding.inflate(inflater, container, false)
-        binding.institutionInfo = institutionDetailViewModel.institutionInfo
-        youTubePlayerFragment = binding.youtubeFragment
+      //  binding.institutionInfo = institutionDetailViewModel.institutionInfo
+        //youTubePlayerFragment = binding.youtubeFragment
         youTubePlayerFragment.initialize(BuildConfig.YOUTUBE_API_KEY, this)
         return binding.root
     }
@@ -50,7 +52,7 @@ class InstitutionDetailFragment : Fragment(), YouTubePlayer.OnInitializedListene
         if(player == null) return
         if(wasRestored) player.play()
         else {
-            player.cueVideo(binding.institutionInfo.institution.videoURL)
+            player.cueVideo(binding.institutionInfo?.institution?.videoURL)
             player.setPlayerStyle(YouTubePlayer.PlayerStyle.DEFAULT)
         }
     }

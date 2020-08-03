@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.Observer
@@ -20,6 +21,7 @@ private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
 class HomeFragment : Fragment(), RecyclerViewClickListener<Institution>{
+
     private var param1: String? = null
     private var param2: String? = null
 
@@ -45,7 +47,7 @@ class HomeFragment : Fragment(), RecyclerViewClickListener<Institution>{
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        binding.articleViewModel = viewModel
+        binding.institutionViewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
         return binding.root
     }
@@ -89,8 +91,12 @@ class HomeFragment : Fragment(), RecyclerViewClickListener<Institution>{
         _binding = null
     }
 
-    override fun onCardViewClick(view: View, obj: Institution) {
+    private fun setOnClickListener(){
 
+    }
+
+    override fun onCardViewClick(view: View, obj: Institution) {
+        setOnClickListener()
     }
 
 }
