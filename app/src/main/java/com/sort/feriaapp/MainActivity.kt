@@ -2,6 +2,7 @@ package com.sort.feriaapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.sort.feriaapp.databinding.ActivityMainBinding
@@ -18,9 +19,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val binding = ActivityMainBinding.inflate(layoutInflater)
+        val binding: ActivityMainBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(binding.topAppBar)
+
         homeFragment = HomeFragment.newInstance("", "")
         galleryFragment = GalleryFragment.newInstance("", "")
         mediaFragment = MediaFragment.newInstance("", "")

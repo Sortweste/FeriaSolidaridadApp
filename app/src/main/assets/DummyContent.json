@@ -2,7 +2,7 @@
   {
     "id": 1,
     "description": "",
-    "institution": "Linux Foundation",
+    "name": "Linux Foundation",
     "summary": "Consorcio tecnológico sin ánimo de lucro establecido para adoptar el crecimiento de Linux.",
     "imageURL": "https://i1.wp.com/windtux.com/wp-content/uploads/2016/01/Linux-foundation-logo.png?ssl=1",
     "logoURL": "https://i1.wp.com/windtux.com/wp-content/uploads/2016/01/Linux-foundation-logo.png?ssl=1",
@@ -18,7 +18,7 @@
   {
     "id": 2,
     "description": "",
-    "institution": "Node js",
+    "name": "Node js",
     "summary": "Entorno en tiempo de ejecución multiplataforma, de código abierto, para la capa del servidor basado en el lenguaje de programación JavaScrip",
     "imageURL": "https://s3-us-west-2.amazonaws.com/devcodepro/media/tutorials/instalacion-de-nodejs-en-ubuntu-t1.jpg",
     "logoURL": "https://nodejs.org/static/images/logo-hexagon-card.png",
@@ -34,7 +34,7 @@
   {
     "id": 3,
     "description": "",
-    "institution": "Ruby on Rails",
+    "name": "Ruby on Rails",
     "summary": "Framework de aplicaciones web de código abierto escrito en el lenguaje de programación Ruby",
     "imageURL": "https://www.muylinux.com/wp-content/uploads/2017/12/Ruby-on-Rails-1.png",
     "logoURL": "https://www.logolynx.com/images/logolynx/40/4075aff8eab8b2c14b3c2bab7bc04384.jpeg",
@@ -50,7 +50,7 @@
   {
     "id": 4,
     "description": "",
-    "institution": "Flutter",
+    "name": "Flutter",
     "summary": "SDK de código fuente abierto de desarrollo de aplicaciones móviles creado por Google. ",
     "imageURL": "https://i.ytimg.com/vi/fq4N0hgOWzU/maxresdefault.jpg",
     "logoURL": "https://diegolaballos.com/files/images/flutter-icon.jpg",
@@ -66,7 +66,7 @@
   {
     "id": 5,
     "description": "",
-    "institution": "C#",
+    "name": "C#",
     "summary": "Lenguaje de programación multiparadigma desarrollado y estandarizado por la empresa Microsoft como parte de su plataforma .NET",
     "imageURL": "https://user-images.githubusercontent.com/29004603/75462714-9dd79b80-59bf-11ea-8e6b-575765733340.png",
     "logoURL": "https://cdn-images-1.medium.com/max/822/1*Voh7k0_lP6wMJEApsqfKnA.png",
@@ -82,7 +82,7 @@
   {
     "id": 6,
     "description": "",
-    "institution": "JavaScript",
+    "name": "JavaScript",
     "summary": "Lenguaje de programación interpretado, dialecto del estándar ECMAScript.",
     "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
     "logoURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
