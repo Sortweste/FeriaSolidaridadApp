@@ -1,5 +1,6 @@
 package com.sort.feriaapp.data.dao
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.sort.feriaapp.data.Institution
 import com.sort.feriaapp.data.InstitutionWithEvents
@@ -17,6 +18,6 @@ abstract class InstitutionDao: BaseDao<Institution> {
 
     @Transaction
     @Query("SELECT * FROM institutions WHERE id=:id")
-    abstract fun getInstitutionInfoById(id: Long): InstitutionWithEvents
+    abstract fun getInstitutionInfoById(id: Long): Flow<InstitutionWithEvents>
 
 }

@@ -1,32 +1,34 @@
 package com.sort.feriaapp.ui
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.navArgs
 import com.google.android.youtube.player.YouTubeInitializationResult
 import com.google.android.youtube.player.YouTubePlayer
 import com.google.android.youtube.player.YouTubePlayerFragment
-import com.sort.feriaapp.BuildConfig
+import com.google.android.youtube.player.YouTubePlayerSupportFragment
+import com.sort.feriaapp.R
 import com.sort.feriaapp.databinding.FragmentInstitutionDisplayBinding
 import com.sort.feriaapp.utils.InjectorUtils
 import com.sort.feriaapp.viewmodels.InstitutionDetailViewModel
 
+class InstitutionDetailFragment : Fragment(){
 
-class InstitutionDetailFragment : Fragment(), YouTubePlayer.OnInitializedListener {
-
-
+    private val args: InstitutionDetailFragmentArgs by navArgs()
 
     private var _binding : FragmentInstitutionDisplayBinding? = null
     private val binding get() = _binding!!
-    private lateinit var youTubePlayerFragment: YouTubePlayerFragment
+    //private lateinit var youTubePlayerFragment: YouTubeFragment
 
-    /*private val institutionDetailViewModel: InstitutionDetailViewModel by viewModels {
+    private val institutionDetailViewModel: InstitutionDetailViewModel by viewModels {
         InjectorUtils.provideInstitutionDetailVieModelFactory(this.requireActivity(), args.institutionId)
-    }*/
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,10 +39,20 @@ class InstitutionDetailFragment : Fragment(), YouTubePlayer.OnInitializedListene
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentInstitutionDisplayBinding.inflate(inflater, container, false)
-      //  binding.institutionInfo = institutionDetailViewModel.institutionInfo
-        //youTubePlayerFragment = binding.youtubeFragment
-        youTubePlayerFragment.initialize(BuildConfig.YOUTUBE_API_KEY, this)
+        binding.institutionInfo = institutionDetailViewModel.institutionInfo.value
+        Log.d("HOME", institutionDetailViewModel.institutionInfo.value.toString())
+      //  initYoutube()
         return binding.root
+    }
+
+    /*private fun initYoutube(){
+        youTubePlayerFragment = YouTubeFragment.newInstance(binding.institutionInfo?.institution?.videoURL)
+        //youTubePlayerFragment.initialize(BuildConfig.YOUTUBE_API_KEY, this)
+        childFragmentManager.beginTransaction().add(R.id.youtube_fragment, youTubePlayerFragment).commit()
+    }*/
+
+    private fun initObservers(){
+
     }
 
     override fun onDestroyView() {
@@ -48,7 +60,8 @@ class InstitutionDetailFragment : Fragment(), YouTubePlayer.OnInitializedListene
         _binding = null
     }
 
-    override fun onInitializationSuccess(provider: YouTubePlayer.Provider?, player: YouTubePlayer?, wasRestored: Boolean) {
+
+    /*override fun onInitializationSuccess(provider: YouTubePlayer.Provider?, player: YouTubePlayer?, wasRestored: Boolean) {
         if(player == null) return
         if(wasRestored) player.play()
         else {
@@ -59,7 +72,6 @@ class InstitutionDetailFragment : Fragment(), YouTubePlayer.OnInitializedListene
 
     override fun onInitializationFailure(provider: YouTubePlayer.Provider?, result: YouTubeInitializationResult?) {
         Toast.makeText(activity, "Error al reproducir el vídeo!", Toast.LENGTH_LONG).show()
-    }
-
+    }*/
 
 }

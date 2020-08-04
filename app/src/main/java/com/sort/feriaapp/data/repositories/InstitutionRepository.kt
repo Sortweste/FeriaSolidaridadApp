@@ -1,5 +1,6 @@
 package com.sort.feriaapp.data.repositories
 
+import androidx.lifecycle.LiveData
 import com.sort.feriaapp.data.Institution
 import com.sort.feriaapp.data.InstitutionWithEvents
 import com.sort.feriaapp.data.dao.InstitutionDao
@@ -12,9 +13,8 @@ class InstitutionRepository(private val institutionDao: InstitutionDao): SafeApi
 
     val institutionsWithEvents: Flow<List<InstitutionWithEvents>> = institutionDao.getAllInstitutionsInfo()
 
-    fun getInstitutionInfoById(id: Long): InstitutionWithEvents{
-        return institutionDao.getInstitutionInfoById(id)
-    }
+    fun getInstitutionInfoById(id: Long) = institutionDao.getInstitutionInfoById(id)
+
 
     suspend fun insertInstitution(institution: Institution){
         institutionDao.insert(institution)

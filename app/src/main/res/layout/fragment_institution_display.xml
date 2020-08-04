@@ -56,12 +56,12 @@
                 app:layout_constraintTop_toBottomOf="@id/representative_carousel"
                 tools:text="@string/lorem_ipsum" />
 
-<!--
-            <com.google.android.youtube.player.YouTubePlayerFragment
+            <FrameLayout
                 android:id="@+id/youtube_fragment"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_margin="20dp"
+                goneUnless="@{institutionInfo.institution.videoURL.empty}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
@@ -134,7 +134,6 @@
                 app:layout_constraintTop_toBottomOf="@id/twitter_view"
                 tools:text="Instagram Account" />
 
-    -->
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
