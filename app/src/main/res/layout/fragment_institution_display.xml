@@ -58,10 +58,10 @@
 
             <FrameLayout
                 android:id="@+id/youtube_fragment"
+                goneUnless="@{viewmodel.institutionInfo.institution.videoURL.empty}"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_margin="20dp"
-                goneUnless="@{viewmodel.institutionInfo.institution.videoURL.empty}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
@@ -95,11 +95,13 @@
                 android:drawableLeft="@drawable/ic_action_video"
                 android:drawablePadding="@dimen/drawable_padding"
                 android:gravity="center"
-                android:text="@{viewmodel.institutionInfo.institution.facebook}"
                 android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/facebook"
                 app:goneUnless="@{viewmodel.institutionInfo.institution.facebook.empty}"
+                app:facebookMessage="@{viewmodel.institutionInfo.institution.facebook}"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/meetup_view"
+                tools:textColor="@color/facebook"
                 tools:text="Facebook Account" />
 
             <TextView
@@ -116,6 +118,8 @@
                 app:goneUnless="@{viewmodel.institutionInfo.institution.twitter.empty}"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/facebook_view"
+                android:textColor="@color/twitter"
+                tools:textColor="@color/twitter"
                 tools:text="Twitter Account" />
 
             <TextView

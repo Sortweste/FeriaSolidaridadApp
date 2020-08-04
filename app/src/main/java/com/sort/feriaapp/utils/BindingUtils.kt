@@ -2,6 +2,7 @@ package com.sort.feriaapp.utils
 
 import android.view.View
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -24,4 +25,12 @@ fun bindImageUrl(view: ImageView, url: String?){
 @BindingAdapter("goneUnless")
 fun goneUnless(view: View, notVisible: Boolean){
     view.visibility = if(notVisible) View.GONE else View.VISIBLE
+}
+
+@BindingAdapter("facebookMessage")
+fun setFacebookString(view: TextView, account: String?){
+    if(!account.isNullOrBlank()){
+        val textMessage = "Encuentranos en $account"
+        view.text = textMessage
+    }
 }
