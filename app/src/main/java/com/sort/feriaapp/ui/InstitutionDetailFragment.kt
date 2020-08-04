@@ -1,20 +1,17 @@
 package com.sort.feriaapp.ui
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
-import com.google.android.youtube.player.YouTubeInitializationResult
-import com.google.android.youtube.player.YouTubePlayer
-import com.google.android.youtube.player.YouTubePlayerFragment
-import com.google.android.youtube.player.YouTubePlayerSupportFragment
 import com.sort.feriaapp.databinding.FragmentInstitutionDisplayBinding
 import com.sort.feriaapp.utils.InjectorUtils
 import com.sort.feriaapp.viewmodels.InstitutionDetailViewModel
+
 
 class InstitutionDetailFragment : Fragment(){
 
@@ -39,6 +36,7 @@ class InstitutionDetailFragment : Fragment(){
         _binding = FragmentInstitutionDisplayBinding.inflate(inflater, container, false)
         binding.viewmodel = institutionDetailViewModel
         binding.lifecycleOwner = viewLifecycleOwner
+        (activity as AppCompatActivity).setSupportActionBar(binding.toolbar)
       //  initYoutube()
         return binding.root
     }

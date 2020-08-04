@@ -2,26 +2,45 @@ package com.sort.feriaapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentTransaction
+import android.view.View
+import androidx.navigation.NavController
+import androidx.navigation.NavDestination
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.sort.feriaapp.databinding.ActivityMainBinding
-import com.sort.feriaapp.ui.GalleryFragment
-import com.sort.feriaapp.ui.HomeFragment
-import com.sort.feriaapp.ui.MediaFragment
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), NavController.OnDestinationChangedListener {
+
+    private var _binding: ActivityMainBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val binding: ActivityMainBinding = ActivityMainBinding.inflate(layoutInflater)
+        _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(binding.topAppBar)
 
-        binding.bottomNavigation.setupWithNavController(findNavController(R.id.fragment))
-
+        val navController = findNavController(R.id.fragment)
+        binding.bottomNavigation.setupWithNavController(navController)
+        navController.addOnDestinationChangedListener(this)
     }
+
+    override fun onDestinationChanged(controller: NavController, destination: NavDestination, arguments: Bundle?) {
+        when(destination.id){
+            R.id.homeFragment, R.id.galleryFragment, R.id.mediaFragment -> componentsVisibility(View.VISIBLE)
+            else -> componentsVisibility(View.GONE)
+        }
+    }
+
+    private fun componentsVisibility(status: Int){
+        binding.bottomNavigation.visibility = status
+        binding.topAppBar.visibility = status
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
+    }
+
 }
