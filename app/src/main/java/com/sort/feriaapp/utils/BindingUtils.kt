@@ -1,6 +1,7 @@
 package com.sort.feriaapp.utils
 
 import android.view.View
+import android.webkit.WebView
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
@@ -33,4 +34,13 @@ fun setFacebookString(view: TextView, account: String?){
         val textMessage = "Encuentranos en $account"
         view.text = textMessage
     }
+}
+
+@BindingAdapter("videoURL")
+fun setWebViewValue(view: WebView, videoURL: String?){
+    if(!videoURL.isNullOrBlank()){
+        val url: String = "<iframe width=\"1583\" height=\"658\" src=\"https://www.youtube.com/embed/$videoURL\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe> "
+        view.loadData(url, "text/html", null)
+    }
+
 }

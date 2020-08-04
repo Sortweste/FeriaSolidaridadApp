@@ -11,4 +11,7 @@ abstract class EventDao: BaseDao<Event> {
     @Query("SELECT * FROM events")
     abstract fun getAllEvents(): Flow<List<Event>>
 
+    @Query("SELECT * FROM events WHERE id=:id")
+    abstract fun getEventById(id: Long): Flow<Event>
+
 }

@@ -19,7 +19,12 @@
         android:id="@+id/mediaFragment"
         android:name="com.sort.feriaapp.ui.MediaFragment"
         android:label="Media"
-        tools:layout="@layout/fragment_media" />
+        tools:layout="@layout/fragment_media" >
+        <action
+            android:id="@+id/action_mediaFragment_to_eventDetailFragment"
+            app:destination="@id/eventDetailFragment"
+            app:enterAnim="@anim/fragment_open_enter" />
+    </fragment>
     <fragment
         android:id="@+id/galleryFragment"
         android:name="com.sort.feriaapp.ui.GalleryFragment"
@@ -32,6 +37,15 @@
         tools:layout="@layout/fragment_institution_display" >
         <argument
             android:name="institutionId"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/eventDetailFragment"
+        android:name="com.sort.feriaapp.EventDetailFragment"
+        android:label="EventDetailFragment"
+        tools:layout="@layout/fragment_event_detail">
+        <argument
+            android:name="eventId"
             app:argType="long" />
     </fragment>
 

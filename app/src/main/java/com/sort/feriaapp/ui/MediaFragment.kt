@@ -6,59 +6,81 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
+import androidx.lifecycle.lifecycleScope
+import androidx.navigation.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
 import com.sort.feriaapp.R
+import com.sort.feriaapp.adapters.RecyclerViewEventsAdapter
+import com.sort.feriaapp.data.Event
 import com.sort.feriaapp.databinding.FragmentGalleryBinding
 import com.sort.feriaapp.databinding.FragmentMediaBinding
+import com.sort.feriaapp.helpers.RecyclerViewClickListener
+import com.sort.feriaapp.utils.InjectorUtils
+import com.sort.feriaapp.viewmodels.EventViewModel
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [MediaFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class MediaFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+class MediaFragment : Fragment(), RecyclerViewClickListener<Event> {
+
+    private var _binding: FragmentMediaBinding? = null
+    private val binding get() = _binding!!
+
+    private val viewModel: EventViewModel by viewModels{
+        InjectorUtils.provideEventViewModelFactory(this)
+    }
+
+    private lateinit var adapter: RecyclerViewEventsAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        val binding: FragmentMediaBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_media, container, false)
+        _binding = FragmentMediaBinding.inflate(inflater, container, false)
+        binding.eventViewModel = viewModel
+        binding.lifecycleOwner = viewLifecycleOwner
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initRecyclerView()
+        initObservers()
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment MediaFragment.
-         */
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            MediaFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+        fun newInstance() = MediaFragment()
+    }
+
+    private fun initRecyclerView(){
+        adapter = RecyclerViewEventsAdapter(this)
+        binding.recyclerViewEvent.also {
+            it.setHasFixedSize(true)
+            it.layoutManager = GridLayoutManager(requireContext(), 2)
+            it.adapter = adapter
+        }
+    }
+
+    private fun initObservers(){
+        lifecycleScope.launchWhenCreated {
+            viewModel.events.observe(viewLifecycleOwner, Observer{
+                adapter.setData(it)
+            })
+        }
+    }
+
+    override fun onCardViewClick(view: View, obj: Event) {
+        val action = MediaFragmentDirections.actionMediaFragmentToEventDetailFragment(obj.id)
+        view.findNavController().navigate(action)
     }
 }

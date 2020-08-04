@@ -36,6 +36,8 @@ class InstitutionDetailFragment : Fragment(){
         _binding = FragmentInstitutionDisplayBinding.inflate(inflater, container, false)
         binding.viewmodel = institutionDetailViewModel
         binding.lifecycleOwner = viewLifecycleOwner
+
+        //binding.webView.loadData()
         (activity as AppCompatActivity).setSupportActionBar(binding.toolbar)
       //  initYoutube()
         return binding.root

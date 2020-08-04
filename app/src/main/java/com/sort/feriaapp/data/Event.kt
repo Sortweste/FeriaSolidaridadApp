@@ -8,7 +8,8 @@ import androidx.room.PrimaryKey
 data class Event (
     @PrimaryKey val id: Long,
     val title: String,
-    @ColumnInfo(name = "image_url") val imageURL: String?,
+    @ColumnInfo(name = "image_url") val imageURL: String,
     val link: String,
+    val description: String,
     val InstitutionId: Long
 )
