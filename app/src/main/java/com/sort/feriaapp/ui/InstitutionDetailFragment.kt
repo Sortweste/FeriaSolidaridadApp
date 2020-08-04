@@ -8,12 +8,14 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.navArgs
 import com.google.android.youtube.player.YouTubeInitializationResult
 import com.google.android.youtube.player.YouTubePlayer
 import com.google.android.youtube.player.YouTubePlayerFragment
 import com.google.android.youtube.player.YouTubePlayerSupportFragment
 import com.sort.feriaapp.R
+import com.sort.feriaapp.data.InstitutionWithEvents
 import com.sort.feriaapp.databinding.FragmentInstitutionDisplayBinding
 import com.sort.feriaapp.utils.InjectorUtils
 import com.sort.feriaapp.viewmodels.InstitutionDetailViewModel
@@ -38,22 +40,25 @@ class InstitutionDetailFragment : Fragment(){
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        Log.d("HOME", args.institutionId.toString())
         _binding = FragmentInstitutionDisplayBinding.inflate(inflater, container, false)
-        binding.institutionInfo = institutionDetailViewModel.institutionInfo.value
-        Log.d("HOME", institutionDetailViewModel.institutionInfo.value.toString())
+        binding.viewmodel = institutionDetailViewModel
+        binding.lifecycleOwner = viewLifecycleOwner
       //  initYoutube()
         return binding.root
     }
+
+    /*private fun initObserver(){
+        institutionDetailViewModel.institutionInfo.observe(viewLifecycleOwner, Observer {
+            this.institutionInfo = it
+        })
+    }*/
 
     /*private fun initYoutube(){
         youTubePlayerFragment = YouTubeFragment.newInstance(binding.institutionInfo?.institution?.videoURL)
         //youTubePlayerFragment.initialize(BuildConfig.YOUTUBE_API_KEY, this)
         childFragmentManager.beginTransaction().add(R.id.youtube_fragment, youTubePlayerFragment).commit()
     }*/
-
-    private fun initObservers(){
-
-    }
 
     override fun onDestroyView() {
         super.onDestroyView()

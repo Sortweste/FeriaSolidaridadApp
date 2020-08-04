@@ -16,8 +16,8 @@ fun <T> setRecyclerViewProperties(recyclerView: RecyclerView, data: List<T>?){
 }
 
 @BindingAdapter("setImageUrl")
-fun bindImageUrl(view: ImageView, url: String){
-    if(url.isNotBlank())
+fun bindImageUrl(view: ImageView, url: String?){
+    if(!url.isNullOrBlank())
         Glide.with(view.context).load(url).into(view)
 }
 

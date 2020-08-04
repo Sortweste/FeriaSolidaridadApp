@@ -16,15 +16,6 @@ class InstitutionViewModel(private val institutionRepository:InstitutionReposito
     val institutions: LiveData<List<Institution>>
     get() = _getAllInstitutions
 
-    init{
-
-    }
-
-
-
-    fun getInstitutionInfoById(id: Long) = viewModelScope.launch {
-        institutionRepository.getInstitutionInfoById(id)
-    }
 
     fun insert(institution: Institution) = viewModelScope.launch(Dispatchers.IO) {
         institutionRepository.insertInstitution(institution)

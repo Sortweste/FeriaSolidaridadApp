@@ -10,6 +10,10 @@ import kotlinx.coroutines.launch
 
 class InstitutionDetailViewModel(private val institutionRepository: InstitutionRepository, private val institutionId: Long): ViewModel() {
 
-    val institutionInfo = institutionRepository.getInstitutionInfoById(institutionId).asLiveData()
+    private val _getInstitutionInfo: LiveData<InstitutionWithEvents> = institutionRepository.getInstitutionInfoById(institutionId).asLiveData()
+
+    val institutionInfo: LiveData<InstitutionWithEvents>
+    get() = _getInstitutionInfo
+
 
 }
