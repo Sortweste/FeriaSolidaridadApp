@@ -30,14 +30,14 @@
 
 
             <fragment
-                 android:id="@+id/fragment"
-                 android:name="androidx.navigation.fragment.NavHostFragment"
-                 android:layout_width="match_parent"
-                 android:layout_height="match_parent"
-                 app:defaultNavHost="true"
-                 app:layout_anchorGravity="center"
-                 app:layout_behavior="@string/appbar_scrolling_view_behavior"
-                 app:navGraph="@navigation/nav_graph" />
+                android:id="@+id/fragment"
+                android:name="androidx.navigation.fragment.NavHostFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:defaultNavHost="true"
+                app:layout_anchorGravity="center"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                app:navGraph="@navigation/nav_graph" />
 
 
         </androidx.coordinatorlayout.widget.CoordinatorLayout>

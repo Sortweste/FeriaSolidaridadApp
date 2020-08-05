@@ -4,7 +4,8 @@
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
     <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
     <color name="facebook">#1876f2</color>
     <color name="twitter">#14171A</color>
-
+    <color name="titulo_alerta">#FFAA33</color>
 </resources>

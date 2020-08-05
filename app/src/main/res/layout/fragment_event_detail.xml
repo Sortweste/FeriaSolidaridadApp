@@ -28,11 +28,15 @@
                 android:id="@+id/collapsing_toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:collapsedTitleTextAppearance="@style/CollapsedBar"
                 app:contentScrim="?attr/colorPrimary"
-                app:expandedTitleMarginEnd="64dp"
-                app:expandedTitleMarginStart="48dp"
+                app:expandedTitleGravity="right"
+                app:expandedTitleMarginBottom="0dp"
+                app:expandedTitleMarginTop="150dp"
+                app:expandedTitleTextAppearance="@style/ExpandedBar"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
-                app:titleEnabled="false">
+                app:title="@{viewmodel.eventInfo.title}"
+                app:titleEnabled="true">
 
                 <ImageView
                     android:id="@+id/representative_carousel"
@@ -54,9 +58,7 @@
                     app:contentInsetStart="0dp"
                     app:contentInsetStartWithNavigation="0dp"
                     app:layout_collapseMode="pin"
-                    app:popupTheme="@style/ThemeOverlay.MaterialComponents.Light"
-                    app:title="@{viewmodel.eventInfo.title}"
-                    app:titleTextColor="@color/white" />
+                    app:popupTheme="@style/ThemeOverlay.MaterialComponents.Light" />
 
 
             </com.google.android.material.appbar.CollapsingToolbarLayout>

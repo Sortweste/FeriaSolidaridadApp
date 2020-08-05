@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebChromeClient
 import android.webkit.WebView
+import androidx.activity.addCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -24,7 +25,7 @@ import com.sort.feriaapp.utils.InjectorUtils
 import com.sort.feriaapp.viewmodels.InstitutionDetailViewModel
 
 
-class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMinimal> {
+class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMinimal>{
 
     private val args: InstitutionDetailFragmentArgs by navArgs()
 
@@ -52,13 +53,13 @@ class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMin
         binding.viewmodel = institutionDetailViewModel
         binding.lifecycleOwner = viewLifecycleOwner
         binding.webView.settings.javaScriptEnabled = true
-        binding.webView.webChromeClient = object: WebChromeClient(){
+        binding.webView.webChromeClient = object : WebChromeClient() {
             override fun onProgressChanged(view: WebView?, newProgress: Int) {
                 super.onProgressChanged(view, newProgress)
             }
         }
-
-        (activity as AppCompatActivity).setSupportActionBar(binding.toolbar)
+        initToolBar()
+        //requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, onBackPressed = )
         return binding.root
     }
 
@@ -66,6 +67,16 @@ class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMin
         super.onViewCreated(view, savedInstanceState)
         initRecyclerView()
         initObservers()
+    }
+
+    private fun initToolBar(){
+        (activity as AppCompatActivity).apply {
+            this.setSupportActionBar(binding.toolbar)
+            this.supportActionBar?.also {
+                it.setDisplayHomeAsUpEnabled(true)
+                it.setDisplayShowHomeEnabled(true)
+            }
+        }
     }
 
     private fun initRecyclerView() {
