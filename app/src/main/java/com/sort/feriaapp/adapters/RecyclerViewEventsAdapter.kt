@@ -7,13 +7,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.sort.feriaapp.R
 import com.sort.feriaapp.data.Event
 import com.sort.feriaapp.data.Institution
+import com.sort.feriaapp.data.minimals.EventMinimal
 import com.sort.feriaapp.databinding.CardViewEventsBinding
 import com.sort.feriaapp.helpers.BindAdapter
 import com.sort.feriaapp.helpers.RecyclerViewClickListener
 
-class RecyclerViewEventsAdapter(private val listener: RecyclerViewClickListener<Event>): RecyclerView.Adapter<RecyclerViewEventsAdapter.ViewHolder>(), BindAdapter<Event> {
+class RecyclerViewEventsAdapter(private val listener: RecyclerViewClickListener<EventMinimal>): RecyclerView.Adapter<RecyclerViewEventsAdapter.ViewHolder>(), BindAdapter<EventMinimal> {
 
-    private var items: List<Event> = emptyList()
+    private var items: List<EventMinimal> = emptyList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerViewEventsAdapter.ViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -26,14 +27,14 @@ class RecyclerViewEventsAdapter(private val listener: RecyclerViewClickListener<
     override fun getItemCount(): Int = items.size
 
     inner class ViewHolder(private val binding: CardViewEventsBinding): RecyclerView.ViewHolder(binding.root){
-        fun bind(item: Event){
+        fun bind(item: EventMinimal){
             binding.event = item
             binding.executePendingBindings()
             binding.root.setOnClickListener { listener.onCardViewClick(it, item) }
         }
     }
 
-    override fun setData(items: List<Event>?) {
+    override fun setData(items: List<EventMinimal>?) {
         if(!items.isNullOrEmpty()) {
             this.items = items
             notifyDataSetChanged()

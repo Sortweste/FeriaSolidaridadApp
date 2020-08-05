@@ -8,7 +8,7 @@
 
         <variable
             name="viewmodel"
-            type="com.sort.feriaapp.viewmodels.InstitutionDetailViewModel" />
+            type="com.sort.feriaapp.viewmodels.EventDetailViewModel" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -32,19 +32,18 @@
                 app:expandedTitleMarginEnd="64dp"
                 app:expandedTitleMarginStart="48dp"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
-                app:titleEnabled="false"
-                >
+                app:titleEnabled="false">
 
                 <ImageView
                     android:id="@+id/representative_carousel"
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
                     android:contentDescription="@string/representative_image_institution"
+                    android:fitsSystemWindows="true"
                     android:scaleType="centerCrop"
                     app:layout_collapseMode="parallax"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:setImageUrl="@{viewmodel.institutionInfo.institution.imageURL}"
-                    android:fitsSystemWindows="true"
+                    app:setImageUrl="@{viewmodel.eventInfo.imageURL}"
                     tools:src="@drawable/slider" />
 
                 <androidx.appcompat.widget.Toolbar
@@ -52,11 +51,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
                     android:background="@android:color/transparent"
-                    app:layout_collapseMode="pin"
                     app:contentInsetStart="0dp"
                     app:contentInsetStartWithNavigation="0dp"
+                    app:layout_collapseMode="pin"
                     app:popupTheme="@style/ThemeOverlay.MaterialComponents.Light"
-                    app:title="@{viewmodel.institutionInfo.institution.name}"
+                    app:title="@{viewmodel.eventInfo.title}"
                     app:titleTextColor="@color/white" />
 
 
@@ -81,16 +80,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
                     android:layout_marginVertical="10dp"
-                    android:text="@{viewmodel.institutionInfo.institution.description}"
+                    android:text="@{viewmodel.eventInfo.description}"
                     tools:text="@string/lorem_ipsum" />
 
-                <WebView
-                    android:id="@+id/web_view"
-                    app:goneUnless="@{viewmodel.institutionInfo.institution.videoURL.empty}"
-                    app:videoURL="@{viewmodel.institutionInfo.institution.videoURL}"
-                    android:layout_width="match_parent"
-                    android:layout_height="300dp"
-                    android:layout_margin="20dp" />
 
                 <TextView
                     android:id="@+id/meetup_view"
@@ -102,60 +94,17 @@
                     android:drawableLeft="@drawable/ic_action_video"
                     android:drawablePadding="@dimen/drawable_padding"
                     android:gravity="center"
-                    android:text="@{viewmodel.institutionInfo.institution.meetup}"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    app:goneUnless="@{viewmodel.institutionInfo.institution.meetup.empty}"
+                    app:assistMessage="@{viewmodel.eventInfo.link}"
+                    app:goneUnless="@{viewmodel.eventInfo.link.empty}"
                     tools:text="Link to our meetings" />
 
-
-                <TextView
-                    android:id="@+id/facebook_view"
+                <CheckBox
+                    android:id="@+id/confirm_checkbox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="start"
-                    android:layout_margin="15dp"
-                    android:drawableStart="@drawable/ic_action_video"
-                    android:drawableLeft="@drawable/ic_action_video"
-                    android:drawablePadding="@dimen/drawable_padding"
-                    android:gravity="center"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textColor="@color/facebook"
-                    app:facebookMessage="@{viewmodel.institutionInfo.institution.facebook}"
-                    app:goneUnless="@{viewmodel.institutionInfo.institution.facebook.empty}"
-                    tools:text="Facebook Account"
-                    tools:textColor="@color/facebook" />
-
-                <TextView
-                    android:id="@+id/twitter_view"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="start"
-                    android:layout_margin="15dp"
-                    android:drawableStart="@drawable/ic_action_video"
-                    android:drawableLeft="@drawable/ic_action_video"
-                    android:drawablePadding="@dimen/drawable_padding"
-                    android:gravity="center"
-                    android:text="@{viewmodel.institutionInfo.institution.twitter}"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textColor="@color/twitter"
-                    app:goneUnless="@{viewmodel.institutionInfo.institution.twitter.empty}"
-                    tools:text="Twitter Account"
-                    tools:textColor="@color/twitter" />
-
-                <TextView
-                    android:id="@+id/instagram_view"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="start"
-                    android:layout_margin="15dp"
-                    android:drawableStart="@drawable/ic_action_video"
-                    android:drawableLeft="@drawable/ic_action_video"
-                    android:drawablePadding="@dimen/drawable_padding"
-                    android:gravity="center"
-                    android:text="@{viewmodel.institutionInfo.institution.instagram}"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    app:goneUnless="@{viewmodel.institutionInfo.institution.instagram.empty}"
-                    tools:text="Instagram Account" />
+                    android:layout_gravity="center"
+                    android:text="@string/confirm_assist" />
 
             </LinearLayout>
 

@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.sort.feriaapp.R
 import com.sort.feriaapp.adapters.RecyclerViewEventsAdapter
 import com.sort.feriaapp.data.Event
+import com.sort.feriaapp.data.minimals.EventMinimal
 import com.sort.feriaapp.databinding.FragmentGalleryBinding
 import com.sort.feriaapp.databinding.FragmentMediaBinding
 import com.sort.feriaapp.helpers.RecyclerViewClickListener
@@ -21,7 +22,7 @@ import com.sort.feriaapp.utils.InjectorUtils
 import com.sort.feriaapp.viewmodels.EventViewModel
 
 
-class MediaFragment : Fragment(), RecyclerViewClickListener<Event> {
+class MediaFragment : Fragment(), RecyclerViewClickListener<EventMinimal> {
 
     private var _binding: FragmentMediaBinding? = null
     private val binding get() = _binding!!
@@ -79,7 +80,7 @@ class MediaFragment : Fragment(), RecyclerViewClickListener<Event> {
         }
     }
 
-    override fun onCardViewClick(view: View, obj: Event) {
+    override fun onCardViewClick(view: View, obj: EventMinimal) {
         val action = MediaFragmentDirections.actionMediaFragmentToEventDetailFragment(obj.id)
         view.findNavController().navigate(action)
     }

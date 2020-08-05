@@ -102,4 +102,5 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="event_poster">Event Poster</string>
+    <string name="confirm_assist">Confirm Assist</string>
 </resources>

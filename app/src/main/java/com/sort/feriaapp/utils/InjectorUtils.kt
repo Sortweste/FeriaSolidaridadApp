@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import com.sort.feriaapp.data.AppDatabase
 import com.sort.feriaapp.data.repositories.EventRepository
 import com.sort.feriaapp.data.repositories.InstitutionRepository
+import com.sort.feriaapp.viewmodels.EventDetailViewModelFactory
 import com.sort.feriaapp.viewmodels.EventViewModelFactory
 import com.sort.feriaapp.viewmodels.InstitutionDetailViewModelFactory
 import com.sort.feriaapp.viewmodels.InstitutionViewModelFactory
@@ -29,6 +30,10 @@ object InjectorUtils {
 
     fun provideEventViewModelFactory(fragment: Fragment): EventViewModelFactory{
         return EventViewModelFactory(getEventRepository(fragment.requireContext()))
+    }
+
+    fun provideEventDetailViewModelFactory(context: Context, eventId: Long): EventDetailViewModelFactory{
+        return EventDetailViewModelFactory(getEventRepository(context), eventId)
     }
 
 }

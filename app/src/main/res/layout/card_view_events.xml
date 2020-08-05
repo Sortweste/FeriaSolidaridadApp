@@ -7,7 +7,7 @@
     <data>
         <variable
             name="event"
-            type="com.sort.feriaapp.data.Event" />
+            type="com.sort.feriaapp.data.minimals.EventMinimal" />
     </data>
 
     <com.google.android.material.card.MaterialCardView

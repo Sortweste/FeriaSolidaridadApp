@@ -41,7 +41,7 @@
     </fragment>
     <fragment
         android:id="@+id/eventDetailFragment"
-        android:name="com.sort.feriaapp.EventDetailFragment"
+        android:name="com.sort.feriaapp.ui.EventDetailFragment"
         android:label="EventDetailFragment"
         tools:layout="@layout/fragment_event_detail">
         <argument

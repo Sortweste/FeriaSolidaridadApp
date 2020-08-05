@@ -1,13 +1,13 @@
 package com.sort.feriaapp.data.repositories
 
-import com.sort.feriaapp.data.Event
 import com.sort.feriaapp.data.dao.EventDao
+import com.sort.feriaapp.data.minimals.EventMinimal
 import com.sort.feriaapp.utils.SafeApiRequest
 import kotlinx.coroutines.flow.Flow
 
 class EventRepository(private val eventDao: EventDao): SafeApiRequest() {
 
-    val getAllEvents: Flow<List<Event>> = eventDao.getAllEvents()
+    val getAllEvents: Flow<List<EventMinimal>> = eventDao.getAllEventsMinimal()
 
     fun getEventById(id: Long) = eventDao.getEventById(id)
 

@@ -44,3 +44,11 @@ fun setWebViewValue(view: WebView, videoURL: String?){
     }
 
 }
+
+@BindingAdapter("assistMessage")
+fun setAssistString(view: TextView, link: String?){
+    if(!link.isNullOrBlank()){
+        val textMessage = "Asiste en $link"
+        view.text = textMessage
+    }
+}
