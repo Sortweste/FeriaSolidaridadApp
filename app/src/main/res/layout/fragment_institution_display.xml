@@ -29,10 +29,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:contentScrim="?attr/colorPrimary"
-                app:expandedTitleMarginEnd="64dp"
-                app:expandedTitleMarginStart="48dp"
+                app:expandedTitleMarginTop="150dp"
+                app:expandedTitleMarginBottom="0dp"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
-                app:titleEnabled="false"
+                app:title="@{viewmodel.institutionInfo.institution.name}"
+                app:expandedTitleTextAppearance="@style/ExpandedBar"
+                app:collapsedTitleTextAppearance="@style/CollapsedBar"
+                app:expandedTitleGravity="right"
+                app:titleEnabled="true"
                 >
 
                 <ImageView
@@ -56,8 +60,7 @@
                     app:contentInsetStart="0dp"
                     app:contentInsetStartWithNavigation="0dp"
                     app:popupTheme="@style/ThemeOverlay.MaterialComponents.Light"
-                    app:title="@{viewmodel.institutionInfo.institution.name}"
-                    app:titleTextColor="@color/white" />
+                    />
 
 
             </com.google.android.material.appbar.CollapsingToolbarLayout>

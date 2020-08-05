@@ -28,12 +28,6 @@
 
             </com.google.android.material.appbar.AppBarLayout>
 
-            <!-- <FrameLayout
-                android:id="@+id/fragment_recyclerview"
-                android:name="com.sort.feriaapp.HomeFragment"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior" />-->
 
             <fragment
                  android:id="@+id/fragment"

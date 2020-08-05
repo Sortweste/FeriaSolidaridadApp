@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebChromeClient
+import android.webkit.WebView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -49,6 +51,13 @@ class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMin
         _binding = FragmentInstitutionDisplayBinding.inflate(inflater, container, false)
         binding.viewmodel = institutionDetailViewModel
         binding.lifecycleOwner = viewLifecycleOwner
+        binding.webView.settings.javaScriptEnabled = true
+        binding.webView.webChromeClient = object: WebChromeClient(){
+            override fun onProgressChanged(view: WebView?, newProgress: Int) {
+                super.onProgressChanged(view, newProgress)
+            }
+        }
+
         (activity as AppCompatActivity).setSupportActionBar(binding.toolbar)
         return binding.root
     }

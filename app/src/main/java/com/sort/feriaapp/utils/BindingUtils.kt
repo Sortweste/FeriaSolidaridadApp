@@ -39,7 +39,7 @@ fun setFacebookString(view: TextView, account: String?){
 @BindingAdapter("videoURL")
 fun setWebViewValue(view: WebView, videoURL: String?){
     if(!videoURL.isNullOrBlank()){
-        val url: String = "<iframe width=\"1583\" height=\"658\" src=\"https://www.youtube.com/embed/$videoURL\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe> "
+        val url: String = "<iframe width=\"300\" height=\"300\" src=\"https://www.youtube.com/embed/$videoURL\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe> "
         view.loadData(url, "text/html", null)
     }
 
