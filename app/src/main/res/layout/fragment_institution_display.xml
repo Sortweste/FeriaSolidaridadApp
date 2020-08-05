@@ -84,6 +84,12 @@
                     android:text="@{viewmodel.institutionInfo.institution.description}"
                     tools:text="@string/lorem_ipsum" />
 
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view_institutions_events"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:data="@{viewmodel.events}" />
+
                 <WebView
                     android:id="@+id/web_view"
                     app:goneUnless="@{viewmodel.institutionInfo.institution.videoURL.empty}"

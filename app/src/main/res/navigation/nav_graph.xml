@@ -38,6 +38,10 @@
         <argument
             android:name="institutionId"
             app:argType="long" />
+        <action
+            android:id="@+id/action_institutionDetailFragment_to_eventDetailFragment"
+            app:destination="@id/eventDetailFragment"
+            app:enterAnim="@anim/fragment_fade_enter" />
     </fragment>
     <fragment
         android:id="@+id/eventDetailFragment"

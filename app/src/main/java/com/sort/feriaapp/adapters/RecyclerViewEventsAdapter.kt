@@ -5,8 +5,6 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.sort.feriaapp.R
-import com.sort.feriaapp.data.Event
-import com.sort.feriaapp.data.Institution
 import com.sort.feriaapp.data.minimals.EventMinimal
 import com.sort.feriaapp.databinding.CardViewEventsBinding
 import com.sort.feriaapp.helpers.BindAdapter
