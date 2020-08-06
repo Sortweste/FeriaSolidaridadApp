@@ -6,23 +6,22 @@ import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebChromeClient
 import android.webkit.WebView
-import androidx.activity.addCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.sort.feriaapp.adapters.RecyclerViewEventsAdapter
-import com.sort.feriaapp.data.Event
-import com.sort.feriaapp.data.Institution
 import com.sort.feriaapp.data.minimals.EventMinimal
 import com.sort.feriaapp.databinding.FragmentInstitutionDisplayBinding
 import com.sort.feriaapp.helpers.RecyclerViewClickListener
 import com.sort.feriaapp.utils.InjectorUtils
 import com.sort.feriaapp.viewmodels.InstitutionDetailViewModel
+
 
 
 class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMinimal>{
@@ -77,7 +76,12 @@ class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMin
                 it.setDisplayShowHomeEnabled(true)
             }
         }
+        binding.toolbar.setNavigationOnClickListener {
+            findNavController().navigateUp()
+        }
+        //binding.toolbar.setupWithNavController()
     }
+
 
     private fun initRecyclerView() {
         adapter = RecyclerViewEventsAdapter(this)

@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "description": "Lorem Ipsum,",
+    "description": "The Linux Foundation is dedicated to building sustainable ecosystems around open source projects to accelerate technology development and industry adoption.\nFounded in 2000, the Linux Foundation provides unparalleled support for open source communities through financial and intellectual resources, infrastructure, services, events, and training. Working together, the Linux Foundation and its projects form the most ambitious and successful investment in the creation of shared technology.",
     "name": "Linux Foundation",
     "summary": "Consorcio tecnológico sin ánimo de lucro establecido para adoptar el crecimiento de Linux.",
     "imageURL": "https://i1.wp.com/windtux.com/wp-content/uploads/2016/01/Linux-foundation-logo.png?ssl=1",
@@ -11,9 +11,9 @@
     "type": "Event",
     "meetup": "",
     "website": "",
-    "twitter": "",
-    "instagram": "",
-    "facebook": "Sortweste"
+    "twitter": "@sortweste",
+    "instagram": "@sortweste",
+    "facebook": ""
   },
   {
     "id": 2,
