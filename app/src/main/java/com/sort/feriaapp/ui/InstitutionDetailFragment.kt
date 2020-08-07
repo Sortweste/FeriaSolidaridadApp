@@ -1,9 +1,7 @@
 package com.sort.feriaapp.ui
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.webkit.WebChromeClient
 import android.webkit.WebView
 import androidx.appcompat.app.AppCompatActivity
@@ -15,6 +13,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.sort.feriaapp.R
 import com.sort.feriaapp.adapters.RecyclerViewEventsAdapter
 import com.sort.feriaapp.data.minimals.EventMinimal
 import com.sort.feriaapp.databinding.FragmentInstitutionDisplayBinding
@@ -42,6 +41,7 @@ class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMin
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
     }
 
     override fun onCreateView(
@@ -62,11 +62,17 @@ class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMin
         return binding.root
     }
 
+    override fun onPrepareOptionsMenu(menu: Menu) {
+        super.onPrepareOptionsMenu(menu)
+        menu.findItem(R.id.about).isVisible = false
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initRecyclerView()
         initObservers()
     }
+
 
     private fun initToolBar(){
         (activity as AppCompatActivity).apply {

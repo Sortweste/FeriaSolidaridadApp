@@ -1,7 +1,11 @@
 package com.sort.feriaapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination
@@ -31,6 +35,24 @@ class MainActivity : AppCompatActivity(), NavController.OnDestinationChangedList
         when(destination.id){
             R.id.homeFragment, R.id.galleryFragment, R.id.mediaFragment -> componentsVisibility(View.VISIBLE)
             else -> componentsVisibility(View.GONE)
+        }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        super.onCreateOptionsMenu(menu)
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.app_bar_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when(item.itemId){
+            R.id.about -> {
+                val intent = Intent(this, AboutActivity::class.java)
+                startActivity(intent)
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
         }
     }
 

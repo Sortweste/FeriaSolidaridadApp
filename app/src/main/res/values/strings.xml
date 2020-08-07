@@ -2,7 +2,7 @@
     <string name="app_name">FeriaApp</string>
     <string name="bottom_nav_home">Home</string>
     <string name="bottom_nav_image">Events</string>
-    <string name="bottom_nav_video">Misc.</string>
+    <string name="bottom_nav_video">Profile</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="representative_image_institution">Representative Image</string>
@@ -106,5 +106,5 @@
     <string name="login">Sign in</string>
     <string name="OK">OK</string>
     <string name="login_message">You must be logged in</string>
-
+    <string name="about_title">About</string>
 </resources>
