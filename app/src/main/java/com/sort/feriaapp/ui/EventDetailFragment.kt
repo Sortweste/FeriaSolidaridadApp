@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.sort.feriaapp.R
@@ -47,7 +48,7 @@ class EventDetailFragment : Fragment(){
         binding.viewmodel = eventDetailViewModel
         binding.lifecycleOwner = viewLifecycleOwner
 
-        (activity as AppCompatActivity).setSupportActionBar(binding.toolbar)
+        initToolBar()
 
         binding.confirmCheckbox.setOnCheckedChangeListener { _, b ->
             if(b) validateLogin()
@@ -60,6 +61,19 @@ class EventDetailFragment : Fragment(){
     companion object {
         @JvmStatic
         fun newInstance() = EventDetailFragment()
+    }
+
+    private fun initToolBar(){
+        (activity as AppCompatActivity).apply {
+            this.setSupportActionBar(binding.toolbar)
+            this.supportActionBar?.also {
+                it.setDisplayHomeAsUpEnabled(true)
+                it.setDisplayShowHomeEnabled(true)
+            }
+        }
+        binding.toolbar.setNavigationOnClickListener {
+            findNavController().navigateUp()
+        }
     }
 
     override fun onDestroyView() {
