@@ -79,7 +79,6 @@ class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMin
         binding.toolbar.setNavigationOnClickListener {
             findNavController().navigateUp()
         }
-        //binding.toolbar.setupWithNavController()
     }
 
 

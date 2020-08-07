@@ -9,14 +9,16 @@ import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
 import com.sort.feriaapp.data.dao.InstitutionDao
 import com.sort.feriaapp.data.dao.EventDao
+import com.sort.feriaapp.data.dao.UserDao
 import com.sort.feriaapp.utils.DATABASE_NAME
 import com.sort.feriaapp.workers.SeedDatabaseWorker
 
-@Database(entities = [Institution::class, Event::class], version = 1, exportSchema = false)
+@Database(entities = [Institution::class, Event::class, User::class], version = 1, exportSchema = false)
 abstract class AppDatabase: RoomDatabase() {
 
     abstract fun institutionDao(): InstitutionDao
     abstract fun eventDao(): EventDao
+    abstract fun userDao(): UserDao
 
     companion object {
         @Volatile private var instance: AppDatabase? = null

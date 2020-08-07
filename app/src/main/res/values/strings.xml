@@ -103,4 +103,8 @@
     </string>
     <string name="event_poster">Event Poster</string>
     <string name="confirm_assist">Confirm Assist</string>
+    <string name="login">Sign in</string>
+    <string name="OK">OK</string>
+    <string name="login_message">You must be logged in</string>
+
 </resources>
