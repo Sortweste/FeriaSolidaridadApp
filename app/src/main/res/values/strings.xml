@@ -107,4 +107,9 @@
     <string name="OK">OK</string>
     <string name="login_message">You must be logged in</string>
     <string name="about_title">About</string>
+    <string name="twitter_icon">twitter_icon</string>
+    <string name="facebook_icon">facebook icon</string>
+    <string name="instagram_icon">instagram icon</string>
+    <string name="visit_our_facebook_page">Visit our Facebook Page</string>
+    <string name="instagram_message">Follow us on Instagram!</string>
 </resources>

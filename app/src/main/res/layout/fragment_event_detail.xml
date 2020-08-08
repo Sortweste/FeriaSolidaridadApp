@@ -97,7 +97,7 @@
                     android:drawablePadding="@dimen/drawable_padding"
                     android:gravity="center"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    app:assistMessage="@{viewmodel.eventInfo.link}"
+                    android:text="@{viewmodel.eventInfo.link}"
                     app:goneUnless="@{viewmodel.eventInfo.link.empty}"
                     tools:text="Link to our meetings" />
 

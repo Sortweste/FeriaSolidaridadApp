@@ -18,4 +18,9 @@
     <string name="OK">Aceptar</string>
     <string name="login_message">Debes iniciar sesión para asistir</string>
     <string name="about_title">Acerca De</string>
+    <string name="twitter_icon">twitter_icon</string>
+    <string name="facebook_icon">facebook icon</string>
+    <string name="instagram_icon">instagram icon</string>
+    <string name="visit_our_facebook_page">Visita nuestra página en Facebook</string>
+    <string name="instagram_message">¡Síguenos en Instagram!</string>
 </resources>

@@ -1,9 +1,16 @@
 package com.sort.feriaapp.ui
 
+import android.content.ActivityNotFoundException
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
-import android.view.*
+import android.view.LayoutInflater
+import android.view.Menu
+import android.view.View
+import android.view.ViewGroup
 import android.webkit.WebChromeClient
 import android.webkit.WebView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -18,12 +25,14 @@ import com.sort.feriaapp.adapters.RecyclerViewEventsAdapter
 import com.sort.feriaapp.data.minimals.EventMinimal
 import com.sort.feriaapp.databinding.FragmentInstitutionDisplayBinding
 import com.sort.feriaapp.helpers.RecyclerViewClickListener
+import com.sort.feriaapp.utils.FACEBOOK_PACKAGE
+import com.sort.feriaapp.utils.INSTAGRAM_PACKAGE
 import com.sort.feriaapp.utils.InjectorUtils
+import com.sort.feriaapp.utils.TWITTER_PACKAGE
 import com.sort.feriaapp.viewmodels.InstitutionDetailViewModel
 
 
-
-class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMinimal>{
+class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMinimal>, View.OnClickListener{
 
     private val args: InstitutionDetailFragmentArgs by navArgs()
 
@@ -51,6 +60,11 @@ class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMin
         _binding = FragmentInstitutionDisplayBinding.inflate(inflater, container, false)
         binding.viewmodel = institutionDetailViewModel
         binding.lifecycleOwner = viewLifecycleOwner
+
+        binding.facebookView.setOnClickListener(this)
+        binding.twitterView.setOnClickListener(this)
+        binding.instagramView.setOnClickListener(this)
+
         binding.webView.settings.javaScriptEnabled = true
         binding.webView.webChromeClient = object : WebChromeClient() {
             override fun onProgressChanged(view: WebView?, newProgress: Int) {
@@ -58,7 +72,6 @@ class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMin
             }
         }
         initToolBar()
-        //requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, onBackPressed = )
         return binding.root
     }
 
@@ -115,5 +128,25 @@ class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMin
         val action = InstitutionDetailFragmentDirections.actionInstitutionDetailFragmentToEventDetailFragment(obj.id)
         view.findNavController().navigate(action)
     }
+
+    private fun prepareIntent(packageName: String, uriApp: String, uriWeb: String){
+        val uri = Uri.parse(uriApp)
+        val intent = Intent(Intent.ACTION_VIEW, uri)
+        intent.setPackage(packageName)
+        try {
+            startActivity(intent)
+        } catch(e: ActivityNotFoundException){
+            startActivity(Intent( Intent.ACTION_VIEW, Uri.parse(uriWeb)))
+        }
+    }
+
+    override fun onClick(v: View?) {
+            when(v?.id){
+                binding.facebookView.id -> { prepareIntent(FACEBOOK_PACKAGE, "fb://facewebmodal/f?href=${binding.facebookValue.text}", "https://www.facebook.com/${binding.facebookValue.text}")}
+                binding.instagramView.id -> { prepareIntent(INSTAGRAM_PACKAGE, "http://instagram.com/_u/${binding.instagramValue.text}", "http://instagram.com/${binding.instagramValue.text}") }
+                binding.twitterView.id -> { prepareIntent(TWITTER_PACKAGE, "twitter://user?screen_name=${binding.twitterValue.text}", "https://twitter.com/${binding.twitterValue.text}")}
+            }
+    }
+
 
 }

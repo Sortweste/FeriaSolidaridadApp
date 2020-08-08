@@ -28,14 +28,6 @@ fun goneUnless(view: View, notVisible: Boolean){
     view.visibility = if(notVisible) View.GONE else View.VISIBLE
 }
 
-@BindingAdapter("facebookMessage")
-fun setFacebookString(view: TextView, account: String?){
-    if(!account.isNullOrBlank()){
-        val textMessage = "Encuentranos en $account"
-        view.text = textMessage
-    }
-}
-
 @BindingAdapter("videoURL")
 fun setWebViewValue(view: WebView, videoURL: String?){
     if(!videoURL.isNullOrBlank()){
@@ -43,12 +35,4 @@ fun setWebViewValue(view: WebView, videoURL: String?){
         view.loadData(url, "text/html", null)
     }
 
-}
-
-@BindingAdapter("assistMessage")
-fun setAssistString(view: TextView, link: String?){
-    if(!link.isNullOrBlank()){
-        val textMessage = "Asiste en $link"
-        view.text = textMessage
-    }
 }

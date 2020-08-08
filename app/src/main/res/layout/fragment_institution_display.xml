@@ -62,10 +62,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
                     android:background="@android:color/transparent"
+                    android:theme="@style/ToolbarTheme"
                     app:contentInsetStart="0dp"
                     app:contentInsetStartWithNavigation="0dp"
-                    app:layout_collapseMode="pin"
-                    android:theme="@style/ToolbarTheme" />
+                    app:layout_collapseMode="pin" />
 
 
             </com.google.android.material.appbar.CollapsingToolbarLayout>
@@ -118,58 +118,102 @@
                     android:gravity="center"
                     android:text="@{viewmodel.institutionInfo.institution.meetup}"
                     android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textSize="15sp"
                     app:goneUnless="@{viewmodel.institutionInfo.institution.meetup.empty}"
                     tools:text="Link to our meetings" />
 
 
-                <TextView
-                    android:id="@+id/facebook_view"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="start"
-                    android:layout_margin="15dp"
-                    android:drawableStart="@drawable/ic_action_video"
-                    android:drawableLeft="@drawable/ic_action_video"
-                    android:drawablePadding="@dimen/drawable_padding"
-                    android:gravity="center"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textColor="@color/facebook"
-                    app:facebookMessage="@{viewmodel.institutionInfo.institution.facebook}"
-                    app:goneUnless="@{viewmodel.institutionInfo.institution.facebook.empty}"
-                    tools:text="Facebook Account"
-                    tools:textColor="@color/facebook" />
-
-                <TextView
+                <LinearLayout
                     android:id="@+id/twitter_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="start"
                     android:layout_margin="15dp"
-                    android:drawableStart="@drawable/ic_action_video"
-                    android:drawableLeft="@drawable/ic_action_video"
-                    android:drawablePadding="@dimen/drawable_padding"
-                    android:gravity="center"
-                    android:text="@{viewmodel.institutionInfo.institution.twitter}"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textColor="@color/twitter"
-                    app:goneUnless="@{viewmodel.institutionInfo.institution.twitter.empty}"
-                    tools:text="Twitter Account"
-                    tools:textColor="@color/twitter" />
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:goneUnless="@{viewmodel.institutionInfo.institution.twitter.empty}">
 
-                <TextView
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:contentDescription="@string/twitter_icon"
+                        android:src="@drawable/twitter_icon" />
+
+                    <TextView
+                        android:id="@+id/twitter_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:paddingHorizontal="5dp"
+                        android:text="@{viewmodel.institutionInfo.institution.twitter}"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="@color/twitter"
+                        tools:text="Twitter Account"
+                        tools:textColor="@color/twitter" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/facebook_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_margin="15dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:goneUnless="@{viewmodel.institutionInfo.institution.facebook.empty}">
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:contentDescription="@string/facebook_icon"
+                        android:src="@drawable/facebook_icon" />
+
+                    <TextView
+                        android:id="@+id/facebook_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:paddingHorizontal="5dp"
+                        android:text="@string/visit_our_facebook_page"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="@color/facebook"
+                        tools:text="Facebook Account"
+                        tools:textColor="@color/facebook" />
+
+                </LinearLayout>
+
+                <LinearLayout
                     android:id="@+id/instagram_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="start"
                     android:layout_margin="15dp"
-                    android:drawableStart="@drawable/ic_action_video"
-                    android:drawableLeft="@drawable/ic_action_video"
-                    android:drawablePadding="@dimen/drawable_padding"
-                    android:gravity="center"
-                    android:text="@{viewmodel.institutionInfo.institution.instagram}"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    app:goneUnless="@{viewmodel.institutionInfo.institution.instagram.empty}"
-                    tools:text="Instagram Account" />
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:goneUnless="@{viewmodel.institutionInfo.institution.instagram.empty}">
+
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:contentDescription="@string/instagram_icon"
+                        android:src="@drawable/instagram_icon" />
+
+
+                    <TextView
+                        android:id="@+id/instagram_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:paddingHorizontal="5dp"
+                        android:text="@string/instagram_message"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        tools:text="Instagram Account" />
+
+
+                </LinearLayout>
+
 
             </LinearLayout>
 
