@@ -116,12 +116,33 @@
                     android:drawableLeft="@drawable/ic_action_video"
                     android:drawablePadding="@dimen/drawable_padding"
                     android:gravity="center"
+                    android:clickable="true"
                     android:text="@{viewmodel.institutionInfo.institution.meetup}"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:textSize="15sp"
                     app:goneUnless="@{viewmodel.institutionInfo.institution.meetup.empty}"
-                    tools:text="Link to our meetings" />
+                    tools:text="Link to our meetings"
+                    android:focusable="true" />
 
+
+                <TextView
+                    android:id="@+id/website_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_margin="15dp"
+                    android:drawableStart="@drawable/ic_action_website"
+                    android:drawableLeft="@drawable/ic_action_website"
+                    android:drawablePadding="@dimen/drawable_padding"
+                    android:gravity="center"
+                    android:textColor="@color/link_color"
+                    android:text="@{viewmodel.institutionInfo.institution.website}"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textSize="15sp"
+                    android:clickable="true"
+                    app:goneUnless="@{viewmodel.institutionInfo.institution.website.empty}"
+                    tools:text="Link to our website"
+                    android:focusable="true" />
 
                 <LinearLayout
                     android:id="@+id/twitter_view"
@@ -145,7 +166,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:paddingHorizontal="5dp"
-                        android:text="@{viewmodel.institutionInfo.institution.twitter}"
+                        app:twitterText="@{viewmodel.institutionInfo.institution.twitter}"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textColor="@color/twitter"
                         tools:text="Twitter Account"

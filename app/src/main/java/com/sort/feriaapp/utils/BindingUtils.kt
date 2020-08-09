@@ -36,3 +36,11 @@ fun setWebViewValue(view: WebView, videoURL: String?){
     }
 
 }
+
+@BindingAdapter("twitterText")
+fun setTwitterAccountName(view: TextView, account:String?){
+    if(!account.isNullOrBlank()){
+        val name: String = "@${account}"
+        view.text = name
+    }
+}

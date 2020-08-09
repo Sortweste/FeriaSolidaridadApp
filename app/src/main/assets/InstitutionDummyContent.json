@@ -7,13 +7,13 @@
     "imageURL": "https://i1.wp.com/windtux.com/wp-content/uploads/2016/01/Linux-foundation-logo.png?ssl=1",
     "logoURL": "https://i1.wp.com/windtux.com/wp-content/uploads/2016/01/Linux-foundation-logo.png?ssl=1",
     "videoURL": "nPHL-earq9A",
-    "meetingURL": "",
+    "meetingURL": "https://www.google.com/",
     "type": "Event",
     "meetup": "",
-    "website": "",
-    "twitter": "@sortweste",
-    "instagram": "@sortweste",
-    "facebook": ""
+    "website": "https://www.linuxfoundation.org/",
+    "twitter": "linuxfoundation",
+    "instagram": "",
+    "facebook": "TheLinuxFoundation"
   },
   {
     "id": 2,
@@ -26,14 +26,14 @@
     "meetingURL": "",
     "type": "Event",
     "meetup": "",
-    "website": "",
-    "twitter": "",
+    "website": "https://nodejs.dev/learn",
+    "twitter": "nodejs",
     "instagram": "",
     "facebook": ""
   },
   {
     "id": 3,
-    "description": "",
+    "description": "Ruby on Rails is not a minimalist framework, it's a metropolis. One filled with all the major institutions needed to run a large, sprawling application like Basecamp or GitHub or Shopify.\n\nThis means there's a lot to learn! But it also means you can learn it piece by piece. You do not need to be an expert in all facets of Ruby on Rails to get started on creating a great application.\n\nThe spine of a Rails application is the Model-View-Controller pattern that organizes programming logic into three major layers. The model is where your so-called business logic lives. This is where you calculate whether the next invoice is due or how many todos are left to be completed on a project. The controller is what accepts clicks and taps from the user, routes the commands to the model, and then renders HTML or JSON templates as the view.",
     "name": "Ruby on Rails",
     "summary": "Framework de aplicaciones web de código abierto escrito en el lenguaje de programación Ruby",
     "imageURL": "https://www.muylinux.com/wp-content/uploads/2017/12/Ruby-on-Rails-1.png",
@@ -42,8 +42,8 @@
     "meetingURL": "",
     "type": "Event",
     "meetup": "",
-    "website": "",
-    "twitter": "",
+    "website": "https://rubyonrails.org/",
+    "twitter": "rails",
     "instagram": "",
     "facebook": ""
   },
@@ -58,8 +58,8 @@
     "meetingURL": "",
     "type": "Event",
     "meetup": "",
-    "website": "",
-    "twitter": "",
+    "website": "https://flutter.dev/",
+    "twitter": "FlutterDev",
     "instagram": "",
     "facebook": ""
   },

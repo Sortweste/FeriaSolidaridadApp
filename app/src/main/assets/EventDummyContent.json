@@ -37,6 +37,38 @@
     "imageURL": "https://2.bp.blogspot.com/-CrYLg_oRtrU/Xylish5hxyI/AAAAAAAAPZg/feBSJWyKm0IzTcEroCB8bS9i4ZbMXnPpQCLcBGAsYHQ/s1600/AD%2BBLOG_Easy%2Bmodular%2Bdevelopment_v2.png",
     "link": "Meet Link",
     "description": "The app bundle enables modular app development using dynamic feature modules with a range of customizable delivery options. It’s now possible to shrink resources in dynamic feature modules as well as your base module when building modular apps. This long-requested feature can result in significantly greater size reduction of your apps. The feature is available from Android Studio 4.2, currently in Canary, under the experimental flag:",
-    "InstitutionId": "1"
+    "InstitutionId": "2"
+  },
+  {
+    "id": "6",
+    "title": "Kubernetes",
+    "imageURL": "https://pbs.twimg.com/media/EeqE27uXsAAHznX?format=jpg&name=small",
+    "link": "Meet Link",
+    "description": "Deploying new code to production is six times faster: 6 minutes, down from 40 minutes. “That was a big difference,” says Chen. “Before microservices, for every small change we had to wait for an hour to deploy.” Kubernetes has also improved reliability: ",
+    "InstitutionId": "2"
+  },
+  {
+    "id": "7",
+    "title": "Ubuntu Active Directory",
+    "imageURL": "https://pbs.twimg.com/media/Ee1yl69XkAADu48?format=png&name=small",
+    "link": "Meet Link",
+    "description": "Download our recent whitepaper for detailed insights and step by step instructions on how to integrate Ubuntu Desktop into Active Directory.",
+    "InstitutionId": "2"
+  },
+  {
+    "id": "8",
+    "title": "Jenkins RoadMap",
+    "imageURL": "https://pbs.twimg.com/media/EezZCC0XgAAz6JY?format=png&name=small",
+    "link": "Meet Link",
+    "description": "the Jenkins project is graduating! As a celebration, we’ll be sharing Jenkins content the entire month of August, including over 12 articles (6 included in this newsletter), podcasts, and more.",
+    "InstitutionId": "3"
+  },
+  {
+    "id": "9",
+    "title": "Introducing Jetpack on GitHub",
+    "imageURL": "https://miro.medium.com/max/1620/1*nsd3QVFddan29F8sxehXZA.png",
+    "link": "Meet Link",
+    "description": "In 2018, Jetpack library development moved to the Android Open Source Project to increase transparency and enable external contributions. Since then, we’ve continued to invest in quality-of-life improvements for Jetpack contributors while moving more work-in-progress changes, feature discussions, and bugs to publicly-visible components. We have even seen dedicated external developers learn the workflow and contribute patches; however, we wanted to explore ways to make the process easier and more developer-friendly.",
+    "InstitutionId": "4"
   }
 ]

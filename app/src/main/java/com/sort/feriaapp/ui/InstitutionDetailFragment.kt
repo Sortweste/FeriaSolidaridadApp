@@ -61,9 +61,7 @@ class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMin
         binding.viewmodel = institutionDetailViewModel
         binding.lifecycleOwner = viewLifecycleOwner
 
-        binding.facebookView.setOnClickListener(this)
-        binding.twitterView.setOnClickListener(this)
-        binding.instagramView.setOnClickListener(this)
+        initListeners()
 
         binding.webView.settings.javaScriptEnabled = true
         binding.webView.webChromeClient = object : WebChromeClient() {
@@ -129,7 +127,15 @@ class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMin
         view.findNavController().navigate(action)
     }
 
-    private fun prepareIntent(packageName: String, uriApp: String, uriWeb: String){
+    private fun initListeners(){
+        binding.facebookView.setOnClickListener(this)
+        binding.twitterView.setOnClickListener(this)
+        binding.instagramView.setOnClickListener(this)
+        binding.websiteView.setOnClickListener(this)
+        binding.meetupView.setOnClickListener(this)
+    }
+
+    private fun prepareIntentSocialMedia(packageName: String, uriApp: String, uriWeb: String){
         val uri = Uri.parse(uriApp)
         val intent = Intent(Intent.ACTION_VIEW, uri)
         intent.setPackage(packageName)
@@ -140,11 +146,18 @@ class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMin
         }
     }
 
+    private fun prepareIntent(url: String){
+        val i = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+        startActivity(i)
+    }
+
     override fun onClick(v: View?) {
             when(v?.id){
-                binding.facebookView.id -> { prepareIntent(FACEBOOK_PACKAGE, "fb://facewebmodal/f?href=${binding.facebookValue.text}", "https://www.facebook.com/${binding.facebookValue.text}")}
-                binding.instagramView.id -> { prepareIntent(INSTAGRAM_PACKAGE, "http://instagram.com/_u/${binding.instagramValue.text}", "http://instagram.com/${binding.instagramValue.text}") }
-                binding.twitterView.id -> { prepareIntent(TWITTER_PACKAGE, "twitter://user?screen_name=${binding.twitterValue.text}", "https://twitter.com/${binding.twitterValue.text}")}
+                binding.meetupView.id -> { prepareIntent(binding.meetupView.text.toString()) }
+                binding.websiteView.id -> { prepareIntent(binding.websiteView.text.toString()) }
+                binding.facebookView.id -> { prepareIntentSocialMedia(FACEBOOK_PACKAGE, "fb://facewebmodal/f?href=${binding.facebookValue.text}", "https://www.facebook.com/${binding.facebookValue.text}")}
+                binding.instagramView.id -> { prepareIntentSocialMedia(INSTAGRAM_PACKAGE, "http://instagram.com/_u/${binding.instagramValue.text}", "http://instagram.com/${binding.instagramValue.text}") }
+                binding.twitterView.id -> { prepareIntentSocialMedia(TWITTER_PACKAGE, "twitter://user?screen_name=${binding.twitterValue.text}", "https://twitter.com/${binding.twitterValue.text}")}
             }
     }
 
