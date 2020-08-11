@@ -101,7 +101,7 @@ class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMin
 
 
     private fun initRecyclerView() {
-        adapter = RecyclerViewEventsAdapter(this)
+        adapter = RecyclerViewEventsAdapter(this, false)
         binding.recyclerViewInstitutionsEvents.also {
             it.setHasFixedSize(true)
             it.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
