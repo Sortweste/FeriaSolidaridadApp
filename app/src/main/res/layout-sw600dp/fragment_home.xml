@@ -6,22 +6,23 @@
     <data>
 
         <variable
-            name="eventViewModel"
-            type="com.sort.feriaapp.viewmodels.EventViewModel" />
+            name="institutionViewModel"
+            type="com.sort.feriaapp.viewmodels.InstitutionViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="match_parent">
+
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_view_event"
+            android:id="@+id/recycler_view_article"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="center_horizontal"
-            app:data="@{eventViewModel.events}" />
+            app:data="@{institutionViewModel.institutions}" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+
 </layout>
+  

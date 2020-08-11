@@ -1,5 +1,6 @@
 package com.sort.feriaapp.ui
 
+import android.content.res.Configuration
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -62,7 +63,19 @@ class HomeFragment : Fragment(), RecyclerViewClickListener<Institution>{
         adapter = RecyclerViewAdapter(this)
         binding.recyclerViewArticle.also {
             it.setHasFixedSize(true)
-            it.layoutManager = GridLayoutManager(requireContext(), 2)
+            if(it.resources.configuration.orientation == Configuration.ORIENTATION_PORTRAIT){
+                if(isTablet()){
+                    it.layoutManager = GridLayoutManager(requireContext(), 3)
+                }else{
+                    it.layoutManager = GridLayoutManager(requireContext(), 2)
+                }
+            } else{
+                if(isTablet()){
+                    it.layoutManager = GridLayoutManager(requireContext(), 4)
+                }else{
+                    it.layoutManager = GridLayoutManager(requireContext(), 3    )
+                }
+            }
             it.adapter = adapter
         }
     }
@@ -95,6 +108,12 @@ class HomeFragment : Fragment(), RecyclerViewClickListener<Institution>{
     override fun onCardViewClick(view: View, obj: Institution) {
         val action = HomeFragmentDirections.actionHomeFragmentToInstitutionDetailFragment(obj.id)
         view.findNavController().navigate(action)
+    }
+
+    fun isTablet(): Boolean {
+        return ((this.getResources().getConfiguration().screenLayout
+                and Configuration.SCREENLAYOUT_SIZE_MASK)
+                >= Configuration.SCREENLAYOUT_SIZE_LARGE)
     }
 
 }

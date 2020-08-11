@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebChromeClient
 import android.webkit.WebView
+import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -128,11 +129,11 @@ class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMin
     }
 
     private fun initListeners(){
-        binding.facebookView.setOnClickListener(this)
-        binding.twitterView.setOnClickListener(this)
-        binding.instagramView.setOnClickListener(this)
-        binding.websiteView.setOnClickListener(this)
-        binding.meetupView.setOnClickListener(this)
+        binding.facebookView?.setOnClickListener(this)
+        binding.twitterView?.setOnClickListener(this)
+        binding.instagramView?.setOnClickListener(this)
+        binding.websiteView?.setOnClickListener(this)
+        binding.meetupView?.setOnClickListener(this)
     }
 
     private fun prepareIntentSocialMedia(packageName: String, uriApp: String, uriWeb: String){
@@ -155,9 +156,9 @@ class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMin
             when(v?.id){
                 binding.meetupView.id -> { prepareIntent(binding.meetupView.text.toString()) }
                 binding.websiteView.id -> { prepareIntent(binding.websiteView.text.toString()) }
-                binding.facebookView.id -> { prepareIntentSocialMedia(FACEBOOK_PACKAGE, "fb://facewebmodal/f?href=${binding.facebookValue.text}", "https://www.facebook.com/${binding.facebookValue.text}")}
-                binding.instagramView.id -> { prepareIntentSocialMedia(INSTAGRAM_PACKAGE, "http://instagram.com/_u/${binding.instagramValue.text}", "http://instagram.com/${binding.instagramValue.text}") }
-                binding.twitterView.id -> { prepareIntentSocialMedia(TWITTER_PACKAGE, "twitter://user?screen_name=${binding.twitterValue.text}", "https://twitter.com/${binding.twitterValue.text}")}
+                binding.facebookView?.id -> { prepareIntentSocialMedia(FACEBOOK_PACKAGE, "fb://facewebmodal/f?href=${binding.facebookValue.text}", "https://www.facebook.com/${binding.facebookValue.text}")}
+                binding.instagramView?.id -> { prepareIntentSocialMedia(INSTAGRAM_PACKAGE, "http://instagram.com/_u/${binding.instagramValue.text}", "http://instagram.com/${binding.instagramValue.text}") }
+                binding.twitterView?.id -> { prepareIntentSocialMedia(TWITTER_PACKAGE, "twitter://user?screen_name=${binding.twitterValue.text}", "https://twitter.com/${binding.twitterValue.text}")}
             }
     }
 

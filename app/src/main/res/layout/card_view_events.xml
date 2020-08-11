@@ -11,23 +11,26 @@
     </data>
 
     <com.google.android.material.card.MaterialCardView
-        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/MCVevent"
         android:layout_width="150dp"
         android:layout_height="200dp"
-        app:cardBackgroundColor="@color/white"
         android:layout_margin="10dp"
-        card_view:cardCornerRadius="10dp"
-        card_view:cardPreventCornerOverlap="false"
-        >
+        android:foregroundGravity="center"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="10dp"
+        app:cardPreventCornerOverlap="false">
 
         <ImageView
+            android:id="@+id/IMGcardview_event"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:contentDescription="@string/event_poster"
+            android:layout_gravity="center"
             android:adjustViewBounds="true"
+            android:contentDescription="@string/event_poster"
+            android:foregroundGravity="center"
             android:scaleType="centerCrop"
             app:setImageUrl="@{event.imageURL}"
-            tools:src="@drawable/slider"/>
+            tools:src="@drawable/slider" />
 
 
     </com.google.android.material.card.MaterialCardView>

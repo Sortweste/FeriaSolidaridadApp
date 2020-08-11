@@ -1,21 +1,18 @@
 package com.sort.feriaapp.ui
 
+import android.content.res.Configuration
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import com.sort.feriaapp.R
 import com.sort.feriaapp.adapters.RecyclerViewEventsAdapter
-import com.sort.feriaapp.data.Event
 import com.sort.feriaapp.data.minimals.EventMinimal
-import com.sort.feriaapp.databinding.FragmentGalleryBinding
 import com.sort.feriaapp.databinding.FragmentMediaBinding
 import com.sort.feriaapp.helpers.RecyclerViewClickListener
 import com.sort.feriaapp.utils.InjectorUtils
@@ -67,7 +64,20 @@ class MediaFragment : Fragment(), RecyclerViewClickListener<EventMinimal> {
         adapter = RecyclerViewEventsAdapter(this)
         binding.recyclerViewEvent.also {
             it.setHasFixedSize(true)
-            it.layoutManager = GridLayoutManager(requireContext(), 2)
+            if(it.resources.configuration.orientation == Configuration.ORIENTATION_PORTRAIT){
+                if(isTablet()){
+                    it.layoutManager = GridLayoutManager(requireContext(), 3)
+                }else{
+                    it.layoutManager = GridLayoutManager(requireContext(), 2)
+                }
+
+            } else{
+                if(isTablet()){
+                    it.layoutManager = GridLayoutManager(requireContext(), 4)
+                }else{
+                    it.layoutManager = GridLayoutManager(requireContext(), 3)
+                }
+            }
             it.adapter = adapter
         }
     }
@@ -83,5 +93,11 @@ class MediaFragment : Fragment(), RecyclerViewClickListener<EventMinimal> {
     override fun onCardViewClick(view: View, obj: EventMinimal) {
         val action = MediaFragmentDirections.actionMediaFragmentToEventDetailFragment(obj.id)
         view.findNavController().navigate(action)
+    }
+
+    fun isTablet(): Boolean {
+        return ((this.getResources().getConfiguration().screenLayout
+                and Configuration.SCREENLAYOUT_SIZE_MASK)
+                >= Configuration.SCREENLAYOUT_SIZE_LARGE)
     }
 }
