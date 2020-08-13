@@ -112,4 +112,8 @@
     <string name="instagram_icon">instagram icon</string>
     <string name="visit_our_facebook_page">Visit our Facebook Page</string>
     <string name="instagram_message">Follow us on Instagram!</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="need_an_account">Need an account?</string>
 </resources>
