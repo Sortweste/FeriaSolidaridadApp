@@ -5,12 +5,11 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.card.MaterialCardView
 import com.sort.feriaapp.R
 import com.sort.feriaapp.data.minimals.EventMinimal
 import com.sort.feriaapp.databinding.CardViewEventsBinding
-import com.sort.feriaapp.helpers.BindAdapter
-import com.sort.feriaapp.helpers.RecyclerViewClickListener
+import com.sort.feriaapp.interfaces.BindAdapter
+import com.sort.feriaapp.interfaces.RecyclerViewClickListener
 
 class RecyclerViewEventsAdapter(private val listener: RecyclerViewClickListener<EventMinimal>, val paramMatchParent : Boolean): RecyclerView.Adapter<RecyclerViewEventsAdapter.ViewHolder>(), BindAdapter<EventMinimal> {
 

@@ -10,8 +10,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebChromeClient
 import android.webkit.WebView
-import android.widget.LinearLayout
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -25,7 +23,7 @@ import com.sort.feriaapp.R
 import com.sort.feriaapp.adapters.RecyclerViewEventsAdapter
 import com.sort.feriaapp.data.minimals.EventMinimal
 import com.sort.feriaapp.databinding.FragmentInstitutionDisplayBinding
-import com.sort.feriaapp.helpers.RecyclerViewClickListener
+import com.sort.feriaapp.interfaces.RecyclerViewClickListener
 import com.sort.feriaapp.utils.FACEBOOK_PACKAGE
 import com.sort.feriaapp.utils.INSTAGRAM_PACKAGE
 import com.sort.feriaapp.utils.InjectorUtils

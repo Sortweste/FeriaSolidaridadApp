@@ -1,4 +1,4 @@
-package com.sort.feriaapp.helpers
+package com.sort.feriaapp.interfaces
 
 import android.view.View
 

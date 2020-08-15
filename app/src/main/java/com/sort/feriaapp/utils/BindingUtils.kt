@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.sort.feriaapp.helpers.BindAdapter
+import com.sort.feriaapp.interfaces.BindAdapter
 
 @BindingAdapter("data")
 @Suppress("UNCHECKED_CAST")

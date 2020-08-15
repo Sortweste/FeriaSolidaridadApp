@@ -2,28 +2,21 @@ package com.sort.feriaapp.ui
 
 import android.content.res.Configuration
 import android.os.Bundle
-import android.text.Layout
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.android.material.card.MaterialCardView
-import com.sort.feriaapp.R
 import com.sort.feriaapp.adapters.RecyclerViewEventsAdapter
 import com.sort.feriaapp.data.minimals.EventMinimal
-import com.sort.feriaapp.databinding.CardViewEventsBinding
 import com.sort.feriaapp.databinding.FragmentMediaBinding
-import com.sort.feriaapp.helpers.RecyclerViewClickListener
+import com.sort.feriaapp.interfaces.RecyclerViewClickListener
 import com.sort.feriaapp.utils.InjectorUtils
 import com.sort.feriaapp.viewmodels.EventViewModel
-import kotlinx.android.synthetic.main.card_view_events.view.*
 
 
 class MediaFragment : Fragment(), RecyclerViewClickListener<EventMinimal> {
