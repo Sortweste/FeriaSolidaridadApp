@@ -1,5 +1,6 @@
 package com.sort.feriaapp.viewmodels
 
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
@@ -9,7 +10,7 @@ import com.sort.feriaapp.data.repositories.UserRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class UserViewModel(private val userRepository: UserRepository): ViewModel() {
+class UserViewModel @ViewModelInject constructor(private val userRepository: UserRepository): ViewModel() {
 
     fun insert(user: User) = viewModelScope.launch(Dispatchers.IO) {
         userRepository.insertUser(user)

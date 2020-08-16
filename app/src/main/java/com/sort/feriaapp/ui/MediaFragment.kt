@@ -17,16 +17,15 @@ import com.sort.feriaapp.databinding.FragmentMediaBinding
 import com.sort.feriaapp.interfaces.RecyclerViewClickListener
 import com.sort.feriaapp.utils.InjectorUtils
 import com.sort.feriaapp.viewmodels.EventViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class MediaFragment : Fragment(), RecyclerViewClickListener<EventMinimal> {
 
     private var _binding: FragmentMediaBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel: EventViewModel by viewModels{
-        InjectorUtils.provideEventViewModelFactory(this)
-    }
+    private val viewModel: EventViewModel by viewModels()
 
     private lateinit var adapter: RecyclerViewEventsAdapter
 

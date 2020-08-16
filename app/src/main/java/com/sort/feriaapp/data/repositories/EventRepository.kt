@@ -4,19 +4,12 @@ import com.sort.feriaapp.data.dao.EventDao
 import com.sort.feriaapp.data.minimals.EventMinimal
 import com.sort.feriaapp.utils.SafeApiRequest
 import kotlinx.coroutines.flow.Flow
+import javax.inject.Inject
 
-class EventRepository(private val eventDao: EventDao): SafeApiRequest() {
+class EventRepository @Inject constructor(private val eventDao: EventDao) {
 
     val getAllEvents: Flow<List<EventMinimal>> = eventDao.getAllEventsMinimal()
 
     fun getEventById(id: Long) = eventDao.getEventById(id)
-
-    companion object {
-        @Volatile private var instance: EventRepository? = null
-        fun getInstance(eventDao: EventDao) =
-            instance ?: synchronized(this){
-                instance ?: EventRepository(eventDao).also { instance = it }
-            }
-    }
 
 }
