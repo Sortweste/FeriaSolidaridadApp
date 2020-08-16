@@ -1,4 +1,4 @@
-package com.sort.feriaapp.ui
+package com.sort.feriaapp.ui.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -11,9 +11,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.sort.feriaapp.R
 import com.sort.feriaapp.databinding.FragmentEventDetailBinding
+import com.sort.feriaapp.ui.EventDetailFragmentArgs
 import com.sort.feriaapp.utils.AlertDialog
 import com.sort.feriaapp.utils.InjectorUtils
 import com.sort.feriaapp.viewmodels.EventDetailViewModel

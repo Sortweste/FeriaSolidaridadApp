@@ -1,4 +1,4 @@
-package com.sort.feriaapp
+package com.sort.feriaapp.ui.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -10,8 +10,8 @@ import android.view.View
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination
 import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
+import com.sort.feriaapp.R
 import com.sort.feriaapp.databinding.ActivityMainBinding
 
 

@@ -10,7 +10,6 @@ import com.sort.feriaapp.viewmodels.*
 
 object InjectorUtils {
 
-
     fun provideInstitutionDetailVieModelFactory(context: Context, institutionId: Long): InstitutionDetailViewModelFactory{
         return InstitutionDetailViewModelFactory(getInstitutionRepository(context), institutionId)
     }

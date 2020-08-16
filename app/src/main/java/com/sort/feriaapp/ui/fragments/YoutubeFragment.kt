@@ -1,4 +1,4 @@
-package com.sort.feriaapp.ui
+package com.sort.feriaapp.ui.fragments
 
 import android.widget.Toast
 import com.google.android.youtube.player.YouTubeInitializationResult

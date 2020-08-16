@@ -3,6 +3,8 @@ package com.sort.feriaapp.di
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.sort.feriaapp.network.RequestInterceptor
+import com.sort.feriaapp.network.remotes.EventRemoteDataSource
+import com.sort.feriaapp.network.remotes.UserRemoteDataSource
 import com.sort.feriaapp.network.services.EventService
 import com.sort.feriaapp.network.services.UserService
 import com.sort.feriaapp.utils.BASE_URL
@@ -43,5 +45,13 @@ object RetrofitModule {
     @Singleton
     @Provides
     fun provideEventService(retrofit: Retrofit): EventService = retrofit.create(EventService::class.java)
+
+    @Singleton
+    @Provides
+    fun provideUserRemoteDataSource(userService: UserService) = UserRemoteDataSource(userService)
+
+    @Singleton
+    @Provides
+    fun provideEventRemoteDataSource(eventService: EventService) = EventRemoteDataSource(eventService)
 
 }

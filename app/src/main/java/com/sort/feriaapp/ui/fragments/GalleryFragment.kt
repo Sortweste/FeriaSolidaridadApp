@@ -1,4 +1,4 @@
-package com.sort.feriaapp.ui
+package com.sort.feriaapp.ui.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

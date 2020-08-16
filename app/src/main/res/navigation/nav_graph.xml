@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.sort.feriaapp.ui.HomeFragment"
+        android:name="com.sort.feriaapp.ui.fragments.HomeFragment"
         android:label="Home"
         tools:layout="@layout/fragment_home">
         <action
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/mediaFragment"
-        android:name="com.sort.feriaapp.ui.MediaFragment"
+        android:name="com.sort.feriaapp.ui.fragments.MediaFragment"
         android:label="Media"
         tools:layout="@layout/fragment_media" >
         <action
@@ -27,12 +27,12 @@
     </fragment>
     <fragment
         android:id="@+id/galleryFragment"
-        android:name="com.sort.feriaapp.ui.GalleryFragment"
+        android:name="com.sort.feriaapp.ui.fragments.GalleryFragment"
         android:label="Gallery"
         tools:layout="@layout/fragment_gallery" />
     <fragment
         android:id="@+id/institutionDetailFragment"
-        android:name="com.sort.feriaapp.ui.InstitutionDetailFragment"
+        android:name="com.sort.feriaapp.ui.fragments.InstitutionDetailFragment"
         android:label="InstitutionDetailFragment"
         tools:layout="@layout/fragment_institution_display" >
         <argument
@@ -45,7 +45,7 @@
     </fragment>
     <fragment
         android:id="@+id/eventDetailFragment"
-        android:name="com.sort.feriaapp.ui.EventDetailFragment"
+        android:name="com.sort.feriaapp.ui.fragments.EventDetailFragment"
         android:label="EventDetailFragment"
         tools:layout="@layout/fragment_event_detail">
         <argument

@@ -1,4 +1,4 @@
-package com.sort.feriaapp.ui
+package com.sort.feriaapp.ui.fragments
 
 import android.content.res.Configuration
 import android.os.Bundle
@@ -15,7 +15,7 @@ import com.sort.feriaapp.adapters.RecyclerViewAdapter
 import com.sort.feriaapp.data.Institution
 import com.sort.feriaapp.databinding.FragmentHomeBinding
 import com.sort.feriaapp.interfaces.RecyclerViewClickListener
-import com.sort.feriaapp.utils.InjectorUtils
+import com.sort.feriaapp.ui.HomeFragmentDirections
 import com.sort.feriaapp.viewmodels.InstitutionViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -85,7 +85,10 @@ class HomeFragment : Fragment(), RecyclerViewClickListener<Institution>{
 
 
     override fun onCardViewClick(view: View, obj: Institution) {
-        val action = HomeFragmentDirections.actionHomeFragmentToInstitutionDetailFragment(obj.id)
+        val action =
+            HomeFragmentDirections.actionHomeFragmentToInstitutionDetailFragment(
+                obj.id
+            )
         view.findNavController().navigate(action)
     }
 

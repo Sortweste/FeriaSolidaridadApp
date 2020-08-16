@@ -1,4 +1,4 @@
-package com.sort.feriaapp.ui
+package com.sort.feriaapp.ui.fragments
 
 import android.content.ActivityNotFoundException
 import android.content.Intent
@@ -24,6 +24,8 @@ import com.sort.feriaapp.adapters.RecyclerViewEventsAdapter
 import com.sort.feriaapp.data.minimals.EventMinimal
 import com.sort.feriaapp.databinding.FragmentInstitutionDisplayBinding
 import com.sort.feriaapp.interfaces.RecyclerViewClickListener
+import com.sort.feriaapp.ui.InstitutionDetailFragmentArgs
+import com.sort.feriaapp.ui.InstitutionDetailFragmentDirections
 import com.sort.feriaapp.utils.FACEBOOK_PACKAGE
 import com.sort.feriaapp.utils.INSTAGRAM_PACKAGE
 import com.sort.feriaapp.utils.InjectorUtils
@@ -122,7 +124,10 @@ class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMin
     }
 
     override fun onCardViewClick(view: View, obj: EventMinimal) {
-        val action = InstitutionDetailFragmentDirections.actionInstitutionDetailFragmentToEventDetailFragment(obj.id)
+        val action =
+            InstitutionDetailFragmentDirections.actionInstitutionDetailFragmentToEventDetailFragment(
+                obj.id
+            )
         view.findNavController().navigate(action)
     }
 
