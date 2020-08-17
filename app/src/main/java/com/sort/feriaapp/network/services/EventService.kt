@@ -7,6 +7,6 @@ import retrofit2.http.GET
 interface EventService {
 
     @GET("/events")
-    suspend fun fetchEvents(): Response<EventResponse>
+    suspend fun fetchEvents(): Response<List<EventResponse>>
 
 }

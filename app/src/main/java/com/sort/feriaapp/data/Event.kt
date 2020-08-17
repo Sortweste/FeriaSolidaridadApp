@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "events")
 data class Event (
-    @PrimaryKey val id: Long,
+    @PrimaryKey val id: String,
     val title: String,
     @ColumnInfo(name = "image_url") val imageURL: String,
     val link: String?,

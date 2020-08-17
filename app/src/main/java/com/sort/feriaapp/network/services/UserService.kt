@@ -23,6 +23,6 @@ interface UserService {
     suspend fun unsubscribe(@Path("eventId") eventId: String, @Header("Authorization") token: String): Response<MessageResponse>
 
     @GET("/user/events")
-    suspend fun getAttendEvent(@Header("Authorization") token: String): Response<EventResponse>
+    suspend fun getAttendEvent(@Header("Authorization") token: String): Response<List<EventResponse>>
 
 }
