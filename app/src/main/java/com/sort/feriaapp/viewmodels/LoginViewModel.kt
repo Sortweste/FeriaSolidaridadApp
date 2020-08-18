@@ -10,7 +10,7 @@ import com.sort.feriaapp.network.dtos.LoginDTO
 
 class LoginViewModel @ViewModelInject constructor(private val repository: UserRepository): ViewModel(){
 
-    var inputEmail = MutableLiveData<String>()
+    var inputEmail = MutableLiveData<String?>()
     val inputPassword = MutableLiveData<String>()
     val errorEmail = MutableLiveData<String>()
     val errorPassword = MutableLiveData<String>()
@@ -24,13 +24,13 @@ class LoginViewModel @ViewModelInject constructor(private val repository: UserRe
         if(inputEmail.value.isNullOrBlank())
             errorEmail.value = "Ingrese correo electrónico"
         else{
-            errorEmail.value = ""
+            errorEmail.value = null
             return false
         }
         if(inputPassword.value.isNullOrBlank())
             errorPassword.value = "Ingrese contraseña"
         else {
-            errorPassword.value = ""
+            errorPassword.value = null
             return false
         }
         //if(!inputEmail.value.isNullOrEmpty() && Patterns.EMAIL_ADDRESS.matcher().matches())
