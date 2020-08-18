@@ -52,5 +52,23 @@
             android:name="eventId"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/newsFragment"
+        android:name="com.sort.feriaapp.ui.fragments.NewsFragment"
+        android:label="News"
+        tools:layout="@layout/fragment_news">
+        <action
+            android:id="@+id/action_newsFragment_to_newsDetailFragment"
+            app:destination="@id/newsDetailFragment"
+            app:enterAnim="@anim/fragment_open_enter" />
+    </fragment>
+    <fragment
+        android:id="@+id/newsDetailFragment"
+        android:name="com.sort.feriaapp.ui.fragments.NewsDetailFragment"
+        android:label="NewsDetailFragment" >
+        <argument
+            android:name="newsId"
+            app:argType="string" />
+    </fragment>
 
 </navigation>

@@ -1,5 +1,6 @@
 package com.sort.feriaapp.ui.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -47,7 +48,9 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun startIntent(){
-
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 
     override fun onDestroy() {

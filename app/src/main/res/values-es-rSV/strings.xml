@@ -27,4 +27,6 @@
     <string name="password_hint">Contraseña</string>
     <string name="sign_up">Regístrese</string>
     <string name="need_an_account">¿No tiene cuenta?</string>
+    <string name="representative_news_image">Imagen Representativa para una noticia</string>
+    <string name="bottom_nav_news">Novedades</string>
 </resources>

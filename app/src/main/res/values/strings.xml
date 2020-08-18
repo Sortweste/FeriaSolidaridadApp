@@ -116,4 +116,6 @@
     <string name="password_hint">Password</string>
     <string name="sign_up">Sign Up</string>
     <string name="need_an_account">Need an account?</string>
+    <string name="representative_news_image">Representative News Image</string>
+    <string name="bottom_nav_news">News</string>
 </resources>

@@ -9,6 +9,7 @@ import androidx.work.WorkManager
 import com.sort.feriaapp.data.AppDatabase
 import com.sort.feriaapp.data.dao.EventDao
 import com.sort.feriaapp.data.dao.InstitutionDao
+import com.sort.feriaapp.data.dao.NewsDao
 import com.sort.feriaapp.data.dao.UserDao
 import com.sort.feriaapp.utils.DATABASE_NAME
 import com.sort.feriaapp.workers.SeedDatabaseWorker
@@ -48,5 +49,9 @@ object RoomModule {
     @Singleton
     @Provides
     fun provideUserDao(appDatabase: AppDatabase): UserDao = appDatabase.userDao()
+
+    @Singleton
+    @Provides
+    fun provideNewsDao(appDatabase: AppDatabase): NewsDao = appDatabase.newsDao()
 
 }
