@@ -37,7 +37,7 @@
         tools:layout="@layout/fragment_institution_display" >
         <argument
             android:name="institutionId"
-            app:argType="long" />
+            app:argType="string" />
         <action
             android:id="@+id/action_institutionDetailFragment_to_eventDetailFragment"
             app:destination="@id/eventDetailFragment"
@@ -50,7 +50,7 @@
         tools:layout="@layout/fragment_event_detail">
         <argument
             android:name="eventId"
-            app:argType="long" />
+            app:argType="string" />
     </fragment>
 
 </navigation>

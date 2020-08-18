@@ -34,3 +34,15 @@ fun <T, A> performGetOperation(databaseQuery: () -> Flow<T>, networkCall: suspen
             emitSource(source)
         }
     }
+
+fun <T> performFetchOperation(networkCall: suspend () -> Resource<T>, saveCallResult: suspend (T) -> Unit) : LiveData<Resource<T>> =
+
+    liveData(Dispatchers.IO) {
+        emit(Resource.loading())
+        val responseStatus = networkCall.invoke()
+        if (responseStatus.status == Resource.Status.SUCCESS) {
+            saveCallResult(responseStatus.data!!)
+        } else if (responseStatus.status == Resource.Status.ERROR) {
+            emit(Resource.error(responseStatus.message!!))
+        }
+    }

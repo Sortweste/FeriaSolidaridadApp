@@ -16,6 +16,6 @@ abstract class EventDao: BaseDao<Event> {
     abstract fun getAllEventsMinimal(): Flow<List<EventMinimal>>
 
     @Query("SELECT * FROM events WHERE id=:id")
-    abstract fun getEventById(id: Long): Flow<Event>
+    abstract fun getEventById(id: String): Flow<Event>
 
 }

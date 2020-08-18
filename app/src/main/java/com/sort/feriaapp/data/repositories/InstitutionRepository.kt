@@ -14,7 +14,7 @@ class InstitutionRepository @Inject constructor (private val institutionDao: Ins
 
     val institutionsWithEvents: Flow<List<InstitutionWithEvents>> = institutionDao.getAllInstitutionsInfo()
 
-    fun getInstitutionInfoById(id: Long) = institutionDao.getInstitutionInfoById(id)
+    fun getInstitutionInfoById(id: String) = institutionDao.getInstitutionInfoById(id)
 
 
     suspend fun insertInstitution(institution: Institution){

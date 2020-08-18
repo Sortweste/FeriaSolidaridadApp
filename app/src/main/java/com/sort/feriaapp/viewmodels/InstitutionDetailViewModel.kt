@@ -1,15 +1,16 @@
 package com.sort.feriaapp.viewmodels
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.asLiveData
-import androidx.lifecycle.viewModelScope
+import androidx.hilt.Assisted
+import androidx.hilt.lifecycle.ViewModelInject
+import androidx.lifecycle.*
 import com.sort.feriaapp.data.InstitutionWithEvents
 import com.sort.feriaapp.data.minimals.EventMinimal
 import com.sort.feriaapp.data.repositories.InstitutionRepository
 import kotlinx.coroutines.launch
 
-class InstitutionDetailViewModel(private val institutionRepository: InstitutionRepository, private val institutionId: Long): ViewModel() {
+class InstitutionDetailViewModel @ViewModelInject constructor(private val institutionRepository: InstitutionRepository, @Assisted savedStateHandle: SavedStateHandle): ViewModel() {
+
+    private val institutionId: String = savedStateHandle["institutionId"]!!
 
     private val _getInstitutionInfo: LiveData<InstitutionWithEvents> = institutionRepository.getInstitutionInfoById(institutionId).asLiveData()
 

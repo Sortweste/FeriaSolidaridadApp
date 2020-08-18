@@ -28,26 +28,19 @@ import com.sort.feriaapp.ui.InstitutionDetailFragmentArgs
 import com.sort.feriaapp.ui.InstitutionDetailFragmentDirections
 import com.sort.feriaapp.utils.FACEBOOK_PACKAGE
 import com.sort.feriaapp.utils.INSTAGRAM_PACKAGE
-import com.sort.feriaapp.utils.InjectorUtils
 import com.sort.feriaapp.utils.TWITTER_PACKAGE
 import com.sort.feriaapp.viewmodels.InstitutionDetailViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMinimal>, View.OnClickListener{
-
-    private val args: InstitutionDetailFragmentArgs by navArgs()
 
     private var _binding: FragmentInstitutionDisplayBinding? = null
     private val binding get() = _binding!!
 
     private lateinit var adapter: RecyclerViewEventsAdapter
 
-    private val institutionDetailViewModel: InstitutionDetailViewModel by viewModels {
-        InjectorUtils.provideInstitutionDetailVieModelFactory(
-            this.requireActivity(),
-            args.institutionId
-        )
-    }
+    private val institutionDetailViewModel: InstitutionDetailViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

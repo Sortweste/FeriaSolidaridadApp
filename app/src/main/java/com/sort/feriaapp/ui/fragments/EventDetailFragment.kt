@@ -15,9 +15,10 @@ import com.sort.feriaapp.R
 import com.sort.feriaapp.databinding.FragmentEventDetailBinding
 import com.sort.feriaapp.ui.EventDetailFragmentArgs
 import com.sort.feriaapp.utils.AlertDialog
-import com.sort.feriaapp.utils.InjectorUtils
 import com.sort.feriaapp.viewmodels.EventDetailViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class EventDetailFragment : Fragment(){
 
     private val args: EventDetailFragmentArgs by navArgs()
@@ -25,9 +26,7 @@ class EventDetailFragment : Fragment(){
     private var _binding : FragmentEventDetailBinding? = null
     private val binding get() = _binding!!
 
-    private val eventDetailViewModel: EventDetailViewModel by viewModels {
-        InjectorUtils.provideEventDetailViewModelFactory(this.requireActivity(), args.eventId)
-    }
+    private val eventDetailViewModel: EventDetailViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

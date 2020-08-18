@@ -18,6 +18,6 @@ abstract class InstitutionDao: BaseDao<Institution> {
 
     @Transaction
     @Query("SELECT * FROM institutions WHERE id=:id")
-    abstract fun getInstitutionInfoById(id: Long): Flow<InstitutionWithEvents>
+    abstract fun getInstitutionInfoById(id: String): Flow<InstitutionWithEvents>
 
 }

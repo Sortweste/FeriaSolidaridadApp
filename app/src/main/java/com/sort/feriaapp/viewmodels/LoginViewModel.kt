@@ -1,33 +1,40 @@
 package com.sort.feriaapp.viewmodels
 
-import androidx.databinding.BaseObservable
-import androidx.databinding.Bindable
-import androidx.databinding.Observable
+import android.util.Patterns
+import androidx.hilt.lifecycle.ViewModelInject
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.sort.feriaapp.data.repositories.UserRepository
-
-class LoginViewModel(private val repository: UserRepository): ViewModel(){
-
-    var inputEmail: String = ""
-
-    val inputPassword: String = ""
+import com.sort.feriaapp.network.dtos.LoginDTO
 
 
-    /*private val _getUserInfo: LiveData<User> = userRepository.getUser().asLiveData()
+class LoginViewModel @ViewModelInject constructor(private val repository: UserRepository): ViewModel(){
 
-val institutionInfo: LiveData<User>
-get() = _getUserInfo*/
+    var inputEmail = MutableLiveData<String>()
+    val inputPassword = MutableLiveData<String>()
+    val errorEmail = MutableLiveData<String>()
+    val errorPassword = MutableLiveData<String>()
+
+    fun login() =
+        //if(performValidation())
+            repository.login(LoginDTO(inputEmail.value.toString(), inputPassword.value.toString()))
 
 
-    private val _emailEditTextContent = 1
-
-
-    fun login(){
-
-    }
-
-    private fun performValidation(){
-
+    private fun performValidation(): Boolean{
+        if(inputEmail.value.isNullOrBlank())
+            errorEmail.value = "Ingrese correo electrónico"
+        else{
+            errorEmail.value = ""
+            return false
+        }
+        if(inputPassword.value.isNullOrBlank())
+            errorPassword.value = "Ingrese contraseña"
+        else {
+            errorPassword.value = ""
+            return false
+        }
+        //if(!inputEmail.value.isNullOrEmpty() && Patterns.EMAIL_ADDRESS.matcher().matches())
+        return true
     }
 
 }

@@ -20,6 +20,8 @@ class UserRepository @Inject constructor(private val userDao: UserDao, private v
 
     fun register(userDTO: UserDTO) = performPostOperation { userRemoteDataSource.register(userDTO) }
 
+    fun subscribe(eventId: String, token:String) = performPostOperation { userRemoteDataSource.subscribe(eventId, token) }
+
     //fun getAttendEvent(token: String) = performGetOperation(networkCall = {userRemoteDataSource.getAttendEvent(token)}, saveCallResult = {Unit})
 
     suspend fun insertUser(user: User){

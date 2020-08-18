@@ -10,6 +10,6 @@ class EventRepository @Inject constructor(private val eventDao: EventDao) {
 
     val getAllEvents: Flow<List<EventMinimal>> = eventDao.getAllEventsMinimal()
 
-    fun getEventById(id: Long) = eventDao.getEventById(id)
+    fun getEventById(id: String) = eventDao.getEventById(id)
 
 }
