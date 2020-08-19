@@ -13,15 +13,15 @@
         android:title="@string/bottom_nav_image"
         />
     <item
+        android:id="@+id/newsFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_action_news"
+        android:title="@string/bottom_nav_news"
+        />
+    <item
         android:id="@+id/galleryFragment"
         android:enabled="true"
         android:icon="@drawable/ic_user"
         android:title="@string/bottom_nav_video"
-        />
-    <item
-        android:id="@+id/newsFragment"
-        android:enabled="true"
-        android:icon="@drawable/ic_user"
-        android:title="@string/bottom_nav_news"
         />
 </menu>

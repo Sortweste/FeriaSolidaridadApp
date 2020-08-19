@@ -14,7 +14,9 @@ import androidx.navigation.fragment.findNavController
 import com.sort.feriaapp.R
 import com.sort.feriaapp.databinding.FragmentNewsDetailBinding
 import com.sort.feriaapp.viewmodels.NewsDetailViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class NewsDetailFragment : Fragment() {
 
     private var _binding : FragmentNewsDetailBinding? = null

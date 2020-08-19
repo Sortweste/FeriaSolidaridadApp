@@ -10,7 +10,7 @@ abstract class SafeApiRequest {
         return if (response.isSuccessful)
             Resource.success(response.body()!!)
         else
-            error(response.code().toString())
+            error("${response.code()} ${response.message()}")
     }
 
     private fun <T> error(message: String): Resource<T> {

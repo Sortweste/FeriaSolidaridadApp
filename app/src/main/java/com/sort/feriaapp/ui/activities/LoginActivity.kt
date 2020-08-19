@@ -9,6 +9,7 @@ import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import com.sort.feriaapp.databinding.ActivityLoginBinding
+import com.sort.feriaapp.network.responses.TokenResponse
 import com.sort.feriaapp.storage.SharedPreferencesManager
 import com.sort.feriaapp.utils.Resource
 import com.sort.feriaapp.utils.TOKEN_KEY
@@ -50,8 +51,8 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
             when (it.status) {
                 Resource.Status.SUCCESS -> {
                     binding.progressBar.visibility = View.GONE
-                    Toast.makeText(this, it.data.toString(), Toast.LENGTH_LONG).show()
-                    //mSharedPreferences.putData(TOKEN_KEY, it.data.toString())
+                    Toast.makeText(this, (it.data as TokenResponse).token, Toast.LENGTH_LONG).show()
+                    //mSharedPreferences.putData(TOKEN_KEY, (it.data as TokenResponse).token)
                     startIntent()
                 }
                 Resource.Status.ERROR -> {

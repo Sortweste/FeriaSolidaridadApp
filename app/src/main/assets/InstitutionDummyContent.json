@@ -1,6 +1,6 @@
 [
   {
-    "id": 1,
+    "id": "1a",
     "description": "The Linux Foundation is dedicated to building sustainable ecosystems around open source projects to accelerate technology development and industry adoption.\nFounded in 2000, the Linux Foundation provides unparalleled support for open source communities through financial and intellectual resources, infrastructure, services, events, and training. Working together, the Linux Foundation and its projects form the most ambitious and successful investment in the creation of shared technology.",
     "name": "Linux Foundation",
     "summary": "Consorcio tecnológico sin ánimo de lucro establecido para adoptar el crecimiento de Linux.",
@@ -16,7 +16,7 @@
     "facebook": "TheLinuxFoundation"
   },
   {
-    "id": 2,
+    "id": "2a",
     "description": "Node.js es similar en diseño y está influenciado por sistemas como Event Machine de Ruby y Twisted de Python. Pero Node.js lleva el modelo de eventos un poco más allá. Incluye un bucle de eventos como runtime de ejecución en lugar de una biblioteca. En otros sistemas siempre existe una llamada de bloqueo para iniciar el bucle de eventos. Por lo general, el comportamiento se define mediante devoluciones callbacks de llamada al iniciarse un script y al final se inicia un servidor a través de una llamada de bloqueo como EventMachine::run(). En Node.js, no existe como tal la llamada de inicio del evento de bucle o start-the-event-loop. Node.js simplemente entra en el bucle de eventos después de ejecutar el script de entrada y sale cuando no hay más devoluciones callbacks de llamada para realizar. Se comporta de una forma similar a JavaScript en el navegador - el bucle de eventos está oculto al usuario.\n\nHTTP es un elemento destacado en Node.js, diseñado teniendo en cuenta la transmisión de operaciones con streaming y baja latencia. Esto hace que Node.js sea muy adecuado para la base de una librería o un framework web.",
     "name": "Node js",
     "summary": "Entorno en tiempo de ejecución multiplataforma, de código abierto, para la capa del servidor basado en el lenguaje de programación JavaScrip",
@@ -32,7 +32,7 @@
     "facebook": ""
   },
   {
-    "id": 3,
+    "id": "3a",
     "description": "Ruby on Rails is not a minimalist framework, it's a metropolis. One filled with all the major institutions needed to run a large, sprawling application like Basecamp or GitHub or Shopify.\n\nThis means there's a lot to learn! But it also means you can learn it piece by piece. You do not need to be an expert in all facets of Ruby on Rails to get started on creating a great application.\n\nThe spine of a Rails application is the Model-View-Controller pattern that organizes programming logic into three major layers. The model is where your so-called business logic lives. This is where you calculate whether the next invoice is due or how many todos are left to be completed on a project. The controller is what accepts clicks and taps from the user, routes the commands to the model, and then renders HTML or JSON templates as the view.",
     "name": "Ruby on Rails",
     "summary": "Framework de aplicaciones web de código abierto escrito en el lenguaje de programación Ruby",
@@ -48,7 +48,7 @@
     "facebook": ""
   },
   {
-    "id": 4,
+    "id": "4a",
     "description": "",
     "name": "Flutter",
     "summary": "SDK de código fuente abierto de desarrollo de aplicaciones móviles creado por Google. ",
@@ -64,7 +64,7 @@
     "facebook": ""
   },
   {
-    "id": 5,
+    "id": "5a",
     "description": "",
     "name": "C#",
     "summary": "Lenguaje de programación multiparadigma desarrollado y estandarizado por la empresa Microsoft como parte de su plataforma .NET",
@@ -80,7 +80,7 @@
     "facebook": ""
   },
   {
-    "id": 6,
+    "id": "6a",
     "description": "",
     "name": "JavaScript",
     "summary": "Lenguaje de programación interpretado, dialecto del estándar ECMAScript.",

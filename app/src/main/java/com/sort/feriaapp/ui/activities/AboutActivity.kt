@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.sort.feriaapp.databinding.ActivityAboutBinding
 
+
 class AboutActivity : AppCompatActivity() {
 
     private var _binding: ActivityAboutBinding? = null
