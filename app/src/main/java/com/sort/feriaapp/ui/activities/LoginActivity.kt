@@ -9,9 +9,12 @@ import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import com.sort.feriaapp.databinding.ActivityLoginBinding
+import com.sort.feriaapp.storage.SharedPreferencesManager
 import com.sort.feriaapp.utils.Resource
+import com.sort.feriaapp.utils.TOKEN_KEY
 import com.sort.feriaapp.viewmodels.LoginViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class LoginActivity : AppCompatActivity() {
@@ -21,8 +24,12 @@ class LoginActivity : AppCompatActivity() {
 
     private val loginViewModel: LoginViewModel by viewModels ()
 
+    @Inject
+    lateinit var mSharedPreferences: SharedPreferencesManager
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        verifySession()
         _binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -32,11 +39,18 @@ class LoginActivity : AppCompatActivity() {
         initObservers()
     }
 
+    private fun verifySession(){
+        if(!mSharedPreferences.getData(TOKEN_KEY).isNullOrEmpty())
+            startIntent()
+    }
+
     private fun initObservers(){
         loginViewModel.login().observe(this, Observer {
             when(it.status){
                Resource.Status.SUCCESS -> {
                    binding.progressBar.visibility = View.GONE
+                   Toast.makeText(this, it.data.toString(), Toast.LENGTH_LONG).show()
+                   //mSharedPreferences.putData(TOKEN_KEY, it.data.toString())
                    startIntent()
                }
                 Resource.Status.ERROR -> {

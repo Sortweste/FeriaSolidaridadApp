@@ -13,7 +13,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.sort.feriaapp.R
 import com.sort.feriaapp.databinding.FragmentEventDetailBinding
-import com.sort.feriaapp.ui.EventDetailFragmentArgs
+//import com.sort.feriaapp.ui.EventDetailFragmentArgs
 import com.sort.feriaapp.utils.AlertDialog
 import com.sort.feriaapp.viewmodels.EventDetailViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -21,7 +21,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class EventDetailFragment : Fragment(){
 
-    private val args: EventDetailFragmentArgs by navArgs()
+    //private val args: EventDetailFragmentArgs by navArgs()
 
     private var _binding : FragmentEventDetailBinding? = null
     private val binding get() = _binding!!

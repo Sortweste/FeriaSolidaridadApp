@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">FeriaApp</string>
+    <string name="app_name">Feria de la Solidaridad</string>
     <string name="bottom_nav_home">Home</string>
     <string name="bottom_nav_image">Events</string>
     <string name="bottom_nav_video">Profile</string>

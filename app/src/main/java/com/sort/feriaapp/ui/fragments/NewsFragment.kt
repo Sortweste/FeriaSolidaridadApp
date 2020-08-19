@@ -100,7 +100,7 @@ class NewsFragment : Fragment(), RecyclerViewClickListener<NewsMinimal> {
     }
 
     override fun onCardViewClick(view: View, obj: NewsMinimal) {
-        val action = NewsFragmentDirections.actionHomeFragmentToInstitutionDetailFragment(obj.id)
+        val action = NewsFragmentDirections.actionNewsFragmentToNewsDetailFragment(obj.id)
         view.findNavController().navigate(action)
     }
 }

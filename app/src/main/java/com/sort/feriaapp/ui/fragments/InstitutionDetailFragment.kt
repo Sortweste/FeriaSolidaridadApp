@@ -24,8 +24,8 @@ import com.sort.feriaapp.adapters.RecyclerViewEventsAdapter
 import com.sort.feriaapp.data.minimals.EventMinimal
 import com.sort.feriaapp.databinding.FragmentInstitutionDisplayBinding
 import com.sort.feriaapp.interfaces.RecyclerViewClickListener
-import com.sort.feriaapp.ui.InstitutionDetailFragmentArgs
-import com.sort.feriaapp.ui.InstitutionDetailFragmentDirections
+//import com.sort.feriaapp.ui.InstitutionDetailFragmentArgs
+//import com.sort.feriaapp.ui.InstitutionDetailFragmentDirections
 import com.sort.feriaapp.utils.FACEBOOK_PACKAGE
 import com.sort.feriaapp.utils.INSTAGRAM_PACKAGE
 import com.sort.feriaapp.utils.TWITTER_PACKAGE

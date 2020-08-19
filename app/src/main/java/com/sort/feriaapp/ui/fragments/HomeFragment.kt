@@ -15,7 +15,6 @@ import com.sort.feriaapp.adapters.RecyclerViewAdapter
 import com.sort.feriaapp.data.Institution
 import com.sort.feriaapp.databinding.FragmentHomeBinding
 import com.sort.feriaapp.interfaces.RecyclerViewClickListener
-import com.sort.feriaapp.ui.HomeFragmentDirections
 import com.sort.feriaapp.viewmodels.InstitutionViewModel
 import dagger.hilt.android.AndroidEntryPoint
 

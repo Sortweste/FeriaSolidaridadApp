@@ -15,7 +15,7 @@ import com.sort.feriaapp.adapters.RecyclerViewEventsAdapter
 import com.sort.feriaapp.data.minimals.EventMinimal
 import com.sort.feriaapp.databinding.FragmentMediaBinding
 import com.sort.feriaapp.interfaces.RecyclerViewClickListener
-import com.sort.feriaapp.ui.MediaFragmentDirections
+//import com.sort.feriaapp.ui.MediaFragmentDirections
 import com.sort.feriaapp.viewmodels.EventViewModel
 import dagger.hilt.android.AndroidEntryPoint
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">FeriaApp</string>
+    <string name="app_name">Feria de la Solidaridad</string>
     <string name="bottom_nav_home">Instituciones</string>
     <string name="bottom_nav_image">Eventos</string>
     <string name="bottom_nav_video">Perfil</string>
