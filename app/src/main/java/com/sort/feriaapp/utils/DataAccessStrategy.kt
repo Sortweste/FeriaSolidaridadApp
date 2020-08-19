@@ -14,7 +14,7 @@ fun <T> performPostOperation(networkCall: suspend() -> Resource<T>)  =
         if(response.status == Resource.Status.SUCCESS)
             emit(Resource.success(response.data))
         else if(response.status == Resource.Status.ERROR)
-            emit(Resource.error("Error", response.message))
+            emit(Resource.error(response.message.toString(), response.message))
     }
 
 

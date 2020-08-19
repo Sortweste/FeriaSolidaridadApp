@@ -14,15 +14,16 @@ import com.sort.feriaapp.utils.Resource
 import com.sort.feriaapp.utils.TOKEN_KEY
 import com.sort.feriaapp.viewmodels.LoginViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class LoginActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
     private var _binding: ActivityLoginBinding? = null
     private val binding get() = _binding!!
 
-    private val loginViewModel: LoginViewModel by viewModels ()
+    private val loginViewModel: LoginViewModel by viewModels()
 
     @Inject
     lateinit var mSharedPreferences: SharedPreferencesManager
@@ -36,32 +37,35 @@ class LoginActivity : AppCompatActivity() {
         binding.lifecycleOwner = this
         binding.loginViewModel = loginViewModel
 
-        initObservers()
+        binding.buttonGoLogin.setOnClickListener(this)
     }
 
-    private fun verifySession(){
-        if(!mSharedPreferences.getData(TOKEN_KEY).isNullOrEmpty())
+    private fun verifySession() {
+        if (!mSharedPreferences.getData(TOKEN_KEY).isNullOrEmpty())
             startIntent()
     }
 
-    private fun initObservers(){
+    private fun initObservers() {
         loginViewModel.login().observe(this, Observer {
-            when(it.status){
-               Resource.Status.SUCCESS -> {
-                   binding.progressBar.visibility = View.GONE
-                   Toast.makeText(this, it.data.toString(), Toast.LENGTH_LONG).show()
-                   //mSharedPreferences.putData(TOKEN_KEY, it.data.toString())
-                   startIntent()
-               }
+            when (it.status) {
+                Resource.Status.SUCCESS -> {
+                    binding.progressBar.visibility = View.GONE
+                    Toast.makeText(this, it.data.toString(), Toast.LENGTH_LONG).show()
+                    //mSharedPreferences.putData(TOKEN_KEY, it.data.toString())
+                    startIntent()
+                }
                 Resource.Status.ERROR -> {
                     Toast.makeText(this, it.message, Toast.LENGTH_LONG).show()
+                    binding.progressBar.visibility = View.GONE
                 }
-                Resource.Status.LOADING -> {binding.progressBar.visibility = View.VISIBLE}
+                Resource.Status.LOADING -> {
+                    binding.progressBar.visibility = View.VISIBLE
+                }
             }
         })
     }
 
-    private fun startIntent(){
+    private fun startIntent() {
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
         finish()
@@ -70,6 +74,13 @@ class LoginActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
+    }
+
+    override fun onClick(v: View?) {
+        if (loginViewModel.performValidation())
+            lifecycleScope.launch {
+                initObservers()
+            }
     }
 
 }

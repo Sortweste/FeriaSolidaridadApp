@@ -15,23 +15,22 @@ class LoginViewModel @ViewModelInject constructor(private val repository: UserRe
     val errorEmail = MutableLiveData<String>()
     val errorPassword = MutableLiveData<String>()
 
-    fun login() =
-        //if(performValidation())
-            repository.login(LoginDTO(inputEmail.value.toString(), inputPassword.value.toString()))
+    fun login() = repository.login(LoginDTO(inputEmail.value.toString(), inputPassword.value.toString()))
 
-
-    private fun performValidation(): Boolean{
-        if(inputEmail.value.isNullOrBlank())
+    fun performValidation(): Boolean{
+        if(inputEmail.value.isNullOrBlank()) {
             errorEmail.value = "Ingrese correo electrónico"
-        else{
-            errorEmail.value = null
             return false
         }
-        if(inputPassword.value.isNullOrBlank())
+        else{
+            errorEmail.value = null
+        }
+        if(inputPassword.value.isNullOrBlank()) {
             errorPassword.value = "Ingrese contraseña"
+            return false
+        }
         else {
             errorPassword.value = null
-            return false
         }
         //if(!inputEmail.value.isNullOrEmpty() && Patterns.EMAIL_ADDRESS.matcher().matches())
         return true
