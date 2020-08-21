@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">Feria de la Solidaridad</string>
     <string name="bottom_nav_home">Instituciones</string>
-    <string name="bottom_nav_image">Eventos</string>
+    <string name="bottom_nav_image">Proyectos</string>
     <string name="bottom_nav_video">Perfil</string>
 
     <string name="hello_blank_fragment">Soy un Fragmento Vacío</string>
