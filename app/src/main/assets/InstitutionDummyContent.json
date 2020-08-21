@@ -13,7 +13,7 @@
     "website": "http://www.uca.edu.sv/becas-martires/index.php",
     "twitter": "",
     "instagram": "",
-    "facebook": "Programa de Becas Mártires de la UCA"
+    "facebook": "pbecasmartiresuca"
   },
   {
     "id": "2a",
@@ -58,7 +58,7 @@
     "meetingURL": "voluntariado@ninezprimero.org",
     "type": "Event",
     "meetup": "",
-    "website": "www.ninezprimero.org",
+    "website": "http://www.ninezprimero.org",
     "twitter": "",
     "instagram": "ninez_primero",
     "facebook": "fundacionlaninezprimero"
@@ -74,7 +74,7 @@
     "meetingURL": "icsfralalibertad@yahoo.com",
     "type": "Event",
     "meetup": "",
-    "website": "http://www.icsfra.org/",
+    "website": "https://www.icsfra.org/",
     "twitter": "",
     "instagram": "",
     "facebook": "icsfraPuertodeLaLibertad"
@@ -90,10 +90,10 @@
     "meetingURL": "comunicacionesmupi@gmail.com",
     "type": "Event",
     "meetup": "",
-    "website": "www.museo.com.sv",
+    "website": "http://www.museo.com.sv",
     "twitter": "tejiendomemoria",
     "instagram": "museodelapalabraylaimagen",
-    "facebook": "Museo de la Palabra y la Imagen, MUPI"
+    "facebook": "MuseodelaPalabraylaImagen"
   },
   {
     "id": "7a",
@@ -106,7 +106,7 @@
     "meetingURL": "",
     "type": "Event",
     "meetup": "",
-    "website": "www.aiesec.org",
+    "website": "https://www.aiesec.org",
     "twitter": "",
     "instagram": "",
     "facebook": ""

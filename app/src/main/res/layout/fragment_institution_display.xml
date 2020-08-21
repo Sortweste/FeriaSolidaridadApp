@@ -196,7 +196,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:paddingHorizontal="5dp"
-                        android:text="@string/visit_our_facebook_page"
+                        app:facebookText="@{viewmodel.institutionInfo.institution.facebook}"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textColor="@color/facebook"
                         tools:text="Facebook Account"
@@ -228,7 +228,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:paddingHorizontal="5dp"
-                        android:text="@string/instagram_message"
+                        app:instagramText="@{viewmodel.institutionInfo.institution.instagram}"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         tools:text="Instagram Account" />
 

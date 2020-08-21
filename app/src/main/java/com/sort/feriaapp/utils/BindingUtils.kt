@@ -48,6 +48,23 @@ fun setTwitterAccountName(view: TextView, account:String?){
     }
 }
 
+@BindingAdapter("facebookText")
+fun setFacebookAccountName(view: TextView, account:String?){
+    if(!account.isNullOrBlank()){
+        val name: String = "Visitanos en nuestra página de Facebook"
+        view.text = account
+    }
+}
+
+@BindingAdapter("instagramText")
+fun setInstagramAccountName(view: TextView, account:String?){
+    if(!account.isNullOrBlank()){
+        val name: String = "¡Siguenos en Instagram!"
+        view.text = account 
+    }
+}
+
+
 @SuppressWarnings("deprecation")
 @BindingAdapter("htmlFormattedText")
 fun setHTMLFormText(view: TextView, text:String?){

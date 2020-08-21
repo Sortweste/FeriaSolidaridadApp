@@ -152,7 +152,7 @@ class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMin
             when(v?.id){
                 binding.meetupView.id -> { prepareIntent(binding.meetupView.text.toString()) }
                 binding.websiteView.id -> { prepareIntent(binding.websiteView.text.toString()) }
-                binding.facebookView.id -> { prepareIntentSocialMedia(FACEBOOK_PACKAGE, "fb://facewebmodal/f?href=${binding.facebookValue.text}", "https://www.facebook.com/${binding.facebookValue.text}")}
+                binding.facebookView.id -> { prepareIntentSocialMedia(FACEBOOK_PACKAGE, "fb://facewebmodal/f?href=https://www.facebook.com/${binding.facebookValue.text}", "https://www.facebook.com/${binding.facebookValue.text}")}
                 binding.instagramView.id -> { prepareIntentSocialMedia(INSTAGRAM_PACKAGE, "http://instagram.com/_u/${binding.instagramValue.text}", "http://instagram.com/${binding.instagramValue.text}") }
                 binding.twitterView.id -> { prepareIntentSocialMedia(TWITTER_PACKAGE, "twitter://user?screen_name=${binding.twitterValue.text}", "https://twitter.com/${binding.twitterValue.text}")}
             }
