@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity(), NavController.OnDestinationChangedList
 
     override fun onDestinationChanged(controller: NavController, destination: NavDestination, arguments: Bundle?) {
         when(destination.id){
-            R.id.homeFragment, R.id.galleryFragment, R.id.mediaFragment -> componentsVisibility(View.VISIBLE)
+            R.id.homeFragment, R.id.galleryFragment, R.id.mediaFragment, R.id.newsFragment -> componentsVisibility(View.VISIBLE)
             else -> componentsVisibility(View.GONE)
         }
     }

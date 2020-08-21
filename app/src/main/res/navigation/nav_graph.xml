@@ -29,7 +29,7 @@
         android:id="@+id/galleryFragment"
         android:name="com.sort.feriaapp.ui.fragments.GalleryFragment"
         android:label="Gallery"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/institutionDetailFragment"
         android:name="com.sort.feriaapp.ui.fragments.InstitutionDetailFragment"

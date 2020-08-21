@@ -4,19 +4,23 @@ import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.sort.feriaapp.data.repositories.UserRepository
-import com.sort.feriaapp.network.dtos.LoginDTO
+import com.sort.feriaapp.network.dtos.UserDTO
 import com.sort.feriaapp.utils.emailPattern
 
-
-class LoginViewModel @ViewModelInject constructor(private val repository: UserRepository): ViewModel(){
+class SignUpViewModel @ViewModelInject constructor(private val userRepository: UserRepository): ViewModel() {
 
     var inputEmail = MutableLiveData<String?>()
     val inputPassword = MutableLiveData<String>()
+    val inputFirstName = MutableLiveData<String>()
+    val inputLastName = MutableLiveData<String>()
+
     val errorEmail = MutableLiveData<String>()
     val errorPassword = MutableLiveData<String>()
+    val errorFirstName = MutableLiveData<String>()
+    val errorLastName = MutableLiveData<String>()
 
 
-    fun login() = repository.login(LoginDTO(inputEmail.value.toString(), inputPassword.value.toString()))
+    //fun register() = userRepository.register(UserDTO())
 
     fun performValidation(): Boolean{
 

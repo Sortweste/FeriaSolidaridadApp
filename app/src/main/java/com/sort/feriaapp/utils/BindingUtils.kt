@@ -1,5 +1,8 @@
 package com.sort.feriaapp.utils
 
+import android.net.Uri
+import android.os.Build
+import android.text.Html
 import android.view.View
 import android.webkit.WebView
 import android.widget.ImageView
@@ -20,7 +23,7 @@ fun <T> setRecyclerViewProperties(recyclerView: RecyclerView, data: List<T>?){
 @BindingAdapter("setImageUrl")
 fun bindImageUrl(view: ImageView, url: String?){
     if(!url.isNullOrBlank())
-        Glide.with(view.context).load(url).into(view)
+        Glide.with(view.context).load(Uri.parse(url)).into(view)
 }
 
 @BindingAdapter("goneUnless")
@@ -42,5 +45,16 @@ fun setTwitterAccountName(view: TextView, account:String?){
     if(!account.isNullOrBlank()){
         val name: String = "@${account}"
         view.text = name
+    }
+}
+
+@SuppressWarnings("deprecation")
+@BindingAdapter("htmlFormattedText")
+fun setHTMLFormText(view: TextView, text:String?){
+    if(!text.isNullOrBlank()){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            view.text = Html.fromHtml(text, Html.FROM_HTML_MODE_LEGACY)
+        }else
+            view.text = Html.fromHtml(text)
     }
 }

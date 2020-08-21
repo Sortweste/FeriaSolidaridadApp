@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="facultades">
+        <item>Ciencias Económicas y Empresariales</item>
+        <item>Ciencias Sociales y Humanidades</item>
+        <item>Ingeniería y Arquitectura</item>
+    </string-array>
+
+    <string-array name="arquitectura_e_ingenieria">
+        <item>Arquitectura</item>
+        <item>Ingeniería de Alimentos</item>
+        <item>Ingeniería Civil</item>
+        <item>Ingeniería Eléctrica</item>
+        <item>Ingeniería Energética</item>
+        <item>Ingeniería Industrial</item>
+        <item>Ingeniería Informática</item>
+        <item>Ingeniería Mecánica</item>
+        <item>Ingeniería Química</item>
+    </string-array>
+
+    <string-array name="sociales_y_humanidades">
+        <item>Licenciatura en Ciencias Jurídicas</item>
+        <item>Licenciatura en Comunicación Social</item>
+        <item>Licenciatura en Filosofía</item>
+        <item>Licenciatura en Psicología</item>
+        <item>Licenciatura en Teología</item>
+        <item>Licenciatura en Idioma Inglés</item>
+        <item>Licenciatura en Educación Inicial y Parvularia</item>
+        <item>Licenciatura en Idioma Inglés </item>
+        <item>Licenciatura en Educación Básica para Primero y Segundo Ciclos</item>
+        <item>Profesorado en Teología</item>
+        <item>Profesorado en Educación Inicial y Parvularia</item>
+        <item>Profesorado en Idioma Inglés para Tercer Ciclo de Educación Básica y Educación Media</item>
+        <item>Técnico en Producción Multimedia </item>
+    </string-array>
+
+    <string-array name="economicas_y_empresariales">
+        <item>Licenciatura en Administración de Empresas</item>
+        <item>Licenciatura en Contaduría Pública</item>
+        <item>Licenciatura en Economía</item>
+        <item>Licenciatura en Mercadeo</item>
+        <item>Técnico en Mercadeo</item>
+        <item>Técnico en Contaduría</item>
+    </string-array>
+
+    <string-array name="year">
+        <item>1°</item>
+        <item>2°</item>
+        <item>3°</item>
+        <item>4°</item>
+        <item>5°</item>
+    </string-array>
+
+</resources>

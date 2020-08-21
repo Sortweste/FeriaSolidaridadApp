@@ -118,4 +118,10 @@
     <string name="need_an_account">Need an account?</string>
     <string name="representative_news_image">Representative News Image</string>
     <string name="bottom_nav_news">News</string>
+    <string name="log_out">Log out</string>
+    <string name="my_events">Events</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="faculty">Faculty</string>
 </resources>

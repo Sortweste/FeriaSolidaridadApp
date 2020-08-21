@@ -89,7 +89,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
                     android:layout_marginVertical="10dp"
-                    android:text="@{viewmodel.institutionInfo.institution.description}"
+                    app:htmlFormattedText="@{viewmodel.institutionInfo.institution.description}"
                     tools:text="@string/lorem_ipsum" />
 
                 <androidx.recyclerview.widget.RecyclerView

@@ -12,7 +12,6 @@ fun <T> performPostOperation(networkCall: suspend() -> Resource<T>)  =
     liveData(Dispatchers.IO){
         emit(Resource.loading())
         val response = networkCall.invoke()
-        Log.d("INFO-REQUEST", response.data.toString())
         if(response.status == Resource.Status.SUCCESS)
             emit(Resource.success(response.data))
         else if(response.status == Resource.Status.ERROR)

@@ -39,6 +39,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         binding.loginViewModel = loginViewModel
 
         binding.buttonGoLogin.setOnClickListener(this)
+        binding.redirectSignUp.setOnClickListener(this)
     }
 
     private fun verifySession() {
@@ -51,8 +52,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
             when (it.status) {
                 Resource.Status.SUCCESS -> {
                     binding.progressBar.visibility = View.GONE
-                    Toast.makeText(this, (it.data as TokenResponse).token, Toast.LENGTH_LONG).show()
-                    //mSharedPreferences.putData(TOKEN_KEY, (it.data as TokenResponse).token)
+                    mSharedPreferences.putData(TOKEN_KEY, (it.data as TokenResponse).token)
                     startIntent()
                 }
                 Resource.Status.ERROR -> {
@@ -72,16 +72,27 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         finish()
     }
 
+    private fun registerIntent(){
+        val intent = Intent(this, SignUpActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
+
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
     }
 
     override fun onClick(v: View?) {
-        if (loginViewModel.performValidation())
-            lifecycleScope.launch {
-                initObservers()
+        when(v?.id){
+            binding.buttonGoLogin.id -> {
+                if (loginViewModel.performValidation())
+                    lifecycleScope.launch {
+                        initObservers()
+                    }
             }
+            binding.redirectSignUp.id -> { registerIntent() }
+        }
     }
 
 }

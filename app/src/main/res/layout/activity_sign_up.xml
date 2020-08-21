@@ -6,26 +6,26 @@
     <data>
 
         <variable
-            name="LoginViewModel"
-            type="com.sort.feriaapp.viewmodels.LoginViewModel" />
+            name="SignUpViewModel"
+            type="com.sort.feriaapp.viewmodels.SignUpViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.activities.LoginActivity">
+        tools:context=".ui.activities.SignUpActivity">
 
         <ProgressBar
             android:id="@+id/progress_bar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:elevation="2dp"
             android:indeterminate="true"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:elevation="2dp"
-            android:visibility="gone"
             tools:visibility="gone" />
 
         <View
@@ -42,11 +42,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="10dp"
             android:background="@color/white"
             app:cardCornerRadius="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <LinearLayout
@@ -60,16 +61,66 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginVertical="10dp"
-                    android:text="@string/login"
+                    android:text="@string/sign_up"
                     android:textAppearance="?attr/textAppearanceHeadline6"
                     android:textColor="@color/colorPrimary" />
 
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/first_name"
+                    app:error="@{SignUpViewModel.errorFirstName}"
+                    app:errorEnabled="true">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editTextFirstName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginVertical="10dp"
+                        android:importantForAutofill="no"
+                        android:inputType="textEmailAddress"
+                        android:text="@={SignUpViewModel.inputFirstName}"
+                        android:textSize="15sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/last_name"
+                    app:error="@{SignUpViewModel.errorLastName}"
+                    app:errorEnabled="true">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editTextLastName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginVertical="10dp"
+                        android:importantForAutofill="no"
+                        android:inputType="textEmailAddress"
+                        android:text="@={SignUpViewModel.inputLastName}"
+                        android:textSize="15sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Spinner
+                    android:id="@+id/spinner_faculty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_marginVertical="15dp"
+                    android:prompt="@string/faculty"
+                    android:spinnerMode="dialog"
+                    
+                    tools:entries="@array/facultades" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/email_hint"
-                    app:error="@{LoginViewModel.errorEmail}"
+                    app:error="@{SignUpViewModel.errorEmail}"
                     app:errorEnabled="true">
 
                     <com.google.android.material.textfield.TextInputEditText
@@ -80,18 +131,17 @@
                         android:layout_marginVertical="10dp"
                         android:importantForAutofill="no"
                         android:inputType="textEmailAddress"
-                        android:text="@={LoginViewModel.inputEmail}"
+                        android:text="@={SignUpViewModel.inputEmail}"
                         android:textSize="15sp" />
 
                 </com.google.android.material.textfield.TextInputLayout>
-
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/password_hint"
-                    app:error="@{LoginViewModel.errorPassword}"
                     app:endIconMode="password_toggle"
+                    app:error="@{SignUpViewModel.errorPassword}"
                     app:errorEnabled="true">
 
                     <com.google.android.material.textfield.TextInputEditText
@@ -102,20 +152,30 @@
                         android:layout_marginVertical="10dp"
                         android:importantForAutofill="no"
                         android:inputType="textPassword"
-                        android:text="@={LoginViewModel.inputPassword}"
+                        android:text="@={SignUpViewModel.inputPassword}"
                         android:textSize="15sp" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
+                <!--<Spinner
+                    android:id="@+id/spinner_career"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_marginVertical="15dp"
+                    android:prompt="@string/faculty"
+                    android:spinnerMode="dialog"
+                    tools:entries="@array/sociales_y_humanidades" />-->
+
+
                 <Button
-                    android:id="@+id/buttonGoLogin"
+                    android:id="@+id/buttonGoSignUp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginVertical="10dp"
-                    android:text="@string/login"
+                    android:text="@string/sign_up"
                     android:textSize="15sp" />
-
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -126,18 +186,18 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/need_an_account" />
+                        android:text="@string/already_have_an_account" />
 
                     <TextView
-                        android:id="@+id/redirect_sign_up"
+                        android:id="@+id/redirect_login"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="5dp"
-                        android:text="@string/sign_up"
-                        android:textColor="@color/colorPrimary"
                         android:clickable="true"
-                        android:textStyle="bold"
-                        android:focusable="true" />
+                        android:focusable="true"
+                        android:text="@string/login"
+                        android:textColor="@color/colorPrimary"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
@@ -145,7 +205,7 @@
 
         </com.google.android.material.card.MaterialCardView>
 
-
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </layout>

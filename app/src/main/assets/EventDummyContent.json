@@ -1,74 +1,50 @@
 [
   {
     "id": "1",
-    "title": "Github Actions",
-    "imageURL": "https://github.blog/wp-content/uploads/2020/08/87471037-50ad3c80-c5e3-11ea-9f1b-7963f4615b28.png",
-    "link": "Meet Link",
-    "description": "GitHub Actions help you automate your software development workflows. You’re probably already familiar with the built-in runners for Windows, Linux, and macOS, but what if your workloads require custom hardware, a specific operating system, or software tools that aren’t available on these runners?",
-    "InstitutionId": "1"
+    "title": "Próximos eventos",
+    "imageURL": "https://lh3.googleusercontent.com/pw/ACtC-3cB-EUa09qu1jC4PCIsYNZaeVi5ZGoGL7z-rB-AYMJZlb4G6fnWt_NrpRvZ6msuGzHv19m_laYoaPo9szM3AWYKtIqg_NYLx06MaVyOKtX-1OxmJFBRwdWvgpqtVXiC9x6cqQ0R6dyuDIT6hUr6mlxP=s827-no",
+    "link": "https://forms.gle/cahihFi4qoQa9QACA",
+    "description": "Por el momento no tenemos proyectos con vacantes para voluntariado, pero tenemos el siguiente formulario para que puedan inscribirse las personas interesadas en sumarse, de manera que puedan mantenerse informadas de los proyectos y espacios que se generen.",
+    "InstitutionId": "2a"
   },
   {
     "id": "2",
-    "title": "Test your Android App Bundle",
-    "imageURL": "https://pbs.twimg.com/media/EemSztpX0AEovnf?format=png&name=medium",
-    "link": "Meet Link",
-    "description": "Android App Bundles are the recommended way to build, publish, and distribute your app across multiple device configurations. App bundles also enable advanced features, such as Play Feature Delivery, Play Asset Delivery, and instant experiences. Whether you are just starting to adopt app bundles or are developing for more advanced use cases, this page provides an overview of the various strategies available for you to test your app at each stage of development.",
-    "InstitutionId": "1"
+    "title": "Actividades a realizar",
+    "imageURL": "https://lh3.googleusercontent.com/pw/ACtC-3cHoALgMnLQz1wg9xtnDeNPzpchLNjmF9N6_whmIFKOh2D09WSchqadTCqVlngEVN4UonJHeLSiW4shIXCa1m38TGKbKzCQQKBOXtzQuokYih3Eh7qTJxuOmaE7K16WgR631Y9KYewZX-Z0Do_zAivy=w900-h423-no",
+    "link": "voluntariado@ninezprimero.org",
+    "description": "Actividades presenciales en los diferentes proyectos a partir del próximo año: \n\uF0D8\tEn ambas Ludotecas se trabajan con niños y los estudiantes apoyan en la preparación y realización de intervenciones lúdicas de acuerdo a las particularidades de cada proyecto.\n\uF0D8\tApoyo en desinfección y arreglo del material lúdico a utilizar en las intervenciones. \n\uF0D8\tParticipación en evaluación de cada jornada como desahogo emocional. \nActividades para realizar en línea agosto-diciembre 2020\n\uF0D8\tPlanificación de actividades para estimulación temprana\n\uF0D8\tactividades de bienvenida y socialización\n\uF0D8\tplanificación de actividades manuales\n\uF0D8\tPlanificación de actividades para trabajo en línea con niños\n\uF0D8\tPlanificación de actividades de juego en casa y espacios abiertos.\n\uF0D8\tCartas metodológicas de talleres para padres.  \n¿Cómo puedes ser parte de nuestros proyectos?\nContamos con un proceso de selección para los estudiantes y voluntarios que desean pertenecer a nuestros proyectos, el primer paso es realizar una prueba Psicológica.\nSi Apruebas tendrás que recibir una inducción teórica y una práctica para que conozcas más sobre el proyecto y sobre el trabajo que realizamos.\n¡Y listo! Al culminar estos pasos ya estás preparado para las intervenciones lúdicas.\nPuedes contactarnos para mayor información al correo: voluntariado@ninezprimero.org y puedes llamar o escribir al teléfono: 6114-1361.\n",
+    "InstitutionId": "4a"
   },
   {
     "id": "3",
-    "title": "Google for Startups",
-    "imageURL": "https://pbs.twimg.com/media/Eeh4L-VU4AIfl56?format=png",
-    "link": "Meet Link",
-    "description": "Los invitamos a #FirstFridays, una serie de eventos mensuales para el ecosistema emprendedor de América, diseñada para reunir a los jugadores de las startups más importantes y aprender, crecer y conectarse con ellos. ",
-    "InstitutionId": "1"
+    "title": "Página Web MUPI",
+    "imageURL": "https://scontent-mia3-1.xx.fbcdn.net/v/t1.0-9/19260402_1733289700019993_3529695442998227485_n.jpg?_nc_cat=108&_nc_sid=174925&_nc_ohc=VlEKhw4SMWQAX8CO4Mn&_nc_ht=scontent-mia3-1.xx&oh=bdd9b37dd210f1cdbe5a0d5e66aa878c&oe=5F6629A5",
+    "link": "comunicacionesmupi@gmail.com",
+    "description": "Mejoramiento diseño de página web del MUPI.  \nContáctanos para mayor información",
+    "InstitutionId": "6a"
   },
   {
     "id": "4",
-    "title": "Serverless Computing",
-    "imageURL": "https://pbs.twimg.com/media/Eel4HHiWsAAN7ZS?format=png&name=small",
-    "link": "Meet Link",
-    "description": "The cloud industry is well established, but complexity is commonplace. The advent of serverless computing, Kubernetes, containers and a vast number of possible deployment scenarios leaves many businesses in the dark as to how they should progress with their cloud strategy.",
-    "InstitutionId": "1"
+    "title": "Traducciones",
+    "imageURL": "https://scontent-mia3-1.xx.fbcdn.net/v/t1.0-9/19260402_1733289700019993_3529695442998227485_n.jpg?_nc_cat=108&_nc_sid=174925&_nc_ohc=VlEKhw4SMWQAX8CO4Mn&_nc_ht=scontent-mia3-1.xx&oh=bdd9b37dd210f1cdbe5a0d5e66aa878c&oe=5F6629A5",
+    "link": "comunicacionesmupi@gmail.com",
+    "description": "Traducciones de documentos español-ingles. \nContáctanos para mayor información",
+    "InstitutionId": "6a"
   },
   {
     "id": "5",
-    "title": "Android App Bundle",
-    "imageURL": "https://2.bp.blogspot.com/-CrYLg_oRtrU/Xylish5hxyI/AAAAAAAAPZg/feBSJWyKm0IzTcEroCB8bS9i4ZbMXnPpQCLcBGAsYHQ/s1600/AD%2BBLOG_Easy%2Bmodular%2Bdevelopment_v2.png",
-    "link": "Meet Link",
-    "description": "The app bundle enables modular app development using dynamic feature modules with a range of customizable delivery options. It’s now possible to shrink resources in dynamic feature modules as well as your base module when building modular apps. This long-requested feature can result in significantly greater size reduction of your apps. The feature is available from Android Studio 4.2, currently in Canary, under the experimental flag:",
-    "InstitutionId": "2"
+    "title": "Transcripciones",
+    "imageURL": "https://scontent-mia3-1.xx.fbcdn.net/v/t1.0-9/19260402_1733289700019993_3529695442998227485_n.jpg?_nc_cat=108&_nc_sid=174925&_nc_ohc=VlEKhw4SMWQAX8CO4Mn&_nc_ht=scontent-mia3-1.xx&oh=bdd9b37dd210f1cdbe5a0d5e66aa878c&oe=5F6629A5",
+    "link": "comunicacionesmupi@gmail.com",
+    "description": "Transcripciones de documentos. \nContáctanos para mayor información",
+    "InstitutionId": "6a"
   },
   {
     "id": "6",
-    "title": "Kubernetes",
-    "imageURL": "https://pbs.twimg.com/media/EeqE27uXsAAHznX?format=jpg&name=small",
-    "link": "Meet Link",
-    "description": "Deploying new code to production is six times faster: 6 minutes, down from 40 minutes. “That was a big difference,” says Chen. “Before microservices, for every small change we had to wait for an hour to deploy.” Kubernetes has also improved reliability: ",
-    "InstitutionId": "2"
-  },
-  {
-    "id": "7",
-    "title": "Ubuntu Active Directory",
-    "imageURL": "https://pbs.twimg.com/media/Ee1yl69XkAADu48?format=png&name=small",
-    "link": "Meet Link",
-    "description": "Download our recent whitepaper for detailed insights and step by step instructions on how to integrate Ubuntu Desktop into Active Directory.",
-    "InstitutionId": "2"
-  },
-  {
-    "id": "8",
-    "title": "Jenkins RoadMap",
-    "imageURL": "https://pbs.twimg.com/media/EezZCC0XgAAz6JY?format=png&name=small",
-    "link": "Meet Link",
-    "description": "the Jenkins project is graduating! As a celebration, we’ll be sharing Jenkins content the entire month of August, including over 12 articles (6 included in this newsletter), podcasts, and more.",
-    "InstitutionId": "3"
-  },
-  {
-    "id": "9",
-    "title": "Introducing Jetpack on GitHub",
-    "imageURL": "https://miro.medium.com/max/1620/1*nsd3QVFddan29F8sxehXZA.png",
-    "link": "Meet Link",
-    "description": "In 2018, Jetpack library development moved to the Android Open Source Project to increase transparency and enable external contributions. Since then, we’ve continued to invest in quality-of-life improvements for Jetpack contributors while moving more work-in-progress changes, feature discussions, and bugs to publicly-visible components. We have even seen dedicated external developers learn the workflow and contribute patches; however, we wanted to explore ways to make the process easier and more developer-friendly.",
-    "InstitutionId": "4"
+    "title": "CONNECT",
+    "imageURL": "https://lh3.googleusercontent.com/pw/ACtC-3dZM2do7vZs5o8FQVtQ4cxCN1xvAiT7pXQencyNae_dpUgLRTk2LA3f4VXxdgdVQmrItGSGFg4re7uKldGEz29a5oJRAbV-AQiy2HFqoBzthuTH5cv2jLAqhUZwWVDaEbp1ID25SGbsM4MoKHZpBr74=w724-h398-no",
+    "link": "https://meet.google.com/moh-eptw-xvj",
+    "description": "<strong>Información general</strong>\n\n  •\tQuito, Ecuador.\n\n<strong>Fechas:</strong>    Enero 2020, Junio y Diciembre 2021\nPerfiles:   Psicología\nRequisitos: Tener entre 18 y 30 años, realizar la inversión del programa y disponibilidad de 6 semanas.\nHorario: Lunes a Viernes de 8 a 1 pm= 150 horas reales en 6 semanas\n\nDescripción del proyecto:\nVoluntariado por el ODS 4: Educación de Calidad. Serás un voluntario que buscará promover, a través de talleres y actividades educativas,\nel desarrollo  escolar y personal de niños y jóvenes pertenecientes a fundaciones de Quito, Ecuador.\n\nWebinar informativo:\nJueves 3 de septiembre, 12 -1 pm\n",
+    "InstitutionId": "7a"
   }
 ]

@@ -82,7 +82,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
                     android:layout_marginVertical="10dp"
-                    android:text="@{viewmodel.eventInfo.description}"
+                    app:htmlFormattedText="@{viewmodel.eventInfo.description}"
                     tools:text="@string/lorem_ipsum" />
 
 

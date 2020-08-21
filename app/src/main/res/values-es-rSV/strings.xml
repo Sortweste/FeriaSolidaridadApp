@@ -29,4 +29,10 @@
     <string name="need_an_account">¿No tiene cuenta?</string>
     <string name="representative_news_image">Imagen Representativa para una noticia</string>
     <string name="bottom_nav_news">Novedades</string>
+    <string name="log_out">Cerrar sesión</string>
+    <string name="my_events">Mis Eventos</string>
+    <string name="already_have_an_account">¿Ya tiene una cuenta?</string>
+    <string name="first_name">Nombres</string>
+    <string name="last_name">Apellidos</string>
+    <string name="faculty">Facultad</string>
 </resources>
