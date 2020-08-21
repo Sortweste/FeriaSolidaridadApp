@@ -50,7 +50,7 @@
                     android:text="@{article.name}"
                     android:gravity="center"
                     android:layout_gravity="center"
-                    android:textAppearance="?attr/textAppearanceHeadline6"
+                    android:textAppearance="?attr/textAppearanceSubtitle1"
                     tools:text="Institute Name Placeholder" />
 
             </LinearLayout>
@@ -70,7 +70,7 @@
                 android:layout_height="100dp"
                 app:setImageUrl="@{article.imageURL}"
                 tools:src="@drawable/slider"
-                android:scaleType="fitXY"
+                android:scaleType="fitCenter"
                 android:contentDescription="@string/representative_image_institution" />
 
         </LinearLayout>
