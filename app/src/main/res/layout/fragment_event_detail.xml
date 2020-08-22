@@ -33,7 +33,7 @@
                 app:expandedTitleGravity="right"
                 app:expandedTitleMarginBottom="0dp"
                 app:expandedTitleMarginTop="150dp"
-                app:expandedTitleTextAppearance="@style/ExpandedBar"
+                app:expandedTitleTextAppearance="@style/ExpandedBarEvent"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
                 app:title="@{viewmodel.eventInfo.title}"
                 app:titleEnabled="true">

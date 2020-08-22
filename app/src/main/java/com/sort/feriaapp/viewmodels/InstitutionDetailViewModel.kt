@@ -19,6 +19,5 @@ class InstitutionDetailViewModel @ViewModelInject constructor(private val instit
 
     val events: List<EventMinimal> = emptyList()
 
-    val imageSet: List<String> = emptyList()
 
 }

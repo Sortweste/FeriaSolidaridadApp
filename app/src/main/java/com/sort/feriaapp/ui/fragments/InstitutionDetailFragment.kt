@@ -9,17 +9,21 @@ import android.view.LayoutInflater
 import android.view.Menu
 import android.view.View
 import android.view.ViewGroup
+import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
 import android.webkit.WebChromeClient
 import android.webkit.WebView
+import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import androidx.core.view.get
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.ViewPager2
 import com.sort.feriaapp.R
@@ -28,8 +32,6 @@ import com.sort.feriaapp.adapters.RecyclerViewEventsAdapter
 import com.sort.feriaapp.data.minimals.EventMinimal
 import com.sort.feriaapp.databinding.FragmentInstitutionDisplayBinding
 import com.sort.feriaapp.interfaces.RecyclerViewClickListener
-//import com.sort.feriaapp.ui.InstitutionDetailFragmentArgs
-//import com.sort.feriaapp.ui.InstitutionDetailFragmentDirections
 import com.sort.feriaapp.utils.FACEBOOK_PACKAGE
 import com.sort.feriaapp.utils.INSTAGRAM_PACKAGE
 import com.sort.feriaapp.utils.TWITTER_PACKAGE
@@ -89,7 +91,7 @@ class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMin
 
     private var onBoardingPageChangeCallback = object : ViewPager2.OnPageChangeCallback() {
         override fun onPageSelected(position: Int) {
-            //updateCircleMarker(binding, position)
+            setCurrentIndicator(position)
         }
     }
 
@@ -120,11 +122,36 @@ class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMin
         lifecycleScope.launchWhenCreated {
             institutionDetailViewModel.institutionInfo.observe(viewLifecycleOwner, Observer { info ->
                 adapter.setData(info.events.map { EventMinimal(it.id, it.imageURL) })
+                if(info.institution.imageURL.size > 1)
+                    setUpIndicators(info.institution.imageURL.size)
                 initCarousel(info.institution.imageURL)
             })
         }
     }
 
+    private fun setUpIndicators(size: Int){
+        val layoutParams: LinearLayout.LayoutParams = LinearLayout.LayoutParams(WRAP_CONTENT, WRAP_CONTENT)
+        val index = arrayOfNulls<ImageView>(size)
+        layoutParams.setMargins(8,0,8,0)
+        for(i in index.indices){
+            index[i] = ImageView(context)
+            index[i].apply {
+                this?.setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.inactive_circle))
+                this?.layoutParams = layoutParams
+            }
+            binding.layoutContainer?.addView(index[i])
+        }
+    }
+
+    private fun setCurrentIndicator(position: Int){
+        for(i in 0 until binding.layoutContainer?.childCount!!){
+            val imageView  = binding.layoutContainer!![i] as ImageView
+            if(i == position)
+                imageView.setImageDrawable(requireContext().let { ContextCompat.getDrawable(it, R.drawable.active_circle) })
+            else
+                imageView.setImageDrawable(requireContext().let { ContextCompat.getDrawable(it, R.drawable.inactive_circle) })
+        }
+    }
 
     override fun onDestroyView() {
         super.onDestroyView()
