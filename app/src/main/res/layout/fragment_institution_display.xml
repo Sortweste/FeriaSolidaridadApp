@@ -136,7 +136,7 @@
                     android:drawablePadding="@dimen/drawable_padding"
                     android:gravity="center"
                     android:textColor="@color/link_color"
-                    android:text="@{viewmodel.institutionInfo.institution.website}"
+                    app:sitioWebText="@{viewmodel.institutionInfo.institution.website}"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:textSize="15sp"
                     android:clickable="true"
