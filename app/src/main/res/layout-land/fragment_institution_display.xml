@@ -54,7 +54,7 @@
                     android:scaleType="centerCrop"
                     app:layout_collapseMode="parallax"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:setImageUrl="@{viewmodel.institutionInfo.institution.imageURL}"
+                    app:setImageUrl="@{viewmodel.institutionInfo.institution.imageURL[0]}"
                     tools:src="@drawable/slider" />
 
                 <androidx.appcompat.widget.Toolbar

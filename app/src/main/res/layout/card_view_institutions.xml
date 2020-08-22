@@ -68,7 +68,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                app:setImageUrl="@{article.imageURL}"
+                app:setImageUrl="@{article.imageURL[0]}"
                 tools:src="@drawable/slider"
                 android:scaleType="fitCenter"
                 android:contentDescription="@string/representative_image_institution" />

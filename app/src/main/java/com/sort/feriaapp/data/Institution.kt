@@ -10,7 +10,7 @@ data class Institution (
     val description: String?,
     val name: String,
     val summary: String,
-    @ColumnInfo(name = "image_url") val imageURL: String,
+    @ColumnInfo(name = "image_url") val imageURL: List<String>,
     @ColumnInfo(name = "logo_url") val logoURL: String,
     @ColumnInfo(name = "video_url") val videoURL: String?,
     @ColumnInfo(name = "meeting_url") val meetingURL: String?,
