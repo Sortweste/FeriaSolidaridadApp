@@ -35,4 +35,5 @@
     <string name="first_name">Nombres</string>
     <string name="last_name">Apellidos</string>
     <string name="faculty">Facultad</string>
+    <string name="carousel_image">Imagen Carrusel</string>
 </resources>

@@ -124,4 +124,5 @@
     <string name="first_name">First Name</string>
     <string name="last_name">Last Name</string>
     <string name="faculty">Faculty</string>
+    <string name="carousel_image">carousel_image</string>
 </resources>

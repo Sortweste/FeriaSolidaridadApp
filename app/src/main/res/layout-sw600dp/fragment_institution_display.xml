@@ -39,8 +39,8 @@
                 app:titleEnabled="true">
 
                 <!--             <FrameLayout
-                android:id="@+id/fragment_carrusel"
-                android:name="com.sort.feriaapp.fragment_carrusel"
+                android:id="@+id/fragment_carousel"
+                android:name="com.sort.feriaapp.fragment_carousel"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 app:layout_constraintTop_toTopOf="parent" /> -->

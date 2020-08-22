@@ -21,7 +21,9 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.viewpager2.widget.ViewPager2
 import com.sort.feriaapp.R
+import com.sort.feriaapp.adapters.CarouselAdapter
 import com.sort.feriaapp.adapters.RecyclerViewEventsAdapter
 import com.sort.feriaapp.data.minimals.EventMinimal
 import com.sort.feriaapp.databinding.FragmentInstitutionDisplayBinding
@@ -35,7 +37,7 @@ import com.sort.feriaapp.viewmodels.InstitutionDetailViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMinimal>, View.OnClickListener{
+class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMinimal>, View.OnClickListener {
 
     private var _binding: FragmentInstitutionDisplayBinding? = null
     private val binding get() = _binding!!
@@ -80,6 +82,16 @@ class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMin
         initObservers()
     }
 
+    private fun initCarousel(imageSet: List<String>){
+        binding.viewPagerCarousel?.adapter = CarouselAdapter(this, imageSet.size, imageSet)
+        binding.viewPagerCarousel?.registerOnPageChangeCallback(onBoardingPageChangeCallback)
+    }
+
+    private var onBoardingPageChangeCallback = object : ViewPager2.OnPageChangeCallback() {
+        override fun onPageSelected(position: Int) {
+            //updateCircleMarker(binding, position)
+        }
+    }
 
     private fun initToolBar(){
         (activity as AppCompatActivity).apply {
@@ -108,6 +120,7 @@ class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMin
         lifecycleScope.launchWhenCreated {
             institutionDetailViewModel.institutionInfo.observe(viewLifecycleOwner, Observer { info ->
                 adapter.setData(info.events.map { EventMinimal(it.id, it.imageURL) })
+                initCarousel(info.institution.imageURL)
             })
         }
     }
@@ -115,6 +128,7 @@ class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMin
 
     override fun onDestroyView() {
         super.onDestroyView()
+        binding.viewPagerCarousel?.unregisterOnPageChangeCallback(onBoardingPageChangeCallback)
         _binding = null
     }
 
