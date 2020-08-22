@@ -11,6 +11,7 @@ import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.sort.feriaapp.interfaces.BindAdapter
+import kotlinx.android.synthetic.main.fragment_institution_display.view.*
 
 @BindingAdapter("data")
 @Suppress("UNCHECKED_CAST")
@@ -45,8 +46,37 @@ fun setTwitterAccountName(view: TextView, account:String?){
     if(!account.isNullOrBlank()){
         val name: String = "@${account}"
         view.text = name
+        view.contentDescription = account
     }
 }
+
+@BindingAdapter("facebookText")
+fun setFacebookAccountName(view: TextView, account:String?){
+    if(!account.isNullOrBlank()){
+        val name: String = "Visitanos en nuestra página de Facebook"
+        view.text = name
+        view.contentDescription = account
+    }
+}
+
+@BindingAdapter("instagramText")
+fun setInstagramAccountName(view: TextView, account:String?){
+    if(!account.isNullOrBlank()){
+        val name: String = "¡Siguenos en Instagram!"
+        view.text = name
+        view.contentDescription = account
+    }
+}
+
+@BindingAdapter("sitioWebText")
+fun setSitioWebAccountName(view: TextView, account:String?){
+    if(!account.isNullOrBlank()){
+        val name: String = "Visitanos en nuestro sitio web"
+        view.text = name
+        view.contentDescription = account
+    }
+}
+
 
 @SuppressWarnings("deprecation")
 @BindingAdapter("htmlFormattedText")

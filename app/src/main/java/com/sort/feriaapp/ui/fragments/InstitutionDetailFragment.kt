@@ -4,12 +4,14 @@ import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebChromeClient
 import android.webkit.WebView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -151,10 +153,10 @@ class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMin
     override fun onClick(v: View?) {
             when(v?.id){
                 binding.meetupView.id -> { prepareIntent(binding.meetupView.text.toString()) }
-                binding.websiteView.id -> { prepareIntent(binding.websiteView.text.toString()) }
-                binding.facebookView.id -> { prepareIntentSocialMedia(FACEBOOK_PACKAGE, "fb://facewebmodal/f?href=${binding.facebookValue.text}", "https://www.facebook.com/${binding.facebookValue.text}")}
-                binding.instagramView.id -> { prepareIntentSocialMedia(INSTAGRAM_PACKAGE, "http://instagram.com/_u/${binding.instagramValue.text}", "http://instagram.com/${binding.instagramValue.text}") }
-                binding.twitterView.id -> { prepareIntentSocialMedia(TWITTER_PACKAGE, "twitter://user?screen_name=${binding.twitterValue.text}", "https://twitter.com/${binding.twitterValue.text}")}
+                binding.websiteView.id -> { prepareIntent(binding.websiteView.contentDescription.toString()) }
+                binding.facebookView.id -> { prepareIntentSocialMedia(FACEBOOK_PACKAGE, "fb://facewebmodal/f?href=https://www.facebook.com/${binding.facebookValue.contentDescription}", "https://www.facebook.com/${binding.facebookValue.contentDescription}")}
+                binding.instagramView.id -> { prepareIntentSocialMedia(INSTAGRAM_PACKAGE, "http://instagram.com/_u/${binding.instagramValue.contentDescription}", "http://instagram.com/${binding.instagramValue.contentDescription}") }
+                binding.twitterView.id -> { prepareIntentSocialMedia(TWITTER_PACKAGE, "twitter://user?screen_name=${binding.twitterValue.contentDescription}", "https://twitter.com/${binding.twitterValue.contentDescription}")}
             }
     }
 
