@@ -13,7 +13,7 @@ interface UserService {
     @POST("/login")
     suspend fun login(@Body loginDTO: LoginDTO): Response<TokenResponse>
 
-    @POST("/user")
+    @POST("/users")
     suspend fun register(@Body userDTO: UserDTO): Response<TokenResponse>
 
     @POST("/user/{eventId}/event")

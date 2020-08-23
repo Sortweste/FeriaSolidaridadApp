@@ -25,7 +25,7 @@ class SignUpViewModel @ViewModelInject constructor(private val userRepository: U
     val errorLastName = MutableLiveData<String>()
 
 
-    fun register() = userRepository.register(UserDTO(UserHelper(career.value.toString(), inputEmail.value.toString(), inputFirstName.value.toString(), inputLastName.value.toString(), inputPassword.value.toString(), year.value!!.toInt())))
+    fun register() = userRepository.register(UserDTO(UserHelper(career.value.toString(), inputEmail.value.toString(), inputFirstName.value.toString(), inputLastName.value.toString(), inputPassword.value.toString(), year.value?.get(0).toString().toInt())))
 
     fun performValidation(): Boolean{
 
