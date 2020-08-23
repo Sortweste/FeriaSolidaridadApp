@@ -5,13 +5,15 @@ import android.os.Build
 import android.text.Html
 import android.view.View
 import android.webkit.WebView
-import android.widget.ImageView
-import android.widget.TextView
+import android.widget.*
+import android.widget.AdapterView.OnItemSelectedListener
 import androidx.databinding.BindingAdapter
+import androidx.databinding.InverseBindingAdapter
+import androidx.databinding.InverseBindingListener
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.sort.feriaapp.interfaces.BindAdapter
-import kotlinx.android.synthetic.main.fragment_institution_display.view.*
+
 
 @BindingAdapter("data")
 @Suppress("UNCHECKED_CAST")
@@ -88,3 +90,17 @@ fun setHTMLFormText(view: TextView, text:String?){
             view.text = Html.fromHtml(text)
     }
 }
+
+@Suppress("UNCHECKED_CAST")
+@BindingAdapter(value = ["selectedValue", "selectedValueAttrChanged"], requireAll = false)
+fun setSpinnerSelectedValue(spinner: Spinner, selectedValue: String, newTextAttrChanged: InverseBindingListener){
+    spinner.onItemSelectedListener = object : OnItemSelectedListener {
+        override fun onNothingSelected(p0: AdapterView<*>?) {}
+        override fun onItemSelected(parent: AdapterView<*>?, view: View?, pos: Int, id: Long) = newTextAttrChanged.onChange()
+    }
+    val pos = (spinner.adapter as ArrayAdapter<String?>).getPosition(selectedValue)
+    spinner.setSelection(pos, true)
+}
+
+@InverseBindingAdapter(attribute = "selectedValue", event = "selectedValueAttrChanged")
+fun getSpinnerSelectedValue(spinner: Spinner): String = spinner.selectedItem.toString()

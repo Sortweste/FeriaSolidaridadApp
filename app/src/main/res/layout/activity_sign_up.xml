@@ -113,7 +113,7 @@
                     android:layout_marginVertical="15dp"
                     android:prompt="@string/faculty"
                     android:spinnerMode="dialog"
-                    
+                    app:selectedValue="@={SignUpViewModel.faculty}"
                     tools:entries="@array/facultades" />
 
                 <com.google.android.material.textfield.TextInputLayout

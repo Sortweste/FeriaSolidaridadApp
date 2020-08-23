@@ -14,7 +14,9 @@ import com.sort.feriaapp.viewmodels.SignUpViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class SignUpActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener, View.OnClickListener {
+class SignUpActivity : AppCompatActivity(),
+    //AdapterView.OnItemSelectedListener,
+    View.OnClickListener {
 
     private var _binding: ActivitySignUpBinding? = null
     private val binding get() = _binding!!
@@ -41,7 +43,7 @@ class SignUpActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener, 
             adapter.setDropDownViewResource(android.R.layout.select_dialog_singlechoice)
             v.adapter = adapter
         }
-        v.onItemSelectedListener = this
+        //v.onItemSelectedListener = this
     }
 
     override fun onDestroy() {
@@ -49,7 +51,7 @@ class SignUpActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener, 
         _binding = null
     }
 
-    override fun onNothingSelected(p0: AdapterView<*>?) {
+    /*override fun onNothingSelected(p0: AdapterView<*>?) {
         TODO("Not yet implemented")
     }
 
@@ -57,7 +59,7 @@ class SignUpActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener, 
         when(parent?.id){
             binding.spinnerFaculty.id -> {  }
         }
-    }
+    }*/
 
     private fun loginIntent(){
         val intent = Intent(this, LoginActivity::class.java)
