@@ -29,7 +29,8 @@ class SignUpViewModel @ViewModelInject constructor(private val userRepository: U
 
     fun performValidation(): Boolean{
 
-        if(inputEmail.value.isNullOrBlank() || inputPassword.value.isNullOrBlank() || !inputEmail.value.toString().matches(emailPattern)){
+        if(inputEmail.value.isNullOrBlank() || inputPassword.value.isNullOrBlank() || !inputEmail.value.toString().matches(emailPattern) ||
+            inputFirstName.value.isNullOrBlank() || inputLastName.value.isNullOrBlank() ){
 
             if(inputEmail.value.isNullOrBlank()) {
                 errorEmail.value = "Ingrese correo electrónico"
@@ -45,11 +46,25 @@ class SignUpViewModel @ViewModelInject constructor(private val userRepository: U
                 errorPassword.value = null
             }
 
+            if(inputFirstName.value.isNullOrBlank()){
+                errorFirstName.value = "Ingrese un nombre"
+            }else{
+                errorFirstName.value = null
+            }
+
+            if(inputLastName.value.isNullOrBlank()){
+                errorLastName.value = "Ingrese un apellido"
+            }else{
+                errorLastName.value = null
+            }
+
             return false
 
         }else {
             errorEmail.value = null
             errorPassword.value = null
+            errorFirstName.value = null
+            errorLastName.value = null
         }
 
         return true
