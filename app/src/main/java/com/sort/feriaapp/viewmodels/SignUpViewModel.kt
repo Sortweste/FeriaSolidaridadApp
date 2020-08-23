@@ -4,6 +4,7 @@ import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.sort.feriaapp.data.repositories.UserRepository
+import com.sort.feriaapp.helpers.UserHelper
 import com.sort.feriaapp.network.dtos.UserDTO
 import com.sort.feriaapp.utils.emailPattern
 
@@ -13,8 +14,10 @@ class SignUpViewModel @ViewModelInject constructor(private val userRepository: U
     val inputPassword = MutableLiveData<String>()
     val inputFirstName = MutableLiveData<String>()
     val inputLastName = MutableLiveData<String>()
+
     val faculty = MutableLiveData<String>()
     val career = MutableLiveData<String>()
+    val year = MutableLiveData<String>()
 
     val errorEmail = MutableLiveData<String>()
     val errorPassword = MutableLiveData<String>()
@@ -22,7 +25,7 @@ class SignUpViewModel @ViewModelInject constructor(private val userRepository: U
     val errorLastName = MutableLiveData<String>()
 
 
-    //fun register() = userRepository.register(UserDTO())
+    fun register() = userRepository.register(UserDTO(UserHelper(career.value.toString(), inputEmail.value.toString(), inputFirstName.value.toString(), inputLastName.value.toString(), inputPassword.value.toString(), year.value!!.toInt())))
 
     fun performValidation(): Boolean{
 
