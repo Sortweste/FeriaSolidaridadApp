@@ -18,6 +18,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.get
+import androidx.core.view.isEmpty
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -133,13 +134,15 @@ class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMin
         val layoutParams: LinearLayout.LayoutParams = LinearLayout.LayoutParams(WRAP_CONTENT, WRAP_CONTENT)
         val index = arrayOfNulls<ImageView>(size)
         layoutParams.setMargins(8,0,8,0)
-        for(i in index.indices){
-            index[i] = ImageView(context)
-            index[i].apply {
-                this?.setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.inactive_circle))
-                this?.layoutParams = layoutParams
+        if(binding.layoutContainer?.isEmpty()){
+            for(i in index.indices){
+                index[i] = ImageView(context)
+                index[i].apply {
+                    this?.setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.inactive_circle))
+                    this?.layoutParams = layoutParams
+                }
+                binding.layoutContainer?.addView(index[i])
             }
-            binding.layoutContainer?.addView(index[i])
         }
     }
 
