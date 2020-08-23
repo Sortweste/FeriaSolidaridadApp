@@ -43,7 +43,7 @@
                 android:name="com.sort.feriaapp.fragment_carousel"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                app:layout_constraintTop_toTopOf="parent" /> -->
+                app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
                     android:id="@+id/representative_carousel"
@@ -56,6 +56,23 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:setImageUrl="@{viewmodel.institutionInfo.institution.imageURL[0]}"
                     tools:src="@drawable/slider" />
+                     -->
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/view_pager_carousel"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:overScrollMode="never"/>
+
+                <LinearLayout
+                    android:id="@+id/layout_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_gravity="bottom"
+                    />
 
                 <androidx.appcompat.widget.Toolbar
                     android:id="@+id/toolbar"
@@ -137,7 +154,7 @@
                     android:drawablePadding="@dimen/drawable_padding"
                     android:focusable="true"
                     android:gravity="center"
-                    android:text="@{viewmodel.institutionInfo.institution.website}"
+                    app:sitioWebText="@{viewmodel.institutionInfo.institution.website}"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:textColor="@color/link_color"
                     android:textSize="15sp"
@@ -205,7 +222,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:paddingHorizontal="5dp"
-                            android:text="@string/instagram_message"
+                            app:instagramText="@{viewmodel.institutionInfo.institution.instagram}"
                             android:textAppearance="?android:attr/textAppearanceSmall"
                             tools:text="Instagram Account" />
 
@@ -234,7 +251,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:paddingHorizontal="5dp"
-                            android:text="@string/visit_our_facebook_page"
+                            app:facebookText="@{viewmodel.institutionInfo.institution.facebook}"
                             android:textAppearance="?android:attr/textAppearanceSmall"
                             android:textColor="@color/facebook"
                             tools:text="Facebook Account"
