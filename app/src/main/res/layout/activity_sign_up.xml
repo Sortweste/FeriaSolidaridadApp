@@ -116,6 +116,17 @@
                     app:selectedValue="@={SignUpViewModel.faculty}"
                     tools:entries="@array/facultades" />
 
+                <Spinner
+                    android:id="@+id/spinner_career"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_marginVertical="15dp"
+                    android:prompt="@string/career"
+                    android:spinnerMode="dialog"
+                    app:selectedValue="@={SignUpViewModel.career}"
+                    tools:entries="@array/arquitectura_e_ingenieria" />
+
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

@@ -125,4 +125,5 @@
     <string name="last_name">Last Name</string>
     <string name="faculty">Faculty</string>
     <string name="carousel_image">carousel_image</string>
+    <string name="career">career</string>
 </resources>

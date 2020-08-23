@@ -14,6 +14,7 @@ class SignUpViewModel @ViewModelInject constructor(private val userRepository: U
     val inputFirstName = MutableLiveData<String>()
     val inputLastName = MutableLiveData<String>()
     val faculty = MutableLiveData<String>()
+    val career = MutableLiveData<String>()
 
     val errorEmail = MutableLiveData<String>()
     val errorPassword = MutableLiveData<String>()

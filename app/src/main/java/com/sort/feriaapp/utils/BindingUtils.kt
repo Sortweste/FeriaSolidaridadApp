@@ -93,7 +93,7 @@ fun setHTMLFormText(view: TextView, text:String?){
 
 @Suppress("UNCHECKED_CAST")
 @BindingAdapter(value = ["selectedValue", "selectedValueAttrChanged"], requireAll = false)
-fun setSpinnerSelectedValue(spinner: Spinner, selectedValue: String, newTextAttrChanged: InverseBindingListener){
+fun setSpinnerSelectedValue(spinner: Spinner, selectedValue: String?, newTextAttrChanged: InverseBindingListener){
     spinner.onItemSelectedListener = object : OnItemSelectedListener {
         override fun onNothingSelected(p0: AdapterView<*>?) {}
         override fun onItemSelected(parent: AdapterView<*>?, view: View?, pos: Int, id: Long) = newTextAttrChanged.onChange()
