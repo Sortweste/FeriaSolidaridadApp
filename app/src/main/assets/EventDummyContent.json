@@ -212,11 +212,21 @@
   {
   "id": "22",
   "title": "Programa de Liderazgo Ignaciano Universitario Latinoamericano",
-  "imageURL":  "",
+  "imageURL":  "https://lh3.googleusercontent.com/pw/ACtC-3fuk0WxhYYadlA3FVsYaXicMd9TmgXcwTam97ObuKL8201kXtFMerC_69JVgb5XfLs_dChXY4uTTkhQjov2nQgOOK0ndo48Ac3Wugdhi79w8rTaCg3BnuQ8T-HAMaetpU3QCH80qQsisRrJEpN-q-ta=w1241-h827-no",
   "link": "",
   "email": "yami.catota76@gmail.com",
   "form": "",
   "description": "<p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:\"Calibri\",sans-serif;'><strong><em><span style='font-size:16px;line-height:107%;font-family:\"Lato\",serif;'>Informaci&oacute;n general</span></em></strong></p>\n<p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:\"Calibri\",sans-serif;text-align:justify;'><em><span style='font-size:16px;line-height:107%;font-family:\"Lato\",serif;'>Espacio formativo, con duraci&oacute;n de febrero a diciembre de 2021. Consta con actividades fuera de la Universidad y talleres formativos brindados los d&iacute;as viernes en el Campus UCA. Las actividades inician en febrero de 2021 y se finalizan en diciembre, entreg&aacute;ndose un diploma.</span></em></p>",
   "InstitutionId": "11a"
-}
+  },
+  {
+    "id": "23",
+    "title": "Actividades Fundación Paraíso Down El Salvador",
+    "imageURL":  "https://lh3.googleusercontent.com/pw/ACtC-3f7QNacGm9zsszoEy1yO_A-9Jo9U2woDDMqWo99KUanCTXCEqNxQLA2sKB_CqrzYRCxPGJn6F3BjYmaqbNC29927eVlL6_BuTtQHJ6FddT_DM-CjwU4eiK_ctULjoDxDhN0HegPXSbfd1ULaZcBDrvr=w1241-h827-no",
+    "link": "",
+    "email": "apoyosexternos.paraisodown@gmail.com",
+    "form": "",
+    "description": "<p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:\"Calibri\",sans-serif;'><strong><em><span style='font-size:16px;line-height:107%;font-family:\"Lato\",serif;'>Actividades Fundaci&oacute;n Para&iacute;so Down El Salvador</span></em></strong><strong><em><span style='font-size:16px;line-height:107%;font-family:\"Lato\",serif;'>&nbsp;</span></em></strong></p>\n<p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:\"Calibri\",sans-serif;text-align:justify;'><em><span style='font-size:16px;line-height:107%;font-family:\"Lato\",serif;'>Foros y Conversatorios virtuales dirigidas a profesionales, familiares o responsables de personas con s&iacute;ndrome de Down.</span></em></p>\n<p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:\"Calibri\",sans-serif;text-align:justify;'><em><span style='font-size:16px;line-height:107%;font-family:\"Lato\",serif;'>Tem&aacute;ticas sobre el s&iacute;ndrome de Down, desarrollo biopsicosocial, conducta, emociones, duelo, etc.</span></em></p>\n<p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:\"Calibri\",sans-serif;text-align:justify;'><em><span style='font-size:16px;line-height:107%;font-family:\"Lato\",serif;'>Puedes consultar sobre fechas y horarios a nuestro correo</span></em></p>",
+    "InstitutionId": "13a"
+  }
 ]
