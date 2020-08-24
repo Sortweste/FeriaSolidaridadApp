@@ -207,5 +207,21 @@
     "twitter": "",
     "instagram": "sumemossv",
     "facebook": "SumemosSV"
+  },
+  {
+    "id": "11a",
+    "description": "<p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:\"Calibri\",sans-serif;'><strong><em><span style='font-size:16px;line-height:107%;font-family:\"Lato\",serif;'>Informaci&oacute;n general</span></em></strong></p>\n<p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:\"Calibri\",sans-serif;text-align:justify;'><em><span style='font-size:16px;line-height:107%;font-family:\"Lato\",serif;color:#222222;background:white;'>Nuestro objetivo es promover la formaci&oacute;n y el ejercicio de un protagonismo juvenil basado en la justicia y la solidaridad, en aquellos escenarios de actuaci&oacute;n donde la comunidad estudiantil tiene un papel importante que cumplir. Este objetivo se concreta en nuestros programas de formaci&oacute;n, actividades de expresi&oacute;n y en el apoyo a las diferentes iniciativas estudiantiles que organizan espacios de conocimiento, reflexi&oacute;n y experiencias como contribuci&oacute;n a la formaci&oacute;n integral de la comunidad estudiantil. Por lo tanto, el CAE promueve el protagonismo juvenil entre la comunidad estudiantil de la UCA; facilita los espacios y gestiona los recursos oportunos en diferentes facetas de la vida estudiantil para que los j&oacute;venes ejerzan su protagonismo desde la dimensi&oacute;n acad&eacute;mica, formativa y de expresi&oacute;n; e impulsa la organizaci&oacute;n estudiantil como parte esencial de la vida universitaria con objetivos diversos que contribuyan a la formaci&oacute;n integral. CAE</span></em></p>",
+    "name": "Centro de Asuntos Estudiantiles (CAE)",
+    "summary": "Somos la unidad encargada de promover el protagonismo juvenil en la Universidad Centroamericana José Simeón Cañas. Aquí encontrarás espacios de expresión, planes de formación y acompañamiento para diversos tipos de organización estudiantil.",
+    "imageURL": [""],
+    "logoURL": "",
+    "videoURL": "",
+    "meetingURL": "",
+    "type": "Event",
+    "meetup": "",
+    "website": "http://www.uca.edu.sv/vida-estudiantil/asociaciones-movimientos/",
+    "twitter": "",
+    "instagram": "cae.ucasv",
+    "facebook": "CAE.UCASV"
   }
 ]
