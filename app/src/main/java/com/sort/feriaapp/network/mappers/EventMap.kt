@@ -8,6 +8,8 @@ fun EventResponse.toEvent() = Event(
     title = title,
     description = description,
     link = link,
+    email = "",
+    form = "",
     imageURL = image_url,
     InstitutionId = ""
 )

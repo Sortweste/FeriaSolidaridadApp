@@ -1,5 +1,7 @@
 package com.sort.feriaapp.ui.fragments
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -19,7 +21,7 @@ import com.sort.feriaapp.viewmodels.EventDetailViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class EventDetailFragment : Fragment(){
+class EventDetailFragment : Fragment(), View.OnClickListener{
 
     //private val args: EventDetailFragmentArgs by navArgs()
 
@@ -54,6 +56,8 @@ class EventDetailFragment : Fragment(){
             else  Toast.makeText(context, "No asistir", Toast.LENGTH_LONG).show()
         }
 
+        initListeners()
+
         return binding.root
     }
 
@@ -80,9 +84,28 @@ class EventDetailFragment : Fragment(){
         _binding = null
     }
 
+    private fun initListeners(){
+        binding.meetupView.setOnClickListener(this)
+        binding.emailView.setOnClickListener(this)
+        binding.formView.setOnClickListener(this)
+    }
+
     private fun validateLogin(){
         AlertDialog.display(requireContext(), resources.getString(R.string.login), resources.getString(R.string.login_message), resources.getString(R.string.OK))
         //Toast.makeText(context, "Asistencia Confirmada", Toast.LENGTH_LONG).show()
+    }
+
+    private fun prepareIntent(url: String){
+        val i = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+        startActivity(i)
+    }
+
+    override fun onClick(v: View?) {
+            when(v?.id){
+                binding.meetupView.id -> { prepareIntent(binding.meetupView.contentDescription.toString()) }
+                binding.emailView.id -> { prepareIntent(binding.emailView.contentDescription.toString()) }
+                binding.formView.id -> { prepareIntent(binding.formView.contentDescription.toString()) }
+            }
     }
 
 }

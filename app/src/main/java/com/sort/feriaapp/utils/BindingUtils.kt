@@ -79,6 +79,33 @@ fun setSitioWebAccountName(view: TextView, account:String?){
     }
 }
 
+@BindingAdapter("emailText")
+fun setEmailAccountName(view: TextView, account:String?){
+    if(!account.isNullOrBlank()){
+        val name: String = "Contáctanos para mayor información"
+        view.text = name
+        view.contentDescription = account
+    }
+}
+
+@BindingAdapter("formText")
+fun setFormAccount(view: TextView, account:String?){
+    if(!account.isNullOrBlank()){
+        val name: String = "Completa nuestro formulario"
+        view.text = name
+        view.contentDescription = account
+    }
+}
+
+@BindingAdapter("meetText")
+fun setMeetLink(view: TextView, account:String?){
+    if(!account.isNullOrBlank()){
+        val name: String = "Enlace a nuestra reunión"
+        view.text = name
+        view.contentDescription = account
+    }
+}
+
 
 @SuppressWarnings("deprecation")
 @BindingAdapter("htmlFormattedText")

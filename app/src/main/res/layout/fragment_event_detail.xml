@@ -55,10 +55,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
                     android:background="@android:color/transparent"
+                    android:theme="@style/ToolbarTheme"
                     app:contentInsetStart="0dp"
                     app:contentInsetStartWithNavigation="0dp"
-                    app:layout_collapseMode="pin"
-                    android:theme="@style/ToolbarTheme" />
+                    app:layout_collapseMode="pin" />
 
 
             </com.google.android.material.appbar.CollapsingToolbarLayout>
@@ -92,20 +92,57 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_margin="15dp"
+                    android:clickable="true"
                     android:drawableStart="@drawable/ic_action_video"
                     android:drawableLeft="@drawable/ic_action_video"
                     android:drawablePadding="@dimen/drawable_padding"
+                    android:focusable="true"
                     android:gravity="center"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@{viewmodel.eventInfo.link}"
                     app:goneUnless="@{viewmodel.eventInfo.link.empty}"
+                    app:meetText="@{viewmodel.eventInfo.link}"
                     tools:text="Link to our meetings" />
+
+                <TextView
+                    android:id="@+id/email_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="15dp"
+                    android:clickable="true"
+                    android:drawableStart="@drawable/ic_action_email"
+                    android:drawableLeft="@drawable/ic_action_email"
+                    android:drawablePadding="@dimen/drawable_padding"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    app:emailText="@{viewmodel.eventInfo.email}"
+                    app:goneUnless="@{viewmodel.eventInfo.email.empty}"
+                    tools:text="Contact Us" />
+
+                <TextView
+                    android:id="@+id/form_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="15dp"
+                    android:clickable="true"
+                    android:drawableStart="@drawable/ic_action_form"
+                    android:drawableLeft="@drawable/ic_action_form"
+                    android:drawablePadding="@dimen/drawable_padding"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    app:formText="@{viewmodel.eventInfo.form}"
+                    app:goneUnless="@{viewmodel.eventInfo.form.empty}"
+                    tools:text="Complete this form" />
 
                 <CheckBox
                     android:id="@+id/confirm_checkbox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:layout_marginVertical="10dp"
                     android:text="@string/confirm_assist" />
 
             </LinearLayout>
