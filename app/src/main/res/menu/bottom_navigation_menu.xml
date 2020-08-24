@@ -19,7 +19,7 @@
         android:title="@string/bottom_nav_news"
         />
     <item
-        android:id="@+id/galleryFragment"
+        android:id="@+id/profileFragment"
         android:enabled="true"
         android:icon="@drawable/ic_user"
         android:title="@string/bottom_nav_video"

@@ -26,9 +26,9 @@
             app:enterAnim="@anim/fragment_open_enter" />
     </fragment>
     <fragment
-        android:id="@+id/galleryFragment"
-        android:name="com.sort.feriaapp.ui.fragments.GalleryFragment"
-        android:label="Gallery"
+        android:id="@+id/profileFragment"
+        android:name="com.sort.feriaapp.ui.fragments.ProfileFragment"
+        android:label="Profile"
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/institutionDetailFragment"

@@ -10,10 +10,17 @@ abstract class SafeApiRequest {
         return if (response.isSuccessful)
             Resource.success(response.body()!!)
         else
-            error("${response.code()} ${response.message()}")
+            //error(response.message(), response.code())
+            error(response.code())
     }
 
-    private fun <T> error(message: String): Resource<T> {
+    private fun <T> error(code: Int): Resource<T> {
+        var message = ""
+        when(code){
+            404 -> {message = "Usuario no encontrado"}
+            400 -> {message = "Credenciales no válidas"}
+            500 -> {message = "Error al iniciar sesión"}
+        }
         return Resource.error(message)
     }
 

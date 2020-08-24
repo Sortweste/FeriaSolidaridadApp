@@ -22,13 +22,13 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-<!--
-        <TextView
+
+        <!--<TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="Username"
             android:text="@{profileViewModel.user.firstName}"
-            />
+            />-->
 
         <Button
             android:id="@+id/bottomLoginOut"
@@ -37,11 +37,11 @@
             android:layout_marginHorizontal="30dp"
             android:layout_marginVertical="20dp"
             android:text="@string/log_out"
-            app:backgroundTint="@android:color/secondary_text_light_nodisable"
+            app:backgroundTint="@android:color/holo_red_light"
             app:layout_constraintBottom_toBottomOf="@id/view_template_profie"
             />
 
-        <TextView
+        <!--<TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -59,8 +59,8 @@
             android:background="#FFFFFF"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/view_template_profie" />
--->
+            app:layout_constraintTop_toBottomOf="@id/view_template_profie" />-->
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
