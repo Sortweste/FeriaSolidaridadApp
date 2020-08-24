@@ -6,9 +6,9 @@ apply plugin: 'kotlin-kapt'
 apply plugin: "androidx.navigation.safeargs.kotlin"
 apply plugin: 'dagger.hilt.android.plugin'
 
-def keystorePropertiesFile = rootProject.file("keystore.properties")
+/*def keystorePropertiesFile = rootProject.file("keystore.properties")
 def keystoreProperties = new Properties()
-keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))*/
 
 android {
     compileSdkVersion 29
@@ -22,7 +22,7 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField("String",  "YOUTUBE_API_KEY", keystoreProperties['YOUTUBE_API_KEY'])
+       // buildConfigField("String",  "YOUTUBE_API_KEY", keystoreProperties['YOUTUBE_API_KEY'])
 
     }
 

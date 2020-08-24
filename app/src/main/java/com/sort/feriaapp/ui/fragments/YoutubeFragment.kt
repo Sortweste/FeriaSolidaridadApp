@@ -11,7 +11,7 @@ class YoutubeFragment : YouTubePlayerFragment(), YouTubePlayer.OnInitializedList
     private var videoURL: String? = null
 
     init {
-        initialize(BuildConfig.YOUTUBE_API_KEY, this)
+       // initialize(BuildConfig.YOUTUBE_API_KEY, this)
     }
 
     fun newInstance(videoURL: String) =

@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
 import android.webkit.WebChromeClient
 import android.webkit.WebView
+import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
@@ -36,10 +37,11 @@ import com.sort.feriaapp.utils.INSTAGRAM_PACKAGE
 import com.sort.feriaapp.utils.TWITTER_PACKAGE
 import com.sort.feriaapp.viewmodels.InstitutionDetailViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.android.synthetic.main.fragment_institution_display.*
 
 @AndroidEntryPoint
 class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMinimal>, View.OnClickListener {
-
+    lateinit var fullscreenView: View
     private var _binding: FragmentInstitutionDisplayBinding? = null
     private val binding get() = _binding!!
 
@@ -66,6 +68,25 @@ class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMin
         binding.webView.webChromeClient = object : WebChromeClient() {
             override fun onProgressChanged(view: WebView?, newProgress: Int) {
                 super.onProgressChanged(view, newProgress)
+            }
+
+            override fun onShowCustomView(view: View?, callback: CustomViewCallback?) {
+                super.onShowCustomView(view, callback)
+
+                if (view is FrameLayout) {
+                    fullscreenView = view
+                    fullscreenContainer.addView(fullscreenView)
+                    fullscreenContainer.visibility = View.VISIBLE
+                    topAppBar.visibility = View.GONE
+                }
+            }
+
+            override fun onHideCustomView() {
+                super.onHideCustomView()
+
+                fullscreenContainer.removeView(fullscreenView)
+                fullscreenContainer.visibility = View.GONE
+                topAppBar.visibility = View.VISIBLE
             }
         }
         initToolBar()

@@ -10,7 +10,10 @@
             name="viewmodel"
             type="com.sort.feriaapp.viewmodels.InstitutionDetailViewModel" />
     </data>
-
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/topAppBar"
         android:layout_width="match_parent"
@@ -248,5 +251,11 @@
         </androidx.core.widget.NestedScrollView>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
+        <FrameLayout
+            android:id="@+id/fullscreenContainer"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </FrameLayout>
+    </FrameLayout>
 </layout>
