@@ -11,7 +11,8 @@ data class Event (
     @ColumnInfo(name = "image_url") val imageURL: String,
     val link: String?,
     val email: String?,
-    val form: String,
+    val form: String?,
+    val css: String?,
     val description: String,
     val InstitutionId: String
 )

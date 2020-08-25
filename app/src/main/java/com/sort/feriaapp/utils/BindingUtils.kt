@@ -91,7 +91,7 @@ fun setEmailAccountName(view: TextView, account:String?){
 @BindingAdapter("formText")
 fun setFormAccount(view: TextView, account:String?){
     if(!account.isNullOrBlank()){
-        val name: String = "Completa nuestro formulario"
+        val name: String = "Contáctanos para mayor información"
         view.text = name
         view.contentDescription = account
     }

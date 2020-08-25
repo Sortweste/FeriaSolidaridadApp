@@ -90,6 +90,7 @@ class EventDetailFragment : Fragment(), View.OnClickListener{
         binding.meetupView.setOnClickListener(this)
         binding.emailView.setOnClickListener(this)
         binding.formView.setOnClickListener(this)
+        binding.cssView.setOnClickListener(this)
     }
 
     /*private fun validateLogin(){
@@ -112,7 +113,7 @@ class EventDetailFragment : Fragment(), View.OnClickListener{
             when(v?.id){
                 binding.meetupView.id -> { prepareIntent(binding.meetupView.contentDescription.toString()) }
                 binding.formView.id -> { prepareIntent(binding.formView.contentDescription.toString()) }
-
+                binding.cssView.id -> { prepareIntent(binding.cssView.contentDescription.toString()) }
                 binding.emailView.id -> { prepareIntentEmail(binding.emailView.contentDescription.toString()) }
             }
     }
