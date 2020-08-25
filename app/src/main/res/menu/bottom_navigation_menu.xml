@@ -18,10 +18,10 @@
         android:icon="@drawable/ic_action_news"
         android:title="@string/bottom_nav_news"
         />
-    <item
+    <!--<item
         android:id="@+id/profileFragment"
         android:enabled="true"
         android:icon="@drawable/ic_user"
         android:title="@string/bottom_nav_video"
-        />
+        />-->
 </menu>
