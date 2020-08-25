@@ -100,11 +100,17 @@ class EventDetailFragment : Fragment(), View.OnClickListener{
         startActivity(i)
     }
 
+    private fun prepareIntentEmail(url: String){
+        val i = Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto",url,null))
+        startActivity(i)
+    }
+
     override fun onClick(v: View?) {
             when(v?.id){
                 binding.meetupView.id -> { prepareIntent(binding.meetupView.contentDescription.toString()) }
-                binding.emailView.id -> { prepareIntent(binding.emailView.contentDescription.toString()) }
                 binding.formView.id -> { prepareIntent(binding.formView.contentDescription.toString()) }
+
+                binding.emailView.id -> { prepareIntentEmail(binding.emailView.contentDescription.toString()) }
             }
     }
 
