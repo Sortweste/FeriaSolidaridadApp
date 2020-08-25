@@ -45,12 +45,9 @@ class ProfileFragment : Fragment() {
         layoutManager.spanSizeLookup = object: GridLayoutManager.SpanSizeLookup(){
             override fun getSpanSize(position: Int): Int = if(position % 3 == 0) 2 else 1
         }
-        /*val layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
-        layoutManager.gapStrategy = StaggeredGridLayoutManager.GAP_HANDLING_MOVE_ITEMS_BETWEEN_SPANS*/
 
         binding.recyclerViewBook.also {
             it.setHasFixedSize(true)
-            //it.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
             it.layoutManager = layoutManager
             it.adapter = adapter
         }

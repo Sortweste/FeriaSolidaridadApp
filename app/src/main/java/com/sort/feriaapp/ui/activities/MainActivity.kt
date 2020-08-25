@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity(), NavController.OnDestinationChangedList
     private var _binding: ActivityMainBinding? = null
     private val binding get() = _binding!!
 
-    private var menu: Menu? = null
+    //private var menu: Menu? = null
 
     @Inject
     lateinit var mSharedPreferences: SharedPreferencesManager
@@ -53,11 +53,11 @@ class MainActivity : AppCompatActivity(), NavController.OnDestinationChangedList
         super.onCreateOptionsMenu(menu)
         val inflater: MenuInflater = menuInflater
         inflater.inflate(R.menu.app_bar_menu, menu)
-        if (!mSharedPreferences.getData(TOKEN_KEY).isNullOrEmpty()) {
+        /*if (!mSharedPreferences.getData(TOKEN_KEY).isNullOrEmpty()) {
             menu?.findItem(R.id.log_out)?.isVisible = true
             menu?.findItem(R.id.login_in)?.isVisible = false
         }
-        this.menu = menu
+        this.menu = menu*/
         return true
     }
 
@@ -68,7 +68,7 @@ class MainActivity : AppCompatActivity(), NavController.OnDestinationChangedList
                 startActivity(intent)
                 true
             }
-            R.id.log_out -> {
+          /*  R.id.log_out -> {
                 mSharedPreferences.clearData(TOKEN_KEY)
                 this.menu?.findItem(R.id.log_out)?.isVisible = false
                 invalidateOptionsMenu()
@@ -79,7 +79,7 @@ class MainActivity : AppCompatActivity(), NavController.OnDestinationChangedList
                 startActivity(intent)
                 finish()
                 true
-            }
+            }*/
             else -> super.onOptionsItemSelected(item)
         }
     }
