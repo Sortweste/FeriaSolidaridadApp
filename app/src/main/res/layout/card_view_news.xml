@@ -20,19 +20,18 @@
         app:cardBackgroundColor="@color/white"
         >
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{news.title}"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:layout_margin="10dp"
+            tools:text="News Title Placeholder"/>
 
-        <LinearLayout
+        <!--<LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@{news.title}"
-                android:textAppearance="?attr/textAppearanceHeadline6"
-                android:layout_margin="10dp"
-                tools:text="News Title Placeholder"/>
 
             <ImageView
                 android:layout_width="match_parent"
@@ -42,7 +41,7 @@
                 android:contentDescription="@string/representative_news_image"
                 app:srcCompat="@drawable/slider" />
 
-        </LinearLayout>
+        </LinearLayout>-->
     </com.google.android.material.card.MaterialCardView>
 
 </layout>

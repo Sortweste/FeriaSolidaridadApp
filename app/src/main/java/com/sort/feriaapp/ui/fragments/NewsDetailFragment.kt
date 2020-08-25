@@ -1,8 +1,11 @@
 package com.sort.feriaapp.ui.fragments
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.Menu
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebChromeClient
@@ -17,7 +20,7 @@ import com.sort.feriaapp.viewmodels.NewsDetailViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class NewsDetailFragment : Fragment() {
+class NewsDetailFragment : Fragment(), View.OnClickListener {
 
     private var _binding : FragmentNewsDetailBinding? = null
     private val binding get() = _binding!!
@@ -43,6 +46,9 @@ class NewsDetailFragment : Fragment() {
             }
         }
         initToolBar()
+
+        binding.linkView.setOnClickListener(this)
+
         return binding.root
     }
 
@@ -50,6 +56,12 @@ class NewsDetailFragment : Fragment() {
         @JvmStatic
         fun newInstance() = NewsDetailFragment()
     }
+
+    override fun onPrepareOptionsMenu(menu: Menu) {
+        super.onPrepareOptionsMenu(menu)
+        menu.findItem(R.id.about).isVisible = false
+    }
+
     private fun initToolBar(){
         (activity as AppCompatActivity).apply {
             this.setSupportActionBar(binding.toolbar)
@@ -66,5 +78,14 @@ class NewsDetailFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun prepareIntent(url: String){
+        val i = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+        startActivity(i)
+    }
+
+    override fun onClick(v: View?) {
+        prepareIntent(binding.linkView.contentDescription.toString())
     }
 }

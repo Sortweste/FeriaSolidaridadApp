@@ -9,6 +9,7 @@ data class News(
     @PrimaryKey val id: String,
     val title: String,
     val description: String?,
-    @ColumnInfo(name = "image_url") val imageURL: String,
-    @ColumnInfo(name = "video_url") val videoURL: String?
+    @ColumnInfo(name = "image_url") val imageURL: String?,
+    @ColumnInfo(name = "video_url") val videoURL: String?,
+    val link: String?
 )

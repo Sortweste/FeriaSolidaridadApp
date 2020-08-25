@@ -11,10 +11,13 @@ import com.google.gson.reflect.TypeToken
 import com.sort.feriaapp.data.AppDatabase
 import com.sort.feriaapp.data.Event
 import com.sort.feriaapp.data.Institution
+import com.sort.feriaapp.data.News
 import com.sort.feriaapp.data.dao.EventDao
 import com.sort.feriaapp.data.dao.InstitutionDao
+import com.sort.feriaapp.data.dao.NewsDao
 import com.sort.feriaapp.utils.EVENT_DUMMY_CONTENT_FILENAME
 import com.sort.feriaapp.utils.INSTITUTION_DUMMY_CONTENT_FILENAME
+import com.sort.feriaapp.utils.NEWS_DUMMY_CONTENT_FILENAME
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.withContext
@@ -25,7 +28,8 @@ class SeedDatabaseWorker @WorkerInject constructor(
     @Assisted context: Context,
     @Assisted workerParameters: WorkerParameters,
     private val institutionDao: InstitutionDao,
-    private val eventDao: EventDao
+    private val eventDao: EventDao,
+    private val newsDao: NewsDao
 ) : CoroutineWorker(context, workerParameters) {
 
     override suspend fun doWork(): Result = coroutineScope {
@@ -45,6 +49,14 @@ class SeedDatabaseWorker @WorkerInject constructor(
                         val eventList: List<Event> =
                             Gson().fromJson(jsonReader, eventType)
                         eventDao.insertMany(*eventList.toTypedArray())
+                    }
+                }
+                applicationContext.assets.open(NEWS_DUMMY_CONTENT_FILENAME).use { inputStream ->
+                    JsonReader(inputStream.reader()).use { jsonReader ->
+                        val newsType = object : TypeToken<List<News>>() {}.type
+                        val newsList: List<News> =
+                            Gson().fromJson(jsonReader, newsType)
+                        newsDao.insertMany(*newsList.toTypedArray())
                     }
                 }
                 Result.success()
