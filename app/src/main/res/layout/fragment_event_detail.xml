@@ -45,6 +45,7 @@
                     android:contentDescription="@string/representative_image_institution"
                     android:fitsSystemWindows="true"
                     android:scaleType="centerCrop"
+                    android:background="@color/white"
                     app:layout_collapseMode="parallax"
                     app:layout_constraintTop_toTopOf="parent"
                     app:setImageUrl="@{viewmodel.eventInfo.imageURL}"

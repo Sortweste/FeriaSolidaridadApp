@@ -96,6 +96,8 @@ class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMin
     override fun onPrepareOptionsMenu(menu: Menu) {
         super.onPrepareOptionsMenu(menu)
         menu.findItem(R.id.about).isVisible = false
+        menu.findItem(R.id.login_in).isVisible = false
+        menu.findItem(R.id.log_out).isVisible = false
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
