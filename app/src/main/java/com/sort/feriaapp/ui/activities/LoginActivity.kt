@@ -31,7 +31,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        verifySession()
+        //verifySession()
         _binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
