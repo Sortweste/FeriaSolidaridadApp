@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.sort.feriaapp.ui.fragments.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_institutionDetailFragment"
+            app:destination="@id/institutionDetailFragment"
+            app:enterAnim="@anim/fragment_open_enter" />
+    </fragment>
+    <fragment
+        android:id="@+id/mediaFragment"
+        android:name="com.sort.feriaapp.ui.fragments.MediaFragment"
+        android:label="Media"
+        tools:layout="@layout/fragment_media" >
+        <action
+            android:id="@+id/action_mediaFragment_to_eventDetailFragment"
+            app:destination="@id/eventDetailFragment"
+            app:enterAnim="@anim/fragment_open_enter" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.sort.feriaapp.ui.fragments.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/institutionDetailFragment"
+        android:name="com.sort.feriaapp.ui.fragments.InstitutionDetailFragment"
+        android:label="InstitutionDetailFragment"
+        tools:layout="@layout/fragment_institution_display" >
+        <argument
+            android:name="institutionId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_institutionDetailFragment_to_eventDetailFragment"
+            app:destination="@id/eventDetailFragment"
+            app:enterAnim="@anim/fragment_fade_enter" />
+    </fragment>
+    <fragment
+        android:id="@+id/eventDetailFragment"
+        android:name="com.sort.feriaapp.ui.fragments.EventDetailFragment"
+        android:label="EventDetailFragment"
+        tools:layout="@layout/fragment_event_detail">
+        <argument
+            android:name="eventId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/newsFragment"
+        android:name="com.sort.feriaapp.ui.fragments.NewsFragment"
+        android:label="News"
+        tools:layout="@layout/fragment_news">
+        <action
+            android:id="@+id/action_newsFragment_to_newsDetailFragment"
+            app:destination="@id/newsDetailFragment"
+            app:enterAnim="@anim/fragment_open_enter" />
+    </fragment>
+    <fragment
+        android:id="@+id/newsDetailFragment"
+        android:name="com.sort.feriaapp.ui.fragments.NewsDetailFragment"
+        android:label="NewsDetailFragment" >
+        <argument
+            android:name="newsId"
+            app:argType="string" />
+    </fragment>
+
+</navigation>

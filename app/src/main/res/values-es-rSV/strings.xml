@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Feria de la Solidaridad</string>
+    <string name="bottom_nav_home">Instituciones</string>
+    <string name="bottom_nav_image">Proyectos</string>
+    <string name="bottom_nav_video">Perfil</string>
+
+    <string name="hello_blank_fragment">Soy un Fragmento Vacío</string>
+    <string name="representative_image_institution">Imagen Representativa de la Institución</string>
+    <string name="institution_icon">Logo de la Institución</string>
+    <string name="app_about">XIX Feria de la Solidaridad</string>
+    <string name="representative_event_institution">Representative Event Institution</string>
+    <string name="meetup_logo">meetup logo</string>
+    <string name="facebook_line">Encuéntranos en </string>
+    <string name="event_poster">Afiche del Evento</string>
+    <string name="confirm_assist">Confirmar Asistencia</string>
+    <string name="login">Inicia sesión</string>
+    <string name="OK">Aceptar</string>
+    <string name="login_message">Debes iniciar sesión para asistir</string>
+    <string name="about_title">Acerca De</string>
+    <string name="twitter_icon">twitter_icon</string>
+    <string name="facebook_icon">facebook icon</string>
+    <string name="instagram_icon">instagram icon</string>
+    <string name="visit_our_facebook_page">Visita nuestra página en Facebook</string>
+    <string name="instagram_message">¡Síguenos en Instagram!</string>
+    <string name="email_hint">Correo electrónico</string>
+    <string name="password_hint">Contraseña</string>
+    <string name="sign_up">Regístrese</string>
+    <string name="need_an_account">¿No tiene cuenta?</string>
+    <string name="representative_news_image">Imagen Representativa para una noticia</string>
+    <string name="bottom_nav_news">Novedades</string>
+    <string name="log_out">Cerrar sesión</string>
+    <string name="my_events">Mis Eventos</string>
+    <string name="already_have_an_account">¿Ya tiene una cuenta?</string>
+    <string name="first_name">Nombres</string>
+    <string name="last_name">Apellidos</string>
+    <string name="faculty">Facultad</string>
+    <string name="carousel_image">Imagen Carrusel</string>
+    <string name="career">Carrera</string>
+    <string name="year">Año</string>
+    <string name="bottom_nav_images">Álbum</string>
+    <string name="report">Repórtate con el Centro de Servicio Social para particpar en este proyecto</string>
+</resources>

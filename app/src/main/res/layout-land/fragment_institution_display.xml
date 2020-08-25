@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.sort.feriaapp.viewmodels.InstitutionDetailViewModel" />
+    </data>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/topAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/collapsing_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:collapsedTitleTextAppearance="@style/CollapsedBar"
+                app:contentScrim="?attr/colorPrimary"
+                app:expandedTitleGravity="right"
+                app:expandedTitleMarginBottom="0dp"
+                app:expandedTitleMarginTop="150dp"
+                app:expandedTitleTextAppearance="@style/ExpandedBar"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+                app:title="@{viewmodel.institutionInfo.institution.name}"
+                app:titleEnabled="true">
+
+                <!--             <FrameLayout
+                android:id="@+id/fragment_carousel"
+                android:name="com.sort.feriaapp.fragment_carousel"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/representative_carousel"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:contentDescription="@string/representative_image_institution"
+                    android:fitsSystemWindows="true"
+                    android:scaleType="centerCrop"
+                    app:layout_collapseMode="parallax"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:setImageUrl="@{viewmodel.institutionInfo.institution.imageURL[0]}"
+                    tools:src="@drawable/slider" />
+                     -->
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/view_pager_carousel"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:overScrollMode="never"/>
+
+                <LinearLayout
+                    android:id="@+id/layout_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_gravity="bottom"
+                    />
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="@android:color/transparent"
+                    android:theme="@style/ToolbarTheme"
+                    app:contentInsetStart="0dp"
+                    app:contentInsetStartWithNavigation="0dp"
+                    app:layout_collapseMode="pin" />
+
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/institute_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginVertical="10dp"
+                    app:htmlFormattedText="@{viewmodel.institutionInfo.institution.description}"
+                    tools:text="@string/lorem_ipsum" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view_institutions_events"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:data="@{viewmodel.events}" />
+
+                <WebView
+                    android:id="@+id/web_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_margin="20dp"
+                    app:goneUnless="@{viewmodel.institutionInfo.institution.videoURL.empty}"
+                    app:videoURL="@{viewmodel.institutionInfo.institution.videoURL}" />
+
+                <TextView
+                    android:id="@+id/meetup_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="15dp"
+                    android:drawableStart="@drawable/ic_action_video"
+                    android:drawableLeft="@drawable/ic_action_video"
+                    android:drawablePadding="@dimen/drawable_padding"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:text="@{viewmodel.institutionInfo.institution.meetup}"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textSize="15sp"
+                    app:goneUnless="@{viewmodel.institutionInfo.institution.meetup.empty}"
+                    tools:text="Link to our meetings"
+                    android:focusable="true" />
+
+
+                <TextView
+                    android:id="@+id/website_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="15dp"
+                    android:clickable="true"
+                    android:drawableStart="@drawable/ic_action_website"
+                    android:drawableLeft="@drawable/ic_action_website"
+                    android:drawablePadding="@dimen/drawable_padding"
+                    android:focusable="true"
+                    android:gravity="center"
+                    app:sitioWebText="@{viewmodel.institutionInfo.institution.website}"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/link_color"
+                    android:textSize="15sp"
+                    app:goneUnless="@{viewmodel.institutionInfo.institution.website.empty}"
+                    tools:text="Link to our website" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/twitter_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="15dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:goneUnless="@{viewmodel.institutionInfo.institution.twitter.empty}">
+
+                        <ImageView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:contentDescription="@string/twitter_icon"
+                            android:src="@drawable/twitter_icon" />
+
+                        <TextView
+                            android:id="@+id/twitter_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:paddingHorizontal="5dp"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:textColor="@color/twitter"
+                            app:twitterText="@{viewmodel.institutionInfo.institution.twitter}"
+                            tools:text="Twitter Account"
+                            tools:textColor="@color/twitter" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/instagram_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="15dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:goneUnless="@{viewmodel.institutionInfo.institution.instagram.empty}">
+
+
+                        <ImageView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:contentDescription="@string/instagram_icon"
+                            android:src="@drawable/instagram_icon" />
+
+
+                        <TextView
+                            android:id="@+id/instagram_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:paddingHorizontal="5dp"
+                            app:instagramText="@{viewmodel.institutionInfo.institution.instagram}"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            tools:text="Instagram Account" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/facebook_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="15dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:goneUnless="@{viewmodel.institutionInfo.institution.facebook.empty}">
+
+                        <ImageView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:contentDescription="@string/facebook_icon"
+                            android:src="@drawable/facebook_icon" />
+
+                        <TextView
+                            android:id="@+id/facebook_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:paddingHorizontal="5dp"
+                            app:facebookText="@{viewmodel.institutionInfo.institution.facebook}"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:textColor="@color/facebook"
+                            tools:text="Facebook Account"
+                            tools:textColor="@color/facebook" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+        <FrameLayout
+            android:id="@+id/fullscreenContainer"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </FrameLayout>
+    </FrameLayout>
+</layout>

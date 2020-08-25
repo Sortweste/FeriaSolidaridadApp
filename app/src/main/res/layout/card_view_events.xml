@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="event"
+            type="com.sort.feriaapp.data.minimals.EventMinimal" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/MCVevent"
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        android:layout_margin="10dp"
+        android:foregroundGravity="center"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="10dp"
+        app:cardPreventCornerOverlap="false">
+
+        <ImageView
+            android:id="@+id/IMGcardview_event"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/event_poster"
+            android:foregroundGravity="center"
+            android:scaleType="centerCrop"
+            app:setImageUrl="@{event.imageURL}"
+            tools:src="@drawable/slider" />
+
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

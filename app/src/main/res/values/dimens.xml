@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="Title_cardview">28sp</dimen>
+    <dimen name="institution_cardview">18sp</dimen>
+    <dimen name="description_cardview">14sp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+    <dimen name="circle_image">50dp</dimen>
+    <dimen name="drawable_padding">10dp</dimen>
+</resources>
