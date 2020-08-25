@@ -53,10 +53,10 @@ class EventDetailFragment : Fragment(), View.OnClickListener{
 
         initToolBar()
 
-        binding.confirmCheckbox.setOnCheckedChangeListener { _, b ->
+        /*binding.confirmCheckbox.setOnCheckedChangeListener { _, b ->
             if(b) validateLogin()
             else  Toast.makeText(context, "No asistir", Toast.LENGTH_LONG).show()
-        }
+        }*/
 
         initListeners()
 
@@ -92,10 +92,11 @@ class EventDetailFragment : Fragment(), View.OnClickListener{
         binding.formView.setOnClickListener(this)
     }
 
-    private fun validateLogin(){
+    /*private fun validateLogin(){
         AlertDialog.display(requireContext(), resources.getString(R.string.login), resources.getString(R.string.login_message), resources.getString(R.string.OK))
         //Toast.makeText(context, "Asistencia Confirmada", Toast.LENGTH_LONG).show()
-    }
+    }*/
+
 
     private fun prepareIntent(url: String){
         val i = Intent(Intent.ACTION_VIEW, Uri.parse(url))

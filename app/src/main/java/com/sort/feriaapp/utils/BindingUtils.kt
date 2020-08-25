@@ -97,6 +97,15 @@ fun setFormAccount(view: TextView, account:String?){
     }
 }
 
+@BindingAdapter("cssFormText")
+fun setCSSFormAccount(view: TextView, account:String?){
+    if(!account.isNullOrBlank()){
+        val name: String = "Formulario de CSS"
+        view.text = name
+        view.contentDescription = account
+    }
+}
+
 @BindingAdapter("meetText")
 fun setMeetLink(view: TextView, account:String?){
     if(!account.isNullOrBlank()){
