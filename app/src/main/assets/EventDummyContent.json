@@ -228,5 +228,45 @@
     "form": "",
     "description": "<p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:\"Calibri\",sans-serif;'><strong><em><span style='font-size:16px;line-height:107%;font-family:\"Lato\",serif;'>Actividades Fundaci&oacute;n Para&iacute;so Down El Salvador</span></em></strong><strong><em><span style='font-size:16px;line-height:107%;font-family:\"Lato\",serif;'>&nbsp;</span></em></strong></p>\n<p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:\"Calibri\",sans-serif;text-align:justify;'><em><span style='font-size:16px;line-height:107%;font-family:\"Lato\",serif;'>Foros y Conversatorios virtuales dirigidas a profesionales, familiares o responsables de personas con s&iacute;ndrome de Down.</span></em></p>\n<p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:\"Calibri\",sans-serif;text-align:justify;'><em><span style='font-size:16px;line-height:107%;font-family:\"Lato\",serif;'>Tem&aacute;ticas sobre el s&iacute;ndrome de Down, desarrollo biopsicosocial, conducta, emociones, duelo, etc.</span></em></p>\n<p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:\"Calibri\",sans-serif;text-align:justify;'><em><span style='font-size:16px;line-height:107%;font-family:\"Lato\",serif;'>Puedes consultar sobre fechas y horarios a nuestro correo</span></em></p>",
     "InstitutionId": "13a"
+  },
+  {
+    "id": "24",
+    "title": "Diseño y Desarrollo del portal para el programa LA FUENTE",
+    "imageURL":  "https://lh3.googleusercontent.com/pw/ACtC-3eWD3V-8mEoHBKhr-XUFGomqIQNnZfddLf8E93LEJYDMwEa6yo-yk-nqQTX5s_LCVDLM2roDKBHsNQTTQ2PULaulRzlGDiojx2tQ3GbYjjJvCnhLlS0yyUYmo1LZCIujcmZucWm9NyQoUYIDSFULu-l=w1600-h734-no\"",
+    "link": "",
+    "email": "",
+    "form": "https://forms.gle/v31HtdNhyXAKt9b59",
+    "description": "<p style='margin-right:0cm;margin-left:0cm;font-size:15px;font-family:\"Calibri\",sans-serif;margin-top:0cm;margin-bottom:8.0pt;line-height:107%;'><em><span style='font-family:\"Lato\",serif;color:black;'>Buscamos j&oacute;venes en el &aacute;rea de Ing. En Computaci&oacute;n y Lic. En Dise&ntilde;o Gr&aacute;fico y carreras afines para el dise&ntilde;o y desarrollo de un portal donde podamos proveer a nuestros beneficiarios una plataforma con un entorno agradable e intuitivo donde puedan realizar los procesos y recibir toda la informaci&oacute;n necesaria sobre eventos y actividades de nuestro sitio a trav&eacute;s de la creaci&oacute;n de un Usuario &uacute;nico protegido con contrase&ntilde;a.</span></em></p>\n<p style='margin-right:0cm;margin-left:0cm;font-size:15px;font-family:\"Calibri\",sans-serif;margin-top:0cm;margin-bottom:8.0pt;line-height:107%;'><strong><em><span style='font-family:\"Lato\",serif;color:black;'>Plazas para voluntarios disponibles:</span></em></strong><em><span style='font-family:\"Lato\",serif;color:black;'>&nbsp;5</span></em></p>",
+    "InstitutionId": "13a"
+  },
+  {
+    "id": "25",
+    "title": "Tutores para el programa LA FUENTE",
+    "imageURL":  "https://lh3.googleusercontent.com/pw/ACtC-3eWD3V-8mEoHBKhr-XUFGomqIQNnZfddLf8E93LEJYDMwEa6yo-yk-nqQTX5s_LCVDLM2roDKBHsNQTTQ2PULaulRzlGDiojx2tQ3GbYjjJvCnhLlS0yyUYmo1LZCIujcmZucWm9NyQoUYIDSFULu-l=w1600-h734-no\"",
+    "link": "",
+    "email": "",
+    "form": "https://forms.gle/v31HtdNhyXAKt9b59",
+    "description": "<p style='margin-right:0cm;margin-left:0cm;font-size:15px;font-family:\"Calibri\",sans-serif;margin-top:0cm;margin-bottom:8.0pt;line-height:107%;'><em><span style='font-family:\"Lato\",serif;color:black;'>Buscamos j&oacute;venes tutores en el &aacute;rea de Ingeniar&iacute;a o Licenciatura con un enfoque en la educaci&oacute;n de Matem&aacute;ticas, Ingles Y Computaci&oacute;n de 3er Ciclo y Bachillerato para refuerzo acad&eacute;mico dentro del programa la FUENTE</span></em></p>\n<p style='margin-right:0cm;margin-left:0cm;font-size:15px;font-family:\"Calibri\",sans-serif;margin-top:0cm;margin-bottom:8.0pt;line-height:107%;'><strong><em><span style='font-family:\"Lato\",serif;color:black;'>Plazas para voluntarios disponibles:</span></em></strong><em><span style='font-family:\"Lato\",serif;color:black;'>&nbsp;6 (2 por cada materia)</span></em></p>",
+    "InstitutionId": "13a"
+  },
+  {
+    "id": "26",
+    "title": "Tutores para el programa \nEDUCACION Y CAPACITACION PARA ADULTOS",
+    "imageURL":  "https://lh3.googleusercontent.com/pw/ACtC-3eWD3V-8mEoHBKhr-XUFGomqIQNnZfddLf8E93LEJYDMwEa6yo-yk-nqQTX5s_LCVDLM2roDKBHsNQTTQ2PULaulRzlGDiojx2tQ3GbYjjJvCnhLlS0yyUYmo1LZCIujcmZucWm9NyQoUYIDSFULu-l=w1600-h734-no\"",
+    "link": "",
+    "email": "",
+    "form": "https://forms.gle/v31HtdNhyXAKt9b59",
+    "description": "<p style='margin-right:0cm;margin-left:0cm;font-size:15px;font-family:\"Calibri\",sans-serif;margin-top:0cm;margin-bottom:8.0pt;line-height:107%;'><em><span style='font-family:\"Lato\",serif;color:black;'>Buscamos j&oacute;venes tutores en el &aacute;rea de Ingeniar&iacute;a o Licenciatura con un enfoque en la educaci&oacute;n de Matem&aacute;ticas, Ingles Y Computaci&oacute;n para personal adultas dentro del programa de EDUCACION Y CAPACITACION PARA ADULTOS</span></em></p>\n<p style='margin-right:0cm;margin-left:0cm;font-size:15px;font-family:\"Calibri\",sans-serif;margin-top:0cm;margin-bottom:8.0pt;line-height:107%;'><strong><em><span style='font-family:\"Lato\",serif;color:black;'>Plazas para voluntarios disponibles:</span></em></strong><em><span style='font-family:\"Lato\",serif;color:black;'>&nbsp;6 (2 por cada materia)</span></em></p>",
+    "InstitutionId": "13a"
+  },
+  {
+    "id": "27",
+    "title": "Tutores para el programa \nASESORIA LEGAL PARA JOVENES Y FAMILIAS DE COMUNIDADES BENEFICIARIAS\n",
+    "imageURL":  "https://lh3.googleusercontent.com/pw/ACtC-3eWD3V-8mEoHBKhr-XUFGomqIQNnZfddLf8E93LEJYDMwEa6yo-yk-nqQTX5s_LCVDLM2roDKBHsNQTTQ2PULaulRzlGDiojx2tQ3GbYjjJvCnhLlS0yyUYmo1LZCIujcmZucWm9NyQoUYIDSFULu-l=w1600-h734-no\"",
+    "link": "",
+    "email": "",
+    "form": "https://forms.gle/v31HtdNhyXAKt9b59",
+    "description": "<p style='margin-right:0cm;margin-left:0cm;font-size:15px;font-family:\"Calibri\",sans-serif;margin-top:0cm;margin-bottom:8.0pt;line-height:107%;'><em><span style='font-family:\"Lato\",serif;color:black;'>Buscamos j&oacute;venes de Lic. En ciencias jur&iacute;dicas para asesorar en tr&aacute;mites relacionados a familia, vivienda y otros similares en j&oacute;venes y familias beneficiarias de nuestros programas</span></em></p>\n<p style='margin-right:0cm;margin-left:0cm;font-size:15px;font-family:\"Calibri\",sans-serif;margin-top:0cm;margin-bottom:8.0pt;line-height:107%;'><strong><em><span style='font-family:\"Lato\",serif;color:black;'>Plazas para voluntarios disponibles:</span></em></strong><em><span style='font-family:\"Lato\",serif;color:black;'>&nbsp;3</span></em></p>",
+    "InstitutionId": "13a"
   }
 ]

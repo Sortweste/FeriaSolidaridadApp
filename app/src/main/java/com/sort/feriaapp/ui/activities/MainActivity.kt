@@ -41,10 +41,6 @@ class MainActivity : AppCompatActivity(), NavController.OnDestinationChangedList
         navController.addOnDestinationChangedListener(this)
     }
 
-    override fun onResume() {
-        super.onResume()
-        updateMenu()
-    }
 
     override fun onDestinationChanged(controller: NavController, destination: NavDestination, arguments: Bundle?) {
         when(destination.id){
@@ -63,14 +59,6 @@ class MainActivity : AppCompatActivity(), NavController.OnDestinationChangedList
         }
         this.menu = menu
         return true
-    }
-
-    private fun updateMenu(){
-        if (!mSharedPreferences.getData(TOKEN_KEY).isNullOrEmpty()) {
-            this.menu?.findItem(R.id.log_out)?.isVisible = true
-            this.menu?.findItem(R.id.login_in)?.isVisible = false
-            invalidateOptionsMenu()
-        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
