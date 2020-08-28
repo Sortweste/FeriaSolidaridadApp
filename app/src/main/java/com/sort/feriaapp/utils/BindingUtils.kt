@@ -115,6 +115,32 @@ fun setMeetLink(view: TextView, account:String?){
     }
 }
 
+@BindingAdapter("emailText2")
+fun setEmail2AccountName(view: TextView, account:String?){
+    if(!account.isNullOrBlank()){
+        val name: String = account
+        view.text = name
+        view.contentDescription = account
+    }
+}
+
+@BindingAdapter("telephoneText")
+fun setTelephoneAccountName(view: TextView, account:String?){
+    if(!account.isNullOrBlank()){
+        val name: String = account
+        view.text = name
+        view.contentDescription = account
+    }
+}
+
+@BindingAdapter("googleFormText")
+fun setGoogleFormAccountName(view: TextView, account:String?){
+    if(!account.isNullOrBlank()){
+        val name: String = "Formulario"
+        view.text = name
+        view.contentDescription = account
+    }
+}
 
 @SuppressWarnings("deprecation")
 @BindingAdapter("htmlFormattedText")

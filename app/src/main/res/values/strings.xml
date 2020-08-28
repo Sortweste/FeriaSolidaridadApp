@@ -130,4 +130,7 @@
     <string name="bottom_nav_images">Images</string>
     <string name="report">Report to CSS</string>
     <string name="image_to_zoom">Image to Zoom</string>
+    <string name="Telefono">Telefono</string>
+    <string name="correo">Correo</string>
+    <string name="Formulario">Formulario</string>
 </resources>

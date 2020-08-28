@@ -108,6 +108,63 @@
                     app:htmlFormattedText="@{viewmodel.institutionInfo.institution.description}"
                     tools:text="@string/lorem_ipsum" />
 
+                <TextView
+                    android:id="@+id/googleForm_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_margin="15dp"
+                    android:clickable="true"
+                    android:drawableStart="@drawable/ic_action_form"
+                    android:drawableLeft="@drawable/ic_action_form"
+                    android:drawablePadding="@dimen/drawable_padding"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/link_color"
+                    android:textSize="15sp"
+                    app:goneUnless="@{viewmodel.institutionInfo.institution.googleForm.empty}"
+                    app:googleFormText="@{viewmodel.institutionInfo.institution.googleForm}"
+                    tools:text="@string/Formulario" />
+
+                <TextView
+                    android:id="@+id/email_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_margin="15dp"
+                    android:clickable="true"
+                    android:drawableStart="@drawable/ic_action_email"
+                    android:drawableLeft="@drawable/ic_action_email"
+                    android:drawablePadding="@dimen/drawable_padding"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/link_color"
+                    android:textSize="15sp"
+                    app:goneUnless="@{viewmodel.institutionInfo.institution.email.empty}"
+                    app:emailText2="@{viewmodel.institutionInfo.institution.email}"
+                    tools:text="@string/correo" />
+
+                <TextView
+                    android:id="@+id/telephone_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_margin="15dp"
+                    android:clickable="true"
+                    android:drawableStart="@drawable/ic_action_website"
+                    android:drawableLeft="@drawable/ic_action_website"
+                    android:drawablePadding="@dimen/drawable_padding"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/link_color"
+                    android:textSize="15sp"
+                    app:goneUnless="@{viewmodel.institutionInfo.institution.phone.empty}"
+                    app:telephoneText="@{viewmodel.institutionInfo.institution.phone}"
+                    tools:text="@string/Telefono" />
+
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recycler_view_institutions_events"
                     android:layout_width="match_parent"
