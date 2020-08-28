@@ -23,6 +23,7 @@ import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import com.bumptech.glide.Glide
 import com.bumptech.glide.Priority
 import com.bumptech.glide.load.DataSource
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
@@ -64,9 +65,6 @@ class ProfileFragment : Fragment(), RecyclerViewOnTouchListener<InstagramMinimal
     private fun initRecyclerView(){
         adapter = StaggeredRecyclerViewAdapter(this)
         val layoutManager: GridLayoutManager = GridLayoutManager(requireContext(), 3)
-        /*layoutManager.spanSizeLookup = object: GridLayoutManager.SpanSizeLookup(){
-            override fun getSpanSize(position: Int): Int = if(position % 3 == 0) 2 else 1
-        }*/
 
         binding.recyclerViewBook.also {
             it.setHasFixedSize(true)
@@ -91,12 +89,10 @@ class ProfileFragment : Fragment(), RecyclerViewOnTouchListener<InstagramMinimal
         val imageView = dialog.findViewById<ImageView>(R.id.dialog_image)
         //Glide.with(imageView).load(Uri.parse(obj.imageURL)).dontAnimate().error(R.drawable.logo_oficial).priority(Priority.HIGH).into(imageView)
 
-        val circularProgress = CircularProgressDrawable(requireContext())
-        circularProgress.strokeWidth = 5f
-        circularProgress.centerRadius = 30f
-        circularProgress.start()
 
-        Glide.with(imageView).load(Uri.parse(obj.imageURL)).centerCrop().placeholder(R.drawable.white).into(imageView)
+        Glide.with(requireContext()).asBitmap().load(Uri.parse(obj.imageURL)).skipMemoryCache(true).diskCacheStrategy(DiskCacheStrategy.NONE).centerCrop().placeholder(R.drawable.white).dontAnimate().into(imageView)
+
+        //Glide.with(requireContext()).load(Uri.parse(obj.imageURL)).onlyRetrieveFromCache(true).centerCrop().error(R.drawable.white).into(imageView)
 
         /*Glide.with(imageView).load(Uri.parse(obj.imageURL)).listener(object : RequestListener<Drawable>{
             override fun onLoadFailed(
@@ -113,18 +109,9 @@ class ProfileFragment : Fragment(), RecyclerViewOnTouchListener<InstagramMinimal
         }).into(imageView)*/
 
         dialog.findViewById<TextView>(R.id.dialog_description).text = obj.description
-        /*imageView.setOnTouchListener{_, motionEvent ->
-            when(motionEvent.action){
-                MotionEvent.ACTION_UP -> { dialog.dismiss() }
-            }
-            true
-        }*/
+
         dialog.create()
-
-        //dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         dialog.window?.attributes?.windowAnimations = R.style.DialogScale
-
-
         dialog.show()
     }
 
@@ -132,13 +119,5 @@ class ProfileFragment : Fragment(), RecyclerViewOnTouchListener<InstagramMinimal
     override fun onImageTouch(v: View, obj: InstagramMinimal) {
         showDialog(obj)
     }
-
-    /*override fun onImageTouch(flag: Boolean, obj: InstagramMinimal, motionEvent: MotionEvent) {
-        val dialog = showDialog(obj)
-        when(motionEvent.action){
-            MotionEvent.ACTION_BUTTON_PRESS -> {dialog.show()}
-            MotionEvent.ACTION_BUTTON_RELEASE -> { dialog.dismiss() }
-        }
-    }*/
 
 }

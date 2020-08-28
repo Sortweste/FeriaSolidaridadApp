@@ -1,5 +1,8 @@
 package com.sort.feriaapp.utils
 
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.os.Build
 import android.text.Html
@@ -12,7 +15,11 @@ import androidx.databinding.InverseBindingAdapter
 import androidx.databinding.InverseBindingListener
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.request.target.CustomTarget
+import com.bumptech.glide.request.transition.Transition
 import com.sort.feriaapp.interfaces.BindAdapter
+import java.io.ByteArrayInputStream
+import java.io.ByteArrayOutputStream
 
 
 @BindingAdapter("data")
@@ -26,7 +33,7 @@ fun <T> setRecyclerViewProperties(recyclerView: RecyclerView, data: List<T>?){
 @BindingAdapter("setImageUrl")
 fun bindImageUrl(view: ImageView, url: String?){
     if(!url.isNullOrBlank())
-        Glide.with(view.context).load(Uri.parse(url)).into(view)
+        Glide.with(view.context).asBitmap().load(Uri.parse(url)).fitCenter().into(view)
 }
 
 @BindingAdapter("goneUnless")

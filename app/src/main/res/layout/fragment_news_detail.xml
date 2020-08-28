@@ -71,7 +71,7 @@
                     tools:text="@string/lorem_ipsum" />
 
                 <WebView
-                    android:id="@+id/web_view"
+                    android:id="@+id/web_view_news"
                     android:layout_width="match_parent"
                     android:layout_height="300dp"
                     android:layout_margin="20dp"
