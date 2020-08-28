@@ -4,12 +4,13 @@ import android.app.Application
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
+import com.sort.feriaapp.data.minimals.InstagramMinimal
 import com.sort.feriaapp.data.repositories.EventRepository
 import com.sort.feriaapp.data.repositories.UserRepository
 
 class ProfileViewModel @ViewModelInject constructor(private val eventRepository: EventRepository, private val userRepository: UserRepository): ViewModel(){
 
-    val images = listOf<String>(
+    private val images = listOf<String>(
         "https://lh3.googleusercontent.com/pw/ACtC-3cRhqqrkTbSmP1JBj2QHUuhhkzjBjQlYb24tqdkCfr4g8eJ6l6G4Mv8_n3Yydj1KNDw81xBPlbtjj9QlBwfo7iF5datIDz5H3C2FlDRjV9M6Q_lC1XqtOpz_3GOhvsmZHEsfDaQ0h3tkreEvcCRF65R=w1103-h827-no",
         "https://lh3.googleusercontent.com/pw/ACtC-3eMJTcZsAIyu90_n6ucStUSTcJoXXMpJ--5PO7ogvJWg_4w1_1wUKsKa0P7sl9enl0oTeT8le4MR6mXSzamToxCkXseK_5kNga1jeNQr0eWO2YEybY7iGgmBPXqbKFFxYhtSkngBa46v7aTtEtUMw07=w1103-h827-no",
         "https://lh3.googleusercontent.com/pw/ACtC-3cWfXZ3lmNumvoKvy2LZ_thaf0cYHolXeDJTmsrgMLdApXzzpwFE2vpti_qBzg5PAIqCl3wyKBLHatSWDecn-TEOGmRqZkhMpCxH_ShtcuQWVGrmOk5V4R8l3KEib-f4OA462UfASkUhJED9ljmIjCy=w1542-h827-no",
@@ -28,6 +29,48 @@ class ProfileViewModel @ViewModelInject constructor(private val eventRepository:
         "https://lh3.googleusercontent.com/pw/ACtC-3f9Qi-QK-k7VA-3a0TYusg-ZseJeT9Sk3vvMe2ZAhTy5DgUvWe0XWbORP0aN5fQ3pYSrx3VNzKNycIaAN3MLAJnq1uOWfDvZN-5Us7jSu_29y4keOMyFai-LByjybd023YfRBa8qcYs_Q4oWoNmaRaR=w1103-h827-no",
         "https://lh3.googleusercontent.com/pw/ACtC-3cx35mDvC7ZVGs4aePzccknQV8lwy07VcuF-QB7oQxYV9f-GnYuJgOlxbg4JwGvcvGnjQ-ycbuov4xakYjR5yFIDfXZkzQRGRCmUPe4NtqjsLMJC8avX5A0BwUYIy5TYanaGY9M-v8Miim_TSTxybm8=w1248-h827-no",
         "https://lh3.googleusercontent.com/pw/ACtC-3fMP6vwEj3RDxmxUWzeP3VsCaXC0y4YhMoK7rfUSL7saf08NoO0hZG3YOoNEidS1Sxc5MnlfPrgN0n5LQA_dglx3MK0LbQGZJrGAJQ2UKeDVGJRKCrj_Cy2Mgest6vyl69oj2EOgYOE7eJtaOQKxMhy=w1470-h827-no"
+    )
+
+    private val descriptions = listOf<String>(
+        "Levantamiento arquitectónico Museo Casa Blanca",
+        "Levantamiento arquitectónico Museo Casa Blanca",
+        "Refuerzo Escolar de Matemática Instituto Nacional José Damián Villacorta",
+        "Refuerzo Escolar de Matemática Instituto Nacional José Damián Villacorta",
+        "Propuesta de mejora en Planta Lechera ENA",
+        "Diseño de línea de impelencia Cooperativa Los Almendros San Ildefonso San Vicente",
+        "Diseño de línea de impelencia Cooperativa Los Almendros San Ildefonso San Vicente",
+        "Levantamiento topográfico en Santa Ana",
+        "Levantamiento topográfico en Arcatao",
+        "Levantamiento topográfico en Arcatao",
+        "Levantamiento topográfico en Arcatao",
+        "Diseño de Ciclo Ruta Puerto de La Libertad",
+        "Entrega Levantamiento topográfico Arcatao",
+        "Entrega Levantamiento arquitectónico Museo Casa Blanca",
+        "Propuesta Arquitectónica Casa Comunal Santa Rosa, San Vicente",
+        "Propuesta Arquitectónica Casa Comunal Santa Rosa, San Vicente",
+        "Propuesta Arquitectónica Casa Comunal Santa Rosa, San Vicente",
+        "Propuesta de mejora en Planta Lechera ENA"
+    )
+
+    val data = listOf<InstagramMinimal>(
+        InstagramMinimal(images[0], descriptions[0]),
+        InstagramMinimal(images[1], descriptions[1]),
+        InstagramMinimal(images[2], descriptions[2]),
+        InstagramMinimal(images[3], descriptions[3]),
+        InstagramMinimal(images[4], descriptions[4]),
+        InstagramMinimal(images[5], descriptions[5]),
+        InstagramMinimal(images[6], descriptions[6]),
+        InstagramMinimal(images[7], descriptions[7]),
+        InstagramMinimal(images[8], descriptions[8]),
+        InstagramMinimal(images[9], descriptions[9]),
+        InstagramMinimal(images[10], descriptions[10]),
+        InstagramMinimal(images[11], descriptions[11]),
+        InstagramMinimal(images[12], descriptions[12]),
+        InstagramMinimal(images[13], descriptions[13]),
+        InstagramMinimal(images[14], descriptions[14]),
+        InstagramMinimal(images[15], descriptions[15]),
+        InstagramMinimal(images[16], descriptions[16]),
+        InstagramMinimal(images[17], descriptions[17])
     )
 
 }

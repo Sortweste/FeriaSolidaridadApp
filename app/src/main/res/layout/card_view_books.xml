@@ -6,36 +6,35 @@
     <data>
 
         <variable
-            name="image"
-            type="String" />
+            name="instagramMinimal"
+            type="com.sort.feriaapp.data.minimals.InstagramMinimal" />
     </data>
-
-    <!--<com.google.android.material.card.MaterialCardView
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:foregroundGravity="center"
-        app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="5dp"
-        android:layout_marginVertical="1dp"
-        android:layout_marginHorizontal="2dp"
-        app:cardPreventCornerOverlap="false">-->
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="wrap_content"
         android:layout_margin="1dp">
 
         <ImageView
+            android:id="@+id/image_book"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:setImageUrl="@{image}"
-            android:scaleType="fitXY"
+            android:layout_height="150dp"
+            app:setImageUrl="@{instagramMinimal.imageURL}"
+            android:scaleType="center"
             android:adjustViewBounds="true"
             tools:src="@drawable/slider"
+            android:background="@color/white"
             android:contentDescription="@string/carousel_image" />
-    </RelativeLayout>
 
-    <!--</com.google.android.material.card.MaterialCardView>-->
+        <!--<ImageView
+            android:id="@+id/expanded_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible"
+            android:contentDescription="@string/image_to_zoom"
+            />-->
+
+    </RelativeLayout>
 
 
 </layout>

@@ -10,7 +10,9 @@ import kotlinx.coroutines.launch
 
 class InstitutionDetailViewModel @ViewModelInject constructor(private val institutionRepository: InstitutionRepository, @Assisted savedStateHandle: SavedStateHandle): ViewModel() {
 
-    private val institutionId: String = savedStateHandle["institutionId"]!!
+    private val savedStateHandleViewModel = savedStateHandle
+
+    private val institutionId: String = savedStateHandleViewModel.get("institutionId")!!
 
     private val _getInstitutionInfo: LiveData<InstitutionWithEvents> = institutionRepository.getInstitutionInfoById(institutionId).asLiveData()
 
@@ -19,5 +21,7 @@ class InstitutionDetailViewModel @ViewModelInject constructor(private val instit
 
     val events: List<EventMinimal> = emptyList()
 
+    //fun saveWebViewState() = savedStateHandleViewModel.set("WebViewState")
+    //fun getWebViewState() = savedStateHandleViewModel.get("WebViewState")
 
 }
