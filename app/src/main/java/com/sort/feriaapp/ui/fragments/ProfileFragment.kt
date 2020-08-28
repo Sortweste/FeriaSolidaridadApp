@@ -3,6 +3,9 @@ package com.sort.feriaapp.ui.fragments
 import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.app.Dialog
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
+import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,13 +13,19 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import com.bumptech.glide.Glide
 import com.bumptech.glide.Priority
+import com.bumptech.glide.load.DataSource
+import com.bumptech.glide.load.engine.GlideException
+import com.bumptech.glide.request.RequestListener
+import com.bumptech.glide.request.target.Target
 import com.sort.feriaapp.R
 import com.sort.feriaapp.adapters.StaggeredRecyclerViewAdapter
 import com.sort.feriaapp.data.minimals.InstagramMinimal
@@ -74,13 +83,34 @@ class ProfileFragment : Fragment(), RecyclerViewOnTouchListener<InstagramMinimal
 
 
 
-    @SuppressLint("ClickableViewAccessibility")
+    @SuppressLint("ClickableViewAccessibility", "NewApi")
     private fun showDialog(obj: InstagramMinimal){
         val dialog = Dialog(requireContext())
         dialog.setContentView(R.layout.instagram_dialog)
 
         val imageView = dialog.findViewById<ImageView>(R.id.dialog_image)
-        Glide.with(imageView).load(Uri.parse(obj.imageURL)).placeholder(R.drawable.slider).error(R.drawable.slider).priority(Priority.HIGH).into(imageView)
+        //Glide.with(imageView).load(Uri.parse(obj.imageURL)).dontAnimate().error(R.drawable.logo_oficial).priority(Priority.HIGH).into(imageView)
+
+        val circularProgress = CircularProgressDrawable(requireContext())
+        circularProgress.strokeWidth = 5f
+        circularProgress.centerRadius = 30f
+        circularProgress.start()
+
+        Glide.with(imageView).load(Uri.parse(obj.imageURL)).centerCrop().placeholder(R.drawable.white).into(imageView)
+
+        /*Glide.with(imageView).load(Uri.parse(obj.imageURL)).listener(object : RequestListener<Drawable>{
+            override fun onLoadFailed(
+                e: GlideException?, model: Any?, target: Target<Drawable>?, isFirstResource: Boolean): Boolean {
+                //dialog.findViewById<ProgressBar>(R.id.progress_dialog).visibility = View.GONE
+                return false
+            }
+
+            override fun onResourceReady(resource: Drawable?, model: Any?, target: Target<Drawable>?, dataSource: DataSource?, isFirstResource: Boolean): Boolean {
+                dialog.findViewById<ProgressBar>(R.id.progress_dialog).visibility = View.GONE
+                imageView.setImageDrawable(resource)
+                return false
+            }
+        }).into(imageView)*/
 
         dialog.findViewById<TextView>(R.id.dialog_description).text = obj.description
         /*imageView.setOnTouchListener{_, motionEvent ->
@@ -89,6 +119,11 @@ class ProfileFragment : Fragment(), RecyclerViewOnTouchListener<InstagramMinimal
             }
             true
         }*/
+        dialog.create()
+
+        //dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        dialog.window?.attributes?.windowAnimations = R.style.DialogScale
+
 
         dialog.show()
     }
