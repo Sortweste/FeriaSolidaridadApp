@@ -106,9 +106,11 @@ class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMin
         }
     }
 
+    /*
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
     }
+
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
@@ -119,7 +121,7 @@ class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMin
         super.onViewStateRestored(savedInstanceState)
         binding.webView.restoreState(savedInstanceState)
     }
-
+    */
     override fun onPrepareOptionsMenu(menu: Menu) {
         super.onPrepareOptionsMenu(menu)
         menu.findItem(R.id.about).isVisible = false

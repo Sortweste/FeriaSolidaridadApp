@@ -104,6 +104,7 @@ class EventDetailFragment : Fragment(), View.OnClickListener{
         startActivity(i)
     }
 
+
     private fun prepareIntentEmail(url: String){
         val i = Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto",url,null))
         startActivity(i)
