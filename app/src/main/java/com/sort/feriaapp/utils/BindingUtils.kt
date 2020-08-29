@@ -36,6 +36,13 @@ fun bindImageUrl(view: ImageView, url: String?){
         Glide.with(view.context).asBitmap().load(Uri.parse(url)).fitCenter().into(view)
 }
 
+@BindingAdapter("setImageUrlCrop")
+fun bindImageUrlCrop(view: ImageView, url: String?){
+    if(!url.isNullOrBlank())
+        Glide.with(view.context).asBitmap().load(Uri.parse(url)).centerCrop().into(view)
+}
+
+
 @BindingAdapter("goneUnless")
 fun goneUnless(view: View, notVisible: Boolean){
     view.visibility = if(notVisible) View.GONE else View.VISIBLE

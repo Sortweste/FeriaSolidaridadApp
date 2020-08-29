@@ -77,8 +77,8 @@ class NewsDetailFragment : Fragment(), View.OnClickListener {
 
                 if (view is FrameLayout) {
                     fullscreenView = view
-                    fullscreenContainer.addView(fullscreenView)
-                    fullscreenContainer.visibility = View.VISIBLE
+                    binding.fullScreenContainerNews.addView(fullscreenView)
+                    binding.fullScreenContainerNews.visibility = View.VISIBLE
                     topAppBar.visibility = View.GONE
                 }
             }
@@ -86,8 +86,8 @@ class NewsDetailFragment : Fragment(), View.OnClickListener {
             override fun onHideCustomView() {
                 super.onHideCustomView()
 
-                fullscreenContainer.removeView(fullscreenView)
-                fullscreenContainer.visibility = View.GONE
+                binding.fullScreenContainerNews.removeView(fullscreenView)
+                binding.fullScreenContainerNews.visibility = View.GONE
                 topAppBar.visibility = View.VISIBLE
             }
         }

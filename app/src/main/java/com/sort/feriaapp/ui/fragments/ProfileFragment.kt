@@ -118,6 +118,7 @@ class ProfileFragment : Fragment(), RecyclerViewOnTouchListener<InstagramMinimal
 
     override fun onImageTouch(v: View, obj: InstagramMinimal) {
         showDialog(obj)
+
     }
 
 }

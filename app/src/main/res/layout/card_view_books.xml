@@ -19,11 +19,11 @@
             android:id="@+id/image_book"
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            app:setImageUrl="@{instagramMinimal.imageURL}"
-            android:scaleType="centerInside"
+            app:setImageUrlCrop="@{instagramMinimal.imageURL}"
+            android:scaleType="fitCenter"
             android:adjustViewBounds="true"
             tools:src="@drawable/slider"
-            android:background="@color/black"
+            android:background="@color/white"
             android:contentDescription="@string/carousel_image" />
 
         <!--<ImageView

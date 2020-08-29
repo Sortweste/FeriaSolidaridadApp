@@ -98,5 +98,14 @@
 
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>
+
+        <FrameLayout
+            android:id="@+id/fullScreenContainerNews"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </FrameLayout>
+
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
 </layout>
