@@ -10,7 +10,10 @@
             name="viewmodel"
             type="com.sort.feriaapp.viewmodels.InstitutionDetailViewModel" />
     </data>
-
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/topAppBar"
         android:layout_width="match_parent"
@@ -147,22 +150,19 @@
                     tools:text="@string/correo" />
 
                 <TextView
-                    android:id="@+id/telephone_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="start"
                     android:layout_margin="15dp"
-                    android:clickable="true"
                     android:drawableStart="@drawable/ic_action_website"
                     android:drawableLeft="@drawable/ic_action_website"
                     android:drawablePadding="@dimen/drawable_padding"
-                    android:focusable="true"
                     android:gravity="center"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:textColor="@color/link_color"
                     android:textSize="15sp"
                     app:goneUnless="@{viewmodel.institutionInfo.institution.phone.empty}"
-                    app:telephoneText="@{viewmodel.institutionInfo.institution.phone}"
+                    android:text="@{viewmodel.institutionInfo.institution.phone}"
                     tools:text="@string/Telefono" />
 
                 <androidx.recyclerview.widget.RecyclerView
@@ -321,6 +321,15 @@
 
         </androidx.core.widget.NestedScrollView>
 
+
+
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
+        <FrameLayout
+            android:id="@+id/fullscreenContainer"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </FrameLayout>
+    </FrameLayout>
 
 </layout>
