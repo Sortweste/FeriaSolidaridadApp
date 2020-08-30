@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.content.res.Configuration
+import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,7 +13,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
 import android.webkit.WebChromeClient
-import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.FrameLayout
@@ -41,7 +41,6 @@ import com.sort.feriaapp.utils.INSTAGRAM_PACKAGE
 import com.sort.feriaapp.utils.TWITTER_PACKAGE
 import com.sort.feriaapp.viewmodels.InstitutionDetailViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.fragment_institution_display.*
 
 @AndroidEntryPoint
 class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMinimal>, View.OnClickListener {
@@ -66,17 +65,22 @@ class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMin
         binding.viewmodel = institutionDetailViewModel
         binding.lifecycleOwner = viewLifecycleOwner
 
-        if (savedInstanceState != null)
+        /*if (savedInstanceState != null)
             binding.webView.restoreState(savedInstanceState)
         else
-            initWebView()
+            initWebView()*/
+
+        initWebView()
+        if(savedInstanceState!=null) binding.webView.restoreState(savedInstanceState)
 
         initListeners()
         initToolBar()
+
+
         return binding.root
     }
 
-    @SuppressLint("SetJavaScriptEnabled")
+    /*@SuppressLint("SetJavaScriptEnabled")
     private fun initWebView(){
         binding.webView.settings.javaScriptEnabled = true
         binding.webView.webChromeClient = object : WebChromeClient() {
@@ -104,24 +108,9 @@ class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMin
                 topAppBar.visibility = View.VISIBLE
             }
         }
-    }
-
-    /*
-    override fun onConfigurationChanged(newConfig: Configuration) {
-        super.onConfigurationChanged(newConfig)
-    }
+    }*/
 
 
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-        binding.webView.saveState(outState)
-    }
-
-    override fun onViewStateRestored(savedInstanceState: Bundle?) {
-        super.onViewStateRestored(savedInstanceState)
-        binding.webView.restoreState(savedInstanceState)
-    }
-    */
     override fun onPrepareOptionsMenu(menu: Menu) {
         super.onPrepareOptionsMenu(menu)
         menu.findItem(R.id.about).isVisible = false
@@ -174,6 +163,7 @@ class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMin
                 if(info.institution.imageURL.size > 1)
                     setUpIndicators(info.institution.imageURL.size)
                 initCarousel(info.institution.imageURL)
+                if(!info.institution.videoURL.isNullOrBlank()) loadWebView(info.institution.videoURL)
             })
         }
     }
@@ -269,5 +259,81 @@ class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMin
                 binding.twitterView.id -> { prepareIntentSocialMedia(TWITTER_PACKAGE, "twitter://user?screen_name=${binding.twitterValue.contentDescription}", "https://twitter.com/${binding.twitterValue.contentDescription}")}
             }
     }
+
+
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        binding.webView.saveState(outState)
+    }
+
+    override fun onViewStateRestored(savedInstanceState: Bundle?) {
+        super.onViewStateRestored(savedInstanceState)
+        binding.webView.restoreState(savedInstanceState)
+    }
+
+    @SuppressLint("SetJavaScriptEnabled")
+    private fun initWebView(){
+        binding.webView.webViewClient = WebViewClientCustom()
+        binding.webView.webChromeClient = WebChromeClientCustom()
+        binding.webView.settings.javaScriptEnabled = true
+
+    }
+
+    private fun loadWebView(videoURL: String){
+        val url = "<iframe width=\"300\" height=\"300\" src=\"https://www.youtube.com/embed/$videoURL\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe> "
+        binding.webView.loadData(url, "text/html", null)
+        binding.webViewProgressBar.visibility = View.GONE
+        binding.webView.visibility = View.VISIBLE
+    }
+
+    class WebViewClientCustom : WebViewClient(){
+        override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
+            super.onPageStarted(view, url, favicon)
+        }
+
+        override fun onPageFinished(view: WebView?, url: String?) {
+            super.onPageFinished(view, url)
+        }
+    }
+
+    inner class WebChromeClientCustom: WebChromeClient(){
+
+        private var mCustomView: View? = null
+        private var mCustomViewCallback: CustomViewCallback? = null
+        private var mFullscreenContainer: FrameLayout? = null
+        private var mOriginalOrientation = 0
+        private var mOriginalSystemUiVisibility = 0
+
+        override fun onHideCustomView(){
+
+            (activity?.window?.decorView as FrameLayout).removeView(mCustomView)
+            this.mCustomView = null;
+            (activity?.window?.decorView as FrameLayout).systemUiVisibility = mOriginalSystemUiVisibility
+            activity?.requestedOrientation = mOriginalOrientation
+            mCustomViewCallback?.onCustomViewHidden()
+            mCustomViewCallback = null
+        }
+
+        override fun onShowCustomView(view: View?, callback: CustomViewCallback?) {
+
+            if(mCustomView!=null) onHideCustomView()
+            else{
+                mCustomView = view
+                mOriginalSystemUiVisibility = activity?.window?.decorView?.systemUiVisibility!!
+                mOriginalOrientation = activity?.requestedOrientation!!
+                mCustomViewCallback = callback
+
+                //ViewGroup.LayoutParams.MATCH_PARENT = -1
+                (activity?.window?.decorView as FrameLayout).addView(mCustomView, FrameLayout.LayoutParams(-1,-1))
+                (activity?.window?.decorView as FrameLayout).systemUiVisibility = 3846
+            }
+        }
+
+    }
+
 
 }

@@ -70,13 +70,20 @@
                     app:htmlFormattedText="@{viewmodel.newsInfo.description}"
                     tools:text="@string/lorem_ipsum" />
 
-                <WebView
+                <!--<WebView
                     android:id="@+id/web_view_news"
                     android:layout_width="match_parent"
                     android:layout_height="300dp"
                     android:layout_margin="20dp"
                     app:goneUnless="@{viewmodel.newsInfo.videoURL.empty}"
-                    app:videoURL="@{viewmodel.newsInfo.videoURL}" />
+                    app:videoURL="@{viewmodel.newsInfo.videoURL}" />-->
+
+                <WebView
+                    android:id="@+id/web_view_news"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_margin="20dp"
+                    app:goneUnless="@{viewmodel.newsInfo.videoURL.empty}"/>
 
                 <TextView
                     android:id="@+id/link_view"

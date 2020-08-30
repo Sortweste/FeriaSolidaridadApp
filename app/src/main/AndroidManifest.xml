@@ -29,7 +29,8 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.activities.MainActivity"
-            android:screenOrientation="portrait" />
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            />
         <activity
             android:name=".ui.activities.AboutActivity"
             android:screenOrientation="portrait" />

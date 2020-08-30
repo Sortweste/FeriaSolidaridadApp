@@ -48,14 +48,13 @@ fun goneUnless(view: View, notVisible: Boolean){
     view.visibility = if(notVisible) View.GONE else View.VISIBLE
 }
 
-@BindingAdapter("videoURL")
+/*@BindingAdapter("videoURL")
 fun setWebViewValue(view: WebView, videoURL: String?){
     if(!videoURL.isNullOrBlank()){
         val url: String = "<iframe width=\"300\" height=\"300\" src=\"https://www.youtube.com/embed/$videoURL\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe> "
         view.loadData(url, "text/html", null)
     }
-
-}
+}*/
 
 @BindingAdapter("twitterText")
 fun setTwitterAccountName(view: TextView, account:String?){

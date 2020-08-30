@@ -175,13 +175,26 @@
                     android:layout_height="match_parent"
                     app:data="@{viewmodel.events}" />
 
-                <WebView
+                <!--<WebView
                     android:id="@+id/web_view"
                     android:layout_width="match_parent"
                     android:layout_height="300dp"
                     android:layout_margin="20dp"
                     app:goneUnless="@{viewmodel.institutionInfo.institution.videoURL.empty}"
-                    app:videoURL="@{viewmodel.institutionInfo.institution.videoURL}" />
+                    app:videoURL="@{viewmodel.institutionInfo.institution.videoURL}" />-->
+
+                <WebView
+                    android:id="@+id/web_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_margin="20dp"
+                    app:goneUnless="@{viewmodel.institutionInfo.institution.videoURL.empty}"/>
+
+                <ProgressBar
+                    android:id="@+id/web_view_progress_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_margin="20dp"/>
 
                 <TextView
                     android:id="@+id/meetup_view"
