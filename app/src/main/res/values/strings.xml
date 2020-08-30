@@ -7,7 +7,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="representative_image_institution">Representative Image</string>
     <string name="institution_icon">Institution Icon</string>
-    <string name="app_about">App Activity Title</string>
+    <string name="app_about">XIX Feria de la Solidaridad</string>
     <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at tristique velit. Vestibulum eget erat ac augue maximus feugiat. Cras luctus hendrerit ligula, non pretium nisi dictum quis. Nunc venenatis sodales velit. Cras gravida nisi odio, a laoreet felis venenatis quis. Aliquam erat volutpat. Integer nec nisi eu urna volutpat facilisis vitae vitae lectus. Nullam tincidunt scelerisque tristique. Cras ac aliquam magna. Etiam diam urna, bibendum eu vehicula sit amet, mattis non ipsum. Proin sit amet ante vel purus consequat rhoncus vitae ut ipsum. Sed tempor, urna ut tempor consectetur, ipsum ipsum congue elit, vel fermentum massa tellus nec lacus. Morbi molestie nibh commodo ante congue, id mollis nisi elementum. Praesent semper mi eget porta viverra. Proin condimentum pulvinar dolor, ullamcorper sollicitudin enim imperdiet ac. Curabitur convallis, risus et condimentum eleifend, justo nisl tempor orci, non posuere nisi turpis non urna.</string>
     <string name="representative_event_institution">Representative Event Institution</string>
     <string name="meetup_logo">meetup logo</string>
@@ -128,9 +128,9 @@
     <string name="career">career</string>
     <string name="year">year</string>
     <string name="bottom_nav_images">Images</string>
-    <string name="report">Report to CSS</string>
+    <string name="report">Confirm to CSS</string>
     <string name="image_to_zoom">Image to Zoom</string>
-    <string name="Telefono">Telefono</string>
-    <string name="correo">Correo</string>
-    <string name="Formulario">Formulario</string>
+    <string name="Telefono">Phone</string>
+    <string name="correo">e-mail</string>
+    <string name="Formulario">Form</string>
 </resources>

@@ -141,7 +141,7 @@ fun setTelephoneAccountName(view: TextView, account:String?){
 @BindingAdapter("googleFormText")
 fun setGoogleFormAccountName(view: TextView, account:String?){
     if(!account.isNullOrBlank()){
-        val name: String = "Formulario"
+        val name: String = "Mayor información aquí"
         view.text = name
         view.contentDescription = account
     }
