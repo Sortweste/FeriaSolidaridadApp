@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.sort.feriaapp.data.Institution
 import com.sort.feriaapp.interfaces.BindAdapter
 import com.sort.feriaapp.interfaces.RecyclerViewClickListener
@@ -32,6 +33,10 @@ class RecyclerViewAdapter(private val listener: RecyclerViewClickListener<Instit
             binding.root.setOnClickListener { listener.onCardViewClick(it, item) }
         }
     }
+
+    /*override fun onViewRecycled(holder: ViewHolder) {
+        Glide.with().clear(holder.itemView.)
+    }*/
 
     override fun setData(items: List<Institution>?) {
         if(!items.isNullOrEmpty()) {

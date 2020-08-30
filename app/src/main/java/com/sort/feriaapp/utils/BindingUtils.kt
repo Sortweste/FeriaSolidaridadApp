@@ -1,5 +1,8 @@
 package com.sort.feriaapp.utils
 
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.os.Build
 import android.text.Html
@@ -12,7 +15,11 @@ import androidx.databinding.InverseBindingAdapter
 import androidx.databinding.InverseBindingListener
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.request.target.CustomTarget
+import com.bumptech.glide.request.transition.Transition
 import com.sort.feriaapp.interfaces.BindAdapter
+import java.io.ByteArrayInputStream
+import java.io.ByteArrayOutputStream
 
 
 @BindingAdapter("data")
@@ -26,8 +33,15 @@ fun <T> setRecyclerViewProperties(recyclerView: RecyclerView, data: List<T>?){
 @BindingAdapter("setImageUrl")
 fun bindImageUrl(view: ImageView, url: String?){
     if(!url.isNullOrBlank())
-        Glide.with(view.context).load(Uri.parse(url)).into(view)
+        Glide.with(view.context).asBitmap().load(Uri.parse(url)).fitCenter().into(view)
 }
+
+@BindingAdapter("setImageUrlCrop")
+fun bindImageUrlCrop(view: ImageView, url: String?){
+    if(!url.isNullOrBlank())
+        Glide.with(view.context).asBitmap().load(Uri.parse(url)).centerCrop().into(view)
+}
+
 
 @BindingAdapter("goneUnless")
 fun goneUnless(view: View, notVisible: Boolean){
@@ -101,6 +115,33 @@ fun setFormAccount(view: TextView, account:String?){
 fun setCSSFormAccount(view: TextView, account:String?){
     if(!account.isNullOrBlank()){
         val name: String = "Formulario de CSS"
+        view.text = name
+        view.contentDescription = account
+    }
+}
+
+@BindingAdapter("emailText2")
+fun setEmail2AccountName(view: TextView, account:String?){
+    if(!account.isNullOrBlank()){
+        val name: String = account
+        view.text = name
+        view.contentDescription = account
+    }
+}
+
+@BindingAdapter("telephoneText")
+fun setTelephoneAccountName(view: TextView, account:String?){
+    if(!account.isNullOrBlank()){
+        val name: String = account
+        view.text = name
+        view.contentDescription = account
+    }
+}
+
+@BindingAdapter("googleFormText")
+fun setGoogleFormAccountName(view: TextView, account:String?){
+    if(!account.isNullOrBlank()){
+        val name: String = "Mayor información aquí"
         view.text = name
         view.contentDescription = account
     }

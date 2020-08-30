@@ -1,5 +1,6 @@
 package com.sort.feriaapp.ui.fragments
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -10,6 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebChromeClient
 import android.webkit.WebView
+import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation.findNavController
@@ -18,6 +20,7 @@ import com.sort.feriaapp.R
 import com.sort.feriaapp.databinding.FragmentNewsDetailBinding
 import com.sort.feriaapp.viewmodels.NewsDetailViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.android.synthetic.main.fragment_institution_display.*
 
 @AndroidEntryPoint
 class NewsDetailFragment : Fragment(), View.OnClickListener {
@@ -26,6 +29,8 @@ class NewsDetailFragment : Fragment(), View.OnClickListener {
     private val binding get() = _binding!!
 
     private val newsDetailViewModel: NewsDetailViewModel by viewModels()
+
+    lateinit var fullscreenView: View
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,12 +44,12 @@ class NewsDetailFragment : Fragment(), View.OnClickListener {
         _binding = FragmentNewsDetailBinding.inflate(inflater, container, false)
         binding.viewmodel = newsDetailViewModel
         binding.lifecycleOwner = viewLifecycleOwner
-        binding.webView.settings.javaScriptEnabled = true
-        binding.webView.webChromeClient = object : WebChromeClient() {
-            override fun onProgressChanged(view: WebView?, newProgress: Int) {
-                super.onProgressChanged(view, newProgress)
-            }
-        }
+
+        if (savedInstanceState != null)
+            binding.webViewNews.restoreState(savedInstanceState)
+        else
+            initWebView()
+
         initToolBar()
 
         binding.linkView.setOnClickListener(this)
@@ -55,6 +60,37 @@ class NewsDetailFragment : Fragment(), View.OnClickListener {
     companion object {
         @JvmStatic
         fun newInstance() = NewsDetailFragment()
+    }
+
+
+    @SuppressLint("SetJavaScriptEnabled")
+    private fun initWebView(){
+        binding.webViewNews.settings.javaScriptEnabled = true
+        binding.webViewNews.webChromeClient = object : WebChromeClient() {
+
+            override fun onProgressChanged(view: WebView?, newProgress: Int) {
+                super.onProgressChanged(view, newProgress)
+            }
+
+            override fun onShowCustomView(view: View?, callback: CustomViewCallback?) {
+                super.onShowCustomView(view, callback)
+
+                if (view is FrameLayout) {
+                    fullscreenView = view
+                    binding.fullScreenContainerNews.addView(fullscreenView)
+                    binding.fullScreenContainerNews.visibility = View.VISIBLE
+                    topAppBar.visibility = View.GONE
+                }
+            }
+
+            override fun onHideCustomView() {
+                super.onHideCustomView()
+
+                binding.fullScreenContainerNews.removeView(fullscreenView)
+                binding.fullScreenContainerNews.visibility = View.GONE
+                topAppBar.visibility = View.VISIBLE
+            }
+        }
     }
 
     override fun onPrepareOptionsMenu(menu: Menu) {

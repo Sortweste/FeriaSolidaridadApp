@@ -1,7 +1,9 @@
 package com.sort.feriaapp.ui.fragments
 
+import android.annotation.SuppressLint
 import android.content.ActivityNotFoundException
 import android.content.Intent
+import android.content.res.Configuration
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,7 +12,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
 import android.webkit.WebChromeClient
+import android.webkit.WebResourceRequest
 import android.webkit.WebView
+import android.webkit.WebViewClient
 import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.LinearLayout
@@ -62,10 +66,21 @@ class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMin
         binding.viewmodel = institutionDetailViewModel
         binding.lifecycleOwner = viewLifecycleOwner
 
-        initListeners()
+        if (savedInstanceState != null)
+            binding.webView.restoreState(savedInstanceState)
+        else
+            initWebView()
 
+        initListeners()
+        initToolBar()
+        return binding.root
+    }
+
+    @SuppressLint("SetJavaScriptEnabled")
+    private fun initWebView(){
         binding.webView.settings.javaScriptEnabled = true
         binding.webView.webChromeClient = object : WebChromeClient() {
+
             override fun onProgressChanged(view: WebView?, newProgress: Int) {
                 super.onProgressChanged(view, newProgress)
             }
@@ -89,15 +104,27 @@ class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMin
                 topAppBar.visibility = View.VISIBLE
             }
         }
-        initToolBar()
-        return binding.root
     }
 
+    /*
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
+    }
+
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        binding.webView.saveState(outState)
+    }
+
+    override fun onViewStateRestored(savedInstanceState: Bundle?) {
+        super.onViewStateRestored(savedInstanceState)
+        binding.webView.restoreState(savedInstanceState)
+    }
+    */
     override fun onPrepareOptionsMenu(menu: Menu) {
         super.onPrepareOptionsMenu(menu)
         menu.findItem(R.id.about).isVisible = false
-        /*menu.findItem(R.id.login_in).isVisible = false
-        menu.findItem(R.id.log_out).isVisible = false*/
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -107,8 +134,8 @@ class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMin
     }
 
     private fun initCarousel(imageSet: List<String>){
-        binding.viewPagerCarousel?.adapter = CarouselAdapter(this, imageSet.size, imageSet)
-        binding.viewPagerCarousel?.registerOnPageChangeCallback(onBoardingPageChangeCallback)
+        binding.viewPagerCarousel.adapter = CarouselAdapter(this, imageSet.size, imageSet)
+        binding.viewPagerCarousel.registerOnPageChangeCallback(onBoardingPageChangeCallback)
     }
 
     private var onBoardingPageChangeCallback = object : ViewPager2.OnPageChangeCallback() {
@@ -197,6 +224,9 @@ class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMin
         binding.instagramView.setOnClickListener(this)
         binding.websiteView.setOnClickListener(this)
         binding.meetupView.setOnClickListener(this)
+        binding.googleFormView?.setOnClickListener(this)
+        binding.telephoneView?.setOnClickListener(this)
+        binding.emailView?.setOnClickListener(this)
     }
 
     private fun prepareIntentSocialMedia(packageName: String, uriApp: String, uriWeb: String){
@@ -210,6 +240,18 @@ class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMin
         }
     }
 
+    private fun prepareIntentPhone(phoneNumber: String){
+        val callIntent: Intent = Uri.parse("tel:${phoneNumber}").let { number ->
+            Intent(Intent.ACTION_DIAL, number)
+        }
+        startActivity(callIntent)
+    }
+
+    private fun prepareIntentEmail(url: String){
+        val i = Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto",url,null))
+        startActivity(i)
+    }
+
     private fun prepareIntent(url: String){
         val i = Intent(Intent.ACTION_VIEW, Uri.parse(url))
         startActivity(i)
@@ -217,6 +259,9 @@ class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMin
 
     override fun onClick(v: View?) {
             when(v?.id){
+                binding.googleFormView?.id -> { prepareIntent(binding.googleFormView?.contentDescription.toString()) }
+                binding.telephoneView?.id -> { prepareIntentPhone(binding.telephoneView?.contentDescription.toString()) }
+                binding.emailView?.id -> { prepareIntentEmail(binding.emailView?.contentDescription.toString()) }
                 binding.meetupView.id -> { prepareIntent(binding.meetupView.text.toString()) }
                 binding.websiteView.id -> { prepareIntent(binding.websiteView.contentDescription.toString()) }
                 binding.facebookView.id -> { prepareIntentSocialMedia(FACEBOOK_PACKAGE, "fb://facewebmodal/f?href=https://www.facebook.com/${binding.facebookValue.contentDescription}", "https://www.facebook.com/${binding.facebookValue.contentDescription}")}
@@ -224,6 +269,5 @@ class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMin
                 binding.twitterView.id -> { prepareIntentSocialMedia(TWITTER_PACKAGE, "twitter://user?screen_name=${binding.twitterValue.contentDescription}", "https://twitter.com/${binding.twitterValue.contentDescription}")}
             }
     }
-
 
 }
