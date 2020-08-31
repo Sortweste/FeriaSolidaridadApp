@@ -63,19 +63,10 @@ class MediaFragment : Fragment(), RecyclerViewClickListener<EventMinimal> {
         adapter = RecyclerViewEventsAdapter(this,true)
         binding.recyclerViewEvent.also {
             it.setHasFixedSize(true)
-            if(it.resources.configuration.orientation == Configuration.ORIENTATION_PORTRAIT){
-                if(isTablet()){
-                    it.layoutManager = GridLayoutManager(requireContext(), 3)
-                }else{
-                    it.layoutManager = GridLayoutManager(requireContext(), 2)
-                }
-
-            } else{
-                if(isTablet()){
-                    it.layoutManager = GridLayoutManager(requireContext(), 4)
-                }else{
-                    it.layoutManager = GridLayoutManager(requireContext(), 3)
-                }
+            if(isTablet()){
+                it.layoutManager = GridLayoutManager(requireContext(), 4)
+            }else{
+                it.layoutManager = GridLayoutManager(requireContext(), 3)
             }
             it.adapter = adapter
         }
