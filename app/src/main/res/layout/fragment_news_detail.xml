@@ -9,15 +9,11 @@
             type="com.sort.feriaapp.viewmodels.NewsDetailViewModel" />
     </data>
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:id="@+id/topAppBar"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent">
 
-        <com.google.android.material.appbar.AppBarLayout
+        <!--<com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fitsSystemWindows="true">
@@ -49,7 +45,7 @@
 
             </com.google.android.material.appbar.CollapsingToolbarLayout>
 
-        </com.google.android.material.appbar.AppBarLayout>
+        </com.google.android.material.appbar.AppBarLayout>-->
 
 
         <androidx.core.widget.NestedScrollView
@@ -61,6 +57,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:fitsSystemWindows="true"
+                    android:theme="@style/ToolbarTheme"
+                    android:background="@color/colorPrimary"
+                    app:title="@{viewmodel.newsInfo.title}"
+                    app:titleTextColor="@color/white"
+                    android:layout_gravity="start"
+                    app:titleTextAppearance="@style/CollapsedBar"
+                    tools:ignore="NewApi"/>
+
 
                 <TextView
                     android:layout_width="match_parent"
@@ -106,6 +116,6 @@
             android:layout_height="match_parent">
         </FrameLayout>
 
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </RelativeLayout>
 
 </layout>
