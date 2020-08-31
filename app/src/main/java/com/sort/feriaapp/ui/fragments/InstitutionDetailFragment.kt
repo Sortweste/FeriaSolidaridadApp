@@ -204,9 +204,22 @@ class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMin
         }
     }
 
+    override fun onPause() {
+        super.onPause()
+        binding.webView.onPause()
+        binding.webView.pauseTimers()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        binding.webView.resumeTimers()
+        binding.webView.onResume()
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         binding.viewPagerCarousel?.unregisterOnPageChangeCallback(onBoardingPageChangeCallback)
+        binding.webView.destroy()
         _binding = null
     }
 

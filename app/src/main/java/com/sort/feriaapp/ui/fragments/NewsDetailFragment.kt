@@ -79,7 +79,7 @@ class NewsDetailFragment : Fragment(), View.OnClickListener {
                     fullscreenView = view
                     binding.fullScreenContainerNews.addView(fullscreenView)
                     binding.fullScreenContainerNews.visibility = View.VISIBLE
-                    topAppBar.visibility = View.GONE
+                    binding.toolbar.visibility = View.GONE
                 }
             }
 
@@ -88,7 +88,7 @@ class NewsDetailFragment : Fragment(), View.OnClickListener {
 
                 binding.fullScreenContainerNews.removeView(fullscreenView)
                 binding.fullScreenContainerNews.visibility = View.GONE
-                topAppBar.visibility = View.VISIBLE
+                binding.toolbar.visibility = View.VISIBLE
             }
         }
     }
@@ -111,8 +111,21 @@ class NewsDetailFragment : Fragment(), View.OnClickListener {
         }
     }
 
+    override fun onPause() {
+        super.onPause()
+        binding.webViewNews.onPause()
+        binding.webViewNews.pauseTimers()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        binding.webViewNews.resumeTimers()
+        binding.webViewNews.onResume()
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
+        binding.webViewNews.destroy()
         _binding = null
     }
 
