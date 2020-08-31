@@ -286,8 +286,8 @@ class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMin
     private fun loadWebView(videoURL: String){
         val url = "<iframe width=\"300\" height=\"300\" src=\"https://www.youtube.com/embed/$videoURL\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe> "
         binding.webView.loadData(url, "text/html", null)
-        binding.webViewProgressBar.visibility = View.GONE
-        binding.webView.visibility = View.VISIBLE
+        /*binding.webViewProgressBar.visibility = View.GONE
+        binding.webView.visibility = View.VISIBLE*/
     }
 
     class WebViewClientCustom : WebViewClient(){

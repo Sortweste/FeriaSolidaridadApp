@@ -188,13 +188,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="300dp"
                     android:layout_margin="20dp"
+                    android:layout_gravity="center"
                     app:goneUnless="@{viewmodel.institutionInfo.institution.videoURL.empty}"/>
 
-                <ProgressBar
+                <!--<ProgressBar
                     android:id="@+id/web_view_progress_bar"
                     android:layout_width="match_parent"
                     android:layout_height="300dp"
-                    android:layout_margin="20dp"/>
+                    app:goneUnless="@{viewmodel.institutionInfo.institution.videoURL.empty}"
+                    android:layout_margin="20dp"/>-->
 
                 <TextView
                     android:id="@+id/meetup_view"

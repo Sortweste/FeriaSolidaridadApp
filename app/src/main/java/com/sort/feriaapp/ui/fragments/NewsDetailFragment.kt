@@ -2,6 +2,8 @@ package com.sort.feriaapp.ui.fragments
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.content.res.Configuration
+import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -11,9 +13,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebChromeClient
 import android.webkit.WebView
+import android.webkit.WebViewClient
 import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.Navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.sort.feriaapp.R
@@ -45,10 +50,8 @@ class NewsDetailFragment : Fragment(), View.OnClickListener {
         binding.viewmodel = newsDetailViewModel
         binding.lifecycleOwner = viewLifecycleOwner
 
-        if (savedInstanceState != null)
-            binding.webViewNews.restoreState(savedInstanceState)
-        else
-            initWebView()
+        initWebView()
+        if(savedInstanceState!=null) binding.webViewNews.restoreState(savedInstanceState)
 
         initToolBar()
 
@@ -62,36 +65,11 @@ class NewsDetailFragment : Fragment(), View.OnClickListener {
         fun newInstance() = NewsDetailFragment()
     }
 
-
-    @SuppressLint("SetJavaScriptEnabled")
-    private fun initWebView(){
-        binding.webViewNews.settings.javaScriptEnabled = true
-        binding.webViewNews.webChromeClient = object : WebChromeClient() {
-
-            override fun onProgressChanged(view: WebView?, newProgress: Int) {
-                super.onProgressChanged(view, newProgress)
-            }
-
-            override fun onShowCustomView(view: View?, callback: CustomViewCallback?) {
-                super.onShowCustomView(view, callback)
-
-                if (view is FrameLayout) {
-                    fullscreenView = view
-                    binding.fullScreenContainerNews.addView(fullscreenView)
-                    binding.fullScreenContainerNews.visibility = View.VISIBLE
-                    topAppBar.visibility = View.GONE
-                }
-            }
-
-            override fun onHideCustomView() {
-                super.onHideCustomView()
-
-                binding.fullScreenContainerNews.removeView(fullscreenView)
-                binding.fullScreenContainerNews.visibility = View.GONE
-                topAppBar.visibility = View.VISIBLE
-            }
-        }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initObservers()
     }
+
 
     override fun onPrepareOptionsMenu(menu: Menu) {
         super.onPrepareOptionsMenu(menu)
@@ -124,4 +102,86 @@ class NewsDetailFragment : Fragment(), View.OnClickListener {
     override fun onClick(v: View?) {
         prepareIntent(binding.linkView.contentDescription.toString())
     }
+
+    private fun initObservers() {
+        lifecycleScope.launchWhenCreated {
+            newsDetailViewModel.newsInfo.observe(viewLifecycleOwner, Observer { info ->
+                if(!info.videoURL.isNullOrBlank()) loadWebView(info.videoURL)
+            })
+        }
+    }
+
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        binding.webViewNews.saveState(outState)
+    }
+
+    override fun onViewStateRestored(savedInstanceState: Bundle?) {
+        super.onViewStateRestored(savedInstanceState)
+        binding.webViewNews.restoreState(savedInstanceState)
+    }
+
+    @SuppressLint("SetJavaScriptEnabled")
+    private fun initWebView(){
+        binding.webViewNews.webViewClient = WebViewClientCustom()
+        binding.webViewNews.webChromeClient = WebChromeClientCustom()
+        binding.webViewNews.settings.javaScriptEnabled = true
+
+    }
+
+    private fun loadWebView(videoURL: String){
+        val url = "<iframe width=\"300\" height=\"300\" src=\"https://www.youtube.com/embed/$videoURL\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe> "
+        binding.webViewNews.loadData(url, "text/html", null)
+    }
+
+    class WebViewClientCustom : WebViewClient(){
+        override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
+            super.onPageStarted(view, url, favicon)
+        }
+
+        override fun onPageFinished(view: WebView?, url: String?) {
+            super.onPageFinished(view, url)
+        }
+    }
+
+    inner class WebChromeClientCustom: WebChromeClient(){
+
+        private var mCustomView: View? = null
+        private var mCustomViewCallback: CustomViewCallback? = null
+        private var mFullscreenContainer: FrameLayout? = null
+        private var mOriginalOrientation = 0
+        private var mOriginalSystemUiVisibility = 0
+
+        override fun onHideCustomView(){
+
+            (activity?.window?.decorView as FrameLayout).removeView(mCustomView)
+            this.mCustomView = null;
+            (activity?.window?.decorView as FrameLayout).systemUiVisibility = mOriginalSystemUiVisibility
+            activity?.requestedOrientation = mOriginalOrientation
+            mCustomViewCallback?.onCustomViewHidden()
+            mCustomViewCallback = null
+        }
+
+        override fun onShowCustomView(view: View?, callback: CustomViewCallback?) {
+
+            if(mCustomView!=null) onHideCustomView()
+            else{
+                mCustomView = view
+                mOriginalSystemUiVisibility = activity?.window?.decorView?.systemUiVisibility!!
+                mOriginalOrientation = activity?.requestedOrientation!!
+                mCustomViewCallback = callback
+
+                //ViewGroup.LayoutParams.MATCH_PARENT = -1
+                (activity?.window?.decorView as FrameLayout).addView(mCustomView, FrameLayout.LayoutParams(-1,-1))
+                (activity?.window?.decorView as FrameLayout).systemUiVisibility = 3846
+            }
+        }
+
+    }
+
+
 }
