@@ -1,11 +1,13 @@
 package com.sort.feriaapp.ui.fragments
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.content.res.Configuration
 import android.graphics.Bitmap
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.Menu
@@ -18,6 +20,7 @@ import android.webkit.WebViewClient
 import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.LinearLayout
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.get
@@ -318,6 +321,7 @@ class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMin
             mCustomViewCallback = null
         }
 
+        @RequiresApi(Build.VERSION_CODES.KITKAT)
         override fun onShowCustomView(view: View?, callback: CustomViewCallback?) {
 
             if(mCustomView!=null) onHideCustomView()
@@ -329,7 +333,8 @@ class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMin
 
                 //ViewGroup.LayoutParams.MATCH_PARENT = -1
                 (activity?.window?.decorView as FrameLayout).addView(mCustomView, FrameLayout.LayoutParams(-1,-1))
-                (activity?.window?.decorView as FrameLayout).systemUiVisibility = 3846
+                //(activity?.window?.decorView as FrameLayout).systemUiVisibility = 3846
+                (activity?.window?.decorView as FrameLayout).systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN ; View.SYSTEM_UI_FLAG_FULLSCREEN ; View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
             }
         }
 

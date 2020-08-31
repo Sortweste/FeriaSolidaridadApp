@@ -5,6 +5,7 @@ import android.content.Intent
 import android.content.res.Configuration
 import android.graphics.Bitmap
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -15,6 +16,7 @@ import android.webkit.WebChromeClient
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.FrameLayout
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -166,6 +168,7 @@ class NewsDetailFragment : Fragment(), View.OnClickListener {
             mCustomViewCallback = null
         }
 
+        @RequiresApi(Build.VERSION_CODES.KITKAT)
         override fun onShowCustomView(view: View?, callback: CustomViewCallback?) {
 
             if(mCustomView!=null) onHideCustomView()
@@ -177,7 +180,7 @@ class NewsDetailFragment : Fragment(), View.OnClickListener {
 
                 //ViewGroup.LayoutParams.MATCH_PARENT = -1
                 (activity?.window?.decorView as FrameLayout).addView(mCustomView, FrameLayout.LayoutParams(-1,-1))
-                (activity?.window?.decorView as FrameLayout).systemUiVisibility = 3846
+                (activity?.window?.decorView as FrameLayout).systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN ; View.SYSTEM_UI_FLAG_FULLSCREEN ; View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
             }
         }
 
