@@ -136,4 +136,5 @@
     <string name="outstanding">Outstanding</string>
     <string name="alumnos_que_destacaron_en_su_servicio_social">data_outstanding_title</string>
     <string name="data_oustanding_title">Alumnos que destacaron en su servicio social</string>
+    <string name="continuar">Continuar</string>
 </resources>
