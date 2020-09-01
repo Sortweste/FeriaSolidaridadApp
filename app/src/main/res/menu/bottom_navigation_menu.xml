@@ -24,4 +24,10 @@
         android:icon="@drawable/ic_action_image"
         android:title="@string/bottom_nav_images"
         />
+    <item
+        android:id="@+id/oustandingFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_action_star"
+        android:title="@string/outstanding"
+        />
 </menu>

@@ -45,4 +45,7 @@
     <string name="Telefono">Telefono</string>
     <string name="correo">Correo</string>
     <string name="Formulario">Formulario</string>
+    <string name="outstanding">Destacados</string>
+    <string name="alumnos_que_destacaron_en_su_servicio_social">data_outstanding_title</string>
+    <string name="data_oustanding_title">Alumnos que destacaron en su servicio social</string>
 </resources>
