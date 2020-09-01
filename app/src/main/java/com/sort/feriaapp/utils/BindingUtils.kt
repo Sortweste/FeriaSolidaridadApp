@@ -147,6 +147,24 @@ fun setGoogleFormAccountName(view: TextView, account:String?){
     }
 }
 
+@BindingAdapter("revistaText")
+fun setRevista(view: TextView, account:String?){
+    if(!account.isNullOrBlank()){
+        val name: String = "Ver Revista Realidades"
+        view.text = name
+        view.contentDescription = account
+    }
+}
+
+@BindingAdapter("enlaceText")
+fun setEnlace(view: TextView, account:String?){
+    if(!account.isNullOrBlank()){
+        val name: String = "Ver Reglamento del Centro de Servicio Social"
+        view.text = name
+        view.contentDescription = account
+    }
+}
+
 @BindingAdapter("meetText")
 fun setMeetLink(view: TextView, account:String?){
     if(!account.isNullOrBlank()){
