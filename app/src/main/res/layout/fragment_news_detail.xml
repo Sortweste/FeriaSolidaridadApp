@@ -114,6 +114,23 @@
                     app:meetText="@{viewmodel.newsInfo.link}"
                     tools:text="Link to our meetings" />
 
+                <TextView
+                    android:id="@+id/enlace_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="15dp"
+                    android:clickable="true"
+                    android:drawableStart="@drawable/ic_action_website"
+                    android:drawableLeft="@drawable/ic_action_website"
+                    android:drawablePadding="@dimen/drawable_padding"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    app:goneUnless="@{viewmodel.newsInfo.enlace.empty}"
+                    app:sitioWebText="@{viewmodel.newsInfo.enlace}"
+                    tools:text="Link to the web site" />
+
 
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>
