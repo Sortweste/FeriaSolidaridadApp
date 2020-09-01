@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.sort.feriaapp.viewmodels.AboutViewModel" />
+    </data>
+
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.activities.AboutActivity">
@@ -38,10 +46,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
-            android:drawablePadding="10dp"
+            android:text="@{viewmodel.data}"
             tools:drawableTop="@drawable/slider"
             tools:text="@string/lorem_ipsum" />
 
     </ScrollView>
 
 </RelativeLayout>
+
+</layout>

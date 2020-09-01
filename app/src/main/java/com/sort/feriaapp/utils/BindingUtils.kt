@@ -159,7 +159,7 @@ fun setRevista(view: TextView, account:String?){
 @BindingAdapter("enlaceText")
 fun setEnlace(view: TextView, account:String?){
     if(!account.isNullOrBlank()){
-        val name: String = "Ver Reglamento del Centro de Servicio Social"
+        val name: String = "Reglamento del Centro de Servicio Social"
         view.text = name
         view.contentDescription = account
     }
