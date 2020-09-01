@@ -8,6 +8,8 @@ import android.view.View
 import android.webkit.WebChromeClient
 import android.webkit.WebView
 import android.widget.FrameLayout
+import android.widget.LinearLayout
+import android.widget.RelativeLayout
 import androidx.activity.viewModels
 import com.sort.feriaapp.R
 import com.sort.feriaapp.databinding.ActivityMainBinding
@@ -40,10 +42,11 @@ class VideoActivity : AppCompatActivity(), View.OnClickListener {
 
     @SuppressLint("SetJavaScriptEnabled")
     private fun initWebView(){
-        binding.webViewVideo.settings.loadWithOverviewMode = true
+            //binding.webViewVideo.settings.loadWithOverviewMode = true
+        //binding.webViewVideo.layoutParams = RelativeLayout.LayoutParams(-1, -1)
         binding.webViewVideo.settings.useWideViewPort = true
         binding.webViewVideo.settings.javaScriptEnabled = true
-        binding.webViewVideo.webChromeClient = object : WebChromeClient() {
+        /*binding.webViewVideo.webChromeClient = object : WebChromeClient() {
 
             override fun onProgressChanged(view: WebView?, newProgress: Int) {
                 super.onProgressChanged(view, newProgress)
@@ -66,7 +69,12 @@ class VideoActivity : AppCompatActivity(), View.OnClickListener {
                 fullscreenContainer.visibility = View.GONE
                 binding.nextButton.visibility = View.VISIBLE
             }
-        }
+        }*/
+
+        binding.fullscreenContainer.removeAllViews()
+        fullscreenView = binding.webViewVideo
+        binding.fullscreenContainer.addView(fullscreenView)
+
     }
 
     override fun onPause() {

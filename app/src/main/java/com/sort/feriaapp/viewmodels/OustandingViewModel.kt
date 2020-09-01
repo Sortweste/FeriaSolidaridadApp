@@ -9,6 +9,8 @@ class OustandingViewModel @ViewModelInject constructor(): ViewModel() {
 
     val imageURL = "https://lh3.googleusercontent.com/pw/ACtC-3dx3t2FWPaH9CRk7JvvL4KXSW_7_GUcvfgyZg5pA6Rl6svWIuRXcSiO6Kf-Ot7zIUU7gxVPWKny7vyY7g6-zpjt--YH4oO_hSlib0azrV8mB2PpFBidN3DVrKF1FVLuELtjnNzy1dm99C7uBOwdEcoH=w1042-h827-no"
 
+    val videoURL = "cva1fD2dKt0"
+
     /*val students = listOf<String>(
         "ANDREA ROSMELI MARTÍNEZ ALARCÓN, estudiante de psicología.",
         "GABRIELA MICHELLE LÓPEZ CORTEZ, estudiante de psicología.",

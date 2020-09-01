@@ -30,13 +30,14 @@ class SplashActivity : AppCompatActivity() {
 
     private val runnable = Runnable {
         if(!isFinishing){
-            if (!mSharedPreferences.getData(LOGIN_KEY).isNullOrEmpty())
+            startIntent()
+            /*if (!mSharedPreferences.getData(LOGIN_KEY).isNullOrEmpty())
                 startIntent()
             else {
                 mSharedPreferences.putData(LOGIN_KEY, "Logged")
                 startVideoIntent()
                 finish()
-            }
+            }*/
         }
     }
 
