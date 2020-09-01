@@ -72,6 +72,15 @@
                     tools:ignore="NewApi"/>
 
 
+                <ImageView
+                    android:id="@+id/image_news"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    app:goneUnless="@{viewmodel.newsInfo.imageURL.empty}"
+                    app:setImageUrl="@{viewmodel.newsInfo.imageURL}"
+                    android:contentDescription="@string/representative_image_institution" />
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
