@@ -19,7 +19,6 @@ android {
         targetSdkVersion 29
         versionCode 5
         versionName "1.4"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
        // buildConfigField("String",  "YOUTUBE_API_KEY", keystoreProperties['YOUTUBE_API_KEY'])

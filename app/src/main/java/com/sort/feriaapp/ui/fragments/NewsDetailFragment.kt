@@ -52,8 +52,7 @@ class NewsDetailFragment : Fragment(), View.OnClickListener {
 
         initToolBar()
 
-        binding.linkView.setOnClickListener(this)
-
+        initListeners()
         return binding.root
     }
 
@@ -134,7 +133,15 @@ class NewsDetailFragment : Fragment(), View.OnClickListener {
         startActivity(i)
     }
 
+    private fun initListeners(){
+        binding.linkView.setOnClickListener(this)
+        binding.enlaceView.setOnClickListener(this)
+    }
     override fun onClick(v: View?) {
-        prepareIntent(binding.linkView.contentDescription.toString())
+        when(v?.id){
+            binding.linkView?.id -> { prepareIntent(binding.linkView?.contentDescription.toString()) }
+            binding.enlaceView?.id -> { prepareIntent(binding.enlaceView?.contentDescription.toString()) }
+        }
+
     }
 }

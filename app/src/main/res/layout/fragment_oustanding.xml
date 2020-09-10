@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.sort.feriaapp.viewmodels.OustandingViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title_rector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginVertical="10dp"
+            android:text="Palabras del Rector sobre la XIX Feria de la Solidaridad"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"/>
+
+        <WebView
+            android:id="@+id/web_view_rector"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_margin="20dp"
+            app:goneUnless="@{viewmodel.videoURL.empty}"
+            app:videoURL="@{viewmodel.videoURL}" />
+
+    </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/fullscreenContainerRector"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </FrameLayout>
+
+
+
+        <!--<ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            tools:src="@drawable/slider"
+            app:setImageUrl="@{viewmodel.imageURL}"
+            android:contentDescription="@string/representative_image_institution" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            tools:text="@string/lorem_ipsum"
+            htmlFormattedText="@{viewmodel.students}"/>-->
+
+        <!--<TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            tools:text="@string/lorem_ipsum"
+            android:text="@{viewmodel.students[0]}"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            tools:text="@string/lorem_ipsum"
+            android:text="@{viewmodel.students[1]}"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            tools:text="@string/lorem_ipsum"
+            android:text="@{viewmodel.students[2]}"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            tools:text="@string/lorem_ipsum"
+            android:text="@{viewmodel.students[3]}"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            tools:text="@string/lorem_ipsum"
+            android:text="@{viewmodel.students[4]}"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            tools:text="@string/lorem_ipsum"
+            android:text="@{viewmodel.students[5]}"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            tools:text="@string/lorem_ipsum"
+            android:text="@{viewmodel.students[6]}"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            tools:text="@string/lorem_ipsum"
+            android:text="@{viewmodel.students[7]}"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            tools:text="@string/lorem_ipsum"
+            android:text="@{viewmodel.students[8]}"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            tools:text="@string/lorem_ipsum"
+            android:text="@{viewmodel.students[9]}"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            tools:text="@string/lorem_ipsum"
+            android:text="@{viewmodel.students[10]}"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            tools:text="@string/lorem_ipsum"
+            android:text="@{viewmodel.students[11]}"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            tools:text="@string/lorem_ipsum"
+            android:text="@{viewmodel.students[12]}"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            tools:text="@string/lorem_ipsum"
+            android:text="@{viewmodel.students[13]}"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            tools:text="@string/lorem_ipsum"
+            android:text="@{viewmodel.students[14]}"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            tools:text="@string/lorem_ipsum"
+            android:text="@{viewmodel.students[15]}"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            tools:text="@string/lorem_ipsum"
+            android:text="@{viewmodel.students[16]}"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            tools:text="@string/lorem_ipsum"
+            android:text="@{viewmodel.students[17]}"/>-->
+
+    </FrameLayout>
+
+</layout>

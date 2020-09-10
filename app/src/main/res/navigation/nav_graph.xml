@@ -70,5 +70,9 @@
             android:name="newsId"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/oustandingFragment"
+        android:name="com.sort.feriaapp.ui.fragments.OustandingFragment"
+        android:label="Oustanding" />
 
 </navigation>

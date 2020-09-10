@@ -240,6 +240,8 @@ class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMin
         binding.googleFormView?.setOnClickListener(this)
         binding.telephoneView?.setOnClickListener(this)
         binding.emailView?.setOnClickListener(this)
+        binding.revistaView?.setOnClickListener(this)
+        binding.enlaceView?.setOnClickListener(this)
     }
 
     private fun prepareIntentSocialMedia(packageName: String, uriApp: String, uriWeb: String){
@@ -273,6 +275,8 @@ class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMin
     override fun onClick(v: View?) {
             when(v?.id){
                 binding.googleFormView?.id -> { prepareIntent(binding.googleFormView?.contentDescription.toString()) }
+                binding.revistaView?.id -> { prepareIntent(binding.revistaView?.contentDescription.toString()) }
+                binding.enlaceView?.id -> { prepareIntent(binding.enlaceView?.contentDescription.toString()) }
                 binding.telephoneView?.id -> { prepareIntentPhone(binding.telephoneView?.contentDescription.toString()) }
                 binding.emailView?.id -> { prepareIntentEmail(binding.emailView?.contentDescription.toString()) }
                 binding.meetupView.id -> { prepareIntent(binding.meetupView.text.toString()) }
