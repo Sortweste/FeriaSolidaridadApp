@@ -11,5 +11,6 @@ data class News(
     val description: String?,
     @ColumnInfo(name = "image_url") val imageURL: String?,
     @ColumnInfo(name = "video_url") val videoURL: String?,
-    val link: String?
+    val link: String?,
+    val enlace: String?
 )

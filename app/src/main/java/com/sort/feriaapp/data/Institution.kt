@@ -17,6 +17,8 @@ data class Institution (
     val type: String?,
     val meetup: String?,
     val googleForm: String?,
+    val revista: String?,
+    val enlace: String?,
     val email: String?,
     val phone: String?,
     val website: String?,

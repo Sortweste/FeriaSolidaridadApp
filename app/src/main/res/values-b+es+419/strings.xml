@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="outstanding">Destacados</string>
     <string name="alumnos_que_destacaron_en_su_servicio_social">data_outstanding_title</string>
     <string name="data_oustanding_title">Alumnos que destacaron en su servicio social</string>
     <string name="actividades">Actividades</string>

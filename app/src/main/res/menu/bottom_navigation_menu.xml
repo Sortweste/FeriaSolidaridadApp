@@ -13,15 +13,22 @@
         android:title="@string/bottom_nav_image"
         />
     <item
-        android:id="@+id/newsFragment"
+        android:id="@+id/oustandingFragment"
         android:enabled="true"
-        android:icon="@drawable/ic_action_news"
-        android:title="@string/bottom_nav_news"
+        android:icon="@drawable/ic_action_star"
+        android:title="Rector"
         />
     <item
         android:id="@+id/profileFragment"
         android:enabled="true"
-        android:icon="@drawable/ic_action_image"
+        android:icon="@drawable/ic_action_book"
         android:title="@string/bottom_nav_images"
         />
+    <item
+        android:id="@+id/newsFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_action_news"
+        android:title="@string/actividades"
+        />
+
 </menu>
