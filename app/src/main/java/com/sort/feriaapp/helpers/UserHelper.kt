@@ -1,5 +1,6 @@
 package com.sort.feriaapp.helpers
 
+/*NOT IMPLEMENTED: Class for manager User model in retrofit*/
 data class UserHelper(
     val career: String,
     val email: String,

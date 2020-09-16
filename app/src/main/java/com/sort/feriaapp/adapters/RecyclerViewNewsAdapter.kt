@@ -10,6 +10,7 @@ import com.sort.feriaapp.databinding.CardViewNewsBinding
 import com.sort.feriaapp.interfaces.BindAdapter
 import com.sort.feriaapp.interfaces.RecyclerViewClickListener
 
+/*RecyclerViewAdapter for News class using databinding*/
 class RecyclerViewNewsAdapter(private val listener: RecyclerViewClickListener<NewsMinimal>): RecyclerView.Adapter<RecyclerViewNewsAdapter.ViewHolder>(),
     BindAdapter<NewsMinimal> {
 

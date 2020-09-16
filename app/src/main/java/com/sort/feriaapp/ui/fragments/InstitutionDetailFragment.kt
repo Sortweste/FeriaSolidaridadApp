@@ -46,11 +46,14 @@ import kotlinx.android.synthetic.main.fragment_institution_display.*
 @AndroidEntryPoint
 class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMinimal>, View.OnClickListener {
     lateinit var fullscreenView: View
+
+    /*Using databinding*/
     private var _binding: FragmentInstitutionDisplayBinding? = null
     private val binding get() = _binding!!
 
     private lateinit var adapter: RecyclerViewEventsAdapter
 
+    /*Injecting ViewModel*/
     private val institutionDetailViewModel: InstitutionDetailViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -76,6 +79,7 @@ class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMin
         return binding.root
     }
 
+    /*Prepare webview for fullscreen*/
     @SuppressLint("SetJavaScriptEnabled")
     private fun initWebView(){
         binding.webView.settings.javaScriptEnabled = true
@@ -85,6 +89,7 @@ class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMin
                 super.onProgressChanged(view, newProgress)
             }
 
+            /*Enter fullscreen*/
             override fun onShowCustomView(view: View?, callback: CustomViewCallback?) {
                 super.onShowCustomView(view, callback)
 
@@ -96,6 +101,7 @@ class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMin
                 }
             }
 
+            /*Exit fullscreen*/
             override fun onHideCustomView() {
                 super.onHideCustomView()
 
@@ -152,6 +158,7 @@ class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMin
                 it.setDisplayShowHomeEnabled(true)
             }
         }
+        /*Show back arrow*/
         binding.toolbar.setNavigationOnClickListener {
             findNavController().navigateUp()
         }
@@ -178,6 +185,7 @@ class InstitutionDetailFragment : Fragment(), RecyclerViewClickListener<EventMin
         }
     }
 
+    /*Show indicators in ViewPager Carousel*/
     private fun setUpIndicators(size: Int){
         val layoutParams: LinearLayout.LayoutParams = LinearLayout.LayoutParams(WRAP_CONTENT, WRAP_CONTENT)
         val index = arrayOfNulls<ImageView>(size)

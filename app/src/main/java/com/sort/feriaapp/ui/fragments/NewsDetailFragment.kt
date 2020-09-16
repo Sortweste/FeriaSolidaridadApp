@@ -71,6 +71,7 @@ class NewsDetailFragment : Fragment(), View.OnClickListener {
                 super.onProgressChanged(view, newProgress)
             }
 
+            /*Enter fullscreen*/
             override fun onShowCustomView(view: View?, callback: CustomViewCallback?) {
                 super.onShowCustomView(view, callback)
 
@@ -82,6 +83,7 @@ class NewsDetailFragment : Fragment(), View.OnClickListener {
                 }
             }
 
+            /*Exit fullscreen*/
             override fun onHideCustomView() {
                 super.onHideCustomView()
 
@@ -92,11 +94,13 @@ class NewsDetailFragment : Fragment(), View.OnClickListener {
         }
     }
 
+    /*Hide three dots menu*/
     override fun onPrepareOptionsMenu(menu: Menu) {
         super.onPrepareOptionsMenu(menu)
         menu.findItem(R.id.about).isVisible = false
     }
 
+    /*Add custom toolbar*/
     private fun initToolBar(){
         (activity as AppCompatActivity).apply {
             this.setSupportActionBar(binding.toolbar)
@@ -105,6 +109,7 @@ class NewsDetailFragment : Fragment(), View.OnClickListener {
                 it.setDisplayShowHomeEnabled(true)
             }
         }
+        /*Show Back Arrow*/
         binding.toolbar.setNavigationOnClickListener {
             findNavController().navigateUp()
         }

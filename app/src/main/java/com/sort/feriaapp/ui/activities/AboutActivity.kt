@@ -10,15 +10,18 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class AboutActivity : AppCompatActivity() {
 
+    /*Using databinding*/
     private var _binding: ActivityAboutBinding? = null
     private val binding get() = _binding!!
 
+    /*Injecting ViewModel*/
     private val aboutViewModel: AboutViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         _binding = ActivityAboutBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        /*Adding toolbar*/
         setSupportActionBar(binding.topAppBarAbout)
         binding.lifecycleOwner = this
         binding.viewmodel = aboutViewModel

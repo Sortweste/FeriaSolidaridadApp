@@ -3,6 +3,7 @@ package com.sort.feriaapp.utils
 import retrofit2.Response
 import java.io.IOException
 
+/*Display information if Status is SUCCESS*/
 abstract class SafeApiRequest {
 
     suspend fun <T : Any> apiRequest(call: suspend () -> Response<T>): Resource<T> {

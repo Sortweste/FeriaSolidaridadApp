@@ -10,6 +10,7 @@ import com.sort.feriaapp.databinding.CardViewBooksBinding
 import com.sort.feriaapp.interfaces.BindAdapter
 import com.sort.feriaapp.interfaces.RecyclerViewOnTouchListener
 
+/*RecyclerViewAdapter for Profile class using databinding*/
 class StaggeredRecyclerViewAdapter(private val listener: RecyclerViewOnTouchListener<InstagramMinimal>): RecyclerView.Adapter<StaggeredRecyclerViewAdapter.ViewHolder>(),
     BindAdapter<InstagramMinimal>{
 

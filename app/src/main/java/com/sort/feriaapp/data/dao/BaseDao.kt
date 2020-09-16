@@ -5,6 +5,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Update
 
+/*Generic Dao class to inherit to other Dao's*/
 interface BaseDao <T> {
 
     @Insert

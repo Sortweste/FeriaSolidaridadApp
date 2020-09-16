@@ -6,6 +6,7 @@ import com.sort.feriaapp.network.services.UserService
 import com.sort.feriaapp.utils.SafeApiRequest
 import javax.inject.Inject
 
+/*Class to perform User operations to API*/
 class UserRemoteDataSource @Inject constructor(private val userService: UserService): SafeApiRequest() {
 
     suspend fun login(loginDTO: LoginDTO) = apiRequest { userService.login(loginDTO) }

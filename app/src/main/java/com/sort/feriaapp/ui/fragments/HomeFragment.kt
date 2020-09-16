@@ -21,9 +21,11 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class HomeFragment : Fragment(), RecyclerViewClickListener<Institution>{
 
+    /*Use databinding*/
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
+    /*Inject ViewModel*/
     private val viewModel: InstitutionViewModel by viewModels()
     private lateinit var adapter: RecyclerViewAdapter
 
@@ -75,6 +77,7 @@ class HomeFragment : Fragment(), RecyclerViewClickListener<Institution>{
     }
 
 
+    /*Manage Intent with Navigation Components*/
     override fun onCardViewClick(view: View, obj: Institution) {
         val action =
             HomeFragmentDirections.actionHomeFragmentToInstitutionDetailFragment(

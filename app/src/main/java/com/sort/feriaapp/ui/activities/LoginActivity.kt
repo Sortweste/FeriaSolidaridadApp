@@ -21,11 +21,14 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
+    /*Using databinding*/
     private var _binding: ActivityLoginBinding? = null
     private val binding get() = _binding!!
 
+    /*Injecting ViewModel*/
     private val loginViewModel: LoginViewModel by viewModels()
 
+    /*Injecting SharedPreferences*/
     @Inject
     lateinit var mSharedPreferences: SharedPreferencesManager
 
@@ -83,6 +86,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         _binding = null
     }
 
+    /*Manage Log In and Register intents*/
     override fun onClick(v: View?) {
         when(v?.id){
             binding.buttonGoLogin.id -> {

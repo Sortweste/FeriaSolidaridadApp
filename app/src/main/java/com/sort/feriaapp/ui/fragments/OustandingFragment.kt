@@ -20,11 +20,13 @@ import kotlinx.android.synthetic.main.fragment_institution_display.*
 @AndroidEntryPoint
 class OustandingFragment : Fragment() {
 
+    /*Using Databinding*/
     private var _binding: FragmentOustandingBinding? = null
     private val binding get() = _binding!!
 
     lateinit var fullscreenView: View
 
+    /*Injecting ViewModel*/
     private val oustandingViewModel: OustandingViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,6 +47,7 @@ class OustandingFragment : Fragment() {
         return binding.root
     }
 
+    /*Prepare WebView for FullScreen*/
     @SuppressLint("SetJavaScriptEnabled")
     private fun initWebView(){
         binding.webViewRector.settings.javaScriptEnabled = true
@@ -54,6 +57,7 @@ class OustandingFragment : Fragment() {
                 super.onProgressChanged(view, newProgress)
             }
 
+            /*Enter fullscreen*/
             override fun onShowCustomView(view: View?, callback: CustomViewCallback?) {
                 super.onShowCustomView(view, callback)
 
@@ -65,6 +69,7 @@ class OustandingFragment : Fragment() {
                 }
             }
 
+            /*Exit fullscreen*/
             override fun onHideCustomView() {
                 super.onHideCustomView()
 

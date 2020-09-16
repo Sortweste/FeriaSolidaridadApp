@@ -7,6 +7,7 @@ import androidx.lifecycle.asLiveData
 import com.sort.feriaapp.data.minimals.NewsMinimal
 import com.sort.feriaapp.data.repositories.NewsRepository
 
+/*ViewModel for NewsFragment*/
 class NewsViewModel @ViewModelInject constructor(private val newsRepository: NewsRepository): ViewModel()  {
     private val _getAllNews = newsRepository.getAllNews.asLiveData()
 

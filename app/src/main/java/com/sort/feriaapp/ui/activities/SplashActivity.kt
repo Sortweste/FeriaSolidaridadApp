@@ -28,6 +28,7 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
     }
 
+    /*Wait for two seconds, then intent*/
     private val runnable = Runnable {
         if(!isFinishing){
             startIntent()

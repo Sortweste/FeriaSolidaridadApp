@@ -9,6 +9,7 @@ import com.sort.feriaapp.data.dao.EventDao
 import com.sort.feriaapp.data.dao.NewsDao
 import com.sort.feriaapp.data.dao.UserDao
 
+/*Local database configuration*/
 @Database(entities = [Institution::class, Event::class, User::class, News::class], version = 1, exportSchema = false)
 @TypeConverters(Converters::class)
 abstract class AppDatabase: RoomDatabase() {

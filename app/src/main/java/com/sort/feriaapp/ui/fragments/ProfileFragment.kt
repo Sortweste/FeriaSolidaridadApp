@@ -39,13 +39,13 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class ProfileFragment : Fragment(), RecyclerViewOnTouchListener<InstagramMinimal> {
 
+    /*Using databinding*/
     private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding!!
 
+    /*Injecting ViewModel*/
     private val viewModel: ProfileViewModel by viewModels()
     private lateinit var adapter: StaggeredRecyclerViewAdapter
-
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -80,7 +80,7 @@ class ProfileFragment : Fragment(), RecyclerViewOnTouchListener<InstagramMinimal
     }
 
 
-
+    /*Prepare dialog for Zoom image on Long Press*/
     @SuppressLint("ClickableViewAccessibility", "NewApi")
     private fun showDialog(obj: InstagramMinimal){
         val dialog = Dialog(requireContext())
@@ -116,6 +116,7 @@ class ProfileFragment : Fragment(), RecyclerViewOnTouchListener<InstagramMinimal
     }
 
 
+    /*On Long Press, show image*/
     override fun onImageTouch(v: View, obj: InstagramMinimal) {
         showDialog(obj)
 

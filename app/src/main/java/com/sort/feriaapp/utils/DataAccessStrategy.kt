@@ -8,6 +8,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
+/*Perform POST Operation to API using coroutines*/
 fun <T> performPostOperation(networkCall: suspend() -> Resource<T>)  =
     liveData(Dispatchers.IO){
         emit(Resource.loading())
@@ -19,6 +20,7 @@ fun <T> performPostOperation(networkCall: suspend() -> Resource<T>)  =
     }
 
 
+/*Perform GET Operation to API using coroutines*/
 fun <T, A> performGetOperation(databaseQuery: () -> Flow<T>, networkCall: suspend () -> Resource<A>, saveCallResult: suspend (A) -> Unit) : LiveData<Resource<T>> =
 
     liveData(Dispatchers.IO) {
@@ -36,6 +38,7 @@ fun <T, A> performGetOperation(databaseQuery: () -> Flow<T>, networkCall: suspen
         }
     }
 
+/*Perform FETCH Operation to API using coroutines*/
 fun <T> performFetchOperation(networkCall: suspend () -> Resource<T>, saveCallResult: suspend (T) -> Unit) : LiveData<Resource<T>> =
 
     liveData(Dispatchers.IO) {

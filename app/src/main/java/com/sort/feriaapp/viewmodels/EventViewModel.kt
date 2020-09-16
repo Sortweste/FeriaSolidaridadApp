@@ -8,6 +8,7 @@ import com.sort.feriaapp.data.minimals.EventMinimal
 import com.sort.feriaapp.data.repositories.EventRepository
 import javax.inject.Inject
 
+/*ViewModel for EventFragment*/
 class EventViewModel @ViewModelInject constructor(private val eventRepository: EventRepository): ViewModel() {
 
     private val _getAllEvents = eventRepository.getAllEvents.asLiveData()

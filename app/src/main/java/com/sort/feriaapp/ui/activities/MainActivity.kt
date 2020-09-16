@@ -22,6 +22,7 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity(), NavController.OnDestinationChangedListener {
 
+    /*Using databinding*/
     private var _binding: ActivityMainBinding? = null
     private val binding get() = _binding!!
 
@@ -36,12 +37,14 @@ class MainActivity : AppCompatActivity(), NavController.OnDestinationChangedList
         setContentView(binding.root)
         setSupportActionBar(binding.topAppBar)
 
+        /*Preparing BottomNavMenu*/
         val navController = findNavController(R.id.fragment)
         binding.bottomNavigation.setupWithNavController(navController)
         navController.addOnDestinationChangedListener(this)
     }
 
 
+    /*Manage BottomNav Visibility*/
     override fun onDestinationChanged(controller: NavController, destination: NavDestination, arguments: Bundle?) {
         when(destination.id){
             R.id.homeFragment, R.id.profileFragment, R.id.mediaFragment, R.id.newsFragment, R.id.oustandingFragment -> componentsVisibility(View.VISIBLE)
@@ -49,6 +52,7 @@ class MainActivity : AppCompatActivity(), NavController.OnDestinationChangedList
         }
     }
 
+    /*Three dots menu*/
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         super.onCreateOptionsMenu(menu)
         val inflater: MenuInflater = menuInflater
@@ -60,6 +64,7 @@ class MainActivity : AppCompatActivity(), NavController.OnDestinationChangedList
         this.menu = menu*/
         return true
     }
+
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when(item.itemId){

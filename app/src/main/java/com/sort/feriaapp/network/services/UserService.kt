@@ -8,6 +8,7 @@ import com.sort.feriaapp.network.responses.TokenResponse
 import retrofit2.Response
 import retrofit2.http.*
 
+/*User Service to define all API operations*/
 interface UserService {
 
     @POST("/login")

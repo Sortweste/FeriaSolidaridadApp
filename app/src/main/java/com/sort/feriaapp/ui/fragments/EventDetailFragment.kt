@@ -25,9 +25,11 @@ class EventDetailFragment : Fragment(), View.OnClickListener{
 
     //private val args: EventDetailFragmentArgs by navArgs()
 
+    /*Using databinding*/
     private var _binding : FragmentEventDetailBinding? = null
     private val binding get() = _binding!!
 
+    /*Injecting ViewModel*/
     private val eventDetailViewModel: EventDetailViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,6 +37,7 @@ class EventDetailFragment : Fragment(), View.OnClickListener{
         setHasOptionsMenu(true)
     }
 
+    /*Hiding three dots menu*/
     override fun onPrepareOptionsMenu(menu: Menu) {
         super.onPrepareOptionsMenu(menu)
         menu.findItem(R.id.about).isVisible = false

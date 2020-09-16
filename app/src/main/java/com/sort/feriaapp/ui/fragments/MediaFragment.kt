@@ -22,9 +22,11 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class MediaFragment : Fragment(), RecyclerViewClickListener<EventMinimal> {
 
+    /*Using databinding*/
     private var _binding: FragmentMediaBinding? = null
     private val binding get() = _binding!!
 
+    /*Injecting ViewModel*/
     private val viewModel: EventViewModel by viewModels()
 
     private lateinit var adapter: RecyclerViewEventsAdapter
@@ -80,6 +82,7 @@ class MediaFragment : Fragment(), RecyclerViewClickListener<EventMinimal> {
         }
     }
 
+    /*Using Navigation Component for intent*/
     override fun onCardViewClick(view: View, obj: EventMinimal) {
         val action =
             MediaFragmentDirections.actionMediaFragmentToEventDetailFragment(

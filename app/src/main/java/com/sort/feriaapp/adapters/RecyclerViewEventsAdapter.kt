@@ -11,6 +11,7 @@ import com.sort.feriaapp.databinding.CardViewEventsBinding
 import com.sort.feriaapp.interfaces.BindAdapter
 import com.sort.feriaapp.interfaces.RecyclerViewClickListener
 
+/*RecyclerViewAdapter for Events class using databinding*/
 class RecyclerViewEventsAdapter(private val listener: RecyclerViewClickListener<EventMinimal>, val paramMatchParent : Boolean): RecyclerView.Adapter<RecyclerViewEventsAdapter.ViewHolder>(), BindAdapter<EventMinimal> {
 
     private var items: List<EventMinimal> = emptyList()

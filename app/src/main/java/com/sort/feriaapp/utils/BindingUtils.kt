@@ -21,7 +21,10 @@ import com.sort.feriaapp.interfaces.BindAdapter
 import java.io.ByteArrayInputStream
 import java.io.ByteArrayOutputStream
 
+/*Databinding methods to use in xml files*/
 
+
+/*Set data for Recyclerview*/
 @BindingAdapter("data")
 @Suppress("UNCHECKED_CAST")
 fun <T> setRecyclerViewProperties(recyclerView: RecyclerView, data: List<T>?){
@@ -30,24 +33,27 @@ fun <T> setRecyclerViewProperties(recyclerView: RecyclerView, data: List<T>?){
     }
 }
 
+/*Fetch image from URL and set it to ImageView*/
 @BindingAdapter("setImageUrl")
 fun bindImageUrl(view: ImageView, url: String?){
     if(!url.isNullOrBlank())
         Glide.with(view.context).asBitmap().load(Uri.parse(url)).fitCenter().into(view)
 }
 
+/*Same as before, but centerCrop*/
 @BindingAdapter("setImageUrlCrop")
 fun bindImageUrlCrop(view: ImageView, url: String?){
     if(!url.isNullOrBlank())
         Glide.with(view.context).asBitmap().load(Uri.parse(url)).centerCrop().into(view)
 }
 
-
+/*Hide widget*/
 @BindingAdapter("goneUnless")
 fun goneUnless(view: View, notVisible: Boolean){
     view.visibility = if(notVisible) View.GONE else View.VISIBLE
 }
 
+/*Load webview URL*/
 @BindingAdapter("videoURL")
 fun setWebViewValue(view: WebView, videoURL: String?){
     if(!videoURL.isNullOrBlank()){
@@ -57,6 +63,7 @@ fun setWebViewValue(view: WebView, videoURL: String?){
 
 }
 
+/*Display message for twitter account*/
 @BindingAdapter("twitterText")
 fun setTwitterAccountName(view: TextView, account:String?){
     if(!account.isNullOrBlank()){
@@ -66,6 +73,7 @@ fun setTwitterAccountName(view: TextView, account:String?){
     }
 }
 
+/*Display message for facebook account*/
 @BindingAdapter("facebookText")
 fun setFacebookAccountName(view: TextView, account:String?){
     if(!account.isNullOrBlank()){
@@ -75,6 +83,7 @@ fun setFacebookAccountName(view: TextView, account:String?){
     }
 }
 
+/*Display message for instagram account*/
 @BindingAdapter("instagramText")
 fun setInstagramAccountName(view: TextView, account:String?){
     if(!account.isNullOrBlank()){
@@ -84,6 +93,7 @@ fun setInstagramAccountName(view: TextView, account:String?){
     }
 }
 
+/*Display message for website*/
 @BindingAdapter("sitioWebText")
 fun setSitioWebAccountName(view: TextView, account:String?){
     if(!account.isNullOrBlank()){
@@ -93,6 +103,7 @@ fun setSitioWebAccountName(view: TextView, account:String?){
     }
 }
 
+/*Display message for email*/
 @BindingAdapter("emailText")
 fun setEmailAccountName(view: TextView, account:String?){
     if(!account.isNullOrBlank()){
@@ -102,6 +113,7 @@ fun setEmailAccountName(view: TextView, account:String?){
     }
 }
 
+/*Display message for google form*/
 @BindingAdapter("formText")
 fun setFormAccount(view: TextView, account:String?){
     if(!account.isNullOrBlank()){
@@ -111,6 +123,7 @@ fun setFormAccount(view: TextView, account:String?){
     }
 }
 
+/*Same as before*/
 @BindingAdapter("cssFormText")
 fun setCSSFormAccount(view: TextView, account:String?){
     if(!account.isNullOrBlank()){
@@ -120,6 +133,7 @@ fun setCSSFormAccount(view: TextView, account:String?){
     }
 }
 
+/*Same as before*/
 @BindingAdapter("emailText2")
 fun setEmail2AccountName(view: TextView, account:String?){
     if(!account.isNullOrBlank()){
@@ -129,6 +143,8 @@ fun setEmail2AccountName(view: TextView, account:String?){
     }
 }
 
+
+/*Display message for phone number*/
 @BindingAdapter("telephoneText")
 fun setTelephoneAccountName(view: TextView, account:String?){
     if(!account.isNullOrBlank()){
@@ -138,6 +154,7 @@ fun setTelephoneAccountName(view: TextView, account:String?){
     }
 }
 
+/*Same as before*/
 @BindingAdapter("googleFormText")
 fun setGoogleFormAccountName(view: TextView, account:String?){
     if(!account.isNullOrBlank()){
@@ -147,6 +164,7 @@ fun setGoogleFormAccountName(view: TextView, account:String?){
     }
 }
 
+/*Custom message*/
 @BindingAdapter("revistaText")
 fun setRevista(view: TextView, account:String?){
     if(!account.isNullOrBlank()){
@@ -156,6 +174,7 @@ fun setRevista(view: TextView, account:String?){
     }
 }
 
+/*Custom message*/
 @BindingAdapter("enlaceText")
 fun setEnlace(view: TextView, account:String?){
     if(!account.isNullOrBlank()){
@@ -165,6 +184,7 @@ fun setEnlace(view: TextView, account:String?){
     }
 }
 
+/*Display message for Meetup Link*/
 @BindingAdapter("meetText")
 fun setMeetLink(view: TextView, account:String?){
     if(!account.isNullOrBlank()){
@@ -174,7 +194,7 @@ fun setMeetLink(view: TextView, account:String?){
     }
 }
 
-
+/*Display html as text*/
 @SuppressWarnings("deprecation")
 @BindingAdapter("htmlFormattedText")
 fun setHTMLFormText(view: TextView, text:String?){
@@ -186,6 +206,7 @@ fun setHTMLFormText(view: TextView, text:String?){
     }
 }
 
+/*Databinding for Spinner Modal*/
 @Suppress("UNCHECKED_CAST")
 @BindingAdapter(value = ["selectedValue", "selectedValueAttrChanged"], requireAll = false)
 fun setSpinnerSelectedValue(spinner: Spinner, selectedValue: String?, newTextAttrChanged: InverseBindingListener){

@@ -3,6 +3,7 @@ package com.sort.feriaapp.network
 import okhttp3.Interceptor
 import okhttp3.Response
 
+/*Interceptor to add header Content-Type: application/json to all request in Retrofit*/
 class RequestInterceptor: Interceptor {
 
     override fun intercept(chain: Interceptor.Chain): Response {

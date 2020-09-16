@@ -18,6 +18,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
+/*Dependency Injection for Network Layer*/
+
 @Module
 @InstallIn(ApplicationComponent::class)
 object RetrofitModule {
@@ -34,6 +36,8 @@ object RetrofitModule {
         .addInterceptor(RequestInterceptor())
         .build()
 
+    /*Provide Retrofit singleton instance for App*/
+
     @Singleton
     @Provides
     fun provideRetrofit(gson: Gson, okHttpClient: OkHttpClient) : Retrofit = Retrofit.Builder()
@@ -42,6 +46,8 @@ object RetrofitModule {
         .baseUrl(BASE_URL)
         .build()
 
+    /*Provide Services for RemoteDataSource*/
+
     @Singleton
     @Provides
     fun provideUserService(retrofit: Retrofit): UserService = retrofit.create(UserService::class.java)
@@ -49,6 +55,8 @@ object RetrofitModule {
     @Singleton
     @Provides
     fun provideEventService(retrofit: Retrofit): EventService = retrofit.create(EventService::class.java)
+
+    /*Provide RemoteDataSource for every Entity*/
 
     @Singleton
     @Provides

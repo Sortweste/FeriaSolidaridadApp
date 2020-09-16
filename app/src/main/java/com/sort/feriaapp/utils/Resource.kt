@@ -1,5 +1,6 @@
 package com.sort.feriaapp.utils
 
+/*Validates status for Resource when fetching or posting*/
 data class Resource<out T>(val status: Status, val data: T?, val message: String?) {
 
     enum class Status {

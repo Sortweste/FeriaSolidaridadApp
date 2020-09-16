@@ -12,6 +12,7 @@ import com.sort.feriaapp.interfaces.RecyclerViewClickListener
 import com.sort.feriaapp.R
 import com.sort.feriaapp.databinding.CardViewInstitutionsBinding
 
+/*RecyclerViewAdapter class using databinding*/
 class RecyclerViewAdapter(private val listener: RecyclerViewClickListener<Institution>): RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>(), BindAdapter<Institution> {
 
     private var items: List<Institution> = emptyList()

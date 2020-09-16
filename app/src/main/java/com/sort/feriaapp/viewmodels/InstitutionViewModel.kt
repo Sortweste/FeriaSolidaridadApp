@@ -7,6 +7,7 @@ import com.sort.feriaapp.data.Institution
 import com.sort.feriaapp.data.repositories.InstitutionRepository
 import kotlinx.coroutines.*
 
+/*ViewModel for InstitutionFragment*/
 class InstitutionViewModel @ViewModelInject constructor(private val institutionRepository:InstitutionRepository): ViewModel() {
 
     private val _getAllInstitutions = institutionRepository
@@ -17,6 +18,7 @@ class InstitutionViewModel @ViewModelInject constructor(private val institutionR
     get() = _getAllInstitutions
 
 
+    /*Coroutine for insert operation*/
     fun insert(institution: Institution) = viewModelScope.launch(Dispatchers.IO) {
         institutionRepository.insertInstitution(institution)
     }

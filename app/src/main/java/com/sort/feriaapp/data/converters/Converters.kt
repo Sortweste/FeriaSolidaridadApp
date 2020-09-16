@@ -4,6 +4,7 @@ import androidx.room.TypeConverter
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 
+/*Allow to store Entity Properties as List<String>*/
 object Converters {
 
     @TypeConverter

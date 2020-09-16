@@ -18,6 +18,7 @@ import com.sort.feriaapp.viewmodels.VideoViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_institution_display.*
 
+/*NOT IMPLEMENTED: MUST BE DELETED*/
 @AndroidEntryPoint
 class VideoActivity : AppCompatActivity(), View.OnClickListener {
 

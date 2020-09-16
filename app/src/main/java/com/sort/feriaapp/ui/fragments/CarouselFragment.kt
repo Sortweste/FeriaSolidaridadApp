@@ -11,11 +11,13 @@ import com.sort.feriaapp.utils.bindImageUrl
 private const val ARG_POSITION = "ARG_POSITION"
 private const val ARG_URL = "ARG_URL"
 
+/*Singleton Fragment for showing Image in Carousel*/
 class CarouselFragment : Fragment() {
 
     private var position: Int? = null
     private var resource: String? = null
 
+    /*Using Databinding*/
     private var _binding: FragmentCarouselBinding? = null
     private val binding get() = _binding!!
 

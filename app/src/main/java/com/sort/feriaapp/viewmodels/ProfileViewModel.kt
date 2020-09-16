@@ -8,8 +8,10 @@ import com.sort.feriaapp.data.minimals.InstagramMinimal
 import com.sort.feriaapp.data.repositories.EventRepository
 import com.sort.feriaapp.data.repositories.UserRepository
 
+/*ViewModel for ProfileFragment*/
 class ProfileViewModel @ViewModelInject constructor(private val eventRepository: EventRepository, private val userRepository: UserRepository): ViewModel(){
 
+    /*Images URL*/
     private val images = listOf<String>(
         "https://lh3.googleusercontent.com/pw/ACtC-3cRhqqrkTbSmP1JBj2QHUuhhkzjBjQlYb24tqdkCfr4g8eJ6l6G4Mv8_n3Yydj1KNDw81xBPlbtjj9QlBwfo7iF5datIDz5H3C2FlDRjV9M6Q_lC1XqtOpz_3GOhvsmZHEsfDaQ0h3tkreEvcCRF65R=w1103-h827-no",
         "https://lh3.googleusercontent.com/pw/ACtC-3eMJTcZsAIyu90_n6ucStUSTcJoXXMpJ--5PO7ogvJWg_4w1_1wUKsKa0P7sl9enl0oTeT8le4MR6mXSzamToxCkXseK_5kNga1jeNQr0eWO2YEybY7iGgmBPXqbKFFxYhtSkngBa46v7aTtEtUMw07=w1103-h827-no",
@@ -37,6 +39,7 @@ class ProfileViewModel @ViewModelInject constructor(private val eventRepository:
         "https://lh3.googleusercontent.com/pw/ACtC-3fEVwmIGrINqGTemVOCLraUEPF_q2oFK__xjPB66bm-SvNoCYc7lmO1R7ndEcuIrs_vjpHnldjrgrwTQDxKCNyprpcA-gkdjteIX_n07tteyH5wa_U8JZX8BJkbtgYXGJfuotVN9QKj70l1cQsIIJkm=w1103-h827-no"
     )
 
+    /*Images Descriptions*/
     private val descriptions = listOf<String>(
         "Levantamiento arquitectónico Museo Casa Blanca",
         "Levantamiento arquitectónico Museo Casa Blanca",

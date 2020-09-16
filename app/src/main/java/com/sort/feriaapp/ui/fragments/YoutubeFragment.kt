@@ -6,6 +6,7 @@ import com.google.android.youtube.player.YouTubePlayer
 import com.google.android.youtube.player.YouTubePlayerFragment
 import com.sort.feriaapp.BuildConfig
 
+/*NOT IMPLEMENTED: MUST BE DELETED*/
 class YoutubeFragment : YouTubePlayerFragment(), YouTubePlayer.OnInitializedListener  {
 
     private var videoURL: String? = null

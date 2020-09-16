@@ -9,8 +9,10 @@ import androidx.lifecycle.asLiveData
 import com.sort.feriaapp.data.News
 import com.sort.feriaapp.data.repositories.NewsRepository
 
+/*ViewModel for NewsDetailFragment*/
 class NewsDetailViewModel @ViewModelInject constructor(private val newsRepository: NewsRepository, @Assisted savedStateHandle: SavedStateHandle): ViewModel()  {
 
+    /*Reading params from NavArgs*/
     private val newsId: String = savedStateHandle["newsId"]!!
 
     private val _getNewsInfo: LiveData<News> = newsRepository.getNewsById(newsId).asLiveData()

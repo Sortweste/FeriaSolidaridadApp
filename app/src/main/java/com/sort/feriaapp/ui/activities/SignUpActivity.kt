@@ -22,13 +22,17 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class SignUpActivity : AppCompatActivity(), View.OnClickListener {
 
+    /*Using databinding*/
     private var _binding: ActivitySignUpBinding? = null
     private val binding get() = _binding!!
 
+    /*Injecting ViewModel*/
     private val signUpViewModel: SignUpViewModel by viewModels()
 
+    /*Career Spinner*/
     private lateinit var careerAdapter: ArrayAdapter<CharSequence>
 
+    /*Injecting SharedPreferences*/
     @Inject
     lateinit var mSharedPreferences: SharedPreferencesManager
 
@@ -61,6 +65,7 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener {
         careerAdapter.notifyDataSetChanged()
     }
 
+    /*Observe when Spinner Career Values Change*/
     private fun careerSpinnerObserver(){
         signUpViewModel.faculty.observe(this, Observer {
             when(it){

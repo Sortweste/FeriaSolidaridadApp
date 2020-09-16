@@ -20,6 +20,8 @@ import dagger.hilt.android.components.ApplicationComponent
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Singleton
 
+/*Dependency Injection for local database*/
+
 @Module
 @InstallIn(ApplicationComponent::class)
 object RoomModule {
@@ -29,6 +31,7 @@ object RoomModule {
     fun provideDataBase(@ApplicationContext context: Context): AppDatabase {
         return Room.databaseBuilder(context, AppDatabase::class.java, DATABASE_NAME)
             .addCallback(object : RoomDatabase.Callback() {
+                /*Call Seed Database Worker to Prepopulate Database*/
                 override fun onCreate(db: SupportSQLiteDatabase) {
                     super.onCreate(db)
                     val request = OneTimeWorkRequestBuilder<SeedDatabaseWorker>().build()
@@ -37,6 +40,8 @@ object RoomModule {
             })
             .build()
     }
+
+    /*Provides Dao's for Repositories*/
 
     @Singleton
     @Provides

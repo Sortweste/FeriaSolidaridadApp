@@ -24,6 +24,7 @@ import kotlinx.coroutines.withContext
 import java.lang.Exception
 import javax.inject.Inject
 
+/*Prepopulate Database when App is installed*/
 class SeedDatabaseWorker @WorkerInject constructor(
     @Assisted context: Context,
     @Assisted workerParameters: WorkerParameters,
@@ -32,14 +33,17 @@ class SeedDatabaseWorker @WorkerInject constructor(
     private val newsDao: NewsDao
 ) : CoroutineWorker(context, workerParameters) {
 
+    /*This will run only once, when app is installed successfully*/
     override suspend fun doWork(): Result = coroutineScope {
         withContext(Dispatchers.IO){
             try {
+                /*Reading files from assets folder and mapping to table entities*/
                 applicationContext.assets.open(INSTITUTION_DUMMY_CONTENT_FILENAME).use { inputStream ->
                     JsonReader(inputStream.reader()).use { jsonReader ->
                         val institutionType = object : TypeToken<List<Institution>>() {}.type
                         val institutionList: List<Institution> =
                             Gson().fromJson(jsonReader, institutionType)
+                        /*Inserting the mapping objects to local database*/
                         institutionDao.insertMany(*institutionList.toTypedArray())
                     }
                 }

@@ -10,8 +10,10 @@ import com.sort.feriaapp.data.repositories.UserRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
+/*ViewModel for User*/
 class UserViewModel @ViewModelInject constructor(private val userRepository: UserRepository): ViewModel() {
 
+    /*Coroutine for insert operation*/
     fun insert(user: User) = viewModelScope.launch(Dispatchers.IO) {
         userRepository.insertUser(user)
     }

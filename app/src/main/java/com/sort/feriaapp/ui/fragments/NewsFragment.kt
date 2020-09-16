@@ -22,10 +22,11 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class NewsFragment : Fragment(), RecyclerViewClickListener<NewsMinimal> {
 
+    /*Using databinding*/
     private var _binding: FragmentNewsBinding? = null
     private val binding get() = _binding!!
 
-
+    /*Injecting ViewModel*/
     private val viewModel: NewsViewModel by viewModels()
 
 
@@ -99,6 +100,7 @@ class NewsFragment : Fragment(), RecyclerViewClickListener<NewsMinimal> {
                 >= Configuration.SCREENLAYOUT_SIZE_LARGE)
     }
 
+    /*Using Navigation Component for Intent*/
     override fun onCardViewClick(view: View, obj: NewsMinimal) {
         val action = NewsFragmentDirections.actionNewsFragmentToNewsDetailFragment(obj.id)
         view.findNavController().navigate(action)
