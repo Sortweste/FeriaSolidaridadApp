@@ -25,16 +25,19 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginVertical="10dp"
-            android:text="Palabras del Rector sobre la XIX Feria de la Solidaridad"
+            android:text=""
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"/>
+        <!-- android:text="Palabras del Rector sobre la Feria de la Solidaridad" -->
 
         <WebView
             android:id="@+id/web_view_rector"
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:layout_margin="20dp"
-            app:goneUnless="@{viewmodel.videoURL.empty}"
-            app:videoURL="@{viewmodel.videoURL}" />
+             />
+
+        <!-- app:goneUnless="@{viewmodel.videoURL.empty}" -->
+        <!--app:videoURL="@{viewmodel.videoURL}" -->
 
     </LinearLayout>
 
