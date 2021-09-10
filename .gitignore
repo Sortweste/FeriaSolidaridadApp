@@ -14,4 +14,3 @@
 .cxx
 .idea
 keystore.properties
-/app/src/main/assets/*.json
