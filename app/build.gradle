@@ -17,8 +17,8 @@ android {
         applicationId "com.sort.feriaapp"
         minSdkVersion 15
         targetSdkVersion 29
-        versionCode 8
-        versionName "1.8"
+        versionCode 9
+        versionName "1.9"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
        // buildConfigField("String",  "YOUTUBE_API_KEY", keystoreProperties['YOUTUBE_API_KEY'])
