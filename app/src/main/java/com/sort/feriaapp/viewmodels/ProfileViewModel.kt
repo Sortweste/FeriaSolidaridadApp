@@ -68,30 +68,7 @@ class ProfileViewModel @ViewModelInject constructor(private val eventRepository:
     )
 
     val data = listOf<InstagramMinimal>(
-        InstagramMinimal(images[0], descriptions[0]),
-        InstagramMinimal(images[1], descriptions[1]),
-        InstagramMinimal(images[2], descriptions[2]),
-        InstagramMinimal(images[3], descriptions[3]),
-        InstagramMinimal(images[4], descriptions[4]),
-        InstagramMinimal(images[5], descriptions[5]),
-        InstagramMinimal(images[6], descriptions[6]),
-        InstagramMinimal(images[7], descriptions[7]),
-        InstagramMinimal(images[8], descriptions[8]),
-        InstagramMinimal(images[9], descriptions[9]),
-        InstagramMinimal(images[10], descriptions[10]),
-        InstagramMinimal(images[11], descriptions[11]),
-        InstagramMinimal(images[12], descriptions[12]),
-        InstagramMinimal(images[13], descriptions[13]),
-        InstagramMinimal(images[14], descriptions[14]),
-        InstagramMinimal(images[15], descriptions[15]),
-        InstagramMinimal(images[16], descriptions[16]),
-        InstagramMinimal(images[17], descriptions[17]),
-        InstagramMinimal(images[18], descriptions[18]),
-        InstagramMinimal(images[19], descriptions[19]),
-        InstagramMinimal(images[20], descriptions[20]),
-        InstagramMinimal(images[21], descriptions[21]),
-        InstagramMinimal(images[22], descriptions[22]),
-        InstagramMinimal(images[23], descriptions[23])
+
     )
 
 }
